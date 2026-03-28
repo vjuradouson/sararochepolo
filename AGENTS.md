@@ -1,5 +1,36 @@
-<!-- BEGIN:nextjs-agent-rules -->
-# This is NOT the Next.js you know
+# 🚀 Next.js & Visual Excellence Standards (Agent Rules)
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
-<!-- END:nextjs-agent-rules -->
+## 1. Core Tech Stack & Architecture (App Router Expert)
+- **Framework:** Next.js 14+ (App Router). Priorizar **Server Components** por defecto. Usar `"use client"` solo cuando sea estrictamente necesario (hooks de estado o interactividad).
+- **Rendering:** Forzar **Static Site Generation (SSG)** mediante `output: 'export'` en `next.config.js` siempre que sea posible para máxima velocidad.
+- **Type Safety:** TypeScript estricto. Definir interfaces claras para las Props de cada componente.
+- **Directory Structure:**
+    - `app/`: Solo para archivos de routing (`page.tsx`, `layout.tsx`, `loading.tsx`).
+    - `components/ui/`: Componentes base reutilizables (botones, inputs, tarjetas).
+    - `components/sections/`: Secciones completas de la página (Hero, Portfolio, Contact).
+    - `lib/`: Utilidades y configuraciones (framer-motion-variants.ts, utils.ts).
+
+## 2. Visual Identity & Design Standards
+- **Minimalism:** Priorizar el uso de "espacio negativo" (whitespace). Escalas de espaciado generosas (`py-24` a `py-32`) para separar secciones.
+- **Typography:** Uso de fuentes variables optimizadas con `next/font/google`. 
+    - Títulos: `font-serif tracking-tight text-brand-dark`.
+    - Cuerpo: `font-sans text-brand-muted leading-relaxed`.
+- **Animations (Framer Motion):** Implementar transiciones suaves y elegantes:
+    - *Scroll Reveal:* Fade-in up cuando los elementos entran en el viewport.
+    - *Stagger:* Animaciones en cascada para listas o grids.
+- **Styling:** **Tailwind CSS Utility-First**. Prohibido el uso de CSS externo o inline fuera de Tailwind.
+
+## 3. Component Architecture (Atomic & Clean)
+- **Atomic Separation:** Separar `Header`, `Footer` y secciones principales en archivos independientes. No amontonar código en el archivo `page.tsx`.
+- **Global Layout:** `Header` y `Footer` residen **exclusivamente** en `app/layout.tsx` para evitar re-renders y parpadeos.
+- **Colocation:** Componentes que pertenecen a una sola página deben vivir cerca de ella o en una subcarpeta dedicada para evitar el desorden global.
+
+## 4. Senior Implementation Rules
+- **Anti-Pattern Protection:** Prohibido el uso de la etiqueta `<img>`. Usar siempre el componente `next/image` con tamaños definidos para evitar Layout Shift (CLS).
+- **Lucide Icons:** Uso exclusivo de `lucide-react` para mantener una iconografía consistente y ligera.
+- **Accessibility (a11y):** Asegurar contrastes WCAG AA, uso de etiquetas semánticas (`<article>`, `<section>`, `<nav>`) y atributos `aria-label`.
+- **SEO Mastery:** Implementar el objeto `Metadata` de Next.js en cada página (Title, Description, OpenGraph). No usar la etiqueta `<Head>` (obsoleta en App Router).
+- **Clean Code Rule:** Si un componente supera las 60 líneas de código, **debe** ser fragmentado en sub-componentes más pequeños y manejables.
+
+## 5. Reference Style
+- El objetivo es emular la estética de `beatrizhc.com`: Limpieza visual, transiciones de alta gama, tipografía premium y carga instantánea.
