@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ContactForm from "@/components/ui/ContactForm";
+import ContactForm from "@/app/[locale]/(routes)/contact/components/ContactForm";
 
 export const metadata: Metadata = {
     title: "Contacto · Sara Roche",

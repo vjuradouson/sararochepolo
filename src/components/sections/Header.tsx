@@ -18,7 +18,7 @@ export default function Header() {
     const isHome = pathname.split('/').length === 2
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-neutral-200 dark:bg-[#0a0a0a]/80 dark:border-neutral-800">
+        <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-neutral-200">
             <nav
                 className="mx-auto flex max-w-7xl items-center justify-between px-6 md:px-12 h-20"
                 aria-label="Navegación principal"
@@ -84,7 +84,7 @@ export default function Header() {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2 }}
-                        className="md:hidden absolute top-20 left-0 right-0 border-b border-neutral-200 dark:border-neutral-800 bg-white dark:bg-[#0a0a0a]"
+                        className="md:hidden absolute top-20 left-0 right-0 border-b border-neutral-200 bg-white"
                     >
                         <ul className="flex flex-col px-6 py-4 space-y-4">
                             {links.map(({ href, label }) => {

@@ -28,11 +28,11 @@ const Column = ({ items }: any) => (
                 key={item.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.4 }}
+                transition={{ delay: i * 0.2 }}
                 className={`relative rounded-2xl overflow-hidden ${item.span}`}
             >
                 {item.type === "text" ? (
-                    <div className="w-full h-full flex flex-col items-center justify-center text-center bg-zinc-100 dark:bg-zinc-900 p-6">
+                    <div className="w-full h-full flex flex-col items-center justify-center text-center bg-zinc-100 p-6">
                         <h3 className="text-xl font-serif mb-2">
                             La Belleza de lo Esencial
                         </h3>
@@ -56,10 +56,19 @@ const Column = ({ items }: any) => (
 export default function MasonryGrid() {
     return (
         <section className="py-24 w-full max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+
+                {/* Columna 1 */}
                 <Column items={col1} />
+
+                {/* Columna 2 */}
                 <Column items={col2} />
-                <Column items={col3} />
+
+                {/* Columna 3 (solo desktop) */}
+                <div className="lg:mobile">
+                    <Column items={col3} />
+                </div>
+
             </div>
         </section>
     );

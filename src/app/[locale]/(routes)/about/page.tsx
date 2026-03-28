@@ -32,7 +32,7 @@ export default function AboutPage() {
                 {/* Left — bio */}
                 <div className="flex flex-col gap-10">
                     {/* Avatar placeholder */}
-                    <div className="w-40 h-40 rounded-full bg-neutral-200 dark:bg-neutral-800 overflow-hidden ring-4 ring-neutral-100 dark:ring-neutral-900" />
+                    <div className="w-40 h-40 rounded-full bg-neutral-200 overflow-hidden ring-4 ring-neutral-100" />
 
                     <div className="space-y-6 text-lg text-brand-muted leading-relaxed max-w-lg">
                         <p>

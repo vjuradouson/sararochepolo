@@ -28,7 +28,7 @@ const projects = [
 
 export default function PortfolioPreview() {
     return (
-        <section className="mx-auto max-w-7xl px-6 md:px-12 py-24 md:py-32 border-t border-neutral-200 dark:border-neutral-800">
+        <section className="mx-auto max-w-7xl px-6 md:px-12 py-24 md:py-32 border-t border-neutral-200">
             <motion.div
                 variants={staggerContainer}
                 initial="hidden"
@@ -49,7 +49,7 @@ export default function PortfolioPreview() {
                         <motion.div
                             key={project.id}
                             variants={fadeIn}
-                            className="group relative flex flex-col sm:flex-row sm:items-center justify-between py-10 border-b border-neutral-200 dark:border-neutral-800 hover:border-brand-dark dark:hover:border-brand-dark transition-colors cursor-pointer"
+                            className="group relative flex flex-col sm:flex-row sm:items-center justify-between py-10 border-b border-neutral-200 hover:border-brand-dark transition-colors cursor-pointer"
                         >
                             <div className="flex items-start sm:items-center gap-6 md:gap-12">
                                 <span className="text-sm font-mono text-brand-muted">{project.id}</span>

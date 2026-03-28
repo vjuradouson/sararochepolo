@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Hero from './components/Hero'
 import MasonryGrid from './components/MasonryGrid'
+import StickySplitSection from './components/StickySplitSection'
 import PortfolioPreview from './components/PortfolioPreview'
 
 export default function HomeClient() {
@@ -23,8 +24,9 @@ export default function HomeClient() {
     return (
         <div className="flex flex-col w-full">
             <Hero key={refreshKey} />
-            <MasonryGrid key={refreshKey + 1} />
-            <PortfolioPreview key={refreshKey + 2} />
+            <StickySplitSection key={refreshKey + 1} />
+            <MasonryGrid key={refreshKey + 2    } />
+            <PortfolioPreview key={refreshKey + 3} />
         </div>
     )
 }
