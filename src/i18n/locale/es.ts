@@ -1,8 +1,14 @@
 export default {
     app: {
+        header: {
+            links: {
+                about: 'Sobre mí',
+                contact: 'Contacto'
+            }
+        },
         home: {
             hero: {
-                portfolio: 'Portfolio Español 2026',
+                product_designer: 'Product Designer · UX/UI - Español',
             }
         }
     }

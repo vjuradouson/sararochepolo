@@ -4,8 +4,11 @@ import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/framer-motion-variants";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { useTranslations } from 'next-intl'
 
 export default function Hero() {
+    const t = useTranslations()
+
     return (
         <section className="mx-auto max-w-7xl px-6 md:px-12 py-16 md:py-16 flex flex-col justify-center min-h-[80vh]">
             <motion.div
@@ -19,7 +22,7 @@ export default function Hero() {
                     variants={fadeIn}
                     className="text-sm font-medium uppercase tracking-widest text-brand-muted mb-6"
                 >
-                    Product Designer · UX/UI
+                    {t("app.home.hero.product_designer")}
                 </motion.p>
 
                 {/* Headline */}
