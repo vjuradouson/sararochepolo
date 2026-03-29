@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
     return (
-        <section className="mx-auto max-w-7xl px-6 md:px-12 py-32 md:py-48 flex flex-col justify-center min-h-[80vh]">
+        <section className="mx-auto max-w-7xl px-6 md:px-12 py-16 md:py-16 flex flex-col justify-center min-h-[80vh]">
             <motion.div
                 variants={staggerContainer}
                 initial="hidden"
@@ -57,6 +57,12 @@ export default function Hero() {
                 <motion.div variants={fadeIn} className="flex items-center gap-8">
                     <Link
                         href="#projects"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            document
+                                .getElementById("projects")
+                                ?.scrollIntoView({ behavior: "smooth" });
+                        }}
                         className="inline-flex items-center gap-2 text-base font-semibold text-brand-dark group"
                     >
                         <span className="relative overflow-hidden">

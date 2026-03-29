@@ -17,7 +17,7 @@ const skills = [
 
 export default function AboutPage() {
     return (
-        <section className="mx-auto max-w-7xl px-6 md:px-12 py-24 md:py-32">
+        <section className="mx-auto max-w-7xl px-6 md:px-12 py-24 md:py-16">
             {/* Heading */}
             <div className="mb-20">
                 <p className="text-sm font-medium uppercase tracking-widest text-brand-muted mb-4">
@@ -35,7 +35,7 @@ export default function AboutPage() {
                     {/* Avatar */}
                     <div className="w-40 h-40 relative rounded-full overflow-hidden ring-4 ring-neutral-100">
                         <Image
-                            src="https://media.licdn.com/dms/image/v2/D4D03AQFESvCDRTlUOQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1694508790183?e=1776297600&v=beta&t=j1dyV7BVxyp6cMU7223eyyvZMO1p7YvvON--0Iadw1o"
+                            src="/media/about/profile.jpeg"
                             alt="Sara Roche Polo"
                             fill
                             className="object-cover"

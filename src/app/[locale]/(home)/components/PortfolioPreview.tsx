@@ -34,7 +34,7 @@ const projects = [
 
 export default function PortfolioPreview() {
     return (
-        <section className="mx-auto max-w-7xl px-6 md:px-12 py-24 md:py-32 border-t border-neutral-200">
+        <section id="projects" className="mx-auto max-w-7xl px-6 md:px-12 py-24 md:py-32 border-t border-neutral-200">
             <motion.div
                 variants={staggerContainer}
                 initial="hidden"
@@ -58,7 +58,7 @@ export default function PortfolioPreview() {
                     </div>
 
                     <Link
-                        href="/work"
+                        href="/"
                         className="hidden md:inline-flex items-center gap-1 text-sm font-medium uppercase tracking-widest text-brand-muted hover:text-brand-dark transition-colors"
                     >
                         Ver todos <ArrowUpRight size={16} />
@@ -115,7 +115,7 @@ export default function PortfolioPreview() {
                 {/* Mobile CTA */}
                 <motion.div variants={fadeIn} className="mt-12 md:hidden">
                     <Link
-                        href="/work"
+                        href="/"
                         className="inline-flex items-center gap-1 text-sm font-medium uppercase tracking-widest text-brand-dark"
                     >
                         Ver todos los proyectos <ArrowUpRight size={16} />

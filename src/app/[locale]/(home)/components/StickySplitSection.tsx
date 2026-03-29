@@ -2,9 +2,21 @@
 
 import { useRef, useEffect, useState } from "react";
 
-const experiences = [
+const experienceData = [
     {
-        year: "2022 — Actualidad",
+        year: "2025 — 2026",
+        title: "UX/UI Designer · Grupo Piquer",
+        description:
+            "Diseño de experiencias digitales para entornos educativos. Mejora de la usabilidad, arquitectura de la información y consistencia visual en la plataforma.",
+    },
+    {
+        year: "2024 — 2025",
+        title: "UX/UI Designer · Grupo Piquer",
+        description:
+            "Diseño de experiencias digitales para entornos educativos. Mejora de la usabilidad, arquitectura de la información y consistencia visual en la plataforma.",
+    },
+    {
+        year: "2022 — 2023",
         title: "UX/UI Designer · Grupo Piquer",
         description:
             "Diseño de experiencias digitales para entornos educativos. Mejora de la usabilidad, arquitectura de la información y consistencia visual en la plataforma.",
@@ -15,6 +27,9 @@ const experiences = [
         description:
             "Diseño de interfaces y piezas gráficas para clientes, colaborando con equipos de marketing y desarrollo.",
     },
+];
+
+const educationData = [
     {
         year: "2020 — 2022",
         title: "Grado Superior en Diseño Gráfico",
@@ -47,6 +62,12 @@ export default function StickySplitSection() {
 
     const [offset, setOffset] = useState(0);
     const [containerHeight, setContainerHeight] = useState("200vh");
+    const [activeTab, setActiveTab] = useState<"experience" | "education">(
+        "experience"
+    );
+
+    const currentData =
+        activeTab === "experience" ? experienceData : educationData;
 
     useEffect(() => {
         const handleResize = () => {
@@ -77,7 +98,7 @@ export default function StickySplitSection() {
             const totalScroll = container.offsetHeight - viewportHeight;
 
             const progress = Math.min(
-                Math.max(-rect.top / totalScroll, 0),
+                Math.max((-rect.top / totalScroll) * 2, 0),
                 1
             );
 
@@ -101,6 +122,22 @@ export default function StickySplitSection() {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
+
+    useEffect(() => {
+        if (!rightRef.current) return;
+
+        if (window.innerWidth >= 1024) {
+            const totalHeight =
+                rightRef.current.scrollHeight + window.innerHeight;
+
+            setContainerHeight(`${totalHeight}px`);
+        } else {
+            setContainerHeight("auto");
+        }
+
+        // Reset scroll interno
+        setOffset(0);
+    }, [activeTab]);
 
     return (
         <section
@@ -132,10 +169,23 @@ export default function StickySplitSection() {
                         </p>
 
                         <div className="mt-10 flex gap-4">
-                            <button className="bg-teal-600 px-6 py-3 rounded-lg hover:bg-teal-500 transition">
+                            <button
+                                onClick={() => setActiveTab("experience")}
+                                className={`cursor-pointer px-6 py-3 rounded-lg transition ${activeTab === "experience"
+                                    ? "bg-teal-600"
+                                    : "border border-white/20 hover:bg-white/10"
+                                    }`}
+                            >
                                 Experiencia
                             </button>
-                            <button className="border border-white/20 px-6 py-3 rounded-lg hover:bg-white/10 transition">
+
+                            <button
+                                onClick={() => setActiveTab("education")}
+                                className={`cursor-pointer px-6 py-3 rounded-lg transition ${activeTab === "education"
+                                    ? "bg-teal-600"
+                                    : "border border-white/20 hover:bg-white/10"
+                                    }`}
+                            >
                                 Formación
                             </button>
                         </div>
@@ -147,13 +197,14 @@ export default function StickySplitSection() {
                             ref={rightRef}
                             style={{
                                 transform:
-                                    window.innerWidth >= 1024
+                                    typeof window !== "undefined" &&
+                                        window.innerWidth >= 1024
                                         ? `translateY(-${offset}px)`
                                         : "none",
                             }}
                             className="flex flex-col gap-10 will-change-transform"
                         >
-                            {experiences.map((item, i) => (
+                            {currentData.map((item, i) => (
                                 <div
                                     key={i}
                                     className="bg-white text-black rounded-2xl p-8 transition hover:scale-[1.01] hover:shadow-xl"

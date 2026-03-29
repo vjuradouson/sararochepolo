@@ -11,7 +11,7 @@
     - `lib/`: Utilidades y configuraciones (framer-motion-variants.ts, utils.ts).
 
 ## 2. Visual Identity & Design Standards
-- **Minimalism:** Priorizar el uso de "espacio negativo" (whitespace). Escalas de espaciado generosas (`py-24` a `py-32`) para separar secciones.
+- **Minimalism:** Priorizar el uso de "espacio negativo" (whitespace). Escalas de espaciado generosas (`py-16` a `py-24`) para separar secciones.
 - **Typography:** Uso de fuentes variables optimizadas con `next/font/google`. 
     - Títulos: `font-serif tracking-tight text-brand-dark`.
     - Cuerpo: `font-sans text-brand-muted leading-relaxed`.
