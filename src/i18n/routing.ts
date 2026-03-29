@@ -7,6 +7,7 @@ const defaultLocale = process.env.NEXT_PUBLIC_DEFAULT_LOCALE ?? 'en'
 export const routing = defineRouting({
   locales: locales,
   defaultLocale: defaultLocale,
+  localePrefix: 'always',
   alternateLinks: false,
   pathnames: {
     [ROUTES.HOME]: '/',

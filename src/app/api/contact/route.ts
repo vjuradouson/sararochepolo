@@ -116,9 +116,15 @@ async function sendContactEmail(data: {
 }) {
     const { name, email, message } = data;
 
+    const to = process.env.CONTACT_EMAIL;
+
+    if (!to) {
+        throw new Error('CONTACT_EMAIL is not defined');
+    }
+
     return resend.emails.send({
         from: process.env.MAIL_FROM || "Portfolio <onboarding@resend.dev>",
-        to: [process.env.CONTACT_EMAIL!],
+        to: [to],
         subject: `[Portfolio] Mensaje de ${name}`,
         html: buildEmailTemplate({ name, email, message }),
     });
