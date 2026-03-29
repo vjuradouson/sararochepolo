@@ -17,8 +17,8 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Sara Roche · Portfolio",
-  description: "Portfolio personal de Sara Roche",
+  title: "Sara Roche Polo · Portfolio",
+  description: "Portfolio personal de Sara Roche Polo",
 };
 
 export default async function RootLayout({

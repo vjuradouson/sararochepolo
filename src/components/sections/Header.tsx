@@ -35,7 +35,7 @@ export default function Header() {
                     }}
                     className="text-xl font-serif tracking-tight text-brand-dark hover:opacity-75 transition-opacity"
                 >
-                    Sara Roche
+                    Sara Roche Polo
                 </Link>
 
                 {/* Desktop links */}

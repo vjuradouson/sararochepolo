@@ -117,7 +117,7 @@ async function sendContactEmail(data: {
     const { name, email, message } = data;
 
     return resend.emails.send({
-        from: "Portfolio <onboarding@resend.dev>", // TODO CHANGE ME
+        from: process.env.MAIL_FROM || "Portfolio <onboarding@resend.dev>",
         to: [process.env.CONTACT_EMAIL!],
         subject: `[Portfolio] Mensaje de ${name}`,
         html: buildEmailTemplate({ name, email, message }),

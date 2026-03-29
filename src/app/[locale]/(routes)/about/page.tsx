@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-    title: "About · Sara Roche",
-    description: "Conoce más sobre Sara Roche, Product Designer especializada en UX/UI.",
+    title: "About · Sara Roche Polo",
+    description: "Conoce más sobre Sara Roche Polo, Product Designer especializada en UX/UI.",
 };
 
 const skills = [
