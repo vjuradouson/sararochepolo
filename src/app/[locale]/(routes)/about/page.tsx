@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
     title: "About · Sara Roche",
-    description: "Conoce más sobre Sara Roche, su historia y sus habilidades.",
+    description: "Conoce más sobre Sara Roche, Product Designer especializada en UX/UI.",
 };
 
 const skills = [
-    "Branding & Identidad visual",
-    "Fotografía",
-    "Diseño editorial",
-    "Ilustración digital",
-    "Dirección de arte",
-    "Motion graphics",
+    "UX Research & User Flows",
+    "UI Design & Design Systems",
+    "Figma & Prototyping",
+    "WordPress & Web Design",
+    "Branding & Visual Identity",
+    "Print Design & Prepress (CMYK)",
 ];
 
 export default function AboutPage() {
@@ -31,25 +32,40 @@ export default function AboutPage() {
             <div className="grid gap-16 md:grid-cols-2">
                 {/* Left — bio */}
                 <div className="flex flex-col gap-10">
-                    {/* Avatar placeholder */}
-                    <div className="w-40 h-40 rounded-full bg-neutral-200 overflow-hidden ring-4 ring-neutral-100" />
+                    {/* Avatar */}
+                    <div className="w-40 h-40 relative rounded-full overflow-hidden ring-4 ring-neutral-100">
+                        <Image
+                            src="https://media.licdn.com/dms/image/v2/D4D03AQFESvCDRTlUOQ/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1694508790183?e=1776297600&v=beta&t=j1dyV7BVxyp6cMU7223eyyvZMO1p7YvvON--0Iadw1o"
+                            alt="Sara Roche Polo"
+                            fill
+                            className="object-cover"
+                            unoptimized
+                        />
+                    </div>
 
                     <div className="space-y-6 text-lg text-brand-muted leading-relaxed max-w-lg">
                         <p>
-                            Soy diseñadora creativa con pasión por construir marcas con
-                            carácter. Me especializo en proyectos donde la identidad visual y
-                            la narrativa van de la mano.
+                            Soy <span className="font-medium text-brand-dark">Product Designer especializada en UX/UI</span> con más de 3 años de experiencia
+                            transformando necesidades complejas en soluciones digitales claras, funcionales y visualmente coherentes.
                         </p>
+
                         <p>
-                            Con más de{" "}
-                            <span className="font-medium text-brand-dark">
-                                5 años de experiencia
-                            </span>{" "}
-                            trabajando con estudios y marcas independientes, combino rigor
-                            técnico con una mirada estética cuidada.
+                            Actualmente trabajo en <span className="font-medium text-brand-dark">Grupo Piquer</span>, donde diseño experiencias digitales en entornos educativos,
+                            mejorando la usabilidad, la estructura de la información y la consistencia visual de la plataforma.
                         </p>
+
                         <p>
-                            Actualmente disponible para proyectos freelance y colaboraciones.
+                            Mi perfil combina diseño de producto y comunicación visual, lo que me permite trabajar tanto en interfaces digitales
+                            como en piezas físicas, asegurando una experiencia de marca consistente en todos los puntos de contacto.
+                        </p>
+
+                        <p>
+                            Formación en Estudios Ingleses (C2) y educación, lo que me aporta una fuerte capacidad de comunicación,
+                            pensamiento estructurado y atención al detalle.
+                        </p>
+
+                        <p>
+                            Actualmente disponible para colaboraciones, proyectos freelance y oportunidades en producto digital.
                         </p>
                     </div>
                 </div>
@@ -75,7 +91,7 @@ export default function AboutPage() {
 
                     <div>
                         <h2 className="text-xs font-semibold uppercase tracking-widest text-brand-muted mb-6">
-                            Contacto
+                            Información
                         </h2>
                         <ul className="space-y-4 text-base text-brand-dark">
                             <li className="flex items-center">
@@ -87,9 +103,17 @@ export default function AboutPage() {
                                     hola@sararoche.com
                                 </a>
                             </li>
+
                             <li className="flex items-center">
                                 <span className="text-brand-muted w-24">Ubicación</span>
-                                <span className="font-medium">Madrid, España</span>
+                                <span className="font-medium">Zaragoza, España</span>
+                            </li>
+
+                            <li className="flex items-center">
+                                <span className="text-brand-muted w-24">Idiomas</span>
+                                <span className="font-medium">
+                                    Español nativo · Inglés C2
+                                </span>
                             </li>
                         </ul>
                     </div>

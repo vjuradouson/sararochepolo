@@ -4,21 +4,73 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const col1 = [
-    { id: 1, src: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f", span: "h-[440px]" },
-    { id: 2, src: "https://images.unsplash.com/photo-1600607686527-6fb886090705", span: "h-[230px]" },
-    { id: 3, src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7", span: "h-[230px]" },
+    {
+        id: 1,
+        src: "https://images.unsplash.com/photo-1559028012-481c04fa702d",
+        span: "h-[440px]",
+        title: "Piquer Platform",
+        tag: "UX/UI · Web App",
+    },
+    {
+        id: 2,
+        src: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6",
+        span: "h-[230px]",
+        title: "Design System",
+        tag: "UI · Figma",
+    },
+    {
+        id: 3,
+        src: "https://images.unsplash.com/photo-1558655146-d09347e92766",
+        span: "h-[230px]",
+        title: "Landing Optimization",
+        tag: "UX · Conversion",
+    },
 ];
 
 const col2 = [
-    { id: 4, src: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d", span: "h-[230px]" },
-    { id: "text", type: "text", span: "h-[440px]" },
-    { id: 5, src: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6", span: "h-[230px]" },
+    {
+        id: 4,
+        src: "https://images.unsplash.com/photo-1492724441997-5dc865305da7",
+        span: "h-[230px]",
+        title: "WordPress UX",
+        tag: "Web Design",
+    },
+    {
+        id: "text",
+        type: "text",
+        span: "h-[440px]",
+    },
+    {
+        id: 5,
+        src: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+        span: "h-[230px]",
+        title: "Editorial Layout",
+        tag: "Print · CMYK",
+    },
 ];
 
 const col3 = [
-    { id: 6, src: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace", span: "h-[230px]" },
-    { id: 7, src: "https://images.unsplash.com/photo-1490481651871-ab68de25d43d", span: "h-[230px]" },
-    { id: 8, src: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f", span: "h-[440px]" },
+    {
+        id: 6,
+        src: "https://images.unsplash.com/photo-1558655146-d09347e92766",
+        span: "h-[230px]",
+        title: "Brand System",
+        tag: "Visual Identity",
+    },
+    {
+        id: 7,
+        src: "https://images.unsplash.com/photo-1600607686527-6fb886090705",
+        span: "h-[230px]",
+        title: "Roll-ups & Posters",
+        tag: "Print Design",
+    },
+    {
+        id: 8,
+        src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+        span: "h-[440px]",
+        title: "Cross-channel Design",
+        tag: "Digital + Physical",
+    },
 ];
 
 const Column = ({ items }: any) => (
@@ -28,25 +80,45 @@ const Column = ({ items }: any) => (
                 key={item.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.2 }}
-                className={`relative rounded-2xl overflow-hidden ${item.span}`}
+                transition={{ delay: i * 0.15 }}
+                className={`relative rounded-2xl overflow-hidden group ${item.span}`}
             >
                 {item.type === "text" ? (
-                    <div className="w-full h-full flex flex-col items-center justify-center text-center bg-zinc-100 p-6">
-                        <h3 className="text-xl font-serif mb-2">
-                            La Belleza de lo Esencial
+                    <div className="w-full h-full flex flex-col justify-center bg-zinc-100 p-8">
+                        <h3 className="text-2xl font-serif mb-4 text-brand-dark">
+                            Diseño centrado en producto
                         </h3>
+                        <p className="text-sm text-zinc-600 leading-relaxed mb-4">
+                            Experiencia diseñando soluciones UX/UI para entornos reales,
+                            desde plataformas educativas hasta sistemas visuales completos.
+                        </p>
                         <p className="text-sm text-zinc-500">
-                            Diseño atemporal y minimalista.
+                            Figma · Adobe Suite · WordPress <br />
+                            Español nativo · Inglés C2
                         </p>
                     </div>
                 ) : (
-                    <Image
-                        src={`${item.src}?auto=format&fit=crop&w=800&q=80`}
-                        alt=""
-                        fill
-                        className="object-cover"
-                    />
+                    <>
+                        <Image
+                            src={`${item.src}?auto=format&fit=crop&w=800&q=80`}
+                            alt={item.title}
+                            fill
+                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+
+                        {/* Overlay */}
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300" />
+
+                        {/* Text */}
+                        <div className="absolute bottom-0 left-0 p-6 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            <p className="text-xs uppercase tracking-widest mb-1">
+                                {item.tag}
+                            </p>
+                            <h4 className="text-lg font-semibold">
+                                {item.title}
+                            </h4>
+                        </div>
+                    </>
                 )}
             </motion.div>
         ))}
@@ -58,14 +130,10 @@ export default function MasonryGrid() {
         <section className="py-24 w-full max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
 
-                {/* Columna 1 */}
                 <Column items={col1} />
-
-                {/* Columna 2 */}
                 <Column items={col2} />
 
-                {/* Columna 3 (solo desktop) */}
-                <div className="lg:mobile">
+                <div className="hidden md:block">
                     <Column items={col3} />
                 </div>
 

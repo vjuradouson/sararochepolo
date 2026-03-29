@@ -8,9 +8,8 @@ export const metadata: Metadata = {
 
 const contactLinks = [
     { label: "Email", value: "hola@sararoche.com", href: "mailto:hola@sararoche.com" },
-    { label: "Instagram", value: "@sararoche", href: "https://instagram.com/sararoche" },
-    { label: "LinkedIn", value: "Sara Roche", href: "https://linkedin.com/in/sararoche" },
-    { label: "Ubicación", value: "Madrid, España", href: null },
+    { label: "LinkedIn", value: "Sara Roche", href: "https://www.linkedin.com/in/sara-roche-polo-a7114318b/" },
+    { label: "Ubicación", value: "Zaragoza, España", href: null },
 ];
 
 export default function ContactPage() {
@@ -30,8 +29,10 @@ export default function ContactPage() {
                 {/* Left — info */}
                 <div className="flex flex-col gap-12">
                     <p className="text-lg text-brand-muted leading-relaxed max-w-md">
-                        ¿Tienes un proyecto en mente? Me encantaría escucharte. Escríbeme y
-                        te respondo en menos de 48&nbsp;h.
+                        Estoy disponible para proyectos de diseño de producto, UX/UI y
+                        sistemas visuales. Si estás construyendo un producto digital o
+                        necesitas mejorar la experiencia de usuario, estaré encantada de ayudarte.
+                        Respondo normalmente en 24–48h.
                     </p>
 
                     <ul className="space-y-6">
@@ -61,6 +62,9 @@ export default function ContactPage() {
 
                 {/* Right — form */}
                 <div>
+                    <h2 className="text-xl font-serif text-brand-dark mb-6">
+                        Cuéntame sobre tu proyecto
+                    </h2>
                     <ContactForm />
                 </div>
             </div>
