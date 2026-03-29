@@ -66,17 +66,31 @@ export default function StickySplitSection() {
         "experience"
     );
 
+    const [mounted, setMounted] = useState(false);
+    const [isDesktop, setIsDesktop] = useState(false);
+
     const currentData =
         activeTab === "experience" ? experienceData : educationData;
 
     useEffect(() => {
+        setMounted(true);
+
+        const check = () => setIsDesktop(window.innerWidth >= 1024);
+        check();
+
+        window.addEventListener("resize", check);
+        return () => window.removeEventListener("resize", check);
+    }, []);
+
+    useEffect(() => {
+        if (!mounted) return;
+
         const handleResize = () => {
             if (!rightRef.current) return;
 
-            if (window.innerWidth >= 1024) {
+            if (isDesktop) {
                 const totalHeight =
                     rightRef.current.scrollHeight + window.innerHeight;
-
                 setContainerHeight(`${totalHeight}px`);
             } else {
                 setContainerHeight("auto");
@@ -87,7 +101,7 @@ export default function StickySplitSection() {
             if (
                 !containerRef.current ||
                 !rightRef.current ||
-                window.innerWidth < 1024
+                !isDesktop
             )
                 return;
 
@@ -114,6 +128,7 @@ export default function StickySplitSection() {
         };
 
         handleResize();
+
         window.addEventListener("resize", handleResize);
         window.addEventListener("scroll", handleScroll);
 
@@ -121,23 +136,21 @@ export default function StickySplitSection() {
             window.removeEventListener("resize", handleResize);
             window.removeEventListener("scroll", handleScroll);
         };
-    }, []);
+    }, [mounted, isDesktop]);
 
     useEffect(() => {
-        if (!rightRef.current) return;
+        if (!mounted || !rightRef.current) return;
 
-        if (window.innerWidth >= 1024) {
+        if (isDesktop) {
             const totalHeight =
                 rightRef.current.scrollHeight + window.innerHeight;
-
             setContainerHeight(`${totalHeight}px`);
         } else {
             setContainerHeight("auto");
         }
 
-        // Reset scroll interno
         setOffset(0);
-    }, [activeTab]);
+    }, [activeTab, mounted, isDesktop]);
 
     return (
         <section
@@ -197,8 +210,7 @@ export default function StickySplitSection() {
                             ref={rightRef}
                             style={{
                                 transform:
-                                    typeof window !== "undefined" &&
-                                        window.innerWidth >= 1024
+                                    mounted && isDesktop
                                         ? `translateY(-${offset}px)`
                                         : "none",
                             }}
