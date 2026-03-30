@@ -4,8 +4,10 @@ import "./../globals.css";
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import { NextIntlClientProvider } from 'next-intl';
+import { routing } from '@/i18n/routing';
+import { BASE_URL, LOCALES } from '@/lib/config';
 
-const locales = process.env.NEXT_PUBLIC_LOCALES?.split(',') ?? ['es', 'en'];
+const locales = LOCALES;
 
 const interSans = Inter({
   variable: "--font-inter",
@@ -17,12 +19,35 @@ const playfairDisplay = Playfair_Display({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Sara Roche Polo · Portfolio",
-  description: "Portfolio personal de Sara Roche Polo",
-};
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
 
-export const dynamic = 'force-static'
+  const { locale } = await params;
+  const { locales, defaultLocale } = routing;
+
+  return {
+    title: "Sara Roche Polo · Portfolio",
+    description: "Portfolio personal de Sara Roche Polo",
+
+    alternates: {
+      canonical: `${BASE_URL}/${locale}`,
+      languages: {
+        ...Object.fromEntries(
+          locales.map(l => [
+            l,
+            `${BASE_URL}/${l}`
+          ])
+        ),
+        'x-default': `${BASE_URL}/${defaultLocale}`,
+      },
+    },
+  };
+}
+
+export const dynamic = 'force-static';
 
 export function generateStaticParams() {
   return locales.map(locale => ({ locale }));
@@ -41,7 +66,7 @@ export default async function RootLayout({
   params
 }: {
   children: React.ReactNode;
-  params: Promise<{ locale: string }>; // ✅ Next 15
+  params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
 

@@ -1,6 +1,7 @@
 import { Resend } from "resend";
+import { RESEND_API_KEY, CONTACT_EMAIL, MAIL_FROM } from '@/lib/config';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = new Resend(RESEND_API_KEY);
 
 // =========================
 // Utils
@@ -116,14 +117,14 @@ async function sendContactEmail(data: {
 }) {
     const { name, email, message } = data;
 
-    const to = process.env.CONTACT_EMAIL;
+    const to = CONTACT_EMAIL;
 
     if (!to) {
         throw new Error('CONTACT_EMAIL is not defined');
     }
 
     return resend.emails.send({
-        from: process.env.MAIL_FROM || "Portfolio <onboarding@resend.dev>",
+        from: MAIL_FROM || "Portfolio <onboarding@resend.dev>",
         to: [to],
         subject: `[Portfolio] Mensaje de ${name}`,
         html: buildEmailTemplate({ name, email, message }),

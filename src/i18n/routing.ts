@@ -1,8 +1,9 @@
 import { ROUTES } from '@/constants/routes'
 import { defineRouting } from 'next-intl/routing'
+import { LOCALES, DEFAULT_LOCALE } from '@/lib/config';
 
-const locales = process.env.NEXT_PUBLIC_LOCALES?.split(',') ?? []
-const defaultLocale = process.env.NEXT_PUBLIC_DEFAULT_LOCALE ?? 'en'
+const locales = LOCALES;
+const defaultLocale = DEFAULT_LOCALE
 
 export const routing = defineRouting({
   locales: locales,
