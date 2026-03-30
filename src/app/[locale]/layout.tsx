@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description: "Portfolio personal de Sara Roche Polo",
 };
 
-export const revalidate = 60;
+export const dynamic = 'force-static'
 
 export function generateStaticParams() {
   return locales.map(locale => ({ locale }));
