@@ -1,8 +1,8 @@
 import { createNavigation } from 'next-intl/navigation'
 import { notFound } from 'next/navigation'
 
-import { routing } from './routing'
+import { ROUTING } from './routing'
 
-const { Link, useRouter, usePathname, redirect, getPathname } = createNavigation(routing)
+const { Link, useRouter, usePathname, redirect, getPathname } = createNavigation(ROUTING)
 
 export { Link, usePathname, redirect, useRouter, getPathname, notFound }

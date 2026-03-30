@@ -2,92 +2,118 @@
 
 import { motion } from "framer-motion";
 import { fadeIn, staggerContainer } from "@/lib/framer-motion-variants";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { useTranslations } from 'next-intl'
+import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export default function Hero() {
-    const t = useTranslations()
+    const t = useTranslations("app");
 
     return (
-        <section className="mx-auto max-w-7xl px-6 md:px-12 py-16 md:py-16 flex flex-col justify-center min-h-[80vh]">
-            <motion.div
-                variants={staggerContainer}
-                initial="hidden"
-                animate="visible"
-                className="max-w-4xl"
-            >
-                {/* Eyebrow */}
-                <motion.p
-                    variants={fadeIn}
-                    className="text-sm font-medium uppercase tracking-widest text-brand-muted mb-6"
-                >
-                    {t("app.home.hero.product_designer")}
-                </motion.p>
+        <section className="mx-auto max-w-7xl px-6 md:px-12 py-20">
+            {/* TOP: 2 columnas */}
+            <div className="grid md:grid-cols-2 gap-12 items-center">
 
-                {/* Headline */}
-                <motion.h1
-                    variants={fadeIn}
-                    className="text-5xl md:text-7xl font-serif tracking-tight text-brand-dark leading-[1.1] mb-8"
-                >
-                    Transformando necesidades complejas
-                    <br />
-                    en <span className="italic">experiencias claras y funcionales</span>
-                </motion.h1>
+                {/* LEFT */}
+                <div>
+                    {/* Eyebrow */}
+                    <p className="uppercase tracking-[0.3em] text-xl text-brand-muted mb-6">
+                        PRODUCT DESIGNER · UX/UI
+                    </p>
 
-                {/* Subheadline */}
-                <motion.p
-                    variants={fadeIn}
-                    className="text-xl md:text-2xl text-brand-muted max-w-2xl leading-relaxed mb-12"
-                >
-                    Product Designer con más de 3 años de experiencia diseñando
-                    interfaces intuitivas y sistemas visuales consistentes.
-                    Combino UX, UI y comunicación visual para crear soluciones
-                    digitales y físicas alineadas con negocio y usuario.
-                </motion.p>
+                    {/* Headline */}
+                    <h1 className="text-4xl md:text-5xl leading-tight">
+                        Transformando
+                        <br />
+                        necesidades complejas
+                        <br />
+                        en <span className="italic font-bold">experiencias claras</span>
+                        <br />
+                        <span className="italic font-bold">y funcionales</span>
+                    </h1>
+                </div>
 
-                {/* Extra value */}
-                <motion.p
-                    variants={fadeIn}
-                    className="text-base text-brand-muted max-w-xl mb-12"
-                >
-                    Experiencia en Figma, Adobe Suite y WordPress, con enfoque en
-                    consistencia de marca tanto en entornos digitales como en
-                    piezas impresas. Español nativo · Inglés C2.
-                </motion.p>
+                {/* RIGHT */}
+                <div className="relative">
 
-                {/* CTA */}
-                <motion.div variants={fadeIn} className="flex items-center gap-8">
-                    <Link
-                        href="#projects"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            document
-                                .getElementById("projects")
-                                ?.scrollIntoView({ behavior: "smooth" });
-                        }}
-                        className="inline-flex items-center gap-2 text-base font-semibold text-brand-dark group"
-                    >
-                        <span className="relative overflow-hidden">
-                            <span className="block border-b-2 border-brand-dark pb-1">
-                                Ver proyectos
-                            </span>
-                            <span className="absolute bottom-0 left-0 w-full h-[2px] bg-brand-dark transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></span>
-                        </span>
-                        <ArrowRight
-                            size={20}
-                            className="transform group-hover:translate-x-1 transition-transform"
-                        />
-                    </Link>
+                    {/* BLOQUE PRINCIPAL */}
+                    <div className="relative  overflow-hidden p-16">
 
-                    <Link
-                        href="/contact"
-                        className="text-base text-brand-muted hover:text-brand-dark transition-colors"
-                    >
-                        Contacto
-                    </Link>
-                </motion.div>
-            </motion.div>
+                        {/* "MORDIDA" blanca abajo izquierda */}
+                        <div className="absolute hero-shape-nav-bg bottom-0 left-0 w-32 h-32 bg-white rounded-tr-[60px]" />
+                        <div className="absolute hero-shape-square-right rounded-tr-[60px]" />
+                        <div className="absolute hero-shape-square-middle" />
+                        <div className="absolute hero-shape-square-left rounded-tr-[60px]" />
+
+                        {/* CONTENIDO */}
+                        <div className="flex items-center justify-center h-[250px]">
+                            <div className="photo-hero-container relative aspect-square rounded-full overflow-hidden ring-4 ring-neutral-100">
+                                <Image
+                                    src="/media/about/profile.jpeg"
+                                    alt={t("portfolio.owner")}
+                                    fill
+                                    className="object-cover"
+                                    unoptimized
+                                />
+                            </div>
+                        </div>
+
+                        {/* SIDEBAR DENTRO */}
+                        <div className="absolute hero-shape-nav flex flex-col gap-1 items-center justify-evenly">
+
+                            <div className="w-6 h-6 min-w-[36px] min-h-[36px] rounded-full bg-[#D6D86A] flex items-center justify-center shadow-md">
+                                <img
+                                    src="/media/icons/mail-icon.svg"
+                                    alt="linkedin"
+                                    className="w-4 h-4 opacity-70 hover:opacity-100 transition"
+                                />
+                            </div>
+
+                            <div className="w-6 h-6 min-w-[36px] min-h-[36px] rounded-full bg-[#D6D86A] flex items-center justify-center shadow-md">
+                                <img
+                                    src="/media/icons/mail-icon.svg"
+                                    alt="linkedin"
+                                    className="w-4 h-4 opacity-70 hover:opacity-100 transition"
+                                />
+                            </div>
+
+                            <div className="w-6 h-6 min-w-[36px] min-h-[36px] rounded-full bg-[#D6D86A] flex items-center justify-center shadow-md">
+                                <img
+                                    src="/media/icons/mail-icon.svg"
+                                    alt="linkedin"
+                                    className="w-4 h-4 opacity-70 hover:opacity-100 transition"
+                                />
+                            </div>
+
+                            <div className="w-6 h-6 min-w-[36px] min-h-[36px] rounded-full bg-[#D6D86A] flex items-center justify-center shadow-md">
+                                <img
+                                    src="/media/icons/mail-icon.svg"
+                                    alt="linkedin"
+                                    className="w-4 h-4 opacity-70 hover:opacity-100 transition"
+                                />
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            {/* BOTTOM TEXT */}
+            <div className="mt-16">
+                <p className="text-lg md:text-body-xl text-brand-muted leading-relaxed">
+                    Product Designer con más de 3 años de experiencia{" "}
+                    <span className="italic font-semibold text-black">
+                        diseñando interfaces intuitivas y sistemas visuales consistentes.
+                    </span>{" "}
+                    Combino UX, UI y comunicación visual para crear{" "}
+                    <span className="italic font-semibold text-black">
+                        soluciones digitales y físicas alineadas con negocio y usuario.
+                    </span>
+                </p>
+            </div>
+
         </section>
     );
 }

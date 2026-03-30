@@ -1,0 +1,70 @@
+/** SQUARE SHAPES **/
+
+.hero-shape-nav {
+    width: 20%;
+    height: 50%;
+    left: 0%;
+    bottom: 0%;
+    background-color: white;
+    border-radius: 30px;
+}
+
+.hero-shape-nav-bg {
+    width: 20%;
+    height: 50%;
+}
+
+.hero-shape-square-right {
+    background-color: #D6D86A;
+    width: 80%;
+    height: 100%;
+    left: 20%;
+    bottom: 0;
+    border-radius: 30px;
+}
+
+.hero-shape-square-middle {
+    background-color: #D6D86A;
+    width: 40%;
+    height: 50%;
+    bottom: 25%;
+    left: 10%;
+    border-radius: 30px;
+}
+
+.hero-shape-square-left {
+    background-color: #D6D86A;
+    width: 40%;
+    height: 50%;
+    top: 0;
+    left: 0;
+    border-radius: 30px;
+}
+
+@media (min-width: 1024px) {
+    .hero-shape-nav {
+        width: 15%;
+    }
+
+    .hero-shape-nav-bg {
+        width: 15%;
+    }
+
+    .hero-shape-square-right {
+        width: 85%;
+        left: 15%;
+    }
+
+    .hero-shape-square-middle {
+        left: 10%;
+    }
+
+    .hero-shape-square-left {
+        width: 85%;
+    }
+}
+
+/* PHOTO */
+.photo-hero-container {
+    width: 70%;
+}

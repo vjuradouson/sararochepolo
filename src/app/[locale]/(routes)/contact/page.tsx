@@ -20,7 +20,7 @@ export default function ContactPage() {
                 <p className="text-sm font-medium uppercase tracking-widest text-brand-muted mb-4">
                     Contacto
                 </p>
-                <h1 className="text-5xl font-serif tracking-tight text-brand-dark sm:text-6xl md:text-7xl">
+                <h1 className="text-5xl tracking-tight text-brand-dark sm:text-6xl md:text-7xl">
                     Hablemos
                 </h1>
             </div>
@@ -62,7 +62,7 @@ export default function ContactPage() {
 
                 {/* Right — form */}
                 <div>
-                    <h2 className="text-xl font-serif text-brand-dark mb-6">
+                    <h2 className="text-xl text-brand-dark mb-6">
                         Cuéntame sobre tu proyecto
                     </h2>
                     <ContactForm />

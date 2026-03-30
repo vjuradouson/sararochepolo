@@ -1,0 +1,24 @@
+@theme inline {
+    /* Background */
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    /* Fonts */
+    --font-family: var(--font-kantumruy-pro), ui-sans-serif, system-ui;
+
+    /* Font weights */
+    --font-weight-thin: 200;
+    --font-weight-bold: 400;
+
+    /* Font sizes */
+    --text-body-2xl: 1.625rem;
+    --text-body-xl: 1.5625rem;
+    --text-body-lg: 1.375rem;
+
+    /* Brand colors */
+    --color-light-blue: var(--color-light-blue);
+    --color-dark-blue: var(--color-dark-blue);
+    --color-yellow: var(--color-yellow);
+
+
+}

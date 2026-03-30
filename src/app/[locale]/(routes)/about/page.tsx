@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { useTranslations } from 'next-intl'
 
 export const metadata: Metadata = {
     title: "About · Sara Roche Polo",
@@ -16,6 +17,8 @@ const skills = [
 ];
 
 export default function AboutPage() {
+    const t = useTranslations()
+
     return (
         <section className="mx-auto max-w-7xl px-6 md:px-12 py-24 md:py-16">
             {/* Heading */}
@@ -23,8 +26,8 @@ export default function AboutPage() {
                 <p className="text-sm font-medium uppercase tracking-widest text-brand-muted mb-4">
                     Sobre mí
                 </p>
-                <h1 className="text-5xl font-serif tracking-tight text-brand-dark sm:text-6xl md:text-7xl">
-                    Hola, soy Sara Roche Polo
+                <h1 className="text-5xl tracking-tight text-brand-dark sm:text-6xl md:text-7xl">
+                    Hola, soy {t("app.portfolio.owner")}
                 </h1>
             </div>
 
@@ -36,7 +39,7 @@ export default function AboutPage() {
                     <div className="w-40 h-40 relative rounded-full overflow-hidden ring-4 ring-neutral-100">
                         <Image
                             src="/media/about/profile.jpeg"
-                            alt="Sara Roche Polo"
+                            alt={t("app.portfolio.owner")}
                             fill
                             className="object-cover"
                             unoptimized

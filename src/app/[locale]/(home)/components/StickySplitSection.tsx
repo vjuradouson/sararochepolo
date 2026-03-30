@@ -167,7 +167,7 @@ export default function StickySplitSection() {
                             — Experience
                         </p>
 
-                        <h2 className="text-4xl md:text-6xl font-serif leading-tight mb-6">
+                        <h2 className="text-4xl md:text-6xl leading-tight mb-6">
                             Building digital experiences
                             <br />
                             <span className="italic text-zinc-300">

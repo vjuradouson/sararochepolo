@@ -47,7 +47,7 @@ export default function PortfolioPreview() {
                     className="flex justify-between items-end mb-16"
                 >
                     <div>
-                        <h2 className="text-4xl md:text-5xl font-serif tracking-tight text-brand-dark mb-4">
+                        <h2 className="text-4xl md:text-5xl tracking-tight text-brand-dark mb-4">
                             Proyectos seleccionados
                         </h2>
                         <p className="text-brand-muted max-w-md">
@@ -80,7 +80,7 @@ export default function PortfolioPreview() {
                                         {project.id}
                                     </span>
 
-                                    <h3 className="text-3xl md:text-4xl font-serif text-brand-dark group-hover:italic transition-all">
+                                    <h3 className="text-3xl md:text-4xl text-brand-dark group-hover:italic transition-all">
                                         {project.title}
                                     </h3>
                                 </div>

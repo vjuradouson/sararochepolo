@@ -1,6 +1,6 @@
 import { hasLocale } from 'next-intl'
 import { getRequestConfig } from 'next-intl/server'
-import { routing } from './routing'
+import { ROUTING } from './routing'
 import { locales } from '@/types/ContextOptions'
 
 function deepMerge(target: any, source: any): any {
@@ -16,7 +16,7 @@ function deepMerge(target: any, source: any): any {
 
 export default getRequestConfig(async ({ requestLocale }) => {
   const requested = await requestLocale
-  const locale = hasLocale(routing.locales, requested) ? requested : routing.defaultLocale
+  const locale = hasLocale(ROUTING.locales, requested) ? requested : ROUTING.defaultLocale
 
   const fallbackMessages = (await import(`./locale/en`)).default
 

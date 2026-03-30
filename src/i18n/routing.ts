@@ -5,7 +5,7 @@ import { LOCALES, DEFAULT_LOCALE } from '@/lib/config';
 const locales = LOCALES;
 const defaultLocale = DEFAULT_LOCALE
 
-export const routing = defineRouting({
+export const ROUTING = defineRouting({
   locales: locales,
   defaultLocale: defaultLocale,
   localePrefix: 'always',
@@ -23,3 +23,10 @@ export const routing = defineRouting({
   }
 })
 
+type Route = (typeof ROUTES)[keyof typeof ROUTES];
+type Locale = typeof LOCALES[number];
+
+export const PATHNAMES = ROUTING.pathnames as Record<
+  Route,
+  string | Record<Locale, string>
+>;

@@ -1,9 +1,9 @@
 import { MetadataRoute } from 'next'
-import { routing } from '@/i18n/routing'
+import { ROUTING } from '@/i18n/routing'
 import { BASE_URL } from '@/lib/config';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const { locales, pathnames, defaultLocale } = routing
+    const { locales, pathnames, defaultLocale } = ROUTING
 
     const entries: MetadataRoute.Sitemap = []
 

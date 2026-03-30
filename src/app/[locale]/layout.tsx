@@ -1,23 +1,21 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Kantumruy_Pro } from "next/font/google";
 import "./../globals.css";
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import { NextIntlClientProvider } from 'next-intl';
-import { routing } from '@/i18n/routing';
+import { ROUTING } from '@/i18n/routing';
 import { BASE_URL, LOCALES } from '@/lib/config';
+
+const kantumruyPro = Kantumruy_Pro({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-kantumruy-pro'
+});
 
 const locales = LOCALES;
 
-const interSans = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-const playfairDisplay = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-});
+import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata({
   params
@@ -26,11 +24,14 @@ export async function generateMetadata({
 }): Promise<Metadata> {
 
   const { locale } = await params;
-  const { locales, defaultLocale } = routing;
+
+  const { locales, defaultLocale } = ROUTING;
+
+  const t = await getTranslations({ locale });
 
   return {
-    title: "Sara Roche Polo · Portfolio",
-    description: "Portfolio personal de Sara Roche Polo",
+    title: t("app.portfolio.title"),
+    description: t("app.portfolio.description"),
 
     alternates: {
       canonical: `${BASE_URL}/${locale}`,
@@ -75,7 +76,7 @@ export default async function RootLayout({
   return (
     <html
       lang={locale}
-      className={`${interSans.variable} ${playfairDisplay.variable} h-full antialiased`}
+      className={`${kantumruyPro.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
         <NextIntlClientProvider locale={locale} messages={messages}>

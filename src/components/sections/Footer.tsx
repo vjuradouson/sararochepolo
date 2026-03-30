@@ -1,15 +1,21 @@
+"use client";
+
+import { useTranslations } from 'next-intl';
+
 export default function Footer() {
+    const t = useTranslations("app")
+
     return (
         <footer className="border-t border-neutral-200 py-12 md:py-16 text-brand-muted">
             <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
 
                 {/* Left */}
                 <div className="text-center md:text-left">
-                    <p className="font-serif tracking-tight text-brand-dark text-lg">
-                        Sara Roche Polo
+                    <p className="tracking-tight text-brand-dark text-lg">
+                        {t("portfolio.owner")}
                     </p>
                     <p className="text-sm">
-                        Product Designer · UX/UI
+                        {t("footer.left.designer")}
                     </p>
                 </div>
 
@@ -26,7 +32,7 @@ export default function Footer() {
                             alt="linkedin"
                             className="w-4 h-4 opacity-70 hover:opacity-100 transition"
                         />
-                        <span>Email</span>
+                        <span>{t("footer.center.email")}</span>
                     </a>
 
                     {/* LinkedIn */}
@@ -41,7 +47,7 @@ export default function Footer() {
                             alt="linkedin"
                             className="w-4 h-4 opacity-70 hover:opacity-100 transition"
                         />
-                        <span>LinkedIn</span>
+                        <span>{t("footer.center.linkedin")}</span>
                     </a>
 
                 </div>
@@ -51,7 +57,7 @@ export default function Footer() {
                     © {new Date().getFullYear()}
                     <br className="md:hidden" />
                     <span className="ml-1">
-                        Diseñado y desarrollado por Sara
+                        {t("portfolio.title")}
                     </span>
                 </div>
 

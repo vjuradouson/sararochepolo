@@ -85,7 +85,7 @@ const Column = ({ items }: any) => (
             >
                 {item.type === "text" ? (
                     <div className="w-full h-full flex flex-col justify-center bg-zinc-100 p-8">
-                        <h3 className="text-2xl font-serif mb-4 text-brand-dark">
+                        <h3 className="text-2xl mb-4 text-brand-dark">
                             Diseño centrado en producto
                         </h3>
                         <p className="text-sm text-zinc-600 leading-relaxed mb-4">

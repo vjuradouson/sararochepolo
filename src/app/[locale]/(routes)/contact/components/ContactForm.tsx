@@ -67,7 +67,7 @@ export default function ContactForm() {
                 className="flex flex-col items-start gap-4 rounded-2xl border border-neutral-200 bg-neutral-50 p-8"
             >
                 <span className="text-2xl">✉️</span>
-                <h2 className="text-lg font-serif text-brand-dark">
+                <h2 className="text-lg text-brand-dark">
                     ¡Mensaje enviado!
                 </h2>
                 <p className="text-sm text-brand-muted">
