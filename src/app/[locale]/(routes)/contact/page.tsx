@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 import ContactForm from "@/app/[locale]/(routes)/contact/components/ContactForm";
+import { getTranslations } from 'next-intl/server'
 
-export const metadata: Metadata = {
-    title: "Contacto · Sara Roche",
-    description: "Ponte en contacto con Sara Roche para tu próximo proyecto.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+    const t = await getTranslations("app.contact");
+
+    return {
+        title: t("seo.title"),
+        description: t("seo.description"),
+    };
+}
 
 const contactLinks = [
     { label: "Email", value: "hola@sararoche.com", href: "mailto:hola@sararoche.com" },
@@ -12,16 +17,19 @@ const contactLinks = [
     { label: "Ubicación", value: "Zaragoza, España", href: null },
 ];
 
-export default function ContactPage() {
+export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale })
+
     return (
         <section className="mx-auto max-w-7xl px-6 md:px-12 py-24 md:py-16">
             {/* Heading */}
             <div className="mb-20">
                 <p className="text-sm font-medium uppercase tracking-widest text-brand-muted mb-4">
-                    Contacto
+                    {t("app.contact.header")}
                 </p>
                 <h1 className="text-5xl tracking-tight text-brand-dark sm:text-6xl md:text-7xl">
-                    Hablemos
+                    {t("app.contact.h1")}
                 </h1>
             </div>
 

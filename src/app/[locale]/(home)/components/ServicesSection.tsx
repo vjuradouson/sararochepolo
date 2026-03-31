@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 const services = [
     {
@@ -31,6 +32,7 @@ const services = [
 ];
 
 const ServicesSection: React.FC = () => {
+    const t = useTranslations("app");
     const [activeIndex, setActiveIndex] = useState(0);
 
     return (
@@ -39,8 +41,8 @@ const ServicesSection: React.FC = () => {
 
                 {/* HEADER */}
                 <div className="mb-12">
-                    <p className="text-3xl text-gray-400 mb-2">— ¿Qué ofrezco?</p>
-                    <h2 className="text-4xl font-bold">Servicios de diseño</h2>
+                    <p className="text-3xl text-gray-400 mb-2">{t("home.services.title")}</p>
+                    <h2 className="text-4xl font-bold">{t("home.services.subtitle")}</h2>
                 </div>
 
                 {/* CONTENT */}

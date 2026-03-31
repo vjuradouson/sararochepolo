@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@import "./base.css";
+@import "./variables.css";
+@import "./theme.css";
+@import "./components/nav.css";
+@import "./components/hero.css";
+@import "./components/services.css";

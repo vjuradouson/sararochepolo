@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 
-export const metadata: Metadata = {
-    title: "About · Sara Roche Polo",
-    description: "Conoce más sobre Sara Roche Polo, Product Designer especializada en UX/UI.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+    const t = await getTranslations("app.about");
+
+    return {
+        title: t("seo.title"),
+        description: t("seo.description"),
+    };
+}
 
 const skills = [
     "UX Research & User Flows",
@@ -16,18 +20,19 @@ const skills = [
     "Print Design & Prepress (CMYK)",
 ];
 
-export default function AboutPage() {
-    const t = useTranslations()
+export default async function AboutPage({ params }: { params: Promise<{ locale: string }> }) {
+    const { locale } = await params;
+    const t = await getTranslations({ locale })
 
     return (
         <section className="mx-auto max-w-7xl px-6 md:px-12 py-24 md:py-16">
             {/* Heading */}
             <div className="mb-20">
                 <p className="text-sm font-medium uppercase tracking-widest text-brand-muted mb-4">
-                    Sobre mí
+                    {t("app.about.header")}
                 </p>
                 <h1 className="text-5xl tracking-tight text-brand-dark sm:text-6xl md:text-7xl">
-                    Hola, soy {t("app.portfolio.owner")}
+                    {t("app.about.h1")} {t("app.portfolio.owner")}
                 </h1>
             </div>
 

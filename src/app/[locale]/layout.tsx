@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { Kantumruy_Pro } from "next/font/google";
-import "./../globals.css";
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import { NextIntlClientProvider } from 'next-intl';
+import { getMessages, setRequestLocale } from 'next-intl/server'
 import { ROUTING } from '@/i18n/routing';
 import { BASE_URL, LOCALES } from '@/lib/config';
+import { ReactNode } from 'react'
 
 const kantumruyPro = Kantumruy_Pro({
   subsets: ['latin'],
@@ -54,24 +55,15 @@ export function generateStaticParams() {
   return locales.map(locale => ({ locale }));
 }
 
-async function getMessages(locale: string) {
-  try {
-    return (await import(`@/i18n/locale/${locale}`)).default;
-  } catch {
-    return (await import(`@/i18n/locale/en`)).default;
-  }
+type LocaleLayoutProps = {
+  children: ReactNode
+  params: Promise<{ locale: string }>
 }
-
-export default async function RootLayout({
-  children,
-  params
-}: {
-  children: React.ReactNode;
-  params: Promise<{ locale: string }>;
-}) {
+export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
   const { locale } = await params;
-
-  const messages = await getMessages(locale);
+  setRequestLocale(locale)
+  const messages = await getMessages({ locale })
+  console.log(messages.app.portfolio.owner)
 
   return (
     <html

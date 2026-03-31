@@ -3,11 +3,11 @@ import HomeClient from "./(home)/HomeClient";
 import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata(): Promise<Metadata> {
-    const t = await getTranslations("app.seo");
+    const t = await getTranslations("app.home");
 
     return {
-        title: t("home.title"),
-        description: t("home.description"),
+        title: t("seo.title"),
+        description: t("seo.description"),
     };
 }
 
