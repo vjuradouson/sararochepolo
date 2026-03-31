@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
 import HomeClient from "./(home)/HomeClient";
+import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-    title: "Sara Roche Polo · Diseño Visual & Dirección de Arte",
-    description: "Portfolio de Sara Roche Polo, especializada en identidad visual y branding premium.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+    const t = await getTranslations("app.seo");
+
+    return {
+        title: t("home.title"),
+        description: t("home.description"),
+    };
+}
 
 export default function Home() {
-    return <HomeClient />
+    return <HomeClient />;
 }

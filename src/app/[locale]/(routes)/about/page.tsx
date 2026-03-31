@@ -36,9 +36,9 @@ export default function AboutPage() {
                 {/* Left — bio */}
                 <div className="flex flex-col gap-10">
                     {/* Avatar */}
-                    <div className="w-40 h-40 relative rounded-full overflow-hidden ring-4 ring-neutral-100">
+                    <div className="w-40 h-40 relative overflow-hidden">
                         <Image
-                            src="/media/about/profile.jpeg"
+                            src="/media/about/profile.png"
                             alt={t("app.portfolio.owner")}
                             fill
                             className="object-cover"

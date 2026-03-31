@@ -37,7 +37,7 @@ export default function Header() {
     const isHome = normalizedPathname === "/";
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-light-blue">
+        <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-light-blue">
             <nav
                 className="mx-auto flex max-w-7xl items-center justify-between px-6 md:px-12 h-20"
                 aria-label="Navegación principal"

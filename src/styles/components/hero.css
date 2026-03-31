@@ -15,7 +15,7 @@
 }
 
 .hero-shape-square-right {
-    background-color: #D6D86A;
+    background-color: var(--color-yellow);
     width: 80%;
     height: 100%;
     left: 20%;
@@ -24,7 +24,7 @@
 }
 
 .hero-shape-square-middle {
-    background-color: #D6D86A;
+    background-color: var(--color-yellow);
     width: 40%;
     height: 50%;
     bottom: 25%;
@@ -33,7 +33,7 @@
 }
 
 .hero-shape-square-left {
-    background-color: #D6D86A;
+    background-color: var(--color-yellow);
     width: 40%;
     height: 50%;
     top: 0;
@@ -41,8 +41,13 @@
     border-radius: 30px;
 }
 
+.hero-sidebar-items {
+    background-color: var(--color-yellow);
+}
+
 @media (min-width: 1024px) {
     .hero-shape-nav {
+        background-color: var(--background);
         width: 15%;
     }
 
@@ -66,5 +71,5 @@
 
 /* PHOTO */
 .photo-hero-container {
-    width: 70%;
+    width: 100%;
 }
