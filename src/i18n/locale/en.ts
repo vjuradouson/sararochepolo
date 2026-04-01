@@ -1,5 +1,3 @@
-import { h1, head, s } from "framer-motion/client";
-
 export default {
     app: {
         portfolio: {
@@ -23,8 +21,8 @@ export default {
         },
         home: {
             seo: {
-                title: "Sara Roche Polo · Visual Design & Art Direction",
-                description: "Portfolio of Sara Roche Polo, specialized in visual identity and premium branding."
+                title: "Sara Roche Polo | Product Designer UX/UI",
+                description: "Product Designer UX/ UI with 3 + years of experience transforming complex needs into intuitive and effective digital experiences."
             },
             hero: {
                 product_designer: "Product Designer · UX/UI",
@@ -38,16 +36,16 @@ export default {
         },
         about: {
             seo: {
-                title: "About Me · Sara Roche Polo",
-                description: "Learn more about Sara Roche Polo, a Product Designer specialized in UX/UI."
+                title: "About Me | Sara Roche Polo",
+                description: "Learn more about Sara Roche Polo, a Product Designer UX/UI focused on creating intuitive solutions and consistent visual systems."
             },
             header: "About Me",
             h1: "Hi, I'm"
         },
         contact: {
             seo: {
-                title: "Contact · Sara Roche Polo",
-                description: "Get in touch with Sara Roche Polo for your next project."
+                title: "Contact | Sara Roche Polo",
+                description: "Get in touch with Sara Roche Polo, a Product Designer UX/UI open to new opportunities and digital projects."
             },
             header: "Contact",
             h1: "Let's talk",

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { useLocale } from "next-intl";
 import { motion, AnimatePresence } from "framer-motion";
@@ -18,6 +18,8 @@ export default function LanguageSwitcher() {
     const pathname = usePathname();
     const router = useRouter();
 
+    const wrapperRef = useRef<HTMLDivElement>(null);
+
     const currentLang = LANGUAGES.find((lang) => lang.code === locale);
 
     const handleLanguageChange = (newLocale: Locale) => {
@@ -27,12 +29,41 @@ export default function LanguageSwitcher() {
         setIsOpen(false);
     };
 
+    // 👉 Click outside
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (
+                wrapperRef.current &&
+                !wrapperRef.current.contains(event.target as Node)
+            ) {
+                setIsOpen(false);
+            }
+        }
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
+    // 👉 Close on ESC
+    useEffect(() => {
+        function handleKey(e: KeyboardEvent) {
+            if (e.key === "Escape") {
+                setIsOpen(false);
+            }
+        }
+
+        document.addEventListener("keydown", handleKey);
+        return () => document.removeEventListener("keydown", handleKey);
+    }, []);
+
     return (
-        <div className="relative">
+        <div ref={wrapperRef} className="relative z-50">
             {/* Trigger Button */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="cursor-pointer flex items-center gap-2 px-3 py-2 rounded-lg bg-neutral-100 hover:bg-neutral-200 transition-colors duration-200 text-sm font-light text-brand-dark"
+                className="cursor-pointer flex items-center gap-2 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-light text-brand-dark"
                 aria-label="Cambiar idioma"
                 aria-expanded={isOpen}
                 aria-haspopup="menu"
@@ -59,41 +90,42 @@ export default function LanguageSwitcher() {
 
                         {/* Menu */}
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.95, y: -8 }}
+                            initial={{ opacity: 0, scale: 0.96, y: -6 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.95, y: -8 }}
-                            transition={{ duration: 0.2, ease: "easeOut" }}
-                            className="absolute top-full right-0 mt-2 bg-white border border-neutral-200 rounded-lg shadow-lg p-2 z-50 min-w-[160px]"
+                            exit={{ opacity: 0, scale: 0.96, y: -6 }}
+                            transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+                            style={{ originX: 1, originY: 0 }}
+                            className="absolute right-0 top-[calc(100%+8px)] z-50 min-w-[170px] rounded-2xl border border-neutral-200 bg-white m-2 shadow-[0_12px_32px_rgba(0,0,0,0.10)]"
                             role="menu"
                         >
-                            <ul className="space-y-1">
-                                {LANGUAGES.map(({ code, label, flag }) => {
-                                    const isActive = code === locale;
-                                    return (
-                                        <motion.li key={code}>
-                                            <button
-                                                onClick={() => handleLanguageChange(code)}
-                                                role="menuitem"
-                                                className={`cursor-pointer w-full text-left px-3 py-2 rounded-md transition-colors duration-150 flex items-center gap-2 text-sm font-light ${isActive
-                                                    ? "bg-brand-dark text-black"
-                                                    : "text-brand-dark hover:bg-neutral-100"
-                                                    }`}
-                                            >
-                                                <span>{flag}</span>
-                                                <span>{label}</span>
-                                                {isActive && (
-                                                    <motion.span
-                                                        layoutId="active-lang"
-                                                        className="ml-auto text-xs"
-                                                    >
-                                                        ✓
-                                                    </motion.span>
-                                                )}
-                                            </button>
-                                        </motion.li>
-                                    );
-                                })}
-                            </ul>
+                            {/* Arrow */}
+                            <div className="pointer-events-none absolute -top-[7px] right-6 z-0 h-3.5 w-3.5 rotate-45 border-l border-t border-neutral-200 bg-white" />
+
+                            {/* Content */}
+                            <div className="relative z-10">
+                                <ul className="space-y-1">
+                                    {LANGUAGES.map(({ code, label, flag }) => {
+                                        const isActive = code === locale;
+
+                                        return (
+                                            <li key={code}>
+                                                <button
+                                                    onClick={() => handleLanguageChange(code)}
+                                                    role="menuitem"
+                                                    className={`w-full cursor-pointer rounded-xl px-3 py-2 text-left text-sm font-light transition-colors duration-150 flex items-center gap-2 ${isActive
+                                                        ? "bg-white text-brand-dark"
+                                                        : "text-brand-dark hover:bg-white"
+                                                        }`}
+                                                >
+                                                    <span>{flag}</span>
+                                                    <span>{label}</span>
+                                                    {isActive && <span className="ml-auto text-xs">✓</span>}
+                                                </button>
+                                            </li>
+                                        );
+                                    })}
+                                </ul>
+                            </div>
                         </motion.div>
                     </>
                 )}

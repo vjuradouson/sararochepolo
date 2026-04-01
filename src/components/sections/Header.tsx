@@ -2,7 +2,7 @@
 
 import { Link } from '@/i18n/navigation'
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import LanguageSwitcher from "@/components/sections/Header/LanguageSwitcher";
@@ -27,6 +27,26 @@ export default function Header() {
     useEffect(() => {
         setMounted(true);
     }, []);
+
+    const mobileMenuRef = useRef<HTMLDivElement>(null);
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (
+                mobileMenuRef.current &&
+                !mobileMenuRef.current.contains(event.target as Node)
+            ) {
+                setMenuOpen(false);
+            }
+        }
+
+        if (menuOpen) {
+            document.addEventListener("mousedown", handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [menuOpen]);
 
     const normalizePath = (path: string) => {
         const localeRegex = new RegExp(`^\\/(${LOCALES.join('|')})`);
@@ -125,6 +145,7 @@ export default function Header() {
             <AnimatePresence>
                 {menuOpen && (
                     <motion.div
+                        ref={mobileMenuRef}
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}

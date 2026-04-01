@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import NeoButton from "@/components/ui/NeoButton";
 
 const container = {
     hidden: {},
@@ -62,6 +63,12 @@ export default function Hero() {
                                 )
                             })}
                         </motion.h1>
+                        <motion.div variants={item} className="mt-8">
+                            <NeoButton size="sm">
+                                <span className="text-2xl">→</span>
+                                <span>CONTACTO</span>
+                            </NeoButton>
+                        </motion.div>
                     </div>
 
                     {/* RIGHT */}
@@ -80,14 +87,14 @@ export default function Hero() {
                                 initial={{ opacity: 0, y: 40 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.3, duration: 0.6 }}
-                                className="absolute bottom-0 left-1/2 -translate-x-1/2 w-64"
+                                className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] max-w-[300px]"
                             >
                                 <Image
                                     src="/media/about/profile.png"
                                     alt={t("portfolio.owner")}
                                     width={500}
                                     height={500}
-                                    className="w-full h-auto"
+                                    className="h-full w-full object-contain"
                                     unoptimized
                                 />
                             </motion.div>
