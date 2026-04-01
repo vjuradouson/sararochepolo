@@ -22,22 +22,9 @@ export default function Footer() {
                 {/* Center */}
                 <div className="flex gap-6 text-sm">
 
-                    {/* Email */}
-                    <a
-                        href="mailto:hola@sararoche.com"
-                        className="flex items-center gap-2 hover:text-brand-dark transition group"
-                    >
-                        <img
-                            src="/media/icons/mail-icon.svg"
-                            alt="linkedin"
-                            className="w-4 h-4 opacity-70 hover:opacity-100 transition"
-                        />
-                        <span>{t("footer.center.email")}</span>
-                    </a>
-
                     {/* LinkedIn */}
                     <a
-                        href="https://www.linkedin.com/in/sara-roche-polo-a7114318b/"
+                        href={t("contact.contact_link.linkedin.href")}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center gap-2 text-sm text-gray-500 hover:text-[#0A66C2] transition-colors"

@@ -11,15 +11,22 @@ export async function generateMetadata(): Promise<Metadata> {
     };
 }
 
-const contactLinks = [
-    { label: "Email", value: "hola@sararoche.com", href: "mailto:hola@sararoche.com" },
-    { label: "LinkedIn", value: "Sara Roche", href: "https://www.linkedin.com/in/sara-roche-polo-a7114318b/" },
-    { label: "Ubicación", value: "Zaragoza, España", href: null },
-];
-
 export default async function ContactPage({ params }: { params: Promise<{ locale: string }> }) {
     const { locale } = await params;
     const t = await getTranslations({ locale })
+
+    const contactLinks = [
+        {
+            label: t("app.contact.contact_link.linkedin.label"),
+            value: t("app.contact.contact_link.linkedin.value"),
+            href: t("app.contact.contact_link.linkedin.href")
+        },
+        {
+            label: t("app.contact.contact_link.location.label"),
+            value: t("app.contact.contact_link.location.value"),
+            href: null
+        },
+    ];
 
     return (
         <section className="mx-auto max-w-7xl px-6 md:px-12 py-24 md:py-16">
@@ -37,10 +44,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                 {/* Left — info */}
                 <div className="flex flex-col gap-12">
                     <p className="text-lg text-brand-muted leading-relaxed max-w-md">
-                        Estoy disponible para proyectos de diseño de producto, UX/UI y
-                        sistemas visuales. Si estás construyendo un producto digital o
-                        necesitas mejorar la experiencia de usuario, estaré encantada de ayudarte.
-                        Respondo normalmente en 24–48h.
+                        {t('app.contact.description')}
                     </p>
 
                     <ul className="space-y-6">
@@ -71,7 +75,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                 {/* Right — form */}
                 <div>
                     <h2 className="text-xl text-brand-dark mb-6">
-                        Cuéntame sobre tu proyecto
+                        {t('app.contact.form.title')}
                     </h2>
                     <ContactForm />
                 </div>

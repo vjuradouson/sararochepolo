@@ -3,8 +3,11 @@
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/lib/framer-motion-variants";
+import { useTranslations } from "next-intl";
 
 export default function ContactForm() {
+    const t = useTranslations("app");
+
     const [form, setForm] = useState({ name: "", email: "", message: "" });
     const [sent, setSent] = useState(false);
     const [loading, setLoading] = useState(false);
@@ -87,21 +90,21 @@ export default function ContactForm() {
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
             <div className="flex flex-col gap-1.5">
                 <label className="text-xs font-semibold uppercase tracking-widest text-brand-muted">
-                    Nombre
+                    {t('contact.form.field.name.label')}
                 </label>
                 <input
                     name="name"
                     required
                     value={form.name}
                     onChange={handleChange}
-                    placeholder="Tu nombre"
+                    placeholder={t('contact.form.field.name.placeholder')}
                     className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm text-brand-dark outline-none focus:ring-2 focus:ring-brand-dark"
                 />
             </div>
 
             <div className="flex flex-col gap-1.5">
                 <label className="text-xs font-semibold uppercase tracking-widest text-brand-muted">
-                    Email
+                    {t('contact.form.field.email.label')}
                 </label>
                 <input
                     name="email"
@@ -109,14 +112,14 @@ export default function ContactForm() {
                     required
                     value={form.email}
                     onChange={handleChange}
-                    placeholder="tu@email.com"
+                    placeholder={t('contact.form.field.email.placeholder')}
                     className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm text-brand-dark outline-none focus:ring-2 focus:ring-brand-dark"
                 />
             </div>
 
             <div className="flex flex-col gap-1.5">
                 <label className="text-xs font-semibold uppercase tracking-widest text-brand-muted">
-                    Mensaje
+                    {t('contact.form.field.message.label')}
                 </label>
                 <textarea
                     ref={textareaRef}
@@ -124,7 +127,7 @@ export default function ContactForm() {
                     required
                     value={form.message}
                     onChange={handleChange}
-                    placeholder="Cuéntame tu proyecto..."
+                    placeholder={t('contact.form.field.message.placeholder')}
                     className="w-full min-h-[120px] rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm text-brand-dark outline-none focus:ring-2 focus:ring-brand-dark resize-none overflow-hidden"
                 />
             </div>

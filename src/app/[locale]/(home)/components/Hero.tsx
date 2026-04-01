@@ -55,13 +55,12 @@ export default function Hero() {
                             variants={item}
                             className="text-4xl md:text-5xl leading-tight"
                         >
-                            Transformando
-                            <br />
-                            necesidades complejas
-                            <br />
-                            en <span className="italic font-bold">experiencias claras</span>
-                            <br />
-                            <span className="italic font-bold">y funcionales</span>
+                            {t.rich("home.hero.h1", {
+                                line: () => <br />,
+                                highlight: (chunks) => (
+                                    <span className="italic font-bold">{chunks}</span>
+                                )
+                            })}
                         </motion.h1>
                     </div>
 
@@ -136,14 +135,12 @@ export default function Hero() {
                 {/* BOTTOM */}
                 <motion.div variants={item} className="mt-16">
                     <p className="text-lg md:text-body-xl text-brand-muted leading-relaxed">
-                        Product Designer con más de 3 años de experiencia{" "}
-                        <span className="italic font-bold text-black">
-                            diseñando interfaces intuitivas y sistemas visuales consistentes.
-                        </span>{" "}
-                        Combino UX, UI y comunicación visual para crear{" "}
-                        <span className="italic font-bold text-black">
-                            soluciones digitales y físicas alineadas con negocio y usuario.
-                        </span>
+                        {t.rich("home.hero.description", {
+                            line: () => <br />,
+                            highlight: (chunks) => (
+                                <span className="italic font-bold">{chunks}</span>
+                            )
+                        })}
                     </p>
                 </motion.div>
 

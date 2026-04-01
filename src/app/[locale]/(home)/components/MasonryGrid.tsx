@@ -103,6 +103,7 @@ const Column = ({ items }: any) => (
                             src={`${item.src}?auto=format&fit=crop&w=800&q=80`}
                             alt={item.title}
                             fill
+                            priority={i === 0}
                             className="object-cover transition-transform duration-500 group-hover:scale-105"
                         />
 
