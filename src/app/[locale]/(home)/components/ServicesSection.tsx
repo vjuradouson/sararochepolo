@@ -35,7 +35,7 @@ const services = [
 const ServicesSection: React.FC = () => {
     const t = useTranslations("app");
     const [activeIndex, setActiveIndex] = useState(0);
-    const MotionImage = motion(Image);
+    const MotionImage = motion.create(Image);
 
     return (
         <section className="w-full py-20">
@@ -82,45 +82,58 @@ const ServicesSection: React.FC = () => {
                             <div className="absolute w-full h-full bg-[#9BBFC2] rounded-3xl rotate-6"></div>
                             <div className="absolute w-full h-full bg-[#D6D86A] rounded-3xl -rotate-6"></div>
 
-                            {/* MAIN CARD ANIMADA */}
-                            <AnimatePresence mode="wait">
-                                <motion.div
-                                    key={activeIndex}
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    exit={{ opacity: 0 }}
-                                    transition={{ duration: 0.25 }}
-                                    className="absolute inset-0 bg-[#0F3F46] rounded-3xl flex flex-col items-center justify-center text-center px-6 shadow-xl will-change-transform overflow-hidden"
-                                >
+                            {/* MAIN CARD */}
+                            <motion.div
+                                className="absolute inset-0 bg-[#0F3F46] rounded-3xl flex flex-col items-center justify-center text-center px-6 shadow-xl overflow-hidden"
+                            >
 
-                                    {/* IMAGE */}
-                                    <MotionImage
-                                        key={services[activeIndex].image}
-                                        src={services[activeIndex].image}
-                                        alt=""
-                                        width={128}
-                                        height={128}
-                                        initial={{ opacity: 0, scale: 1.1, y: 20 }}
-                                        animate={{ opacity: 1, scale: 1, y: 0 }}
-                                        exit={{ opacity: 0, scale: 1.05 }}
-                                        transition={{ duration: 0.4 }}
-                                        className="w-32 h-32 object-cover rounded-xl mb-6 shadow-lg"
-                                    />
+                                {/* IMAGE CROSSFADE */}
+                                {/* IMAGE CROSSFADE */}
+                                <div className="relative w-32 h-32 mb-6">
 
-                                    {/* TEXT */}
-                                    <motion.p
-                                        initial={{ opacity: 0, y: 10 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0 }}
-                                        transition={{ delay: 0.1, duration: 0.3 }}
-                                        className="text-white tracking-[0.2em] text-xl leading-relaxed whitespace-pre-line"
-                                    >
-                                        {services[activeIndex].content}
-                                    </motion.p>
+                                    <AnimatePresence>
+                                        <MotionImage
+                                            key={services[activeIndex].image}
+                                            src={services[activeIndex].image}
+                                            alt=""
+                                            width={128}
+                                            height={128}
+                                            initial={{ opacity: 0, scale: 1.08 }}
+                                            animate={{ opacity: 1, scale: 1 }}
+                                            exit={{ opacity: 0, scale: 0.92 }}
+                                            transition={{
+                                                duration: 0.7,
+                                                ease: [0.22, 1, 0.36, 1] // más suave tipo iOS
+                                            }}
+                                            className="absolute inset-0 w-32 h-32 object-cover rounded-xl shadow-lg"
+                                        />
+                                    </AnimatePresence>
 
-                                </motion.div>
-                            </AnimatePresence>
+                                </div>
 
+                                {/* TEXT CROSSFADE */}
+                                <div className="relative min-h-[80px] flex items-center justify-center">
+
+                                    <AnimatePresence mode="wait">
+                                        <motion.p
+                                            key={services[activeIndex].content}
+                                            initial={{ opacity: 0, y: 12 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            exit={{ opacity: 0, y: -12 }}
+                                            transition={{
+                                                duration: 0.5,
+                                                delay: 0.1, // 👈 pequeño desfase respecto a la imagen
+                                                ease: [0.22, 1, 0.36, 1]
+                                            }}
+                                            className="absolute text-white tracking-[0.2em] text-xl whitespace-pre-line"
+                                        >
+                                            {services[activeIndex].content}
+                                        </motion.p>
+                                    </AnimatePresence>
+
+                                </div>
+
+                            </motion.div>
                         </div>
                     </div>
 

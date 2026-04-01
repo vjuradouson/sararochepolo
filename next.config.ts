@@ -5,7 +5,8 @@ const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
   images: {
-    formats: ['image/webp']
+    formats: ['image/webp'],
+    qualities: [75, 90]
   }
 };
 

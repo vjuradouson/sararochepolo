@@ -94,7 +94,8 @@ export default function Hero() {
                                     alt={t("portfolio.owner")}
                                     width={500}
                                     height={500}
-                                    sizes="(max-width: 768px) 100vw, 500px"
+                                    sizes="100vw"
+                                    quality={90}
                                     className="h-full w-full object-contain"
                                     priority
                                 />

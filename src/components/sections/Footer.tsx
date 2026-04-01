@@ -1,9 +1,7 @@
-"use client";
+import { getTranslations } from 'next-intl/server';
 
-import { useTranslations } from 'next-intl';
-
-export default function Footer() {
-    const t = useTranslations("app")
+export default async function Footer() {
+    const t = await getTranslations("app");
 
     return (
         <footer className="border-t border-neutral-200 py-12 md:py-16 text-brand-muted">

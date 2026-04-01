@@ -63,7 +63,6 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   const { locale } = await params;
   setRequestLocale(locale)
   const messages = await getMessages({ locale })
-  console.log(messages.app.portfolio.owner)
 
   return (
     <html

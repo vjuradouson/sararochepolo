@@ -48,7 +48,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                             fill
                             className="object-cover rounded-2xl shadow-xl border border-gray-200"
                             priority
-                        />
+                            sizes="(max-width: 768px) 100vw, 500px" />
                     </div>
 
                     <div className="space-y-6 text-lg text-brand-muted leading-relaxed max-w-lg">
