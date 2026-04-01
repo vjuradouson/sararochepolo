@@ -41,13 +41,13 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 {/* Left — bio */}
                 <div className="flex flex-col gap-10">
                     {/* Avatar */}
-                    <div className="w-40 h-40 relative overflow-hidden">
+                    <div className="w-56 h-56 md:w-72 md:h-72 relative">
                         <Image
                             src="/media/about/profile.png"
                             alt={t("app.portfolio.owner")}
                             fill
-                            className="object-cover"
-                            unoptimized
+                            className="object-cover rounded-2xl shadow-xl border border-gray-200"
+                            priority
                         />
                     </div>
 

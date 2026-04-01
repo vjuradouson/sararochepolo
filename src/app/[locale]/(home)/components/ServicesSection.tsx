@@ -3,37 +3,39 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
+import Image from 'next/image';
 
 const services = [
     {
         title: "Figma diseño",
         color: "bg-[#D6D86A]",
         content: "Diseño en Figma\nPrototipos y UI kits",
-        image: "https://picsum.photos/400/400?1"
+        image: "/media/home/services/service-1.jpg"
     },
     {
         title: "WordPress",
         color: "bg-[#9BBFC2]",
         content: "Desarrollo WordPress\nThemes personalizados",
-        image: "https://picsum.photos/400/400?2"
+        image: "/media/home/services/service-2.jpg"
     },
     {
         title: "Redes Sociales",
         color: "bg-[#0F3F46]",
         content: "Contenido social\nEstrategia visual",
-        image: "https://picsum.photos/400/400?3"
+        image: "/media/home/services/service-3.jpg"
     },
     {
         title: "Material impreso",
         color: "bg-[#D6D86A]",
         content: "Branding físico\nPackaging y print",
-        image: "https://picsum.photos/400/400?4"
+        image: "/media/home/services/service-4.jpg"
     },
 ];
 
 const ServicesSection: React.FC = () => {
     const t = useTranslations("app");
     const [activeIndex, setActiveIndex] = useState(0);
+    const MotionImage = motion(Image);
 
     return (
         <section className="w-full py-20">
@@ -92,10 +94,12 @@ const ServicesSection: React.FC = () => {
                                 >
 
                                     {/* IMAGE */}
-                                    <motion.img
+                                    <MotionImage
                                         key={services[activeIndex].image}
                                         src={services[activeIndex].image}
                                         alt=""
+                                        width={128}
+                                        height={128}
                                         initial={{ opacity: 0, scale: 1.1, y: 20 }}
                                         animate={{ opacity: 1, scale: 1, y: 0 }}
                                         exit={{ opacity: 0, scale: 1.05 }}

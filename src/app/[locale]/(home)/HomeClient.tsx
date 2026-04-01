@@ -26,8 +26,10 @@ export default function HomeClient() {
         <div className="flex flex-col w-full">
             <Hero key={refreshKey} />
             <ServicesSection key={refreshKey + 1} />
-            <StickySplitSection key={refreshKey + 2} />
-            <MasonryGrid key={refreshKey + 3} />
+            {/*
+<StickySplitSection key={refreshKey + 2} />
+<MasonryGrid key={refreshKey + 3} />
+*/}
             <PortfolioPreview key={refreshKey + 4} />
         </div>
     )

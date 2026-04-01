@@ -94,8 +94,9 @@ export default function Hero() {
                                     alt={t("portfolio.owner")}
                                     width={500}
                                     height={500}
+                                    sizes="(max-width: 768px) 100vw, 500px"
                                     className="h-full w-full object-contain"
-                                    unoptimized
+                                    priority
                                 />
                             </motion.div>
 
