@@ -65,6 +65,30 @@ export default {
                         label: "Mensaje",
                         placeholder: "Cuéntame sobre tu proyecto..."
                     }
+                },
+                button: {
+                    label: "Enviar mensaje",
+                    sending: "Enviando..."
+                },
+                submit: {
+                    json_error: "Respuesta inválida del servidor.",
+                    ko: "Error enviando el mensaje.",
+                    catch: {
+                        prefix: "Hubo un error",
+                        unknown: "Error desconocido"
+                    },
+                    success: {
+                        message: "¡Mensaje enviado con éxito!",
+                        description: "¡Te responderé pronto!",
+                        button: "Enviar otro mensaje"
+                    }
+                },
+                api: {
+                    missing_fields: "Por favor, completa todos los campos.",
+                    invalid_name: "El nombre es demasiado largo.",
+                    invalid_email: "El email es demasiado largo.",
+                    message_too_long: "El mensaje es demasiado largo.",
+                    error_sending_mail: "Error enviando email"
                 }
             },
             contact_link: {

@@ -3,6 +3,7 @@ type NeoButtonProps = {
     onClick?: () => void;
     className?: string;
     size?: "sm" | "md" | "lg";
+    type?: "button" | "submit" | "reset";
 };
 
 export default function NeoButton({
@@ -10,6 +11,7 @@ export default function NeoButton({
     onClick,
     className = "",
     size = "md",
+    type = "button",
 }: NeoButtonProps) {
     const sizes = {
         sm: "px-6 py-3 text-sm gap-3",
@@ -19,6 +21,7 @@ export default function NeoButton({
 
     return (
         <button
+            type={type}
             onClick={onClick}
             className={`
         flex items-center

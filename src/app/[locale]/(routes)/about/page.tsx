@@ -46,9 +46,10 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                             src="/media/about/profile.png"
                             alt={t("app.portfolio.owner")}
                             fill
-                            className="object-cover rounded-2xl shadow-xl border border-gray-200"
+                            className="object-cover object-top rounded-2xl shadow-xl border border-gray-200"
                             priority
-                            sizes="(max-width: 768px) 100vw, 500px" />
+                            sizes="(max-width: 768px) 100vw, 500px"
+                        />
                     </div>
 
                     <div className="space-y-6 text-lg text-brand-muted leading-relaxed max-w-lg">
@@ -102,16 +103,6 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                             Información
                         </h2>
                         <ul className="space-y-4 text-base text-brand-dark">
-                            <li className="flex items-center">
-                                <span className="text-brand-muted w-24">Email</span>
-                                <a
-                                    href="mailto:hola@sararoche.com"
-                                    className="font-medium hover:underline underline-offset-4"
-                                >
-                                    hola@sararoche.com
-                                </a>
-                            </li>
-
                             <li className="flex items-center">
                                 <span className="text-brand-muted w-24">Ubicación</span>
                                 <span className="font-medium">Zaragoza, España</span>

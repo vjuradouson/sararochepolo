@@ -1,13 +1,9 @@
 import { getTranslations } from 'next-intl/server';
-import { HeaderDesktopNav } from "./HeaderDesktopNav";
-import { HeaderMobileMenu } from "./HeaderMobileMenu";
+import { HeaderDesktopNav } from "./components/HeaderDesktopNav";
+import { HeaderMobileMenu } from "./components/HeaderMobileMenu";
 import LanguageSwitcher from "./LanguageSwitcher";
-import HeaderLogoClient from "./HeaderLogoClient"
+import HeaderLogoClient from "./components/HeaderLogoClient"
 import { ROUTES } from '@/constants/routes';
-
-interface Props {
-    pathname: string;
-}
 
 export default async function HeaderWrapper() {
     const t = await getTranslations("app");
@@ -20,7 +16,7 @@ export default async function HeaderWrapper() {
     return (
         <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-white/60 supports-[backdrop-filter]:bg-white/40 border-b border-light-blue/50 shadow-[0_4px_20px_rgba(0,0,0,0.05)]">            <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 md:px-12 h-20">
 
-            {/* Client (interacción) */}
+            {/* Client (interaction) */}
             <HeaderLogoClient ownerName={t("portfolio.owner")} />
 
             {/* Desktop */}

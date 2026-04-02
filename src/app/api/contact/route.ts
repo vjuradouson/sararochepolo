@@ -1,5 +1,6 @@
 import { Resend } from "resend";
-import { RESEND_API_KEY, CONTACT_EMAIL, MAIL_FROM } from '@/lib/config';
+import { getTranslations } from "next-intl/server";
+import { RESEND_API_KEY, CONTACT_EMAIL, MAIL_FROM } from "@/lib/config";
 
 const resend = new Resend(RESEND_API_KEY);
 
@@ -24,27 +25,26 @@ function formatMessage(message: string) {
 // Validation
 // =========================
 
-function validateContactForm(data: {
-    name: string;
-    email: string;
-    message: string;
-}) {
+function validateContactForm(
+    data: { name: string; email: string; message: string },
+    t: (key: string) => string
+) {
     const { name, email, message } = data;
 
     if (!name || !email || !message) {
-        return "Missing fields";
+        return t("contact.form.api.missing_fields");
     }
 
     if (name.length > 100) {
-        return "Name too long";
+        return t("contact.form.api.invalid_name");
     }
 
     if (email.length > 254) {
-        return "Email too long";
+        return t("contact.form.api.invalid_email");
     }
 
     if (message.length > 3000) {
-        return "Message too long";
+        return t("contact.form.api.message_too_long");
     }
 
     return null;
@@ -54,15 +54,18 @@ function validateContactForm(data: {
 // Email Template
 // =========================
 
-function buildEmailTemplate({
-    name,
-    email,
-    message,
-}: {
-    name: string;
-    email: string;
-    message: string;
-}) {
+function buildEmailTemplate(
+    t: (key: string) => string,
+    {
+        name,
+        email,
+        message,
+    }: {
+        name: string;
+        email: string;
+        message: string;
+    }
+) {
     return `
     <div style="font-family: Arial, sans-serif; background-color: #f9fafb; padding: 40px 20px;">
         <div style="max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 16px; padding: 32px; border: 1px solid #e5e7eb;">
@@ -110,24 +113,21 @@ function buildEmailTemplate({
 // Email Sender
 // =========================
 
-async function sendContactEmail(data: {
-    name: string;
-    email: string;
-    message: string;
-}) {
+async function sendContactEmail(
+    t: (key: string) => string,
+    data: { name: string; email: string; message: string }
+) {
     const { name, email, message } = data;
 
-    const to = CONTACT_EMAIL;
-
-    if (!to) {
-        throw new Error('CONTACT_EMAIL is not defined');
+    if (!CONTACT_EMAIL) {
+        throw new Error("CONTACT_EMAIL is not defined");
     }
 
     return resend.emails.send({
         from: MAIL_FROM || "Portfolio <onboarding@resend.dev>",
-        to: [to],
+        to: [CONTACT_EMAIL],
         subject: `[Portfolio] Mensaje de ${name}`,
-        html: buildEmailTemplate({ name, email, message }),
+        html: buildEmailTemplate(t, { name, email, message }),
     });
 }
 
@@ -136,20 +136,29 @@ async function sendContactEmail(data: {
 // =========================
 
 export async function POST(req: Request) {
+    // 👉 locale desde frontend (recomendado)
+    const locale = req.headers.get("x-locale") || "en";
+
+    const t = await getTranslations({
+        locale,
+        namespace: "app",
+    });
+
     try {
         const body = await req.json();
 
-        const error = validateContactForm(body);
+        const error = validateContactForm(body, t);
         if (error) {
             return Response.json({ error }, { status: 400 });
         }
 
-        await sendContactEmail(body);
+        await sendContactEmail(t, body);
 
         return Response.json({ success: true });
+
     } catch (error) {
         return Response.json(
-            { error: "Error sending email" },
+            { error: t("contact.form.api.error_sending_mail") },
             { status: 500 }
         );
     }

@@ -1,32 +1,66 @@
-import { hasLocale } from 'next-intl'
-import { getRequestConfig } from 'next-intl/server'
-import { ROUTING } from './routing'
-import { locales } from '@/types/ContextOptions'
+import { hasLocale } from "next-intl";
+import { getRequestConfig } from "next-intl/server";
+import { ROUTING } from "./routing";
+import { LOCALES, DEFAULT_LOCALE } from "@/lib/config";
+
+// =========================
+// Utils
+// =========================
 
 function deepMerge(target: any, source: any): any {
   for (const key of Object.keys(source)) {
-    if (key in target && typeof target[key] === 'object' && typeof source[key] === 'object') {
-      target[key] = deepMerge({ ...source[key], ...target[key] }, source[key])
+    if (
+      key in target &&
+      typeof target[key] === "object" &&
+      typeof source[key] === "object"
+    ) {
+      target[key] = deepMerge(
+        { ...source[key], ...target[key] },
+        source[key]
+      );
     } else if (!(key in target)) {
-      target[key] = source[key]
+      target[key] = source[key];
     }
   }
-  return target
+  return target;
 }
 
+// =========================
+// Types
+// =========================
+
+type Locale = (typeof LOCALES)[number];
+
+// =========================
+// Config
+// =========================
+
 export default getRequestConfig(async ({ requestLocale }) => {
-  const requested = await requestLocale
-  const locale = hasLocale(ROUTING.locales, requested) ? requested : ROUTING.defaultLocale
+  const requested = await requestLocale;
 
-  const fallbackMessages = (await import(`./locale/en`)).default
+  const locale: Locale = hasLocale(ROUTING.locales, requested)
+    ? (requested as Locale)
+    : DEFAULT_LOCALE;
 
-  const localeMessages =
-    locale === locales._EN ? fallbackMessages : (await import(`./locale/${locale}.ts`)).default
+  // 🔥 loaders dinámicos (build-safe)
+  const loaders: Record<Locale, () => Promise<any>> = Object.fromEntries(
+    LOCALES.map((loc) => [
+      loc,
+      () => import(`./locale/${loc}`),
+    ])
+  ) as Record<Locale, () => Promise<any>>;
 
-  const mergedMessages = deepMerge(localeMessages, fallbackMessages)
+  const safeLocale: Locale =
+    locale in loaders ? locale : DEFAULT_LOCALE;
+
+  const fallbackMessages = (await loaders[DEFAULT_LOCALE]()).default;
+
+  const localeMessages = (await loaders[safeLocale]()).default;
+
+  const mergedMessages = deepMerge(localeMessages, fallbackMessages);
 
   return {
     locale,
     messages: mergedMessages,
-  }
-})
+  };
+});

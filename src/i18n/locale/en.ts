@@ -65,6 +65,30 @@ export default {
                         label: "Message",
                         placeholder: "Tell me about your project..."
                     }
+                },
+                button: {
+                    label: "Send Message",
+                    sending: "Sending..."
+                },
+                submit: {
+                    json_error: "Invalid server response.",
+                    ko: "Error sending the message.",
+                    catch: {
+                        prefix: "There was an error",
+                        unknown: "Unknown error"
+                    },
+                    success: {
+                        message: "Message sent successfully!",
+                        description: "I'll get back to you soon!",
+                        button: "Send another message"
+                    }
+                },
+                api: {
+                    missing_fields: "Please fill in all fields.",
+                    invalid_name: "The name is too long.",
+                    invalid_email: "The email is too long.",
+                    message_too_long: "The message is too long.",
+                    error_sending_mail: "Error sending email"
                 }
             },
             contact_link: {
