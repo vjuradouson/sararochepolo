@@ -16,14 +16,20 @@ export default function middleware(req: NextRequest) {
 
     const response = intlMiddleware(req);
 
-    // 👇 ESTE es el truco correcto
-    response.headers.set('x-consed-debug', '1'); // opcional debug
+    if (response) {
+        if (consent) {
+            response.headers.set('x-consent', consent);
+        }
+
+        response.headers.set('x-consed-debug', '1');
+
+        return response;
+    }
 
     return NextResponse.next({
         request: {
             headers: requestHeaders,
-        },
-        headers: response.headers,
+        }
     });
 }
 
