@@ -20,7 +20,7 @@ export default function HeaderLogoClient({ ownerName }: { ownerName: string }) {
         <Link
             href="/"
             onClick={handleLogoClick}
-            className="font-thin text-body-lg leading-none tracking-normal text-brand-dark hover:opacity-75 transition-opacity"
+            className="font-thin text-body-lg leading-none tracking-normal hover:opacity-75 transition-opacity"
         >
             {ownerName}
         </Link>

@@ -63,7 +63,7 @@ export default function LanguageSwitcher() {
             {/* Trigger Button */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="cursor-pointer flex items-center gap-2 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-light text-brand-dark"
+                className="cursor-pointer flex items-center gap-2 px-3 py-2 rounded-lg transition-colors duration-200 text-sm font-light"
                 aria-label="Cambiar idioma"
                 aria-expanded={isOpen}
                 aria-haspopup="menu"
@@ -113,8 +113,8 @@ export default function LanguageSwitcher() {
                                                     onClick={() => handleLanguageChange(code)}
                                                     role="menuitem"
                                                     className={`w-full cursor-pointer rounded-xl px-3 py-2 text-left text-sm font-light transition-colors duration-150 flex items-center gap-2 ${isActive
-                                                        ? "bg-white text-brand-dark"
-                                                        : "text-brand-dark hover:bg-white"
+                                                        ? "bg-white"
+                                                        : "hover:bg-white"
                                                         }`}
                                                 >
                                                     <span>{flag}</span>

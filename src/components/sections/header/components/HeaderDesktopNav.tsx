@@ -65,7 +65,7 @@ export function HeaderDesktopNav({ links }: DesktopNavProps) {
 
                         <Link
                             href={href}
-                            className={`relative z-10 px-4 py-2 text-body-lg transition-colors ${isActive ? "text-brand-dark" : "hover:text-light-blue"
+                            className={`relative z-10 px-4 py-2 text-body-lg transition-colors ${isActive ? "" : "hover:text-light-blue"
                                 }`}
                         >
                             {label}

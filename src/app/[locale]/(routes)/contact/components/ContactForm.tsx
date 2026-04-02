@@ -81,7 +81,7 @@ export default function ContactForm() {
                 className="flex flex-col items-start gap-4 rounded-2xl border border-neutral-200 bg-neutral-50 p-8"
             >
                 <span className="text-2xl">✉️</span>
-                <h2 className="text-lg text-brand-dark">
+                <h2 className="text-lg">
                     {t("contact.form.submit.success.message")}
                 </h2>
                 <p className="text-sm text-brand-muted">
@@ -89,7 +89,7 @@ export default function ContactForm() {
                 </p>
                 <button
                     onClick={() => setSent(false)}
-                    className="mt-2 text-sm font-medium underline underline-offset-4 text-brand-muted hover:text-brand-dark transition-colors"
+                    className="mt-2 text-sm font-medium underline underline-offset-4 text-brand-muted transition-colors"
                 >
                     {t("contact.form.submit.success.button")}
                 </button>
@@ -109,7 +109,7 @@ export default function ContactForm() {
                     value={form.name}
                     onChange={handleChange}
                     placeholder={t("contact.form.field.name.placeholder")}
-                    className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm text-brand-dark outline-none focus:ring-2 focus:ring-brand-dark"
+                    className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-brand-dark"
                 />
             </div>
 
@@ -124,7 +124,7 @@ export default function ContactForm() {
                     value={form.email}
                     onChange={handleChange}
                     placeholder={t("contact.form.field.email.placeholder")}
-                    className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm text-brand-dark outline-none focus:ring-2 focus:ring-brand-dark"
+                    className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-brand-dark"
                 />
             </div>
 
@@ -139,7 +139,7 @@ export default function ContactForm() {
                     value={form.message}
                     onChange={handleChange}
                     placeholder={t("contact.form.field.message.placeholder")}
-                    className="w-full min-h-[120px] rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm text-brand-dark outline-none focus:ring-2 focus:ring-brand-dark resize-none overflow-hidden"
+                    className="w-full min-h-[120px] rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-brand-dark resize-none overflow-hidden"
                 />
             </div>
 

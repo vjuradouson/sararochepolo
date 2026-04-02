@@ -13,8 +13,8 @@
 ## 2. Visual Identity & Design Standards
 - **Minimalism:** Priorizar el uso de "espacio negativo" (whitespace). Escalas de espaciado generosas (`py-16` a `py-24`) para separar secciones.
 - **Typography:** Uso de fuentes variables optimizadas con `next/font/google`. 
-    - Títulos: `font-kantumruy-pro tracking-tight text-brand-dark`.
-    - Cuerpo: `font-sans text-brand-muted leading-relaxed`.
+    - Títulos: `font-kantumruy-pro tracking-tight`.
+    - Cuerpo: `font-kantumruy-pro leading-relaxed`.
 - **Animations (Framer Motion):** Implementar transiciones suaves y elegantes:
     - *Scroll Reveal:* Fade-in up cuando los elementos entran en el viewport.
     - *Stagger:* Animaciones en cascada para listas o grids.

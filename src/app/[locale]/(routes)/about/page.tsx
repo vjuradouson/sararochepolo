@@ -31,7 +31,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                 <p className="text-xl uppercase tracking-widest text-brand-muted mb-4">
                     {t("app.about.header")}
                 </p>
-                <h1 className="text-4xl tracking-tight text-brand-dark sm:text-5xl">
+                <h1 className="text-4xl tracking-tight sm:text-5xl">
                     {t("app.about.h1")}
                 </h1>
             </div>
@@ -54,12 +54,12 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
 
                     <div className="space-y-6 text-lg text-brand-muted leading-relaxed max-w-lg">
                         <p>
-                            Soy <span className="font-medium text-brand-dark">Product Designer especializada en UX/UI</span> con más de 3 años de experiencia
+                            Soy <span className="font-medium">Product Designer especializada en UX/UI</span> con más de 3 años de experiencia
                             transformando necesidades complejas en soluciones digitales claras, funcionales y visualmente coherentes.
                         </p>
 
                         <p>
-                            Actualmente trabajo en <span className="font-medium text-brand-dark">Grupo Piquer</span>, donde diseño experiencias digitales en entornos educativos,
+                            Actualmente trabajo en <span className="font-medium">Grupo Piquer</span>, donde diseño experiencias digitales en entornos educativos,
                             mejorando la usabilidad, la estructura de la información y la consistencia visual de la plataforma.
                         </p>
 
@@ -89,7 +89,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                             {skills.map((skill) => (
                                 <li
                                     key={skill}
-                                    className="flex items-center gap-3 text-base text-brand-dark"
+                                    className="flex items-center gap-3 text-base"
                                 >
                                     <span className="w-1.5 h-1.5 rounded-full bg-brand-muted flex-shrink-0" />
                                     {skill}
@@ -102,7 +102,7 @@ export default async function AboutPage({ params }: { params: Promise<{ locale: 
                         <h2 className="text-xs font-semibold uppercase tracking-widest text-brand-muted mb-6">
                             Información
                         </h2>
-                        <ul className="space-y-4 text-base text-brand-dark">
+                        <ul className="space-y-4 text-base">
                             <li className="flex items-center">
                                 <span className="text-brand-muted w-24">Ubicación</span>
                                 <span className="font-medium">Zaragoza, España</span>

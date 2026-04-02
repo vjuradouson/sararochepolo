@@ -49,7 +49,7 @@ export function HeaderMobileMenu({ links }: MobileMenuProps) {
         <>
             {/* Toggle button */}
             <button
-                className="flex items-center justify-center p-2 text-brand-dark"
+                className="flex items-center justify-center p-2"
                 onClick={() => setMenuOpen((prev) => !prev)}
                 aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
                 aria-expanded={menuOpen}
@@ -88,8 +88,8 @@ export function HeaderMobileMenu({ links }: MobileMenuProps) {
                                             href={href}
                                             onClick={() => setMenuOpen(false)}
                                             className={`block text-lg transition-colors ${isActive
-                                                ? "text-brand-dark"
-                                                : "text-brand-muted hover:text-brand-dark"
+                                                ? ""
+                                                : "text-brand-muted"
                                                 }`}
                                         >
                                             {label}

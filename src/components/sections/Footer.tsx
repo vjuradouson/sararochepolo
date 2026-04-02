@@ -9,7 +9,7 @@ export default async function Footer() {
 
                 {/* Left */}
                 <div className="text-center md:text-left">
-                    <p className="tracking-tight text-brand-dark text-lg">
+                    <p className="tracking-tight text-lg">
                         {t("portfolio.owner")}
                     </p>
                     <p className="text-sm">

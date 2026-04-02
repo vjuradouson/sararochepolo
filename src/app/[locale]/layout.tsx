@@ -3,10 +3,14 @@ import { Kantumruy_Pro } from "next/font/google";
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, setRequestLocale } from 'next-intl/server'
+import { getMessages, setRequestLocale, getTranslations } from 'next-intl/server'
 import { ROUTING } from '@/i18n/routing';
 import { BASE_URL, LOCALES } from '@/lib/config';
 import { ReactNode } from 'react'
+import CookieBanner from '@/components/CookieBanner';
+import CookieScriptsClient from '@/components/CookieScriptsClient';
+import Script from 'next/script'
+import GTMPageView from '@/components/GTMPageView'
 
 const kantumruyPro = Kantumruy_Pro({
   subsets: ['latin'],
@@ -15,8 +19,6 @@ const kantumruyPro = Kantumruy_Pro({
 });
 
 const locales = LOCALES;
-
-import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata({
   params
@@ -59,17 +61,56 @@ type LocaleLayoutProps = {
   children: ReactNode
   params: Promise<{ locale: string }>
 }
+
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
+
 export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {
   const { locale } = await params;
-  setRequestLocale(locale)
-  const messages = await getMessages({ locale })
+  setRequestLocale(locale);
+  const messages = await getMessages({ locale });
 
   return (
     <html
       lang={locale}
       className={`${kantumruyPro.variable} h-full antialiased`}
     >
+      <head>
+        <Script
+          id="consent-default"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        'default_consent': 'denied'
+      });
+    `,
+          }}
+        />
+        <Script
+          id="gtm"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','${GTM_ID}');
+        `,
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col font-sans">
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: `
+        <iframe src="https://www.googletagmanager.com/ns.html?id=${GTM_ID}"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+      `,
+          }}
+        />
+        <GTMPageView />
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
 
@@ -78,6 +119,10 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
           </main>
 
           <Footer />
+
+          <CookieBanner />
+          <CookieScriptsClient />
+
         </NextIntlClientProvider>
       </body>
     </html>

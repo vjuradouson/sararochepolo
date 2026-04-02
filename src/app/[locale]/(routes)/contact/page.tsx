@@ -35,7 +35,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                 <p className="text-xl uppercase tracking-widest text-brand-muted mb-4">
                     {t("app.contact.header")}
                 </p>
-                <h1 className="text-4xl tracking-tight text-brand-dark sm:text-5xl">
+                <h1 className="text-4xl tracking-tight sm:text-5xl">
                     {t("app.contact.h1")}
                 </h1>
             </div>
@@ -58,12 +58,12 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
                                         href={href}
                                         target={href.startsWith("http") ? "_blank" : undefined}
                                         rel="noopener noreferrer"
-                                        className="text-base font-medium text-brand-dark hover:underline underline-offset-4"
+                                        className="text-base font-medium hover:underline underline-offset-4"
                                     >
                                         {value}
                                     </a>
                                 ) : (
-                                    <span className="text-base font-medium text-brand-dark">
+                                    <span className="text-base font-medium">
                                         {value}
                                     </span>
                                 )}
@@ -74,7 +74,7 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
 
                 {/* Right — form */}
                 <div>
-                    <h2 className="text-xl text-brand-dark mb-6">
+                    <h2 className="text-xl mb-6">
                         {t('app.contact.form.title')}
                     </h2>
                     <ContactForm />

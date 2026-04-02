@@ -47,7 +47,7 @@ export default function PortfolioPreview() {
                     className="flex justify-between items-end mb-16"
                 >
                     <div>
-                        <h2 className="text-4xl md:text-5xl tracking-tight text-brand-dark mb-4">
+                        <h2 className="text-4xl md:text-5xl tracking-tight mb-4">
                             Proyectos seleccionados
                         </h2>
                         <p className="text-brand-muted max-w-md">
@@ -59,7 +59,7 @@ export default function PortfolioPreview() {
 
                     <Link
                         href="/"
-                        className="hidden md:inline-flex items-center gap-1 text-sm font-medium uppercase tracking-widest text-brand-muted hover:text-brand-dark transition-colors"
+                        className="hidden md:inline-flex items-center gap-1 text-sm font-medium uppercase tracking-widest text-brand-muted transition-colors"
                     >
                         Ver todos <ArrowUpRight size={16} />
                     </Link>
@@ -80,7 +80,7 @@ export default function PortfolioPreview() {
                                         {project.id}
                                     </span>
 
-                                    <h3 className="text-3xl md:text-4xl text-brand-dark group-hover:italic transition-all">
+                                    <h3 className="text-3xl md:text-4xl group-hover:italic transition-all">
                                         {project.title}
                                     </h3>
                                 </div>
@@ -105,7 +105,6 @@ export default function PortfolioPreview() {
                             <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity">
                                 <ArrowUpRight
                                     size={20}
-                                    className="text-brand-dark"
                                 />
                             </div>
                         </motion.div>
@@ -116,7 +115,7 @@ export default function PortfolioPreview() {
                 <motion.div variants={fadeIn} className="mt-12 md:hidden">
                     <Link
                         href="/"
-                        className="inline-flex items-center gap-1 text-sm font-medium uppercase tracking-widest text-brand-dark"
+                        className="inline-flex items-center gap-1 text-sm font-medium uppercase tracking-widest"
                     >
                         Ver todos los proyectos <ArrowUpRight size={16} />
                     </Link>
