@@ -22,7 +22,7 @@ export default {
         home: {
             seo: {
                 title: "Sara Roche Polo | Diseñadora de Producto UX/UI",
-                description: "Product Designer UX/UI con más de 3 años de experiencia transformando necesidades complejas en soluciones intuitivas, combinando diseño digital y comunicación visual."
+                description: "Diseñadora de Producto UX/UI con más de 3 años de experiencia transformando necesidades complejas en soluciones intuitivas, combinando diseño digital y comunicación visual."
             },
             hero: {
                 product_designer: "Diseñadora de Producto · UX/UI",
@@ -37,15 +37,15 @@ export default {
         about: {
             seo: {
                 title: "Sobre mí | Sara Roche Polo",
-                description: "Conoce la trayectoria de Sara Roche Polo, Product Designer UX/UI con experiencia en crear soluciones intuitivas y sistemas visuales consistentes."
+                description: "Conoce la trayectoria de Sara Roche Polo, Diseñadora de Producto UX/UI con experiencia en crear soluciones intuitivas y sistemas visuales consistentes."
             },
             header: "Sobre mí",
-            h1: "Hola, soy"
+            h1: "Hola, soy Sara"
         },
         contact: {
             seo: {
                 title: "Contacto | Sara Roche Polo",
-                description: "Contacta con Sara Roche Polo, Product Designer UX/UI disponible para nuevas oportunidades y proyectos digitales."
+                description: "Contacta con Sara Roche Polo, Diseñadora de Producto UX/UI disponible para nuevas oportunidades y proyectos digitales."
             },
             header: "Contacto",
             h1: "Hablemos",

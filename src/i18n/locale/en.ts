@@ -40,7 +40,7 @@ export default {
                 description: "Learn more about Sara Roche Polo, a Product Designer UX/UI focused on creating intuitive solutions and consistent visual systems."
             },
             header: "About Me",
-            h1: "Hi, I'm"
+            h1: "Hi, I'm Sara"
         },
         contact: {
             seo: {

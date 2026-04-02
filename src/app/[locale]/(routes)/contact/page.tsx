@@ -32,10 +32,10 @@ export default async function ContactPage({ params }: { params: Promise<{ locale
         <section className="mx-auto max-w-7xl px-6 md:px-12 py-24 md:py-16">
             {/* Heading */}
             <div className="mb-20">
-                <p className="text-sm font-medium uppercase tracking-widest text-brand-muted mb-4">
+                <p className="text-xl uppercase tracking-widest text-brand-muted mb-4">
                     {t("app.contact.header")}
                 </p>
-                <h1 className="text-5xl tracking-tight text-brand-dark sm:text-6xl md:text-7xl">
+                <h1 className="text-4xl tracking-tight text-brand-dark sm:text-5xl">
                     {t("app.contact.h1")}
                 </h1>
             </div>
