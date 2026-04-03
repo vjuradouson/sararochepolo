@@ -31,5 +31,7 @@ export const COUNTRY_LOCALE_MAP: Record<string, string> = {
     NI: 'es', // Nicaragua
     CR: 'es', // Costa Rica
     PA: 'es', // Panama
-    UY: 'es'  // Uruguay
+    UY: 'es', // Uruguay
+    PR: 'es', // Puerto Rico
+    GQ: 'es'  // Equatorial Guinea
 };

@@ -12,16 +12,40 @@ const isSupportedLocale = (locale: string): boolean => {
     return LOCALES.includes(locale);
 };
 
+/** -------------------------
+ * ACCEPT-LANGUAGE PARSER
+ * ------------------------- */
+const resolveLocaleFromAcceptLanguage = (
+    header: string | null
+): string | null => {
+    if (!header) return null;
+
+    const languages = header
+        .split(',')
+        .map((lang) => lang.split(';')[0].trim().toLowerCase());
+
+    for (const lang of languages) {
+        const base = lang.split('-')[0]; // es-ES → es
+        if (LOCALES.includes(base)) {
+            return base;
+        }
+    }
+
+    return null;
+};
+
 const intlMiddleware = createMiddleware(ROUTING);
 
 export default function middleware(req: NextRequest) {
     /** -------------------------
-     * 1. HEADERS & GEO
+     * 1. HEADERS
      * ------------------------- */
     const country =
         req.headers.get('x-country') ??
         req.headers.get('cf-ipcountry') ??
         'US';
+
+    const acceptLanguage = req.headers.get('accept-language');
 
     /** -------------------------
      * 2. COOKIE LOCALE (PRIORIDAD MÁXIMA)
@@ -29,22 +53,39 @@ export default function middleware(req: NextRequest) {
     const cookieLocale = req.cookies.get('NEXT_LOCALE')?.value;
 
     /** -------------------------
-     * 3. LOCALE DETECTION (GEO fallback)
+     * 3. ACCEPT-LANGUAGE
      * ------------------------- */
-    let locale = cookieLocale ?? resolveLocaleFromCountry(country);
+    const browserLocale = resolveLocaleFromAcceptLanguage(acceptLanguage);
+
+    /** -------------------------
+     * 4. GEO FALLBACK
+     * ------------------------- */
+    const geoLocale = resolveLocaleFromCountry(country);
+
+    /** -------------------------
+     * 5. FINAL LOCALE (orden correcto)
+     * ------------------------- */
+    let locale =
+        cookieLocale ??
+        browserLocale ??
+        geoLocale ??
+        DEFAULT_LOCALE;
+
     if (!isSupportedLocale(locale)) {
         locale = DEFAULT_LOCALE;
     }
 
     /** -------------------------
-     * 4. PATHNAME CHECK
+     * 6. PATHNAME CHECK
      * ------------------------- */
     const pathname = req.nextUrl.pathname;
-    const hasLocale =
-        pathname.startsWith('/es') || pathname.startsWith('/en');
+
+    const hasLocale = LOCALES.some((loc) =>
+        pathname.startsWith(`/${loc}`)
+    );
 
     /** -------------------------
-     * 5. COOKIE CONSENT
+     * 7. COOKIE CONSENT
      * ------------------------- */
     const consent = req.cookies.get(COOKIE_CONSENT_NAME)?.value;
 
@@ -55,7 +96,7 @@ export default function middleware(req: NextRequest) {
     }
 
     /** -------------------------
-     * 6. REDIRECT (solo si no hay locale)
+     * 8. REDIRECT
      * ------------------------- */
     if (!hasLocale) {
         const url = req.nextUrl.clone();
@@ -81,7 +122,7 @@ export default function middleware(req: NextRequest) {
     }
 
     /** -------------------------
-     * 7. NEXT-INTL
+     * 9. NEXT-INTL
      * ------------------------- */
     const response = intlMiddleware(req);
 
@@ -93,7 +134,7 @@ export default function middleware(req: NextRequest) {
     }
 
     /** -------------------------
-     * 8. FALLBACK
+     * 10. FALLBACK
      * ------------------------- */
     return NextResponse.next({
         request: {
