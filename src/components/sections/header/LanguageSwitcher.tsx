@@ -23,6 +23,7 @@ export default function LanguageSwitcher() {
 
     const handleLanguageChange = (newLocale: Locale) => {
         if (newLocale !== locale) {
+            document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=31536000`;
             router.push(pathname, { locale: newLocale });
         }
         setIsOpen(false);

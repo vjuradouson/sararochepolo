@@ -6,6 +6,42 @@ import { COOKIE_CONSENT_NAME } from '@/lib/cookie-consent';
 const intlMiddleware = createMiddleware(ROUTING);
 
 export default function middleware(req: NextRequest) {
+    /** -------------------------
+     * 1. HEADERS & GEO
+     * ------------------------- */
+    const country =
+        req.headers.get('x-country') ??
+        req.headers.get('cf-ipcountry') ??
+        'US';
+
+    console.log('Country:', country);
+
+    /** -------------------------
+     * 2. COOKIE LOCALE (PRIORIDAD MÁXIMA)
+     * ------------------------- */
+    const cookieLocale = req.cookies.get('NEXT_LOCALE')?.value;
+
+    /** -------------------------
+     * 3. LOCALE DETECTION (GEO fallback)
+     * ------------------------- */
+    let detectedLocale = 'en';
+
+    if (country === 'ES') {
+        detectedLocale = 'es';
+    }
+
+    const locale = cookieLocale ?? detectedLocale;
+
+    /** -------------------------
+     * 4. PATHNAME CHECK
+     * ------------------------- */
+    const pathname = req.nextUrl.pathname;
+    const hasLocale =
+        pathname.startsWith('/es') || pathname.startsWith('/en');
+
+    /** -------------------------
+     * 5. COOKIE CONSENT
+     * ------------------------- */
     const consent = req.cookies.get(COOKIE_CONSENT_NAME)?.value;
 
     const requestHeaders = new Headers(req.headers);
@@ -14,18 +50,47 @@ export default function middleware(req: NextRequest) {
         requestHeaders.set('x-consent', consent);
     }
 
+    /** -------------------------
+     * 6. REDIRECT (solo si no hay locale)
+     * ------------------------- */
+    if (!hasLocale) {
+        const url = req.nextUrl.clone();
+        url.pathname = `/${locale}${pathname}`;
+
+        const response = NextResponse.redirect(url);
+
+        // 👉 guardar locale SOLO primera vez
+        if (!cookieLocale) {
+            response.cookies.set('NEXT_LOCALE', locale, {
+                path: '/',
+                maxAge: 60 * 60 * 24 * 365
+            });
+        }
+
+        // 👉 mantener consentimiento
+        if (consent) {
+            response.cookies.set(COOKIE_CONSENT_NAME, consent);
+            response.headers.set('x-consent', consent);
+        }
+
+        return response;
+    }
+
+    /** -------------------------
+     * 7. NEXT-INTL
+     * ------------------------- */
     const response = intlMiddleware(req);
 
     if (response) {
         if (consent) {
             response.headers.set('x-consent', consent);
         }
-
-        response.headers.set('x-consed-debug', '1');
-
         return response;
     }
 
+    /** -------------------------
+     * 8. FALLBACK
+     * ------------------------- */
     return NextResponse.next({
         request: {
             headers: requestHeaders,
