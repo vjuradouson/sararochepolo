@@ -10,6 +10,10 @@ export default {
                 about: "About",
                 contact: "Contact"
             },
+            language_switcher: {
+                en: "English",
+                es: "Spanish"
+            }
         },
         footer: {
             left: {

@@ -7,7 +7,6 @@ export default function CookieScriptsClient() {
     const [consent, setConsent] = useState<CookieConsent | null>(null);
 
     useEffect(() => {
-        // 🔥 Leer consentimiento inicial
         const initialConsent = getConsentFromCookie();
         setConsent(initialConsent);
 
@@ -17,7 +16,6 @@ export default function CookieScriptsClient() {
             loadMarketingScripts();
         }
 
-        // 🔁 Escuchar cambios de consentimiento
         function handleConsentUpdate() {
             const updatedConsent = getConsentFromCookie();
             setConsent(updatedConsent);
@@ -37,9 +35,8 @@ export default function CookieScriptsClient() {
 }
 
 /**
-
 * 🔍 Obtener consentimiento desde cookie
-  */
+*/
 function getConsentFromCookie(): CookieConsent | null {
     const cookieValue = document.cookie
         .split('; ')
@@ -64,8 +61,6 @@ function updateConsent(consent: CookieConsent | null) {
         analytics_storage: consent?.analytics ? 'granted' : 'denied',
         ad_storage: consent?.marketing ? 'granted' : 'denied',
     });
-
-    console.log('🧠 Consent updated:', consent);
 }
 
 /**

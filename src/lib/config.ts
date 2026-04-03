@@ -6,7 +6,7 @@ export const RESEND_API_KEY = process.env.NEXT_PUBLIC_RESEND_API_KEY || ''
 export const MAIL_FROM = process.env.NEXT_PUBLIC_MAIL_FROM || ''
 
 export type Locale = typeof LOCALES[number];
-export const LANGUAGE_META: Record<Locale, { label: string; flag: string }> = {
-    es: { label: "Español", flag: "🇪🇸" },
-    en: { label: "English", flag: "🇬🇧" },
+export const LANGUAGE_META: Record<Locale, {}> = {
+    es: {},
+    en: {},
 };

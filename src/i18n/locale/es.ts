@@ -9,6 +9,10 @@ export default {
             links: {
                 about: "Sobre mí",
                 contact: "Contacto"
+            },
+            language_switcher: {
+                en: "Inglés",
+                es: "Español"
             }
         },
         footer: {
