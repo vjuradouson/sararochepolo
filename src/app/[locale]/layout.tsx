@@ -3,14 +3,17 @@ import { Kantumruy_Pro } from "next/font/google";
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, setRequestLocale, getTranslations } from 'next-intl/server'
+import { getMessages, setRequestLocale, getTranslations } from 'next-intl/server';
 import { ROUTING } from '@/i18n/routing';
 import { BASE_URL, LOCALES } from '@/lib/config';
-import { ReactNode } from 'react'
+import { ReactNode } from 'react';
 import CookieBanner from '@/components/CookieBanner';
 import CookieScriptsClient from '@/components/CookieScriptsClient';
-import Script from 'next/script'
-import GTMPageView from '@/components/GTMPageView'
+import Script from 'next/script';
+import GTMPageView from '@/components/GTMPageView';
+import { Analytics as VercelAnalytics } from '@vercel/analytics/next';
+import { SpeedInsights as VercelSpeedInsights } from '@vercel/speed-insights/next';
+import ConsentScript from '@/components/ConsentScript';
 
 const kantumruyPro = Kantumruy_Pro({
   subsets: ['latin'],
@@ -75,18 +78,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
       className={`${kantumruyPro.variable} h-full antialiased`}
     >
       <head>
-        <Script
-          id="consent-default"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        'default_consent': 'denied'
-      });
-    `,
-          }}
-        />
+        <ConsentScript />
         <Script
           id="gtm"
           strategy="afterInteractive"
@@ -101,7 +93,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
           }}
         />
       </head>
-      <body className="min-h-full flex flex-col font-sans">
+      <body className="min-h-full flex flex-col">
         <noscript
           dangerouslySetInnerHTML={{
             __html: `
@@ -110,7 +102,10 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
       `,
           }}
         />
+        <VercelAnalytics />
+        <VercelSpeedInsights />
         <GTMPageView />
+
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
 
@@ -122,7 +117,6 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
 
           <CookieBanner />
           <CookieScriptsClient />
-
         </NextIntlClientProvider>
       </body>
     </html>
