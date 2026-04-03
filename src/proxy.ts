@@ -2,6 +2,15 @@ import createMiddleware from 'next-intl/middleware';
 import { ROUTING } from './i18n/routing';
 import { NextRequest, NextResponse } from 'next/server';
 import { COOKIE_CONSENT_NAME } from '@/lib/cookie-consent';
+import { LOCALES, COUNTRY_LOCALE_MAP, DEFAULT_LOCALE } from '@/lib/config';
+
+const resolveLocaleFromCountry = (country: string): string => {
+    return COUNTRY_LOCALE_MAP[country] ?? DEFAULT_LOCALE;
+};
+
+const isSupportedLocale = (locale: string): boolean => {
+    return LOCALES.includes(locale);
+};
 
 const intlMiddleware = createMiddleware(ROUTING);
 
@@ -14,8 +23,6 @@ export default function middleware(req: NextRequest) {
         req.headers.get('cf-ipcountry') ??
         'US';
 
-    console.log('Country:', country);
-
     /** -------------------------
      * 2. COOKIE LOCALE (PRIORIDAD MÁXIMA)
      * ------------------------- */
@@ -24,13 +31,10 @@ export default function middleware(req: NextRequest) {
     /** -------------------------
      * 3. LOCALE DETECTION (GEO fallback)
      * ------------------------- */
-    let detectedLocale = 'en';
-
-    if (country === 'ES') {
-        detectedLocale = 'es';
+    let locale = cookieLocale ?? resolveLocaleFromCountry(country);
+    if (!isSupportedLocale(locale)) {
+        locale = DEFAULT_LOCALE;
     }
-
-    const locale = cookieLocale ?? detectedLocale;
 
     /** -------------------------
      * 4. PATHNAME CHECK

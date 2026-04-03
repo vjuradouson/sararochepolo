@@ -10,3 +10,26 @@ export const LANGUAGE_META: Record<Locale, {}> = {
     es: {},
     en: {},
 };
+
+export const COUNTRY_LOCALE_MAP: Record<string, string> = {
+    // Spanish-speaking countries
+    ES: 'es', // Spain
+    MX: 'es', // Mexico
+    AR: 'es', // Argentina
+    CO: 'es', // Colombia
+    CL: 'es', // Chile
+    PE: 'es', // Peru
+    VE: 'es', // Venezuela
+    EC: 'es', // Ecuador
+    GT: 'es', // Guatemala
+    CU: 'es', // Cuba
+    BO: 'es', // Bolivia
+    DO: 'es', // Dominican Republic
+    HN: 'es', // Honduras
+    PY: 'es', // Paraguay
+    SV: 'es', // El Salvador
+    NI: 'es', // Nicaragua
+    CR: 'es', // Costa Rica
+    PA: 'es', // Panama
+    UY: 'es'  // Uruguay
+};
