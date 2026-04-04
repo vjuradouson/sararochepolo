@@ -37,6 +37,14 @@ const resolveLocaleFromAcceptLanguage = (
 const intlMiddleware = createMiddleware(ROUTING);
 
 export default function middleware(req: NextRequest) {
+    const debug = {
+        vercel: req.headers.get('x-vercel-ip-country'),
+        cf: req.headers.get('cf-ipcountry'),
+        ip: req.headers.get('x-forwarded-for'),
+    };
+
+    console.log('DEBUG GEO:', debug);
+
     /** -------------------------
      * 1. HEADERS
      * ------------------------- */
