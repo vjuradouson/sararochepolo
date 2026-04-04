@@ -42,7 +42,7 @@ export default function Intro() {
             >
 
                 {/* LEFT IMAGE */}
-                <motion.div variants={item} className="relative w-full">
+                <motion.div variants={item} className="order-1 md:order-1 relative w-full">
                     <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-gray-100
                      rounded-card shadow-card
                             ">
@@ -58,7 +58,7 @@ export default function Intro() {
                 </motion.div>
 
                 {/* RIGHT CONTENT */}
-                <div className="text-4xl">
+                <div className="order-2 md:order-2 text-4xl">
                     <motion.p
                         variants={item}
                         className="
@@ -80,7 +80,7 @@ export default function Intro() {
                     {/* TOOLS */}
                     <motion.div
                         variants={item}
-                        className="mt-16 ml-12 grid grid-cols-2 gap-x-12 gap-y-4 text-sm tracking-[0.2em]"
+                        className="mt-12 md:mt-16 md:ml-12 grid grid-cols-2 gap-x-12 gap-y-4 text-sm tracking-[0.2em]"
                     >
                         {[
                             "ADOBE PHOTOSHOP",

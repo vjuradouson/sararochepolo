@@ -14,6 +14,7 @@ import GTMPageView from '@/components/GTMPageView';
 import { Analytics as VercelAnalytics } from '@vercel/analytics/next';
 import { SpeedInsights as VercelSpeedInsights } from '@vercel/speed-insights/next';
 import ConsentScript from '@/components/ConsentScript';
+import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 
 const kantumruyPro = Kantumruy_Pro({
   subsets: ['latin'],

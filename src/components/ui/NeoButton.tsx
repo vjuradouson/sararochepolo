@@ -31,10 +31,10 @@ export default function NeoButton({
         tracking-[0.3em]
         font-light
         
-        shadow-[8px_8px_16px_#c5c5c5,-8px_-8px_16px_#ffffff]
+        shadow-[8px_8px_16px_#c5c5c5,0px_0px_0px_#ffffff]
         transition-all duration-200
         
-        hover:shadow-[4px_4px_8px_#c5c5c5,-4px_-4px_8px_#ffffff]
+        hover:shadow-[4px_4px_8px_#c5c5c5,0px_0px_0px_#ffffff]
         active:shadow-[inset_4px_4px_8px_#c5c5c5,inset_-4px_-4px_#ffffff]
 
         cursor-pointer

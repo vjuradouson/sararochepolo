@@ -45,7 +45,7 @@ export default function Hero() {
                     animate="show"
                 >
                     {/* BACKGROUND */}
-                    <div className="absolute right-[10%] top-0 h-full w-[60%] pointer-events-none">
+                    <div className="absolute lg:right-[10%] top-0 h-full lg:w-[60%] pointer-events-none">
                         <motion.div className="
                             absolute right-[-10%] top-1/2 -translate-y-1/2
                             w-[110%] h-[190%]
@@ -63,13 +63,12 @@ export default function Hero() {
                         <div className="grid md:grid-cols-2 gap-12 items-center h-full">
 
                             {/* LEFT */}
-                            <div className="pl-8 md:pl-16 pt-28 pb-28 ml-20 z-10">
-                                <motion.p
-                                    variants={item}
-                                    className="uppercase tracking-[0.3em] text-xl text-gray-500 mb-6"
-                                >
-                                    {t("home.hero.product_designer")}
-                                </motion.p>
+                            <div className="order-1 md:order-1 pl-8 md:pl-16 pt-28 md:pb-28 md:ml-20 z-10">                                <motion.p
+                                variants={item}
+                                className="uppercase tracking-[0.3em] text-xl text-gray-500 mb-6"
+                            >
+                                {t("home.hero.product_designer")}
+                            </motion.p>
 
                                 <motion.h1
                                     variants={item}
@@ -92,7 +91,8 @@ export default function Hero() {
                             </div>
 
                             {/* RIGHT */}
-                            <motion.div variants={item} className="relative h-[90%]">
+                            <motion.div variants={item}
+                                className="mb-12 md:mb-0 order-2 md:order-2 relative h-[500px] md:h-[90%]">
                                 <Image
                                     src="/media/home/hero/apps_hero.png"
                                     alt={t("portfolio.owner")}
