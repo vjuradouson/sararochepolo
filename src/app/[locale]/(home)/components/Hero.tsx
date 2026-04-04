@@ -33,7 +33,7 @@ export default function Hero() {
     const t = useTranslations("app");
 
     return (
-        <section className="w-full py-16">
+        <section className="w-full py-4 md:py-16">
 
             <div className="max-w-[1400px] mx-auto px-6">
 
@@ -48,7 +48,7 @@ export default function Hero() {
                     <div className="absolute lg:right-[10%] top-0 h-full lg:w-[60%] pointer-events-none">
                         <motion.div className="
                             absolute right-[-10%] top-1/2 -translate-y-1/2
-                            w-[110%] h-[190%]
+                            hero-bg-circle
                             rounded-full
                             rotate-[30deg]
                             bg-[radial-gradient(circle_at_left_center,_#f3f3f1_0%,_#f4f4f4_50%,_#e3df5a_50%,_#f4f4f4_75%)]
@@ -63,7 +63,7 @@ export default function Hero() {
                         <div className="grid md:grid-cols-2 gap-12 items-center h-full">
 
                             {/* LEFT */}
-                            <div className="order-1 md:order-1 pl-8 md:pl-16 pt-28 md:pb-28 md:ml-20 z-10">                                <motion.p
+                            <div className="order-1 md:order-1 pl-8 md:pl-16 pt-6 md:pb-28 md:ml-20 z-10">                                <motion.p
                                 variants={item}
                                 className="uppercase tracking-[0.3em] text-xl text-gray-500 mb-6"
                             >

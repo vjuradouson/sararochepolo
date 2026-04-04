@@ -9,8 +9,8 @@ type Project = {
     title: string;
     subtitle: string;
     description: string;
-    bgFrom: string; // centro
-    bgTo: string;   // exterior
+    bgFrom: string;
+    bgTo: string;
     textColor: string;
     content: React.ReactNode;
 };
@@ -67,6 +67,7 @@ const projects: Project[] = [
         ),
     },
 ];
+
 const textVariants = {
     hidden: { opacity: 0, y: 60 },
     show: { opacity: 1, y: 0 },
@@ -87,6 +88,8 @@ export default function ProjectsSection() {
     const activeIndexRef = useRef(0);
 
     const [activeIndex, setActiveIndex] = useState(0);
+
+    const isMobile = () => window.innerWidth < 768;
 
     const setIndex = (index: number) => {
         activeIndexRef.current = index;
@@ -133,7 +136,6 @@ export default function ProjectsSection() {
 
         const wrapperRect = wrapper.getBoundingClientRect();
 
-        // 👇 porcentaje visible del wrapper
         const visibleHeight =
             Math.min(wrapperRect.bottom, window.innerHeight) -
             Math.max(wrapperRect.top, 0);
@@ -145,10 +147,7 @@ export default function ProjectsSection() {
 
         const firstNotAligned = scrollY < firstTop - 2;
 
-        return (
-            visibilityRatio > 0.4 && // 🔥 CLAVE → al menos 60% visible
-            firstNotAligned
-        );
+        return visibilityRatio > 0.4 && firstNotAligned;
     };
 
     const scrollToSection = (index: number) => {
@@ -198,6 +197,9 @@ export default function ProjectsSection() {
     };
 
     useEffect(() => {
+        // 🔥 SOLO desactivar en mobile
+        if (typeof window !== "undefined" && window.innerWidth < 768) return;
+
         const onScroll = () => {
             if (!wrapperRef.current) return;
 
@@ -216,9 +218,6 @@ export default function ProjectsSection() {
                 return;
             }
 
-            // Regla crítica:
-            // si estás entrando desde arriba y la primera no está bien alineada,
-            // SIEMPRE fuerza la primera antes de permitir avanzar.
             if (e.deltaY > 0 && isEnteringFirstFromAbove()) {
                 e.preventDefault();
                 scrollToSection(0);
@@ -228,15 +227,12 @@ export default function ProjectsSection() {
             if (!isInsideProjectsViewport()) return;
 
             const currentIndex = getNearestSectionIndex();
-            const currentTop = getSectionTop(currentIndex);
 
-            // dejar salir hacia arriba normalmente desde la primera
             if (e.deltaY < 0 && currentIndex === 0 && window.scrollY <= firstTop + 2) {
                 wheelAccumulator.current = 0;
                 return;
             }
 
-            // dejar salir hacia abajo normalmente desde la última
             if (
                 e.deltaY > 0 &&
                 currentIndex === projects.length - 1 &&
@@ -248,170 +244,34 @@ export default function ProjectsSection() {
 
             const threshold = 90;
 
-            // 👇 acumulas pero NO dejas que el navegador mueva aún
             wheelAccumulator.current += e.deltaY;
 
-            // 👇 si aún no alcanzas threshold → bloqueas scroll visual
             if (Math.abs(wheelAccumulator.current) < threshold) {
-                e.preventDefault(); // 🔥 CLAVE → elimina micro salto
+                e.preventDefault();
                 return;
             }
 
             if (wheelAccumulator.current > 0) {
                 const nextIndex = Math.min(currentIndex + 1, projects.length - 1);
-
-                if (nextIndex !== currentIndex) {
-                    e.preventDefault();
-                    scrollToSection(nextIndex);
-                } else {
-                    wheelAccumulator.current = 0;
-                }
-            } else {
-                const prevIndex = Math.max(currentIndex - 1, 0);
-
-                if (prevIndex !== currentIndex) {
-                    e.preventDefault();
-                    scrollToSection(prevIndex);
-                } else {
-                    wheelAccumulator.current = 0;
-                }
-            }
-        };
-
-        const onTouchStart = (e: TouchEvent) => {
-            touchStartY.current = e.touches[0]?.clientY ?? null;
-        };
-
-        const onTouchEnd = (e: TouchEvent) => {
-            if (isAnimating.current) return;
-            if (touchStartY.current === null) return;
-
-            const endY = e.changedTouches[0]?.clientY ?? null;
-            if (endY === null) return;
-
-            const diff = touchStartY.current - endY;
-            touchStartY.current = null;
-
-            if (Math.abs(diff) < 50) return;
-
-            if (diff > 0 && isEnteringFirstFromAbove()) {
-                scrollToSection(0);
-                return;
-            }
-
-            if (!isInsideProjectsViewport()) return;
-
-            const currentIndex = getNearestSectionIndex();
-            const firstTop = getSectionTop(0);
-            const lastTop = getSectionTop(projects.length - 1);
-
-            if (diff < 0 && currentIndex === 0 && window.scrollY <= firstTop + 2) {
-                return;
-            }
-
-            if (
-                diff > 0 &&
-                currentIndex === projects.length - 1 &&
-                window.scrollY >= lastTop - 2
-            ) {
-                return;
-            }
-
-            if (diff > 0) {
-                const nextIndex = Math.min(currentIndex + 1, projects.length - 1);
-                if (nextIndex !== currentIndex) scrollToSection(nextIndex);
-            } else {
-                const prevIndex = Math.max(currentIndex - 1, 0);
-                if (prevIndex !== currentIndex) scrollToSection(prevIndex);
-            }
-        };
-
-        const onKeyDown = (e: KeyboardEvent) => {
-            const target = e.target as HTMLElement;
-
-            // ❌ no interferir con inputs
-            if (
-                target.tagName === "INPUT" ||
-                target.tagName === "TEXTAREA" ||
-                target.isContentEditable
-            ) {
-                return;
-            }
-
-            if (isAnimating.current) {
-                e.preventDefault();
-                return;
-            }
-
-            const key = e.key;
-
-            const goingDown =
-                key === "ArrowDown" ||
-                key === "PageDown" ||
-                (key === " " && !e.shiftKey);
-
-            const goingUp =
-                key === "ArrowUp" ||
-                key === "PageUp" ||
-                (key === " " && e.shiftKey);
-
-            // 👇 entrada desde arriba
-            if (goingDown && isEnteringFirstFromAbove()) {
-                e.preventDefault();
-                scrollToSection(0);
-                return;
-            }
-
-            if (!isInsideProjectsViewport()) return;
-
-            const currentIndex = getNearestSectionIndex();
-
-            if (goingDown) {
-                const nextIndex = Math.min(currentIndex + 1, projects.length - 1);
-
                 if (nextIndex !== currentIndex) {
                     e.preventDefault();
                     scrollToSection(nextIndex);
                 }
-            }
-
-            if (goingUp) {
+            } else {
                 const prevIndex = Math.max(currentIndex - 1, 0);
-
                 if (prevIndex !== currentIndex) {
                     e.preventDefault();
                     scrollToSection(prevIndex);
                 }
             }
-
-            // 👇 opcional pro (pero útil)
-            if (key === "Home") {
-                e.preventDefault();
-                scrollToSection(0);
-            }
-
-            if (key === "End") {
-                e.preventDefault();
-                scrollToSection(projects.length - 1);
-            }
         };
-        window.addEventListener("keydown", onKeyDown);
 
         window.addEventListener("scroll", onScroll, { passive: true });
         window.addEventListener("wheel", onWheel, { passive: false });
-        window.addEventListener("touchstart", onTouchStart, { passive: true });
-        window.addEventListener("touchend", onTouchEnd, { passive: true });
 
         return () => {
-            if (animationFrameRef.current) {
-                cancelAnimationFrame(animationFrameRef.current);
-            }
-
             window.removeEventListener("scroll", onScroll);
             window.removeEventListener("wheel", onWheel);
-            window.removeEventListener("touchstart", onTouchStart);
-            window.removeEventListener("touchend", onTouchEnd);
-            window.removeEventListener("keydown", onKeyDown);
         };
     }, []);
 
@@ -424,41 +284,57 @@ export default function ProjectsSection() {
                         sectionRefs.current[index] = el;
                     }}
                     data-index={index}
-                    className="h-screen flex overflow-hidden"
+                    className="md:h-screen flex overflow-hidden"
                     style={{
-                        background: `radial-gradient(ellipse 75% 65% at 50% 50%, ${project.bgFrom} 0%, ${project.bgTo} 65%)`
+                        background: `radial-gradient(ellipse 75% 65% at 50% 50%, ${project.bgFrom} 0%, ${project.bgTo} 65%)`,
                     }}
                 >
-                    <div className="max-w-[1400px] mx-auto px-6 w-full flex items-center">
-                        <div className="h-full grid md:grid-cols-2 gap-12 items-center">
+                    <div className="max-w-[1400px] mx-auto px-6 w-full flex md:items-center">
+                        <div className="w-full md:w-auto md:h-full grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+
+                            {/* TEXT */}
                             <motion.div
                                 variants={textVariants}
                                 initial="hidden"
                                 whileInView="show"
                                 viewport={{ amount: 0.55, once: false }}
                                 transition={{ duration: 0.7, ease: "easeOut" }}
-                                className={`pl-8 md:pl-16 pt-28 pb-28 ml-20 ${project.textColor}`}
+                                className={`
+                                    order-1 md:order-1
+                                    pl-6 md:pl-16
+                                    pt-12 md:pt-28
+                                    pb-12 md:pb-28
+                                    ml-0 md:ml-20
+                                    ${project.textColor}
+                                `}
                             >
-                                <p className="text-2xl opacity-60 mb-4">
+                                <p className="text-xl md:text-2xl opacity-60 mb-4">
                                     {project.subtitle}
                                 </p>
 
-                                <h2 className="text-3xl md:text-5xl font-light mb-6">
+                                <h2 className="text-2xl md:text-5xl font-light mb-6">
                                     {project.title}
                                 </h2>
 
-                                <p className="text-2xl opacity-70 mb-8">
+                                <p className="text-xl md:text-2xl opacity-70 mb-6 md:mb-8">
                                     {project.description}
                                 </p>
 
-                                <NeoButton size="sm" className="mt-24 pl-12 pr-12">
+                                <NeoButton size="sm" className="mt-8 md:mt-24 pl-12 pr-12">
                                     <span className="text-xl">→</span>
                                     <span>VER PUBLICACIONES</span>
                                 </NeoButton>
                             </motion.div>
 
+                            {/* IMAGE */}
                             <motion.div
-                                className="relative h-full flex items-center justify-center md:justify-end"
+                                className="
+                                    order-2 md:order-2
+                                    relative
+                                    h-[500px] md:h-full
+                                    flex md:items-center justify-center md:justify-end
+                                    mb-12 md:mb-0
+                                "
                                 variants={imageVariants}
                                 initial="hidden"
                                 whileInView="show"
@@ -467,6 +343,7 @@ export default function ProjectsSection() {
                             >
                                 {project.content}
                             </motion.div>
+
                         </div>
                     </div>
                 </section>
