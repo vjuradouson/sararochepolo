@@ -68,8 +68,6 @@ function updateConsent(consent: CookieConsent | null) {
 * 🎯 Marketing scripts (placeholder)
   */
 function loadMarketingScripts() {
-    console.log('🚀 Cargando scripts de marketing...');
-
     // Ejemplo:
     // - Meta Pixel
     // - LinkedIn Insight
