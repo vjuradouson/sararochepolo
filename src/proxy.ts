@@ -40,10 +40,7 @@ export default function middleware(req: NextRequest) {
     /** -------------------------
      * 1. HEADERS
      * ------------------------- */
-    const country =
-        req.headers.get('x-country') ??
-        req.headers.get('cf-ipcountry') ??
-        'US';
+    const country = req.headers.get('x-vercel-ip-country') ?? 'US';
 
     const acceptLanguage = req.headers.get('accept-language');
 
