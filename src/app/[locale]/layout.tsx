@@ -31,7 +31,7 @@ export async function generateMetadata({
 
   const { locale } = await params;
 
-  const { locales, defaultLocale } = ROUTING;
+  const { locales } = ROUTING;
 
   const t = await getTranslations({ locale });
 
@@ -48,7 +48,7 @@ export async function generateMetadata({
             `${BASE_URL}/${l}`
           ])
         ),
-        'x-default': `${BASE_URL}/${defaultLocale}`,
+        'x-default': `${BASE_URL}/es`
       },
     },
   };
