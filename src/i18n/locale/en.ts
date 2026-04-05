@@ -3,7 +3,24 @@ export default {
         portfolio: {
             owner: "Sara Roche Polo",
             title: "Sara Roche Polo · Portfolio",
-            description: "Personal portfolio of Sara Roche Polo."
+            description: "Product Designer UX/ UI with 3 + years of experience transforming complex needs into intuitive and effective digital experiences.",
+            seo: {
+                schema: {
+                    person: {
+                        job_title: "Product Designer · UX/UI",
+                        description: "Product Designer specialized in UX/UI"
+                    },
+                    website: {
+                        name: "Sara Roche Polo · Portfolio"
+                    },
+                    profile: {
+                        name: "Sara Roche Polo · Product Designer"
+                    },
+                    creative_work: {
+                        "name": "Sara Roche Polo UX/UI Portfolio"
+                    }
+                }
+            }
         },
         header: {
             links: {
@@ -29,8 +46,8 @@ export default {
                 description: "Product Designer UX/ UI with 3 + years of experience transforming complex needs into intuitive and effective digital experiences."
             },
             hero: {
-                product_designer: "Product Designer · UX/UI",
-                h1: "Transforming<line></line>complex needs<line></line>into <highlight>clear experiences</highlight><line></line><highlight>and functional</highlight>",
+                h1: "Product Designer · UX/UI",
+                product_designer: "Transforming <line></line>complex needs <line></line>into <highlight>clear experiences </highlight><line></line><highlight>and functional</highlight>",
                 description: "Product Designer with over 3 years of experience <highlight>crafting intuitive interfaces and consistent visual systems.</highlight> I combine UX, UI, and visual communication to create <highlight>digital and physical solutions aligned with both business goals and user needs.</highlight>"
             },
             services: {
@@ -43,16 +60,16 @@ export default {
                 title: "About Me | Sara Roche Polo",
                 description: "Learn more about Sara Roche Polo, a Product Designer UX/UI focused on creating intuitive solutions and consistent visual systems."
             },
-            header: "About Me",
-            h1: "Hi, I'm Sara"
+            h1: "About Me",
+            header: "Hi, I'm Sara"
         },
         contact: {
             seo: {
                 title: "Contact | Sara Roche Polo",
                 description: "Get in touch with Sara Roche Polo, a Product Designer UX/UI open to new opportunities and digital projects."
             },
-            header: "Contact",
-            h1: "Let's talk",
+            h1: "Contact",
+            header: "Let's talk",
             description: "I'm available for product design, UX/UI, and visual systems projects. If you're building a digital product or looking to improve the user experience, I'd love to help. I typically respond within 24-48 hours.",
             form: {
                 title: "Tell me about your project",

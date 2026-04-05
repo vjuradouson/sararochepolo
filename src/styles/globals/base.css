@@ -1,13 +1,28 @@
-html,
-body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+@layer base {
+
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background: var(--color-background);
+        color: var(--color-foreground);
+        font-family: var(--font-family);
+        font-weight: 200;
+    }
 }
 
-body {
-    background: var(--color-background);
-    color: var(--color-foreground);
-    font-family: var(--font-family);
-    font-weight: 200;
+@layer components {
+    .container-xxl {
+        @apply max-w-[1600px] mx-auto px-4 md:px-6;
+        width: 100%;
+    }
+
+    .container-xl {
+        @apply max-w-[1400px] mx-auto px-4 md:px-6;
+        width: 100%;
+    }
 }

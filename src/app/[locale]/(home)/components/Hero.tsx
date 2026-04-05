@@ -35,7 +35,7 @@ export default function Hero() {
     return (
         <section className="w-full py-4 md:py-16">
 
-            <div className="max-w-[1400px] mx-auto px-6">
+            <div className="container-xxl mx-auto lg:px-6">
 
                 <motion.div
                     className="overflow-hidden relative 
@@ -57,34 +57,35 @@ export default function Hero() {
                         />
                     </div>
 
-                    {/* 👉 WRAPPER CON PADDING */}
+                    {/* WRAPPER */}
                     <div className="h-full">
 
-                        <div className="grid md:grid-cols-2 gap-12 items-center h-full">
+                        <div className="grid lg:grid-cols-2 gap-12 items-center h-full">
 
                             {/* LEFT */}
-                            <div className="order-1 md:order-1 pl-8 md:pl-16 pt-6 md:pb-28 md:ml-20 z-10">                                <motion.p
-                                variants={item}
-                                className="uppercase tracking-[0.3em] text-xl mb-6"
-                            >
-                                {t("home.hero.product_designer")}
-                            </motion.p>
-
+                            <div className="order-1 pl-8 pt-6 lg:ml-18 lg:pb-36 md:pt-36 px-6 z-10">
                                 <motion.h1
                                     variants={item}
-                                    className="text-2xl md:text-5xl leading-tight text-gray-900"
+                                    className="uppercase tracking-[0.3em] text-lg md:text-2xl mb-6"
                                 >
-                                    {t.rich("home.hero.h1", {
-                                        line: () => <br />,
+                                    {t("home.hero.h1")}
+                                </motion.h1>
+
+                                <motion.p
+                                    variants={item}
+                                    className="text-xl lg:text-5xl leading-tight text-gray-900"
+                                >
+                                    {t.rich("home.hero.product_designer", {
+                                        line: () => <br className="hidden lg:block" />,
                                         highlight: (chunks) => (
                                             <span className="italic font-bold">{chunks}</span>
                                         )
                                     })}
-                                </motion.h1>
+                                </motion.p>
 
                                 <motion.div variants={item} className="mt-8">
                                     <NeoButton size="sm">
-                                        <span className="text-xl">→</span>
+                                        <span className="text-2xl">→</span>
                                         <span>CONTACTO</span>
                                     </NeoButton>
                                 </motion.div>
@@ -92,7 +93,7 @@ export default function Hero() {
 
                             {/* RIGHT */}
                             <motion.div variants={item}
-                                className="mb-12 md:mb-0 order-2 md:order-2 relative h-[500px] md:h-[90%]">
+                                className="mb-12 md:mb-0 order-2 relative h-[500px] lg:h-[90%]">
                                 <Image
                                     src="/media/home/hero/apps_hero.png"
                                     alt={t("portfolio.owner")}

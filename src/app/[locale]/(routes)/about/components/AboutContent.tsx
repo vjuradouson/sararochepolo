@@ -68,7 +68,7 @@ const imageVariant: Variants = {
 
 export default function AboutContent({ data }: Props) {
     return (
-        <section className="mx-auto max-w-7xl px-6 md:px-12 py-24 md:py-16">
+        <section className="container-xl mx-auto px-6 py-8 lg:py-16">
             {/* Heading */}
             <motion.div
                 variants={container}
@@ -77,13 +77,13 @@ export default function AboutContent({ data }: Props) {
                 viewport={{ once: true, amount: 0.6 }}
                 className="mb-20"
             >
-                <motion.p variants={item} className="text-xl uppercase tracking-widest text-brand-muted mb-4">
+                <motion.h1 variants={item} className="text-xl uppercase tracking-widest text-brand-muted mb-4">
                     {data.header}
-                </motion.p>
-
-                <motion.h1 variants={item} className="text-4xl tracking-tight sm:text-5xl">
-                    {data.title}
                 </motion.h1>
+
+                <motion.p variants={item} className="text-4xl tracking-tight sm:text-5xl">
+                    {data.title}
+                </motion.p>
             </motion.div>
 
             {/* Content */}

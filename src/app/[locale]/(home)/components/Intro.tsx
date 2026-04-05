@@ -32,40 +32,94 @@ export default function Intro() {
     const t = useTranslations("app");
 
     return (
-        <section className="w-full py-20">
+        <section className="w-full py-24 mb-16">
             <motion.div
                 variants={container}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true, margin: "-100px" }}
-                className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16"
+                className="container-xl mx-auto px-6 grid md:grid-cols-2 gap-16"
             >
 
                 {/* LEFT IMAGE */}
-                <motion.div variants={item} className="order-1 md:order-1 relative w-full">
-                    <div className="relative w-full aspect-square rounded-2xl overflow-hidden bg-gray-100
-                     rounded-card shadow-card
-                            ">
-                        <Image
-                            src="/media/home/intro/sara_moleskine.png"
-                            alt="profile"
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                            quality={90}
-                            fill
-                            className="object-cover scale-105"
-                        />
-                    </div>
+                <motion.div
+                    variants={item}
+                    className="order-1 md:order-1 relative w-full"
+                >
+                    <motion.div
+                        initial="rest"
+                        animate="rest"
+                        whileHover="hover"
+                        className="relative w-full aspect-square rounded-2xl bg-gray-100 rounded-card shadow-card"
+                    >
+
+                        {/* CARTEL (DETRÁS SIEMPRE) */}
+                        <motion.div
+                            variants={{
+                                rest: {
+                                    y: 0,
+                                    boxShadow: "0 0 0 rgba(0,0,0,0)",
+                                    transition: {
+                                        type: "spring",
+                                        stiffness: 400,
+                                        damping: 18,
+                                        mass: 0.8
+                                    }
+                                },
+                                hover: {
+                                    y: 80,
+                                    boxShadow: "0 12px 18px -6px rgba(0,0,0,0.3), 0 20px 20px -8px rgba(0,0,0,0.3)",
+                                    transition: {
+                                        type: "spring",
+                                        stiffness: 400,
+                                        damping: 18,
+                                        mass: 0.8
+                                    }
+                                }
+                            }}
+                            className="
+                                absolute
+                                inset-0
+                                bg-[var(--color-yellow)]
+                                rounded-2xl
+                                z-0
+                                flex
+                                items-end
+                                justify-center
+                                pb-6
+                                text-3xl
+                                italic
+                                shadow-card
+                            "
+                        >
+                            Hi there!
+                        </motion.div>
+
+                        {/* IMAGEN (ENCIMA + LIFT) */}
+                        <motion.div
+                            variants={{
+                                rest: { y: 0, scale: 1 },
+                            }}
+                            className="absolute inset-0 rounded-2xl overflow-hidden z-10"
+                        >
+                            <Image
+                                src="/media/home/intro/sara_moleskine.png"
+                                alt="profile"
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                quality={90}
+                                fill
+                                className="object-cover scale-105"
+                            />
+                        </motion.div>
+
+                    </motion.div>
                 </motion.div>
 
-                {/* RIGHT CONTENT */}
-                <div className="order-2 md:order-2 text-4xl">
+                {/* RIGHT CONTENT  */}
+                <div className="order-2 md:order-2 text-xl">
                     <motion.p
                         variants={item}
-                        className="
-                            text-[18px] md:text-[20px]
-                            leading-[1.7]
-                            tracking-[0.01em]
-                        "
+                        className="text-xl md:text-2xlleading-[1.7] tracking-[0.01em]"
                     >
                         {t.rich("home.hero.description", {
                             line: () => <br />,
@@ -77,11 +131,9 @@ export default function Intro() {
                         })}
                     </motion.p>
 
-                    {/* TOOLS */}
                     <motion.div
                         variants={item}
-                        className="mt-12 md:mt-16 md:ml-12 grid grid-cols-2 gap-x-12 gap-y-4 text-sm tracking-[0.2em]"
-                    >
+                        className="mt-12 md:mt-16 md:ml-12 grid grid-cols-2 gap-x-12 gap-y-4 tracking-[0.2em]">
                         {[
                             "ADOBE PHOTOSHOP",
                             "ADOBE ILLUSTRATOR",
@@ -90,13 +142,32 @@ export default function Intro() {
                             "FIGMA",
                             "WORDPRESS",
                         ].map((tool) => (
-                            <div key={tool} className="flex items-center gap-3">
-                                <span className="w-2 h-2 rounded-full bg-yellow" />
-                                <span>{tool}</span>
+                            <div key={tool} className="group relative inline-flex items-center cursor-pointer w-fit pl-5">
+
+                                {/* LINEA INICIAL (antes era el dot) */}
+                                <span className="
+                                    absolute left-0 bottom-[2px]
+                                    w-2 h-[4px] bg-yellow z-10
+                                " />
+
+                                {/* TEXTO */}
+                                <span className="relative z-10 tracking-[0.2em] text-sm md:text-lg">
+                                    {tool}
+                                </span>
+
+                                {/* LINEA QUE CRECE */}
+                                <span className="
+                                    absolute left-0 bottom-[2px]
+                                    h-[4px] bg-yellow
+                                    w-full
+                                    origin-left
+                                    scale-x-0
+                                    transition-transform duration-[1400ms] ease-[cubic-bezier(0.2,0,0,1)]
+                                    group-hover:scale-x-100
+                                " />
                             </div>
                         ))}
                     </motion.div>
-
                 </div>
 
             </motion.div>

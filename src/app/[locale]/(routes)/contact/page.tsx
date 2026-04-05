@@ -35,8 +35,8 @@ export default async function ContactPage({
     return (
         <ContactContent
             data={{
-                header: t("app.contact.header"),
-                title: t("app.contact.h1"),
+                header: t("app.contact.h1"),
+                title: t("app.contact.header"),
                 description: t("app.contact.description"),
                 formTitle: t("app.contact.form.title"),
                 contactLinks,

@@ -3,7 +3,23 @@ export default {
         portfolio: {
             owner: "Sara Roche Polo",
             title: "Sara Roche Polo · Portfolio",
-            description: "Portfolio personal de Sara Roche Polo."
+            description: "Diseñadora de Producto UX/UI con más de 3 años de experiencia transformando necesidades complejas en soluciones intuitivas, combinando diseño digital y comunicación visual.",
+            seo: {
+                schema: {
+                    person: {
+                        job_title: "Diseñadora de Producto · UX/UI",
+                    },
+                    website: {
+                        name: "Sara Roche Polo · Portfolio"
+                    },
+                    profile: {
+                        name: "Sara Roche Polo · Diseñadora UX/UI"
+                    },
+                    creative_work: {
+                        "name": "Portfolio UX/UI de Sara Roche Polo"
+                    }
+                }
+            }
         },
         header: {
             links: {
@@ -29,8 +45,8 @@ export default {
                 description: "Diseñadora de Producto UX/UI con más de 3 años de experiencia transformando necesidades complejas en soluciones intuitivas, combinando diseño digital y comunicación visual."
             },
             hero: {
-                product_designer: "Diseñadora de Producto · UX/UI",
-                h1: "Transformando<line></line>necesidades complejas<line></line>en <highlight>experiencias claras</highlight><line></line><highlight>y funcionales</highlight>",
+                h1: "Diseñadora de Producto · UX/UI",
+                product_designer: "Transformando <line></line>necesidades complejas <line></line>en <highlight>experiencias claras </highlight><line></line><highlight>y funcionales</highlight>",
                 description: "Diseñadora de producto con más de 3 años de experiencia <highlight>diseñando interfaces intuitivas y sistemas visuales consistentes.</highlight> Combino UX, UI y comunicación visual para crear <highlight>soluciones digitales y físicas alineadas con negocio y usuario.</highlight>"
             },
             services: {
@@ -51,8 +67,8 @@ export default {
                 title: "Contacto | Sara Roche Polo",
                 description: "Contacta con Sara Roche Polo, Diseñadora de Producto UX/UI disponible para nuevas oportunidades y proyectos digitales."
             },
-            header: "Contacto",
-            h1: "Hablemos",
+            h1: "Contacto",
+            header: "Hablemos",
             description: "Estoy disponible para proyectos de diseño de producto, UX/UI y sistemas visuales.Si estás construyendo un producto digital o necesitas mejorar la experiencia de usuario, estaré encantada de ayudarte. Respondo normalmente en 24–48h.",
             form: {
                 title: "Cuéntame sobre tu proyecto",

@@ -36,7 +36,6 @@ const projects: Project[] = [
                 sizes="(max-width: 768px) 100vw, 50vw"
                 quality={90}
                 className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)]"
-                priority
             />
         ),
     },
@@ -57,7 +56,6 @@ const projects: Project[] = [
                 sizes="(max-width: 768px) 100vw, 50vw"
                 quality={90}
                 className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)]"
-                priority
             />
         ),
     },
@@ -309,12 +307,74 @@ export default function ProjectsSection() {
             }
         };
 
+        const onKeyDown = (e: KeyboardEvent) => {
+            const firstTop = getSectionTop(0);
+            const lastTop = getSectionTop(projects.length - 1);
+
+            if (isAnimating.current) return;
+
+            let delta = 0;
+
+            if (e.key === "ArrowDown" || e.key === "PageDown" || e.key === " ") {
+                delta = 100;
+            }
+
+            if (e.key === "ArrowUp" || e.key === "PageUp") {
+                delta = -100;
+            }
+
+            if (delta === 0) return;
+
+            if (delta > 0 && isEnteringFirstFromAbove()) {
+                e.preventDefault();
+                scrollToSection(0);
+                return;
+            }
+
+            if (delta < 0 && isEnteringLastFromBelow()) {
+                e.preventDefault();
+                scrollToSection(projects.length - 1);
+                return;
+            }
+
+            if (!isInsideProjectsViewport()) return;
+
+            const currentIndex = activeIndexRef.current;
+
+            if (delta < 0 && currentIndex === 0 && window.scrollY <= firstTop + 2) {
+                return;
+            }
+
+            if (
+                delta > 0 &&
+                currentIndex === projects.length - 1 &&
+                window.scrollY >= lastTop - 2
+            ) {
+                return;
+            }
+
+            if (delta > 0) {
+                const nextIndex = Math.min(currentIndex + 1, projects.length - 1);
+                if (nextIndex !== currentIndex) {
+                    e.preventDefault();
+                    scrollToSection(nextIndex);
+                }
+            } else {
+                const prevIndex = Math.max(currentIndex - 1, 0);
+                if (prevIndex !== currentIndex) {
+                    e.preventDefault();
+                    scrollToSection(prevIndex);
+                }
+            }
+        };
+
         window.addEventListener("scroll", onScroll, { passive: true });
         window.addEventListener("wheel", onWheel, { passive: false });
-
+        window.addEventListener("keydown", onKeyDown);
         return () => {
             window.removeEventListener("scroll", onScroll);
             window.removeEventListener("wheel", onWheel);
+            window.removeEventListener("keydown", onKeyDown);
         };
     }, []);
 
@@ -332,8 +392,8 @@ export default function ProjectsSection() {
                         background: `radial-gradient(ellipse 75% 65% at 50% 50%, ${project.bgFrom} 0%, ${project.bgTo} 65%)`,
                     }}
                 >
-                    <div className="max-w-[1400px] mx-auto px-6 w-full flex md:items-center">
-                        <div className="w-full md:w-auto md:h-full grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+                    <div className="container-xl mx-auto px-6 flex md:items-center">
+                        <div className="w-full md:h-full grid md:grid-cols-2 gap-8 md:gap-12 items-center">
 
                             {/* TEXT */}
                             <motion.div
@@ -344,22 +404,21 @@ export default function ProjectsSection() {
                                 transition={{ duration: 0.7, ease: "easeOut" }}
                                 className={`
                                     order-1 md:order-1
-                                    pl-6 md:pl-16
                                     pt-12 md:pt-28
                                     pb-12 md:pb-28
-                                    ml-0 md:ml-20
+                                    ml-0
                                     ${project.textColor}
                                 `}
                             >
-                                <p className="text-xl md:text-2xl opacity-60 mb-4">
+                                <p className="text-xl md:text-3xl opacity-60 mb-4">
                                     {project.subtitle}
                                 </p>
 
-                                <h2 className="text-2xl md:text-5xl font-light mb-6">
+                                <h2 className="text-2xl md:text-5xl font-light mb-12">
                                     {project.title}
                                 </h2>
 
-                                <p className="text-xl md:text-2xl opacity-70 mb-6 md:mb-8">
+                                <p className="text-xl md:text-3xl opacity-70 mb-6 md:mb-8">
                                     {project.description}
                                 </p>
 
@@ -376,6 +435,7 @@ export default function ProjectsSection() {
                                     relative
                                     flex items-center justify-center
                                     mb-12 md:mb-0
+                                    lg:w-[120%]
                                     ${project.parentClass}
                                 `}
 

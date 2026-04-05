@@ -8,7 +8,7 @@ import { useLocale } from 'next-intl'
 import { PATHNAMES } from '@/i18n/routing';
 import { LOCALES } from '@/lib/config';
 import { usePathname } from "next/navigation";
-
+import { getPath } from "@/i18n/getPath";
 interface MobileMenuProps {
     links: { href: string; label: string }[];
 }
@@ -70,12 +70,7 @@ export function HeaderMobileMenu({ links }: MobileMenuProps) {
                     >
                         <ul className="flex flex-col px-6 py-4 space-y-4">
                             {links.map(({ href, label }) => {
-                                const routeConfig = PATHNAMES[href as keyof typeof PATHNAMES];
-
-                                const localizedHref =
-                                    typeof routeConfig === "string"
-                                        ? routeConfig
-                                        : routeConfig[locale];
+                                const localizedHref = getPath(href, locale);
 
                                 const isActive =
                                     normalizedPathname === localizedHref ||
