@@ -80,7 +80,7 @@ export default function PortfolioPreview() {
                                         {project.id}
                                     </span>
 
-                                    <h3 className="text-3xl md:text-4xl group-hover:italic transition-all">
+                                    <h3 className="text-3xl md:text-4xl transition-all">
                                         {project.title}
                                     </h3>
                                 </div>

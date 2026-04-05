@@ -49,7 +49,7 @@ export default function Intro() {
                         <Image
                             src="/media/home/intro/sara_moleskine.png"
                             alt="profile"
-                            sizes="100vw"
+                            sizes="(max-width: 768px) 100vw, 50vw"
                             quality={90}
                             fill
                             className="object-cover scale-105"

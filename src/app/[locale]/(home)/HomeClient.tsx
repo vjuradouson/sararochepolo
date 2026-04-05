@@ -4,9 +4,9 @@ import { useState, useEffect } from 'react'
 import Hero from './components/Hero'
 import Intro from './components/Intro'
 import ProjectsSection from './components/ProjectsSection'
-import ServicesSection from './components/ServicesSection'
+/*import ServicesSection from './components/ServicesSection'
 import MasonryGrid from './components/MasonryGrid'
-import StickySplitSection from './components/StickySplitSection'
+import StickySplitSection from './components/StickySplitSection'*/
 import PortfolioPreview from './components/PortfolioPreview'
 
 export default function HomeClient() {
@@ -30,7 +30,7 @@ export default function HomeClient() {
             <Intro key={refreshKey + 1} />
             <ProjectsSection key={refreshKey + 2} />
             {/*
-            <ServicesSection key={refreshKey + 2} />
+            <ServicesSection key={refreshKey + 3} />
 <StickySplitSection key={refreshKey + 3} />
 <MasonryGrid key={refreshKey + 4} />
             <PortfolioPreview key={refreshKey + 5} />

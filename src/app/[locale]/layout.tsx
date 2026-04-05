@@ -48,7 +48,7 @@ export async function generateMetadata({
             `${BASE_URL}/${l}`
           ])
         ),
-        'x-default': `${BASE_URL}/es`
+        'x-default': `${BASE_URL}`
       },
     },
   };

@@ -65,7 +65,7 @@ export default function Hero() {
                             {/* LEFT */}
                             <div className="order-1 md:order-1 pl-8 md:pl-16 pt-6 md:pb-28 md:ml-20 z-10">                                <motion.p
                                 variants={item}
-                                className="uppercase tracking-[0.3em] text-xl text-gray-500 mb-6"
+                                className="uppercase tracking-[0.3em] text-xl mb-6"
                             >
                                 {t("home.hero.product_designer")}
                             </motion.p>
@@ -97,7 +97,7 @@ export default function Hero() {
                                     src="/media/home/hero/apps_hero.png"
                                     alt={t("portfolio.owner")}
                                     fill
-                                    sizes="100vw"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
                                     quality={90}
                                     className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)]"
                                     priority

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import NeoButton from "@/components/ui/NeoButton";
+import Image from "next/image";
 
 type Project = {
     id: number;
@@ -12,6 +13,7 @@ type Project = {
     bgFrom: string;
     bgTo: string;
     textColor: string;
+    parentClass: string,
     content: React.ReactNode;
 };
 
@@ -25,11 +27,16 @@ const projects: Project[] = [
         bgFrom: "#A3A3A3",
         bgTo: "#404040",
         textColor: "text-white",
+        parentClass: "h-[500px] md:h-[75vh] md:min-h-[500px]",
         content: (
-            <img
-                src="/media/home/hero/apps_hero.png"
+            <Image
+                src="/media/home/projects/meta_adds_igualarte.png"
                 alt="project1"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                quality={90}
                 className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)]"
+                priority
             />
         ),
     },
@@ -41,11 +48,16 @@ const projects: Project[] = [
         bgFrom: "#EEEDE9",
         bgTo: "#FFEBC0",
         textColor: "text-black",
+        parentClass: "h-[500px] md:h-full md:min-h-[500px]",
         content: (
-            <img
-                src="/media/home/hero/apps_hero.png"
+            <Image
+                src="/media/home/projects/figma_pet_buddy.png"
                 alt="project2"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                quality={90}
                 className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)]"
+                priority
             />
         ),
     },
@@ -58,10 +70,14 @@ const projects: Project[] = [
         bgFrom: "#F6F2BA",
         bgTo: "#B0CCE4",
         textColor: "text-black",
+        parentClass: "h-[500px] md:h-full md:min-h-[500px]",
         content: (
-            <img
-                src="/media/home/hero/apps_hero.png"
+            <Image
+                src="/media/home/projects/cars_ilustration.png"
                 alt="project3"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                quality={90}
                 className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)]"
             />
         ),
@@ -150,6 +166,27 @@ export default function ProjectsSection() {
         return visibilityRatio > 0.4 && firstNotAligned;
     };
 
+    const isEnteringLastFromBelow = () => {
+        const wrapper = wrapperRef.current;
+        const lastSection = sectionRefs.current[projects.length - 1];
+        if (!wrapper || !lastSection) return false;
+
+        const wrapperRect = wrapper.getBoundingClientRect();
+
+        const visibleHeight =
+            Math.min(wrapperRect.bottom, window.innerHeight) -
+            Math.max(wrapperRect.top, 0);
+
+        const visibilityRatio = visibleHeight / window.innerHeight;
+
+        const scrollY = window.scrollY;
+        const lastTop = lastSection.offsetTop;
+
+        const lastNotAligned = scrollY > lastTop + 2;
+
+        return visibilityRatio > 0.4 && lastNotAligned;
+    };
+
     const scrollToSection = (index: number) => {
         const target = sectionRefs.current[index];
         if (!target) return;
@@ -224,9 +261,15 @@ export default function ProjectsSection() {
                 return;
             }
 
+            if (e.deltaY < 0 && isEnteringLastFromBelow()) {
+                e.preventDefault();
+                scrollToSection(projects.length - 1);
+                return;
+            }
+
             if (!isInsideProjectsViewport()) return;
 
-            const currentIndex = getNearestSectionIndex();
+            const currentIndex = activeIndexRef.current;
 
             if (e.deltaY < 0 && currentIndex === 0 && window.scrollY <= firstTop + 2) {
                 wheelAccumulator.current = 0;
@@ -328,13 +371,14 @@ export default function ProjectsSection() {
 
                             {/* IMAGE */}
                             <motion.div
-                                className="
+                                className={`
                                     order-2 md:order-2
                                     relative
-                                    h-[500px] md:h-full
-                                    flex md:items-center justify-center md:justify-end
+                                    flex items-center justify-center
                                     mb-12 md:mb-0
-                                "
+                                    ${project.parentClass}
+                                `}
+
                                 variants={imageVariants}
                                 initial="hidden"
                                 whileInView="show"
