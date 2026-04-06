@@ -5,7 +5,7 @@ import Footer from "@/components/sections/Footer";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale, getTranslations } from 'next-intl/server';
 import { ROUTING } from '@/i18n/routing';
-import { BASE_URL, LOCALES } from '@/lib/config';
+import { BASE_URL, LOCALES, LocaleCountryMap } from '@/lib/config';
 import { ReactNode } from 'react';
 import CookieBanner from '@/components/CookieBanner';
 import CookieScriptsClient from '@/components/CookieScriptsClient';
@@ -38,7 +38,25 @@ export async function generateMetadata({
   return {
     title: t("app.portfolio.title"),
     description: t("app.portfolio.description"),
-
+    keywords: t("app.portfolio.seo.keywords"),
+    authors: [
+      { name: t("app.portfolio.owner"), url: BASE_URL }
+    ],
+    openGraph: {
+      title: t("app.portfolio.title"),
+      description: t("app.portfolio.description"),
+      url: `${BASE_URL}/${locale}`,
+      siteName: t("app.portfolio.owner"),
+      images: [
+        {
+          url: `${BASE_URL}/media/about/profile.png`,
+          width: 1200,
+          height: 630,
+        }
+      ],
+      locale: LocaleCountryMap[locale] || 'en_US',
+      type: "website",
+    },
     alternates: {
       canonical: `${BASE_URL}/${locale}`,
       languages: {

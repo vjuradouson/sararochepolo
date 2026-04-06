@@ -11,6 +11,11 @@ export const LANGUAGE_META: Record<Locale, {}> = {
     en: {},
 };
 
+export const LocaleCountryMap: Record<string, string> = {
+    es: "es_ES",
+    en: "en_US"
+};
+
 export const COUNTRY_LOCALE_MAP: Record<string, string> = {
     // Spanish-speaking countries
     ES: 'es', // Spain

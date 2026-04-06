@@ -1,13 +1,26 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import ContactContent from "./ContactContent";
+import { BASE_URL } from '@/lib/config';
+import { getPath } from "@/i18n/getPath";
+import { ROUTES } from "@/constants/routes";
 
-export async function generateMetadata(): Promise<Metadata> {
-    const t = await getTranslations("app.contact");
+export async function generateMetadata({
+    params
+}: {
+    params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations();
 
     return {
-        title: t("seo.title"),
-        description: t("seo.description"),
+        title: t("app.contact.seo.title"),
+        description: t("app.contact.seo.description"),
+        openGraph: {
+            title: t("app.contact.seo.title"),
+            description: t("app.contact.seo.description"),
+            url: `${BASE_URL}/${locale}${getPath(ROUTES.CONTACT, locale)}`,
+        }
     };
 }
 

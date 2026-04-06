@@ -5,7 +5,7 @@ export default async function Footer() {
 
     return (
         <footer className="border-t border-neutral-200 py-12 md:py-16 text-brand-muted">
-            <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="container-xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
 
                 {/* Left */}
                 <div className="text-center md:text-left">

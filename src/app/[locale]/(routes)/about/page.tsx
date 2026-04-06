@@ -3,13 +3,26 @@ import { getTranslations } from "next-intl/server";
 import AboutContent from "./components/AboutContent";
 import JsonLd from "@/components/seo/JsonLd";
 import { getAboutPersonSchema } from "@/lib/seo/schema/about/person";
+import { BASE_URL } from '@/lib/config';
+import { getPath } from "@/i18n/getPath";
+import { ROUTES } from "@/constants/routes";
 
-export async function generateMetadata(): Promise<Metadata> {
-    const t = await getTranslations("app.about");
+export async function generateMetadata({
+    params
+}: {
+    params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+    const { locale } = await params;
+    const t = await getTranslations();
 
     return {
-        title: t("seo.title"),
-        description: t("seo.description"),
+        title: t("app.about.seo.title"),
+        description: t("app.about.seo.description"),
+        openGraph: {
+            title: t("app.about.seo.title"),
+            description: t("app.about.seo.description"),
+            url: `${BASE_URL}/${locale}${getPath(ROUTES.ABOUT, locale)}`,
+        }
     };
 }
 
@@ -21,7 +34,7 @@ export default async function AboutPage({
     const { locale } = await params;
     const t = await getTranslations({ locale });
     const personSchema = getAboutPersonSchema({ t, locale });
-    
+
     return (
         <>
             <JsonLd data={personSchema} />

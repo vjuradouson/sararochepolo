@@ -3,8 +3,9 @@ export default {
         portfolio: {
             owner: "Sara Roche Polo",
             title: "Sara Roche Polo · Portfolio",
-            description: "Product Designer UX/ UI with 3 + years of experience transforming complex needs into intuitive and effective digital experiences.",
+            description: "Product Designer UX/UI based in Zaragoza with 3+ years of experience transforming complex needs into intuitive and effective digital experiences.",
             seo: {
+                keywords: "Sara Roche Polo, Product Designer, UX/UI, Zaragoza, Portfolio, Digital Design, Visual Communication",
                 schema: {
                     person: {
                         job_title: "Product Designer · UX/UI",
@@ -18,6 +19,16 @@ export default {
                     },
                     creative_work: {
                         "name": "Sara Roche Polo UX/UI Portfolio"
+                    },
+                    professional_service: {
+                        address: {
+                            addressLocality: "Zaragoza",
+                            addressRegion: "Aragón",
+                            addressCountry: "ES"
+                        }
+                    },
+                    service: {
+                        name: "UX UI Design Services in Zaragoza",
                     }
                 }
             }
@@ -34,7 +45,7 @@ export default {
         },
         footer: {
             left: {
-                designer: "Product Designer · UX/UI"
+                designer: "Product Designer · UX/UI based in Zaragoza"
             },
             center: {
                 linkedin: "LinkedIn"
@@ -42,8 +53,8 @@ export default {
         },
         home: {
             seo: {
-                title: "Sara Roche Polo | Product Designer UX/UI",
-                description: "Product Designer UX/ UI with 3 + years of experience transforming complex needs into intuitive and effective digital experiences."
+                title: "Sara Roche Polo | Product Designer UX/UI based in Zaragoza",
+                description: "Product Designer UX/ UI based in Zaragoza with 3 + years of experience transforming complex needs into intuitive and effective digital experiences."
             },
             hero: {
                 h1: "Product Designer · UX/UI",
