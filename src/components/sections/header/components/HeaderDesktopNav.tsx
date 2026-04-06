@@ -7,6 +7,7 @@ import { useLocale } from 'next-intl'
 import { PATHNAMES } from '@/i18n/routing';
 import { LOCALES } from '@/lib/config';
 import { usePathname } from "next/navigation";
+import { useSmoothScrollToTop } from "@/hooks/useSmoothScrollToTop";
 
 interface DesktopNavProps {
     links: { href: string; label: string }[];
@@ -28,6 +29,29 @@ export function HeaderDesktopNav({ links }: DesktopNavProps) {
     };
 
     const normalizedPathname = normalizePath(pathname);
+    const { smoothScrollToTop, isScrolling } = useSmoothScrollToTop();
+
+    const handleClick = (href: string) => (e: React.MouseEvent) => {
+        const localeRegex = /^\/[a-z]{2}/;
+        const normalizedPath = pathname.replace(localeRegex, '') || '/';
+
+        const routeConfig = PATHNAMES[href as keyof typeof PATHNAMES];
+
+        const localizedHref =
+            typeof routeConfig === "string"
+                ? routeConfig
+                : routeConfig[locale];
+
+        console.log(localizedHref, normalizedPath);
+
+        if (localizedHref === normalizedPath) {
+            e.preventDefault();
+
+            if (!isScrolling.current) {
+                smoothScrollToTop();
+            }
+        }
+    };
 
     return (
         <ul className="flex items-center gap-6">
@@ -65,6 +89,7 @@ export function HeaderDesktopNav({ links }: DesktopNavProps) {
 
                         <Link
                             href={href}
+                            onClick={handleClick(href)}
                             className={`relative z-10 px-4 py-1 text-body-lg rounded-full transition-all duration-200 
                                 ${isActive
                                     ? "text-[#0B3C49]"

@@ -2,9 +2,11 @@
 
 import { usePathname } from "next/navigation";
 import { Link } from "@/i18n/navigation";
+import { useSmoothScrollToTop } from "@/hooks/useSmoothScrollToTop";
 
 export default function HeaderLogoClient({ ownerName }: { ownerName: string }) {
     const pathname = usePathname();
+    const { smoothScrollToTop, isScrolling } = useSmoothScrollToTop();
 
     const handleLogoClick = (e: React.MouseEvent) => {
         const localeRegex = /^\/[a-z]{2}/;
@@ -12,7 +14,9 @@ export default function HeaderLogoClient({ ownerName }: { ownerName: string }) {
 
         if (normalizedPath === "/") {
             e.preventDefault();
-            window.dispatchEvent(new Event('reanimate-home'));
+            if (!isScrolling.current) {
+                smoothScrollToTop();
+            }
         }
     };
 

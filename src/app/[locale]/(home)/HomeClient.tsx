@@ -7,7 +7,6 @@ import ProjectsSection from './components/ProjectsSection'
 /*import ServicesSection from './components/ServicesSection'
 import MasonryGrid from './components/MasonryGrid'
 import StickySplitSection from './components/StickySplitSection'*/
-import PortfolioPreview from './components/PortfolioPreview'
 
 export default function HomeClient() {
     const [refreshKey, setRefreshKey] = useState(0)
@@ -17,18 +16,18 @@ export default function HomeClient() {
             setRefreshKey(prev => prev + 1)
         }
 
-        window.addEventListener('reanimate-home', handler)
+        window.addEventListener('reanimate-effects', handler)
 
         return () => {
-            window.removeEventListener('reanimate-home', handler)
+            window.removeEventListener('reanimate-effects', handler)
         }
     }, [])
 
     return (
-        <div className="flex flex-col w-full">
-            <Hero key={refreshKey} />
-            <Intro key={refreshKey + 1} />
-            <ProjectsSection key={refreshKey + 2} />
+        <div className="flex flex-col w-full" key={refreshKey}>
+            <Hero />
+            <Intro />
+            <ProjectsSection />
             {/*
             <ServicesSection key={refreshKey + 3} />
 <StickySplitSection key={refreshKey + 3} />

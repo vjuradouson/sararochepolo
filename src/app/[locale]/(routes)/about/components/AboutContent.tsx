@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
+import { useEffect, useState } from "react";
 
 type Props = {
     data: {
@@ -66,10 +67,24 @@ const imageVariant: Variants = {
     },
 };
 
+
 export default function AboutContent({ data }: Props) {
+    const [refreshKey, setRefreshKey] = useState(0)
+
+    useEffect(() => {
+        const handler = () => {
+            setRefreshKey(prev => prev + 1)
+        }
+
+        window.addEventListener('reanimate-effects', handler)
+
+        return () => {
+            window.removeEventListener('reanimate-effects', handler)
+        }
+    }, [])
+
     return (
-        <section className="container-xl mx-auto px-6 py-8 lg:py-16">
-            {/* Heading */}
+        <section className="container-xl mx-auto px-6 py-8 lg:py-16" key={refreshKey}>
             <motion.div
                 variants={container}
                 initial="hidden"

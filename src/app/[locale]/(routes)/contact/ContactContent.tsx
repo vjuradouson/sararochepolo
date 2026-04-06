@@ -2,6 +2,7 @@
 
 import { motion, Variants } from "framer-motion";
 import ContactForm from "./components/ContactForm";
+import { useEffect, useState } from "react";
 
 type Props = {
     data: {
@@ -36,8 +37,22 @@ const item: Variants = {
 };
 
 export default function ContactContent({ data }: Props) {
+    const [refreshKey, setRefreshKey] = useState(0)
+
+    useEffect(() => {
+        const handler = () => {
+            setRefreshKey(prev => prev + 1)
+        }
+
+        window.addEventListener('reanimate-effects', handler)
+
+        return () => {
+            window.removeEventListener('reanimate-effects', handler)
+        }
+    }, [])
+
     return (
-        <section className="container-xl mx-auto px-6 py-8 lg:py-16">
+        <section className="container-xl mx-auto px-6 py-8 lg:py-16" key={refreshKey}>
             {/* Heading */}
             <motion.div
                 variants={container}
