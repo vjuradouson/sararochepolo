@@ -27,15 +27,15 @@ const projects: Project[] = [
         bgFrom: "#A3A3A3",
         bgTo: "#404040",
         textColor: "text-white",
-        parentClass: "h-[500px] md:h-[75vh] md:min-h-[500px]",
+        parentClass: "h-[500px] md:h-[100vh] md:min-h-[500px]",
         content: (
             <Image
-                src="/media/home/projects/meta_adds_igualarte.png"
+                src="/media/home/projects/meta_adds_phones.png"
                 alt="project1"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 quality={90}
-                className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)]"
+                className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] rotate-30 scale-[1.1]"
             />
         ),
     },
@@ -379,7 +379,7 @@ export default function ProjectsSection() {
     }, []);
 
     return (
-        <div ref={wrapperRef}>
+        <div ref={wrapperRef} className="overflow-x-hidden">
             {projects.map((project, index) => (
                 <section
                     key={project.id}
@@ -387,7 +387,7 @@ export default function ProjectsSection() {
                         sectionRefs.current[index] = el;
                     }}
                     data-index={index}
-                    className="md:h-screen flex overflow-hidden"
+                    className="md:h-screen flex"
                     style={{
                         background: `radial-gradient(ellipse 75% 65% at 50% 50%, ${project.bgFrom} 0%, ${project.bgTo} 65%)`,
                     }}

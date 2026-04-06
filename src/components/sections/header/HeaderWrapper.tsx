@@ -14,7 +14,7 @@ export default async function HeaderWrapper() {
     ];
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-white/60 supports-[backdrop-filter]:bg-white/40 border-b border-light-blue/50 shadow-[0_4px_20px_rgba(0,0,0,0.05)]">
+        <header className="fixed top-0 left-0 right-0 z-50 bg-surface-80 backdrop-blur-surface">
             <nav className="container-xl mx-auto flex items-center justify-between px-6 h-20">
 
                 {/* Client (interaction) */}

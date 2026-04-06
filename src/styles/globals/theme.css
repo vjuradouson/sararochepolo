@@ -4,7 +4,9 @@
     --color-foreground: var(--foreground);
 
     /* Fonts */
-    --font-family: var(--font-kantumruy-pro), ui-sans-serif, system-ui;
+    --font-family: var(--font-kantumruy-pro),
+        ui-sans-serif,
+        system-ui;
 
     /* Font weights */
     --font-weight-thin: 200;
@@ -18,10 +20,35 @@
 
     /* Brand colors */
     --color-light-blue: var(--color-light-blue);
+    --color-light-blue-rgb: var(--color-light-blue-rgb);
     --color-dark-blue: var(--color-dark-blue);
     --color-yellow: var(--color-yellow);
 
     /* Shadow */
-    --shadow-card: 0 12px 18px -6px rgba(0, 0, 0, 0.3), 0 20px 20px -8px rgba(0, 0, 0, 0.3);
+    --shadow-card: 0 12px 18px -6px rgba(0, 0, 0, 0.3),
+        0 20px 20px -8px rgba(0, 0, 0, 0.3);
     --radius-card: 32px;
+}
+
+@layer utilities {
+    .bg-surface {
+        background-color: rgb(var(--background-rgb));
+    }
+
+    .bg-surface-60 {
+        background-color: rgb(var(--background-rgb) / 0.6);
+    }
+
+    .bg-surface-80 {
+        background-color: rgb(var(--background-rgb) / 0.8);
+    }
+
+    .bg-surface-90 {
+        background-color: rgb(var(--background-rgb) / 0.8);
+    }
+
+    .backdrop-blur-surface {
+        -webkit-backdrop-filter: blur(8px) saturate(140%);
+        backdrop-filter: blur(8px) saturate(140%);
+    }
 }

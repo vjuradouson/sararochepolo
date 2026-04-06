@@ -55,12 +55,12 @@ export default function LanguageSwitcher() {
             {/* Trigger */}
             <button
                 onClick={() => setIsOpen((prev) => !prev)}
-                className="cursor-pointer flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium text-neutral-700 hover:bg-neutral-100 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-neutral-300"
+                className="cursor-pointer flex items-center gap-2 px-3 py-2 rounded-full text-md transition-all duration-200 hover:bg-light-blue/20 hover:text-[#0B3C49] focus:outline-none focus:ring-2 focus:ring-neutral-300"
                 aria-label="Change language"
                 aria-expanded={isOpen}
                 aria-haspopup="menu"
             >
-                <Globe size={16} className="opacity-70" />
+                <Globe size={16} className="opacity-90" />
                 <span>{t(locale)}</span>
             </button>
 

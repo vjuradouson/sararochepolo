@@ -50,7 +50,7 @@ export function HeaderDesktopNav({ links }: DesktopNavProps) {
                             {mounted && isActive && (
                                 <motion.span
                                     layoutId="active-pill"
-                                    className="absolute inset-0 rounded-full bg-brand-light nav-item-active"
+                                    className="absolute inset-0 rounded-full nav-item-active"
                                     initial={{ opacity: 0, scale: 0.95 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     exit={{ opacity: 0, scale: 0.95 }}
@@ -65,7 +65,10 @@ export function HeaderDesktopNav({ links }: DesktopNavProps) {
 
                         <Link
                             href={href}
-                            className={`relative z-10 px-4 py-2 text-body-lg transition-colors ${isActive ? "" : "hover:text-light-blue"
+                            className={`relative z-10 px-4 py-1 text-body-lg rounded-full transition-all duration-200 
+                                ${isActive
+                                    ? "text-[#0B3C49]"
+                                    : "hover:bg-light-blue/20 hover:text-[#0B3C49] hover:shadow-sm"
                                 }`}
                         >
                             {label}

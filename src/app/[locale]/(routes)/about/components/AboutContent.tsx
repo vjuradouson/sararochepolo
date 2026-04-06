@@ -104,6 +104,8 @@ export default function AboutContent({ data }: Props) {
                         <Image
                             src="/media/about/profile.png"
                             alt={data.owner}
+                            sizes="25vw"
+                            quality={90}
                             fill
                             className="object-cover object-top rounded-2xl shadow-xl border border-gray-200"
                             priority

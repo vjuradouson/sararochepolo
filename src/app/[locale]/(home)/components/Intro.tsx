@@ -50,7 +50,7 @@ export default function Intro() {
                         initial="rest"
                         animate="rest"
                         whileHover="hover"
-                        className="relative w-full aspect-square rounded-2xl bg-gray-100 rounded-card shadow-card"
+                        className="lg:w-[80%] mx-auto relative aspect-square rounded-2xl bg-gray-100 rounded-card shadow-card"
                     >
 
                         {/* CARTEL (DETRÁS SIEMPRE) */}
