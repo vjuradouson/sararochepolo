@@ -30,7 +30,7 @@ const projects: Project[] = [
         parentClass: "h-[500px] md:h-[100vh] md:min-h-[500px]",
         content: (
             <Image
-                src="/media/home/projects/meta_adds_phones.png"
+                src="/media/home/projects/meta_adds.png"
                 alt="project1"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
