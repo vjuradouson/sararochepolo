@@ -58,7 +58,7 @@ export default function Intro() {
                             variants={{
                                 rest: {
                                     y: 0,
-                                    boxShadow: "0 0 0 rgba(0,0,0,0)",
+                                    boxShadow: "inset 8px 8px 8px #44444490, inset -2px -2px 8px #44444490",
                                     transition: {
                                         type: "spring",
                                         stiffness: 400,
@@ -68,7 +68,7 @@ export default function Intro() {
                                 },
                                 hover: {
                                     y: 80,
-                                    boxShadow: "0 12px 18px -6px rgba(0,0,0,0.3), 0 20px 20px -8px rgba(0,0,0,0.3)",
+                                    boxShadow: "inset 8px 8px 8px #44444490, inset -2px -2px 8px #44444490",
                                     transition: {
                                         type: "spring",
                                         stiffness: 400,
@@ -89,7 +89,7 @@ export default function Intro() {
                                 pb-6
                                 text-3xl
                                 italic
-                                shadow-card
+                                shadow-[inset_4px_4px_8px_#c5c5c5,inset_-4px_-4px_#ffffff]
                             "
                         >
                             Hi there!
