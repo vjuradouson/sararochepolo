@@ -71,7 +71,7 @@ export default function ContactForm() {
         } catch (err) {
             setError(
                 t("contact.form.submit.catch.prefix") +
-                " " +
+                ": " +
                 (err instanceof Error
                     ? err.message
                     : t("contact.form.submit.catch.unknown"))

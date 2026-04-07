@@ -61,8 +61,11 @@ export default function ContactContent({ data }: Props) {
                     whileInView="show"
                     viewport={{ once: true, amount: 0.6 }}
                     className="mb-16">
-                    <motion.h1 variants={item} className="text-md uppercase tracking-[0.2em] mb-4">
+                    <motion.p variants={item} className="text-md uppercase tracking-[0.2em] mb-4">
                         {data.header}
+                    </motion.p>
+                    <motion.h1 variants={item} className="text-5xl font-light tracking-tight mb-10">
+                        {data.title}
                     </motion.h1>
                     <motion.div
                         variants={container}
@@ -71,9 +74,6 @@ export default function ContactContent({ data }: Props) {
                         viewport={{ once: true }}
                         className="flex flex-col gap-8"
                     >
-                        <motion.p variants={item} className="text-5xl font-light tracking-tight">
-                            {data.title}
-                        </motion.p>
                         <motion.p variants={item} className="text-xl leading-relaxed max-w-xl">
                             {data.description}
                         </motion.p>

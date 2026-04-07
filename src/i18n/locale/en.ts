@@ -2,20 +2,20 @@ export default {
     app: {
         portfolio: {
             owner: "Sara Roche Polo",
-            title: "Sara Roche Polo",
-            description: "Product Designer UX/UI based in Zaragoza with 3+ years of experience transforming complex needs into intuitive and effective digital experiences.",
+            title: "Product Designer (UX/UI) in Zaragoza | Sara Roche Polo Portfolio",
+            description: "Product Designer (UX/UI) in Zaragoza with over 3 years of experience crafting intuitive, user-centered digital experiences. View my portfolio and real projects.",
             seo: {
-                keywords: "Sara Roche Polo, Product Designer, UX/UI, Zaragoza, Portfolio, Digital Design, Visual Communication",
+                keywords: "Sara Roche Polo, Product Designer, (UX/UI), Zaragoza, Portfolio, Digital Design, Visual Communication",
                 schema: {
                     person: {
-                        job_title: "Product Designer · UX/UI",
+                        job_title: "Product Designer (UX/UI)",
                         description: "Product Designer specialized in UX/UI"
                     },
                     website: {
                         name: "Sara Roche Polo"
                     },
                     profile: {
-                        name: "Sara Roche Polo · Product Designer"
+                        name: "Sara Roche Polo · Product Designer (UX/UI)"
                     },
                     creative_work: {
                         "name": "Sara Roche Polo UX/UI Portfolio"
@@ -28,7 +28,7 @@ export default {
                         }
                     },
                     service: {
-                        name: "UX UI Design Services in Zaragoza",
+                        name: "UX/UI Design Services in Zaragoza",
                     }
                 }
             }
@@ -45,7 +45,7 @@ export default {
         },
         footer: {
             left: {
-                designer: "Product Designer · UX/UI based in Zaragoza"
+                designer: "Product Designer (UX/UI) based in Zaragoza"
             },
             center: {
                 linkedin: "LinkedIn"
@@ -53,11 +53,12 @@ export default {
         },
         home: {
             seo: {
-                title: "Sara Roche Polo | Product Designer UX/UI based in Zaragoza",
-                description: "Product Designer UX/ UI based in Zaragoza with 3 + years of experience transforming complex needs into intuitive and effective digital experiences."
+                title: "Sara Roche Polo | Product Designer (UX/UI) based in Zaragoza",
+                description: "Product Designer (UX/UI) based in Zaragoza with 3 + years of experience transforming complex needs into intuitive and effective digital experiences."
             },
             hero: {
-                h1: "Product Designer · UX/UI",
+                h1: "Product Designer (UX/UI)",
+                h1_meta: "in Zaragoza | Sara Roche Polo",
                 button: {
                     label: "Contact"
                 },
@@ -66,7 +67,7 @@ export default {
                 image_alt: "Mobile app design mockups by Sara Roche Polo, including a transport app and a pet app interface"
             },
             intro: {
-                description: "Product Designer with over 3 years of experience <highlight>crafting intuitive interfaces and consistent visual systems.</highlight> I combine UX, UI, and visual communication to create <highlight>digital and physical solutions aligned with both business goals and user needs.</highlight>",
+                description: "Product Designer (UX/UI) with over 3 years of experience <highlight>crafting intuitive interfaces and consistent visual systems.</highlight> I combine UX, UI, and visual communication to create <highlight>digital and physical solutions aligned with both business goals and user needs.</highlight>",
                 image_title: "Creative process and UX/UI design by Sara Roche Polo",
                 image_alt: "Sara Roche Polo holding a Moleskine notebook as part of her UX/UI design process",
                 hover: {
@@ -89,7 +90,7 @@ export default {
                     image_alt: "Mobile app design mockups by Sara Roche Polo, including a transport app and a pet app interface"
                 },
                 3: {
-                    subtitle: "PPersonal Project",
+                    subtitle: "Personal Project",
                     title: "Mobile UI Concept",
                     description: "VVisual exploration of modern interfaces for mobile apps.",
                     image_title: "Modern mobile UI concept designed by Sara Roche Polo",
@@ -99,18 +100,18 @@ export default {
         },
         about: {
             seo: {
-                title: "About Me | Sara Roche Polo",
-                description: "Learn more about Sara Roche Polo, a Product Designer UX/UI focused on creating intuitive solutions and consistent visual systems."
+                title: "About Me | Product Designer (UX/UI) in Zaragoza | Sara Roche Polo",
+                description: "Sara Roche Polo is a Product Designer (UX/UI) in Zaragoza with over 3 years of experience crafting intuitive, functional, and user-centered digital experiences."
             },
-            h1: "About Me",
-            header: "Hi, I'm Sara",
-            image_title: "Professional portrait of Sara Roche Polo, UX/UI Product Designer",
-            image_alt: "Photo of Sara Roche Polo, UX/UI designer, with a neutral background for her professional portfolio"
+            header: "About Me",
+            h1: "Hi, I'm Sara",
+            image_title: "Professional portrait of Sara Roche Polo, Product Designer (UX/UI)",
+            image_alt: "Photo of Sara Roche Polo, Product Designer (UX/UI), with a neutral background for her professional portfolio"
         },
         contact: {
             seo: {
-                title: "Contact | Sara Roche Polo",
-                description: "Get in touch with Sara Roche Polo, a Product Designer UX/UI open to new opportunities and digital projects."
+                title: "Contact | Product Designer (UX/UI) in Zaragoza | Sara Roche Polo",
+                description: "Get in touch with Sara Roche Polo, Product Designer (UX/UI) in Zaragoza, available for new digital projects and professional opportunities."
             },
             h1: "Contact",
             header: "Shall we talk?",

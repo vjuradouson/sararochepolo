@@ -66,14 +66,19 @@ export default function Hero() {
                             <div className="order-1 pl-8 pt-6 lg:ml-18 lg:pb-36 md:pt-36 px-6 z-10">
                                 <motion.h1
                                     variants={item}
-                                    className="uppercase tracking-[0.3em] text-lg md:text-2xl mb-6"
+                                    className="uppercase tracking-[0.3em] text-lg md:text-2xl mb-2"
                                 >
                                     {t("home.hero.h1")}
                                 </motion.h1>
-
                                 <motion.p
                                     variants={item}
-                                    className="text-xl lg:text-5xl leading-tight text-gray-900"
+                                    className="text-[10px] md:text-xs tracking-[0.3em] uppercase text-gray-500"
+                                >
+                                    {t("home.hero.h1_meta")}
+                                </motion.p>
+                                <motion.p
+                                    variants={item}
+                                    className="text-xl mt-6 lg:text-5xl leading-tight text-gray-900"
                                 >
                                     {t.rich("home.hero.product_designer", {
                                         line: () => <br className="hidden lg:block" />,

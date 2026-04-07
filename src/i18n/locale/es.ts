@@ -2,19 +2,20 @@ export default {
     app: {
         portfolio: {
             owner: "Sara Roche Polo",
-            title: "Sara Roche Polo",
-            description: "Diseñadora de Producto UX/UI en Zaragoza con más de 3 años de experiencia transformando necesidades complejas en soluciones intuitivas, combinando diseño digital y comunicación visual.",
+            title: "Diseñadora de Producto (UX/UI) en Zaragoza | Portfolio Sara Roche Polo",
+            description: "Diseñadora de Producto (UX/UI) en Zaragoza con más de 3 años creando experiencias digitales intuitivas y funcionales. Descubre mi portfolio y proyectos reales.",
             seo: {
-                keywords: "Sara Roche Polo, Diseñadora de Producto, UX/UI, Zaragoza, Portfolio, Diseño Digital, Comunicación Visual",
+                keywords: "Sara Roche Polo, Diseñadora de Producto, (UX/UI), Zaragoza, Portfolio, Diseño Digital, Comunicación Visual",
                 schema: {
                     person: {
-                        job_title: "Diseñadora de Producto · UX/UI",
+                        job_title: "Diseñadora de Producto (UX/UI)",
+                        description: "Diseñadora de Producto especializada en UX/UI"
                     },
                     website: {
                         name: "Sara Roche Polo"
                     },
                     profile: {
-                        name: "Sara Roche Polo · Diseñadora UX/UI"
+                        name: "Sara Roche Polo · Diseñadora de Producto (UX/UI)"
                     },
                     creative_work: {
                         "name": "Portfolio UX/UI de Sara Roche Polo"
@@ -27,7 +28,7 @@ export default {
                         }
                     },
                     service: {
-                        name: "Diseñadora UX/UI en Zaragoza",
+                        name: "Diseñadora de Producto (UX/UI) en Zaragoza",
                     }
                 }
             }
@@ -44,7 +45,7 @@ export default {
         },
         footer: {
             left: {
-                designer: "Diseñadora de Producto · UX/UI en Zaragoza"
+                designer: "Diseñadora de Producto (UX/UI) en Zaragoza"
             },
             center: {
                 linkedin: "LinkedIn"
@@ -52,11 +53,12 @@ export default {
         },
         home: {
             seo: {
-                title: "Sara Roche Polo | Diseñadora de Producto UX/UI en Zaragoza",
-                description: "Diseñadora de Producto UX/UI en Zaragoza con más de 3 años de experiencia transformando necesidades complejas en soluciones intuitivas, combinando diseño digital y comunicación visual."
+                title: "Sara Roche Polo | Diseñadora de Producto (UX/UI) en Zaragoza",
+                description: "Diseñadora de Producto (UX/UI) en Zaragoza con más de 3 años de experiencia transformando necesidades complejas en soluciones intuitivas, combinando diseño digital y comunicación visual."
             },
             hero: {
-                h1: "Diseñadora de Producto · UX/UI",
+                h1: "Diseñadora de Producto (UX/UI)",
+                h1_meta: "en Zaragoza | Sara Roche Polo",
                 button: {
                     label: "Contacto"
                 },
@@ -65,7 +67,7 @@ export default {
                 image_alt: "Mockups de aplicaciones móviles diseñadas por Sara Roche Polo, incluyendo una app de rutas y una app de mascotas"
             },
             intro: {
-                description: "Diseñadora de producto con más de 3 años de experiencia <highlight>diseñando interfaces intuitivas y sistemas visuales consistentes.</highlight> Combino UX, UI y comunicación visual para crear <highlight>soluciones digitales y físicas alineadas con negocio y usuario.</highlight>",
+                description: "Diseñadora de Producto (UX/UI) con más de 3 años de experiencia <highlight>diseñando interfaces intuitivas y sistemas visuales consistentes.</highlight> Combino UX, UI y comunicación visual para crear <highlight>soluciones digitales y físicas alineadas con negocio y usuario.</highlight>",
                 image_title: "Proceso creativo y diseño UX/UI de Sara Roche Polo",
                 image_alt: "Sara Roche Polo sosteniendo un cuaderno Moleskine como parte de su proceso de diseño UX/UI",
                 hover: {
@@ -98,21 +100,21 @@ export default {
         },
         about: {
             seo: {
-                title: "Sobre mí | Sara Roche Polo",
-                description: "Conoce la trayectoria de Sara Roche Polo, Diseñadora de Producto UX/UI con experiencia en crear soluciones intuitivas y sistemas visuales consistentes."
+                title: "Sobre mí | Diseñadora de Producto (UX/UI) en Zaragoza | Sara Roche Polo",
+                description: "Conoce a Sara Roche Polo, Diseñadora de Producto (UX/UI) en Zaragoza. Más de 3 años creando experiencias digitales intuitivas, funcionales y centradas en el usuario."
             },
             header: "Sobre mí",
             h1: "Hola, soy Sara",
-            image_title: "Retrato profesional de Sara Roche Polo, Product Designer UX/UI",
-            image_alt: "Fotografía de Sara Roche Polo, diseñadora UX/UI, con fondo neutro para su portfolio profesional"
+            image_title: "Retrato profesional de Sara Roche Polo, Diseñadora de Producto (UX/UI)",
+            image_alt: "Fotografía de Sara Roche Polo, Diseñadora de Producto (UX/UI), con fondo neutro para su portfolio profesional"
         },
         contact: {
             seo: {
-                title: "Contacto | Sara Roche Polo",
-                description: "Contacta con Sara Roche Polo, Diseñadora de Producto UX/UI disponible para nuevas oportunidades y proyectos digitales."
+                title: "Contacto | Diseñadora de Producto (UX/UI) en Zaragoza | Sara Roche Polo",
+                description: "Contacta con Sara Roche Polo, Diseñadora de Producto (UX/UI) en Zaragoza, disponible para nuevos proyectos digitales y oportunidades profesionales."
             },
-            h1: "Contacto",
-            header: "¿Hablamos?",
+            header: "Contacto",
+            h1: "¿Hablamos?",
             description: "Estoy disponible para proyectos de diseño de producto, UX/UI y sistemas visuales. Si estás construyendo un producto digital o necesitas mejorar la experiencia de usuario, estaré encantada de ayudarte. Respondo normalmente en 24–48h.",
             form: {
                 title: "Cuéntame sobre tu proyecto",
