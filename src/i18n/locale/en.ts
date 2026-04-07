@@ -132,7 +132,7 @@ export default {
                     }
                 },
                 button: {
-                    label: "Send Message",
+                    label: "Send",
                     sending: "Sending..."
                 },
                 submit: {

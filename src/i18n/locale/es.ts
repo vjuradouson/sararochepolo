@@ -113,7 +113,7 @@ export default {
             },
             h1: "Contacto",
             header: "¿Hablamos?",
-            description: "Estoy disponible para proyectos de diseño de producto, UX/UI y sistemas visuales.Si estás construyendo un producto digital o necesitas mejorar la experiencia de usuario, estaré encantada de ayudarte. Respondo normalmente en 24–48h.",
+            description: "Estoy disponible para proyectos de diseño de producto, UX/UI y sistemas visuales. Si estás construyendo un producto digital o necesitas mejorar la experiencia de usuario, estaré encantada de ayudarte. Respondo normalmente en 24–48h.",
             form: {
                 title: "Cuéntame sobre tu proyecto",
                 field: {
@@ -131,7 +131,7 @@ export default {
                     }
                 },
                 button: {
-                    label: "Enviar mensaje",
+                    label: "Enviar",
                     sending: "Enviando..."
                 },
                 submit: {

@@ -87,18 +87,17 @@ export default function ContactForm() {
                 initial="hidden"
                 animate="show"
                 variants={fadeInUp}
-                className="flex flex-col items-start gap-4 rounded-2xl border border-neutral-200 bg-neutral-50 p-8"
+                className="flex flex-col items-start gap-4 rounded-2xl bg-neutral-100 p-8 shadow-[0_10px_30px_rgba(0,0,0,0.08)]"
             >
-                <span className="text-2xl">✉️</span>
-                <h2 className="text-lg">
+                <h2 className="text-lg font-light">
                     {t("contact.form.submit.success.message")}
                 </h2>
-                <p className="text-sm text-brand-muted">
+                <p className="text-sm text-neutral-500">
                     {t("contact.form.submit.success.description")}
                 </p>
                 <button
                     onClick={() => setSent(false)}
-                    className="mt-2 text-sm font-medium underline underline-offset-4 text-brand-muted"
+                    className="mt-2 text-sm underline text-neutral-500"
                 >
                     {t("contact.form.submit.success.button")}
                 </button>
@@ -112,11 +111,11 @@ export default function ContactForm() {
             initial="hidden"
             animate="show"
             variants={{ show: { transition: { staggerChildren: 0.08 } } }}
-            className="flex flex-col gap-5"
+            className="flex flex-col gap-6"
         >
-            {["name", "email", "message"].map((field, i) => (
-                <motion.div key={field} variants={fadeInUp} className="flex flex-col gap-1.5">
-                    <label className="text-xs font-semibold uppercase tracking-widest text-brand-muted">
+            {["name", "email", "message"].map((field) => (
+                <motion.div key={field} variants={fadeInUp} className="flex flex-col gap-2">
+                    <label className="text-md text-neutral-700">
                         {t(`contact.form.field.${field}.label`)}
                     </label>
 
@@ -127,8 +126,7 @@ export default function ContactForm() {
                             required
                             value={form.message}
                             onChange={handleChange}
-                            placeholder={t(`contact.form.field.${field}.placeholder`)}
-                            className="w-full min-h-[120px] rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm outline-none transition-all duration-200 focus:ring-2 focus:ring-brand-dark focus:border-transparent resize-none"
+                            className="shadow-[inset_6px_6px_10px_#d3d3d3,inset_-1px_-1px_1px_#eeeeee] w-full min-h-[140px] rounded-3xl bg-neutral-100 px-4 py-3 text-md outline-none placeholder:text-neutral-700 resize-none"
                         />
                     ) : (
                         <input
@@ -138,26 +136,24 @@ export default function ContactForm() {
                             value={(form as any)[field]}
                             onChange={handleChange}
                             placeholder={t(`contact.form.field.${field}.placeholder`)}
-                            className="w-full rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm outline-none transition-all duration-200 focus:ring-2 focus:ring-brand-dark focus:border-transparent"
+                            className="shadow-[inset_6px_6px_10px_#d3d3d3,inset_-1px_-1px_1px_#eeeeee] w-full rounded-full bg-neutral-100 px-5 py-3 text-md outline-none placeholder:text-neutral-500"
                         />
                     )}
                 </motion.div>
             ))}
 
-            {error && <p className="text-sm text-red-500">{error}</p>}
+            {error && <p className="text-md text-red-500">{error}</p>}
 
             <motion.div
                 variants={fadeInUp}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.97 }}
-                className="w-full md:w-1/2 mx-auto"
+                className="w-full"
             >
                 <NeoButton
-                    size="sm"
+                    size="md"
                     type="submit"
-                    className="w-full justify-center"
+                    className="w-full justify-center rounded-full py-3 text-xl tracking-[0.3em] bg-light-blue color-black font-semibold"
                 >
-                    <span>
+                    <span className="uppercase">
                         {loading
                             ? t("contact.form.button.sending")
                             : t("contact.form.button.label")}

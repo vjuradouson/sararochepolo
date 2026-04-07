@@ -52,76 +52,44 @@ export default function ContactContent({ data }: Props) {
     }, [])
 
     return (
-        <section className="container-xl mx-auto px-6 py-8 lg:py-16" key={refreshKey}>
-            {/* Heading */}
-            <motion.div
-                variants={container}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true, amount: 0.6 }}
-                className="mb-20"
-            >
-                <motion.h1 variants={item} className="text-xl uppercase tracking-widest text-brand-muted mb-4">
-                    {data.header}
-                </motion.h1>
-
-                <motion.p variants={item} className="text-4xl tracking-tight sm:text-5xl">
-                    {data.title}
-                </motion.p>
-            </motion.div>
-
-            <div className="grid gap-16 md:grid-cols-2">
+        <section className="container-xl mx-auto px-6 py-12 lg:py-20" key={refreshKey}>
+            <div className="grid gap-16 md:grid-cols-2 items-start">
                 {/* LEFT */}
                 <motion.div
                     variants={container}
                     initial="hidden"
                     whileInView="show"
-                    viewport={{ once: true }}
-                    className="flex flex-col gap-12"
-                >
-                    <motion.p variants={item} className="text-lg text-brand-muted leading-relaxed max-w-2xl">
-                        {data.description}
-                    </motion.p>
-
-                    <motion.ul className="space-y-6">
-                        {data.contactLinks.map((link) => (
-                            <motion.li key={link.label} variants={item} className="flex flex-col gap-1">
-                                <span className="text-xs font-semibold uppercase tracking-widest text-brand-muted">
-                                    {link.label}
-                                </span>
-
-                                {link.href ? (
-                                    <motion.a
-                                        href={link.href}
-                                        target={link.href.startsWith("http") ? "_blank" : undefined}
-                                        rel="noopener noreferrer"
-                                        whileHover={{ x: 4 }}
-                                        className="text-base font-medium hover:underline underline-offset-4"
-                                    >
-                                        {link.value}
-                                    </motion.a>
-                                ) : (
-                                    <span className="text-base font-medium">
-                                        {link.value}
-                                    </span>
-                                )}
-                            </motion.li>
-                        ))}
-                    </motion.ul>
+                    viewport={{ once: true, amount: 0.6 }}
+                    className="mb-16">
+                    <motion.h1 variants={item} className="text-md uppercase tracking-[0.2em] mb-4">
+                        {data.header}
+                    </motion.h1>
+                    <motion.div
+                        variants={container}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true }}
+                        className="flex flex-col gap-8"
+                    >
+                        <motion.p variants={item} className="text-5xl font-light tracking-tight">
+                            {data.title}
+                        </motion.p>
+                        <motion.p variants={item} className="text-xl leading-relaxed max-w-xl">
+                            {data.description}
+                        </motion.p>
+                    </motion.div>
                 </motion.div>
-
                 {/* RIGHT */}
                 <motion.div
                     variants={container}
                     initial="hidden"
-                    whileInView="show"
+                    whileInView="show" pb-14
                     viewport={{ once: true }}
                 >
-                    <motion.h2 variants={item} className="text-xl mb-6">
-                        {data.formTitle}
-                    </motion.h2>
-
-                    <motion.div variants={item}>
+                    <motion.div
+                        variants={item}
+                        className="rounded-2xl bg-neutral-100 pt-12 pb-14 pl-8 pr-8 shadow-card"
+                    >
                         <ContactForm />
                     </motion.div>
                 </motion.div>
