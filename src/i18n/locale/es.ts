@@ -2,8 +2,8 @@ export default {
     app: {
         portfolio: {
             owner: "Sara Roche Polo",
-            title: "Diseñadora de Producto (UX/UI) en Zaragoza | Portfolio Sara Roche Polo",
-            description: "Diseñadora de Producto (UX/UI) en Zaragoza con más de 3 años creando experiencias digitales intuitivas y funcionales. Descubre mi portfolio y proyectos reales.",
+            title: "Sara Roche Polo — Diseñadora de Producto (UX/UI) en Zaragoza",
+            description: "Diseñadora de Producto (UX/UI) en Zaragoza. Diseño experiencias intuitivas y sistemas visuales claros para productos digitales.",
             seo: {
                 keywords: "Sara Roche Polo, Diseñadora de Producto, (UX/UI), Zaragoza, Portfolio, Diseño Digital, Comunicación Visual",
                 schema: {
