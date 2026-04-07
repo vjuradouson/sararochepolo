@@ -57,12 +57,43 @@ export default {
             },
             hero: {
                 h1: "Diseñadora de Producto · UX/UI",
+                button: {
+                    label: "Contacto"
+                },
                 product_designer: "Transformando <line></line>necesidades complejas <line></line>en <highlight>experiencias claras </highlight><line></line><highlight>y funcionales</highlight>",
-                description: "Diseñadora de producto con más de 3 años de experiencia <highlight>diseñando interfaces intuitivas y sistemas visuales consistentes.</highlight> Combino UX, UI y comunicación visual para crear <highlight>soluciones digitales y físicas alineadas con negocio y usuario.</highlight>"
+                image_title: "Proyectos de diseño UX/UI de apps móviles por Sara Roche Polo",
+                image_alt: "Mockups de aplicaciones móviles diseñadas por Sara Roche Polo, incluyendo una app de rutas y una app de mascotas"
             },
-            services: {
-                title: "— ¿Qué ofrezco?",
-                subtitle: "Servicios de diseño",
+            intro: {
+                description: "Diseñadora de producto con más de 3 años de experiencia <highlight>diseñando interfaces intuitivas y sistemas visuales consistentes.</highlight> Combino UX, UI y comunicación visual para crear <highlight>soluciones digitales y físicas alineadas con negocio y usuario.</highlight>",
+                image_title: "Proceso creativo y diseño UX/UI de Sara Roche Polo",
+                image_alt: "Sara Roche Polo sosteniendo un cuaderno Moleskine como parte de su proceso de diseño UX/UI",
+                hover: {
+                    label: "¡Hola!"
+                }
+            },
+            projects: {
+                1: {
+                    subtitle: "Publicación empresa",
+                    title: "Redes sociales y Meta Ads",
+                    description: "Contenido de marca para redes sociales y Meta Ads siguiendo guidelines de empresa.",
+                    image_title: "Contenido de marca para redes sociales y Meta Ads por Sara Roche Polo",
+                    image_alt: "Publicaciones para redes sociales y campañas de Meta Ads diseñadas por Sara Roche Polo siguiendo guidelines de marca de empresa"
+                },
+                2: {
+                    subtitle: "Proyecto personal",
+                    title: "Diseño en Figma",
+                    description: "Diseño y prototipado de aplicaciones usando Figma.",
+                    image_title: "Proyecto personal de diseño UX/UI en Figma para aplicación móvil por Sara Roche Polo",
+                    image_alt: "Diseño de aplicación móvil de mascotas creado en Figma por Sara Roche Polo, mostrando mockups de interfaz y prototipado UX/UI"
+                },
+                3: {
+                    subtitle: "Proyecto personal",
+                    title: "Concepto UI móvil",
+                    description: "Exploración visual de interfaces modernas para apps móviles.",
+                    image_title: "Concepto de interfaz móvil moderna diseñado por Sara Roche Polo",
+                    image_alt: "Diseño conceptual de interfaz móvil con ilustraciones de vehículos y elementos visuales para apps creado por Sara Roche Polo"
+                }
             }
         },
         about: {
@@ -71,7 +102,9 @@ export default {
                 description: "Conoce la trayectoria de Sara Roche Polo, Diseñadora de Producto UX/UI con experiencia en crear soluciones intuitivas y sistemas visuales consistentes."
             },
             header: "Sobre mí",
-            h1: "Hola, soy Sara"
+            h1: "Hola, soy Sara",
+            image_title: "Retrato profesional de Sara Roche Polo, Product Designer UX/UI",
+            image_alt: "Fotografía de Sara Roche Polo, diseñadora UX/UI, con fondo neutro para su portfolio profesional"
         },
         contact: {
             seo: {
@@ -79,7 +112,7 @@ export default {
                 description: "Contacta con Sara Roche Polo, Diseñadora de Producto UX/UI disponible para nuevas oportunidades y proyectos digitales."
             },
             h1: "Contacto",
-            header: "Hablemos",
+            header: "¿Hablamos?",
             description: "Estoy disponible para proyectos de diseño de producto, UX/UI y sistemas visuales.Si estás construyendo un producto digital o necesitas mejorar la experiencia de usuario, estaré encantada de ayudarte. Respondo normalmente en 24–48h.",
             form: {
                 title: "Cuéntame sobre tu proyecto",

@@ -136,7 +136,6 @@ async function sendContactEmail(
 // =========================
 
 export async function POST(req: Request) {
-    // 👉 locale desde frontend (recomendado)
     const locale = req.headers.get("x-locale") || "en";
 
     const t = await getTranslations({

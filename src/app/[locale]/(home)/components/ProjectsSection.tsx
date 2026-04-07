@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import NeoButton from "@/components/ui/NeoButton";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 type Project = {
     id: number;
@@ -17,71 +18,6 @@ type Project = {
     content: React.ReactNode;
 };
 
-const projects: Project[] = [
-    {
-        id: 1,
-        subtitle: "— Publicación empresa",
-        title: "Redes sociales y Meta Ads",
-        description:
-            "Contenido de marca para redes sociales y Meta Ads siguiendo guidelines de empresa.",
-        bgFrom: "#A3A3A3",
-        bgTo: "#404040",
-        textColor: "text-white",
-        parentClass: "h-[500px] md:h-[100vh] md:min-h-[500px]",
-        content: (
-            <Image
-                src="/media/home/projects/meta_adds.png"
-                alt="project1"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                quality={90}
-                className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] rotate-30 scale-[1.1]"
-            />
-        ),
-    },
-    {
-        id: 2,
-        subtitle: "— Proyecto personal",
-        title: "Diseño en Figma",
-        description: "Diseño y prototipado de aplicaciones usando Figma.",
-        bgFrom: "#EEEDE9",
-        bgTo: "#FFEBC0",
-        textColor: "text-black",
-        parentClass: "h-[500px] md:h-full md:min-h-[500px]",
-        content: (
-            <Image
-                src="/media/home/projects/figma_pet_buddy.png"
-                alt="project2"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                quality={90}
-                className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)]"
-            />
-        ),
-    },
-    {
-        id: 3,
-        subtitle: "— UI Experiment",
-        title: "Mobile UI Concept",
-        description:
-            "Exploración visual de interfaces modernas para apps móviles.",
-        bgFrom: "#F6F2BA",
-        bgTo: "#B0CCE4",
-        textColor: "text-black",
-        parentClass: "h-[500px] md:h-full md:min-h-[500px]",
-        content: (
-            <Image
-                src="/media/home/projects/cars_ilustration.png"
-                alt="project3"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                quality={90}
-                className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)]"
-            />
-        ),
-    },
-];
-
 const textVariants = {
     hidden: { opacity: 0, y: 60 },
     show: { opacity: 1, y: 0 },
@@ -93,17 +29,82 @@ const imageVariants = {
 };
 
 export default function ProjectsSection() {
+    const t = useTranslations("app");
+
+    const projects: Project[] = [
+        {
+            id: 1,
+            subtitle: "— " + t("home.projects.1.subtitle"),
+            title: t("home.projects.1.title"),
+            description: t("home.projects.1.description"),
+            bgFrom: "#A3A3A3",
+            bgTo: "#404040",
+            textColor: "text-white",
+            parentClass: "h-[500px] md:h-[100vh] md:min-h-[500px]",
+            content: (
+                <Image
+                    src="/media/home/projects/meta_adds.png"
+                    title={t("home.projects.1.image_title")}
+                    alt={t("home.projects.1.image_alt")}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    quality={90}
+                    className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] rotate-30 scale-[1.1]"
+                />
+            ),
+        },
+        {
+            id: 2,
+            subtitle: "— " + t("home.projects.2.subtitle"),
+            title: t("home.projects.2.title"),
+            description: t("home.projects.2.description"),
+            bgFrom: "#EEEDE9",
+            bgTo: "#FFEBC0",
+            textColor: "text-black",
+            parentClass: "h-[500px] md:h-full md:min-h-[500px]",
+            content: (
+                <Image
+                    src="/media/home/projects/figma_pet_buddy.png"
+                    title={t("home.projects.2.image_title")}
+                    alt={t("home.projects.2.image_alt")}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    quality={90}
+                    className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)]"
+                />
+            ),
+        },
+        {
+            id: 3,
+            subtitle: "— " + t("home.projects.3.subtitle"),
+            title: t("home.projects.3.title"),
+            description: t("home.projects.3.description"),
+            bgFrom: "#F6F2BA",
+            bgTo: "#B0CCE4",
+            textColor: "text-black",
+            parentClass: "h-[500px] md:h-full md:min-h-[500px]",
+            content: (
+                <Image
+                    src="/media/home/projects/cars_ilustration.png"
+                    title={t("home.projects.3.image_title")}
+                    alt={t("home.projects.3.image_alt")}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    quality={90}
+                    className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)]"
+                />
+            ),
+        },
+    ];
+
     const wrapperRef = useRef<HTMLDivElement>(null);
     const sectionRefs = useRef<(HTMLElement | null)[]>([]);
     const isAnimating = useRef(false);
     const wheelAccumulator = useRef(0);
-    const touchStartY = useRef<number | null>(null);
     const animationFrameRef = useRef<number | null>(null);
     const activeIndexRef = useRef(0);
 
     const [activeIndex, setActiveIndex] = useState(0);
-
-    const isMobile = () => window.innerWidth < 768;
 
     const setIndex = (index: number) => {
         activeIndexRef.current = index;
@@ -232,7 +233,7 @@ export default function ProjectsSection() {
     };
 
     useEffect(() => {
-        // 🔥 SOLO desactivar en mobile
+        // Disable in mobile to avoid conflicts with native momentum scrolling and because the section snapping is less relevant on small screens
         if (typeof window !== "undefined" && window.innerWidth < 768) return;
 
         const onScroll = () => {

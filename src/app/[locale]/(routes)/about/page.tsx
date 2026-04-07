@@ -43,7 +43,10 @@ export default async function AboutPage({
                     header: t("app.about.header"),
                     title: t("app.about.h1"),
                     owner: t("app.portfolio.owner"),
-
+                    image: {
+                        title: t("app.about.image_title"),
+                        alt: t("app.about.image_alt"),
+                    },
                     paragraphs: [
                         `Soy Product Designer especializada en UX/UI con más de 3 años de experiencia transformando necesidades complejas en soluciones digitales claras, funcionales y visualmente coherentes.`,
                         `Actualmente trabajo en Grupo Piquer, donde diseño experiencias digitales en entornos educativos, mejorando la usabilidad, la estructura de la información y la consistencia visual de la plataforma.`,

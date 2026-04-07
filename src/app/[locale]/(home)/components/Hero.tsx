@@ -86,7 +86,7 @@ export default function Hero() {
                                 <motion.div variants={item} className="mt-8">
                                     <NeoButton size="sm">
                                         <span className="text-2xl">→</span>
-                                        <span>CONTACTO</span>
+                                        <span className="uppercase">{t("home.hero.button.label")}</span>
                                     </NeoButton>
                                 </motion.div>
                             </div>
@@ -96,7 +96,8 @@ export default function Hero() {
                                 className="mb-12 md:mb-0 order-2 relative h-[500px] lg:h-[90%]">
                                 <Image
                                     src="/media/home/hero/apps_hero.png"
-                                    alt={t("portfolio.owner")}
+                                    title={t("home.hero.image_title")}
+                                    alt={t("home.hero.image_alt")}
                                     fill
                                     sizes="(max-width: 768px) 100vw, 50vw"
                                     quality={90}

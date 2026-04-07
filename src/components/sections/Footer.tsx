@@ -1,4 +1,5 @@
 import { getTranslations } from 'next-intl/server';
+import { FaLinkedin } from 'react-icons/fa';
 
 export default async function Footer() {
     const t = await getTranslations("app");
@@ -27,11 +28,7 @@ export default async function Footer() {
                         rel="noopener noreferrer"
                         className="flex items-center gap-2 text-sm text-gray-500 hover:text-[#0A66C2] transition-colors"
                     >
-                        <img
-                            src="/media/icons/linkedin-icon.svg"
-                            alt="linkedin"
-                            className="w-4 h-4 opacity-70 hover:opacity-100 transition"
-                        />
+                        <FaLinkedin className="w-4 h-4 opacity-70 hover:opacity-100 transition" />
                         <span>{t("footer.center.linkedin")}</span>
                     </a>
 

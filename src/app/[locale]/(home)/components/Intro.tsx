@@ -92,7 +92,7 @@ export default function Intro() {
                                 shadow-[inset_4px_4px_8px_#c5c5c5,inset_-4px_-4px_#ffffff]
                             "
                         >
-                            Hi there!
+                            {t("home.intro.hover.label")}
                         </motion.div>
 
                         {/* IMAGEN (ENCIMA + LIFT) */}
@@ -104,7 +104,8 @@ export default function Intro() {
                         >
                             <Image
                                 src="/media/home/intro/sara_moleskine.png"
-                                alt="profile"
+                                title={t("home.intro.image_title")}
+                                alt={t("home.intro.image_alt")}
                                 sizes="(max-width: 768px) 100vw, 50vw"
                                 quality={90}
                                 fill
@@ -121,7 +122,7 @@ export default function Intro() {
                         variants={item}
                         className="text-xl md:text-2xlleading-[1.7] tracking-[0.01em]"
                     >
-                        {t.rich("home.hero.description", {
+                        {t.rich("home.intro.description", {
                             line: () => <br />,
                             highlight: (chunks) => (
                                 <span className="font-bold italic">

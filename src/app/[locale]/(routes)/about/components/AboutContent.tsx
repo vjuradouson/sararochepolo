@@ -9,6 +9,10 @@ type Props = {
         header: string;
         title: string;
         owner: string;
+        image: {
+            title: string;
+            alt: string;
+        }
         paragraphs: string[];
         labels: {
             skills: string;
@@ -118,7 +122,8 @@ export default function AboutContent({ data }: Props) {
                     >
                         <Image
                             src="/media/about/profile.png"
-                            alt={data.owner}
+                            title={data.image.title}
+                            alt={data.image.alt}
                             sizes="25vw"
                             quality={90}
                             fill
