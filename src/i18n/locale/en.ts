@@ -2,7 +2,7 @@ export default {
     app: {
         portfolio: {
             owner: "Sara Roche Polo",
-            title: "Sara Roche Polo — Product Designer (UX/UI) in Zaragoza",
+            title: "Sara Roche Polo | Product Designer (UX/UI) in Zaragoza",
             description: "Product Designer (UX/UI) based in Zaragoza. I create intuitive experiences and clear visual systems for digital products.",
             seo: {
                 keywords: "Sara Roche Polo, Product Designer, (UX/UI), Zaragoza, Portfolio, Digital Design, Visual Communication",
@@ -53,8 +53,8 @@ export default {
         },
         home: {
             seo: {
-                title: "Sara Roche Polo | Product Designer (UX/UI) based in Zaragoza",
-                description: "Product Designer (UX/UI) based in Zaragoza with 3 + years of experience transforming complex needs into intuitive and effective digital experiences."
+                title: "Sara Roche Polo | Product Designer (UX/UI) in Zaragoza",
+                description: "Product Designer (UX/UI) based in Zaragoza. I create intuitive experiences and clear visual systems for digital products.",
             },
             hero: {
                 h1: "Product Designer (UX/UI)",
