@@ -39,7 +39,7 @@ export default async function Footer() {
                     © {new Date().getFullYear()}
                     <br className="md:hidden" />
                     <span className="ml-1">
-                        {t("portfolio.title")}
+                        {t("home.seo.title")}
                     </span>
                 </div>
 

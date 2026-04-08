@@ -6,6 +6,7 @@ import { getAboutPersonSchema } from "@/lib/seo/schema/about/person";
 import { BASE_URL } from '@/lib/config';
 import { getPath } from "@/i18n/getPath";
 import { ROUTES } from "@/constants/routes";
+import { withAlternates } from "@/lib/seo/alternates";
 
 export async function generateMetadata({
     params
@@ -15,15 +16,24 @@ export async function generateMetadata({
     const { locale } = await params;
     const t = await getTranslations();
 
-    return {
-        title: t("app.about.seo.title"),
-        description: t("app.about.seo.description"),
-        openGraph: {
-            title: t("app.about.seo.title"),
-            description: t("app.about.seo.description"),
-            url: `${BASE_URL}/${locale}${getPath(ROUTES.ABOUT, locale)}`,
+    const title = t("app.about.seo.title");
+    const description = t("app.about.seo.description")
+
+    return withAlternates(
+        {
+            locale,
+            route: ROUTES.ABOUT
+        },
+        {
+            title: title,
+            description: description,
+            openGraph: {
+                title: title,
+                description: description,
+                url: `${BASE_URL}/${locale}${getPath(ROUTES.ABOUT, locale)}`,
+            }
         }
-    };
+    )
 }
 
 export default async function AboutPage({

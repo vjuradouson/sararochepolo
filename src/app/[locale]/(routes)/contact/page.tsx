@@ -4,24 +4,35 @@ import ContactContent from "./ContactContent";
 import { BASE_URL } from '@/lib/config';
 import { getPath } from "@/i18n/getPath";
 import { ROUTES } from "@/constants/routes";
+import { withAlternates } from "@/lib/seo/alternates";
 
 export async function generateMetadata({
     params
 }: {
     params: Promise<{ locale: string }>
 }): Promise<Metadata> {
-    const { locale } = await params;
+
+    const { locale } = await params
     const t = await getTranslations();
 
-    return {
-        title: t("app.contact.seo.title"),
-        description: t("app.contact.seo.description"),
-        openGraph: {
-            title: t("app.contact.seo.title"),
-            description: t("app.contact.seo.description"),
-            url: `${BASE_URL}/${locale}${getPath(ROUTES.CONTACT, locale)}`,
+    const title = t("app.contact.seo.title");
+    const description = t("app.about.seo.description")
+
+    return withAlternates(
+        {
+            locale,
+            route: ROUTES.CONTACT
+        },
+        {
+            title: title,
+            description: description,
+            openGraph: {
+                title: title,
+                description: description,
+                url: `${BASE_URL}/${locale}${getPath(ROUTES.CONTACT, locale)}`,
+            }
         }
-    };
+    )
 }
 
 export default async function ContactPage({

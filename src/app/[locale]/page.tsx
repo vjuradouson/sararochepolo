@@ -8,14 +8,36 @@ import { getProfileSchema } from "@/lib/seo/schema/profile";
 import { getCreativeWorkSchema } from "@/lib/seo/schema/creativeWork";
 import { getProfessionalServiceSchema } from "@/lib/seo/schema/professionalService";
 import { getServiceSchema } from "@/lib/seo/schema/service";
+import { withAlternates } from "@/lib/seo/alternates";
+import { ROUTES } from "@/constants/routes";
 
-export async function generateMetadata(): Promise<Metadata> {
-    const t = await getTranslations("app.home");
+export async function generateMetadata({
+    params
+}: {
+    params: Promise<{ locale: string }>
+}): Promise<Metadata> {
 
-    return {
-        title: t("seo.title"),
-        description: t("seo.description")
-    };
+    const { locale } = await params
+
+    const t = await getTranslations({ locale })
+
+    const title = t("app.home.seo.title");
+    const description = t("app.home.seo.description")
+
+    return withAlternates(
+        {
+            locale,
+            route: ROUTES.HOME
+        },
+        {
+            title: title,
+            description: description,
+            openGraph: {
+                title: title,
+                description: description
+            }
+        }
+    )
 }
 
 export default async function Home({

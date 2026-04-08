@@ -6,8 +6,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const { locales, pathnames, defaultLocale } = ROUTING
 
     const entries: MetadataRoute.Sitemap = []
-
-    // Fecha limpia (sin milisegundos)
     const lastModified = new Date().toISOString().split('T')[0]
 
     Object.entries(pathnames).forEach(([key, value]) => {
@@ -19,24 +17,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
             return value[locale as keyof typeof value]
         }
 
-        // Alternates (todos los idiomas)
-        const alternates = {
-            languages: {
-                ...Object.fromEntries(
+        locales.forEach((locale) => {
+
+            const url = `${BASE_URL}/${locale}${getPath(locale)}`
+
+            const alternates = {
+                languages: Object.fromEntries(
                     locales.map((l) => [
                         l,
                         `${BASE_URL}/${l}${getPath(l)}`
                     ])
-                ),
-                'x-default': `${BASE_URL}/${defaultLocale}${getPath(defaultLocale)}`
+                )
             }
-        }
 
-        // 👉 SOLO UNA URL (default locale)
-        entries.push({
-            url: `${BASE_URL}/${defaultLocale}${getPath(defaultLocale)}`,
-            lastModified,
-            alternates
+            entries.push({
+                url,
+                lastModified,
+                alternates
+            })
         })
     })
 

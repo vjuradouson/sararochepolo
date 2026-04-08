@@ -4,7 +4,6 @@ import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale, getTranslations } from 'next-intl/server';
-import { ROUTING } from '@/i18n/routing';
 import { BASE_URL, LOCALES, LocaleCountryMap } from '@/lib/config';
 import { ReactNode } from 'react';
 import CookieBanner from '@/components/CookieBanner';
@@ -28,23 +27,16 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string }>
 }): Promise<Metadata> {
+  const { locale } = await params
 
-  const { locale } = await params;
-
-  const { locales } = ROUTING;
-
-  const t = await getTranslations({ locale });
+  const t = await getTranslations({ locale })
 
   return {
-    title: t("app.portfolio.title"),
-    description: t("app.portfolio.description"),
     keywords: t("app.portfolio.seo.keywords"),
     authors: [
       { name: t("app.portfolio.owner"), url: BASE_URL }
     ],
     openGraph: {
-      title: t("app.portfolio.title"),
-      description: t("app.portfolio.description"),
       url: `${BASE_URL}/${locale}`,
       siteName: t("app.portfolio.owner"),
       images: [
@@ -56,19 +48,7 @@ export async function generateMetadata({
       ],
       locale: LocaleCountryMap[locale] || 'en_US',
       type: "website",
-    },
-    alternates: {
-      canonical: `${BASE_URL}/${locale}`,
-      languages: {
-        ...Object.fromEntries(
-          locales.map(l => [
-            l,
-            `${BASE_URL}/${l}`
-          ])
-        ),
-        'x-default': `${BASE_URL}/es`
-      },
-    },
+    }
   };
 }
 
