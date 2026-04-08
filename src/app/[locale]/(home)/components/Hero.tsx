@@ -108,6 +108,7 @@ export default function Hero() {
                                     quality={90}
                                     className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)]"
                                     priority
+                                    fetchPriority="high"
                                 />
                             </motion.div>
 

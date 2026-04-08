@@ -26,7 +26,7 @@ export default async function Footer() {
                         href={t("contact.contact_link.linkedin.href")}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm text-gray-500 hover:text-[#0A66C2] transition-colors"
+                        className="flex items-center gap-2 text-sm hover:text-[#0A66C2] transition-colors"
                     >
                         <FaLinkedin className="w-4 h-4 opacity-70 hover:opacity-100 transition" />
                         <span>{t("footer.center.linkedin")}</span>
