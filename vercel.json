@@ -1,0 +1,14 @@
+{
+    "redirects": [
+        {
+            "source": "/es/acerca-de",
+            "destination": "/es/sobre-mi",
+            "permanent": true
+        },
+        {
+            "source": "/en/about",
+            "destination": "/en/about-me",
+            "permanent": true
+        }
+    ]
+}
