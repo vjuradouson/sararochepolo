@@ -122,7 +122,7 @@ export default function AboutContent({ data }: Props) {
                                     title={data.image.title}
                                     alt={data.image.alt}
                                     sizes="50vw"
-                                    quality={100}
+                                    quality={90}
                                     fill
                                     className="object-cover object-top"
                                     priority

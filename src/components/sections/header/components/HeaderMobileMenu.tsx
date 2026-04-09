@@ -5,7 +5,6 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from '@/i18n/navigation'
 import { useLocale } from 'next-intl'
-import { PATHNAMES } from '@/i18n/routing';
 import { LOCALES } from '@/lib/config';
 import { usePathname } from "next/navigation";
 import { getPath } from "@/i18n/getPath";

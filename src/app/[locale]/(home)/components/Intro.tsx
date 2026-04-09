@@ -53,7 +53,7 @@ export default function Intro() {
                         className="lg:w-[80%] mx-auto relative aspect-square rounded-2xl bg-gray-100 rounded-card shadow-card"
                     >
 
-                        {/* CARTEL (DETRÁS SIEMPRE) */}
+                        {/* CARD BEHIND */}
                         <motion.div
                             variants={{
                                 rest: {
@@ -95,7 +95,7 @@ export default function Intro() {
                             {t("home.intro.hover.label")}
                         </motion.div>
 
-                        {/* IMAGEN (ENCIMA + LIFT) */}
+                        {/* IMAGE OVER */}
                         <motion.div
                             variants={{
                                 rest: { y: 0, scale: 1 },
@@ -116,7 +116,7 @@ export default function Intro() {
                     </motion.div>
                 </motion.div>
 
-                {/* RIGHT CONTENT  */}
+                {/* RIGHT CONTENT */}
                 <div className="order-2 md:order-2 text-xl">
                     <motion.p
                         variants={item}
@@ -145,18 +145,18 @@ export default function Intro() {
                         ].map((tool) => (
                             <div key={tool} className="group relative inline-flex items-center cursor-pointer w-fit pl-5">
 
-                                {/* LINEA INICIAL (antes era el dot) */}
+                                {/* DOT */}
                                 <span className="
                                     absolute left-0 bottom-[2px]
                                     w-2 h-[4px] bg-yellow z-10
                                 " />
 
-                                {/* TEXTO */}
+                                {/* TEXT */}
                                 <span className="relative z-10 tracking-[0.2em] text-sm md:text-lg">
                                     {tool}
                                 </span>
 
-                                {/* LINEA QUE CRECE */}
+                                {/* LARGE LINE */}
                                 <span className="
                                     absolute left-0 bottom-[2px]
                                     h-[4px] bg-yellow

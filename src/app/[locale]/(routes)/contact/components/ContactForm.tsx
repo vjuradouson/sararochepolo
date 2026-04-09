@@ -115,14 +115,18 @@ export default function ContactForm() {
         >
             {["name", "email", "message"].map((field) => (
                 <motion.div key={field} variants={fadeInUp} className="flex flex-col gap-2">
-                    <label className="text-md text-neutral-500 font-semibold">
+                    <label
+                        htmlFor={field}
+                        className="text-md text-neutral-500 font-semibold"
+                    >
                         {t(`contact.form.field.${field}.label`)}
                     </label>
 
                     {field === "message" ? (
                         <textarea
+                            id={field}
                             ref={textareaRef}
-                            name="message"
+                            name={field}
                             required
                             value={form.message}
                             onChange={handleChange}
@@ -130,6 +134,7 @@ export default function ContactForm() {
                         />
                     ) : (
                         <input
+                            id={field}
                             name={field}
                             type={field === "email" ? "email" : "text"}
                             required

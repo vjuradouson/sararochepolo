@@ -35,7 +35,7 @@ export default function CookieScriptsClient() {
 }
 
 /**
-* 🔍 Obtener consentimiento desde cookie
+* 🔍 Get google consent
 */
 function getConsentFromCookie(): CookieConsent | null {
     const cookieValue = document.cookie
@@ -68,17 +68,11 @@ function updateConsent(consent: CookieConsent | null) {
 * 🎯 Marketing scripts (placeholder)
   */
 function loadMarketingScripts() {
-    // Ejemplo:
     // - Meta Pixel
     // - LinkedIn Insight
     // - TikTok Pixel
 }
 
-
-/**
-
-* 🧠 Tipado global
-  */
 declare global {
     interface Window {
         gtag?: (...args: any[]) => void;

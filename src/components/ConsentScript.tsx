@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 
 export default function ConsentScript() {
     useEffect(() => {
-        // fallback seguro sin pelear con TS global
         window.dataLayer = window.dataLayer || [];
 
         const gtag = (...args: any[]) => {

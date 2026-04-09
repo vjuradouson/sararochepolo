@@ -42,7 +42,6 @@ export default getRequestConfig(async ({ requestLocale }) => {
     ? (requested as Locale)
     : DEFAULT_LOCALE;
 
-  // 🔥 loaders dinámicos (build-safe)
   const loaders: Record<Locale, () => Promise<any>> = Object.fromEntries(
     LOCALES.map((loc) => [
       loc,

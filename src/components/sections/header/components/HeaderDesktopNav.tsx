@@ -42,8 +42,6 @@ export function HeaderDesktopNav({ links }: DesktopNavProps) {
                 ? routeConfig
                 : routeConfig[locale];
 
-        console.log(localizedHref, normalizedPath);
-
         if (localizedHref === normalizedPath) {
             e.preventDefault();
 

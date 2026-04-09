@@ -87,7 +87,7 @@ export default function LanguageSwitcher() {
                             className="absolute right-0 mt-3 w-48 rounded-2xl border border-neutral-200 bg-white shadow-[0_12px_32px_rgba(0,0,0,0.10)]"
                             role="menu"
                         >
-                            {/* 👇 Arrow (bocadillo) */}
+                            {/* Arrow */}
                             <div className="pointer-events-none absolute -top-[6px] right-6 h-3 w-3 rotate-45 border-l border-t border-neutral-200 bg-white" />
 
                             <ul className="relative z-10 p-1">

@@ -45,7 +45,7 @@ export default function middleware(req: NextRequest) {
     const acceptLanguage = req.headers.get('accept-language');
 
     /** -------------------------
-     * 2. COOKIE LOCALE (PRIORIDAD MÁXIMA)
+     * 2. COOKIE LOCALE
      * ------------------------- */
     const cookieLocale = req.cookies.get('NEXT_LOCALE')?.value;
 
@@ -60,7 +60,7 @@ export default function middleware(req: NextRequest) {
     const geoLocale = resolveLocaleFromCountry(country);
 
     /** -------------------------
-     * 5. FINAL LOCALE (orden correcto)
+     * 5. FINAL LOCALE
      * ------------------------- */
     let locale =
         cookieLocale ??
@@ -101,7 +101,7 @@ export default function middleware(req: NextRequest) {
 
         const response = NextResponse.redirect(url);
 
-        // 👉 guardar locale SOLO primera vez
+        // Save locale first time
         if (!cookieLocale) {
             response.cookies.set('NEXT_LOCALE', locale, {
                 path: '/',
@@ -109,7 +109,7 @@ export default function middleware(req: NextRequest) {
             });
         }
 
-        // 👉 mantener consentimiento
+        // keep consent
         if (consent) {
             response.cookies.set(COOKIE_CONSENT_NAME, consent);
             response.headers.set('x-consent', consent);
