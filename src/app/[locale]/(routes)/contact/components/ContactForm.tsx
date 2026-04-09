@@ -115,7 +115,7 @@ export default function ContactForm() {
         >
             {["name", "email", "message"].map((field) => (
                 <motion.div key={field} variants={fadeInUp} className="flex flex-col gap-2">
-                    <label className="text-md text-neutral-700">
+                    <label className="text-md text-neutral-500 font-semibold">
                         {t(`contact.form.field.${field}.label`)}
                     </label>
 

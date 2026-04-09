@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 type Props = {
     data: {
-        header: string;
+        h1: string;
         title: string;
         description: string;
         formTitle: string;
@@ -52,7 +52,7 @@ export default function ContactContent({ data }: Props) {
     }, [])
 
     return (
-        <section className="container-xl mx-auto px-6 py-12 lg:py-20" key={refreshKey}>
+        <section className="container-xxl mx-auto px-6 py-12 lg:py-20" key={refreshKey}>
             <div className="grid gap-16 md:grid-cols-2 items-start">
                 {/* LEFT */}
                 <motion.div
@@ -61,12 +61,13 @@ export default function ContactContent({ data }: Props) {
                     whileInView="show"
                     viewport={{ once: true, amount: 0.6 }}
                     className="mb-16">
-                    <motion.p variants={item} className="text-md uppercase tracking-[0.2em] mb-4">
-                        {data.header}
-                    </motion.p>
-                    <motion.h1 variants={item} className="text-5xl font-light tracking-tight mb-10">
-                        {data.title}
+                    <motion.h1 variants={item} className="text-xl uppercase tracking-widest text-brand-muted mb-4">
+                        {data.h1}
                     </motion.h1>
+                    <motion.p variants={item} className="text-4xl tracking-tight sm:text-5xl mb-10">
+                        {data.title}
+                    </motion.p>
+
                     <motion.div
                         variants={container}
                         initial="hidden"
@@ -83,7 +84,7 @@ export default function ContactContent({ data }: Props) {
                 <motion.div
                     variants={container}
                     initial="hidden"
-                    whileInView="show" pb-14
+                    whileInView="show"
                     viewport={{ once: true }}
                 >
                     <motion.div

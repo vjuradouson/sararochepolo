@@ -9,7 +9,7 @@ export default async function HeaderWrapper() {
     const t = await getTranslations("app");
 
     const links = [
-        { href: ROUTES.ABOUT, label: t("header.links.about") },
+        { href: ROUTES.ABOUT, label: t("header.links.about_me") },
         { href: ROUTES.CONTACT, label: t("header.links.contact") },
     ];
 

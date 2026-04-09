@@ -16,7 +16,7 @@ export async function generateMetadata({
     const t = await getTranslations();
 
     const title = t("app.contact.seo.title");
-    const description = t("app.about.seo.description")
+    const description = t("app.about_me.seo.description")
 
     return withAlternates(
         {
@@ -59,7 +59,7 @@ export default async function ContactPage({
     return (
         <ContactContent
             data={{
-                header: t("app.contact.h1"),
+                h1: t("app.contact.h1"),
                 title: t("app.contact.header"),
                 description: t("app.contact.description"),
                 formTitle: t("app.contact.form.title"),

@@ -12,7 +12,7 @@ export function getPersonSchema({ t, locale }: PersonSchemaParams) {
         "@id": `${BASE_URL}/#person`,
         name: t("app.portfolio.owner"),
         jobTitle: t("app.portfolio.seo.schema.person.job_title"),
-        description: t("app.portfolio.description"),
+        description: t("app.home.seo.description"),
         url: BASE_URL,
         inLanguage: locale,
         image: {

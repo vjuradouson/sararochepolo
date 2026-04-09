@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import AboutContent from "./components/AboutContent";
+import AboutContent from "./components/AboutMeContent";
 import JsonLd from "@/components/seo/JsonLd";
 import { getAboutPersonSchema } from "@/lib/seo/schema/about/person";
 import { BASE_URL } from '@/lib/config';
@@ -16,8 +16,8 @@ export async function generateMetadata({
     const { locale } = await params;
     const t = await getTranslations();
 
-    const title = t("app.about.seo.title");
-    const description = t("app.about.seo.description")
+    const title = t("app.about_me.seo.title");
+    const description = t("app.about_me.seo.description")
 
     return withAlternates(
         {
@@ -50,12 +50,12 @@ export default async function AboutPage({
             <JsonLd data={personSchema} />
             <AboutContent
                 data={{
-                    header: t("app.about.header"),
-                    title: t("app.about.h1"),
+                    h1: t("app.about_me.h1"),
+                    header: t("app.about_me.header"),
                     owner: t("app.portfolio.owner"),
                     image: {
-                        title: t("app.about.image_title"),
-                        alt: t("app.about.image_alt"),
+                        title: t("app.about_me.image_title"),
+                        alt: t("app.about_me.image_alt"),
                     },
                     paragraphs: [
                         `Soy Product Designer especializada en UX/UI con más de 3 años de experiencia transformando necesidades complejas en soluciones digitales claras, funcionales y visualmente coherentes.`,

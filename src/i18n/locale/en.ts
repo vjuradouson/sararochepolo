@@ -33,7 +33,7 @@ export default {
         },
         header: {
             links: {
-                about: "About",
+                about_me: "About me",
                 contact: "Contact"
             },
             language_switcher: {
@@ -96,13 +96,13 @@ export default {
                 }
             }
         },
-        about: {
+        about_me: {
             seo: {
                 title: "About Me | Product Designer (UX/UI) in Zaragoza | Sara Roche Polo",
                 description: "Sara Roche Polo is a Product Designer (UX/UI) in Zaragoza with over 3 years of experience crafting intuitive, functional, and user-centered digital experiences."
             },
-            header: "About Me",
-            h1: "Hi, I'm Sara",
+            h1: "About Me",
+            header: "Hi! I'm Sara, a Product Designer specializing in UX/UI",
             image_title: "Professional portrait of Sara Roche Polo, Product Designer (UX/UI)",
             image_alt: "Photo of Sara Roche Polo, Product Designer (UX/UI), with a neutral background for her professional portfolio"
         },

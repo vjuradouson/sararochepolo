@@ -14,7 +14,7 @@ export function getAboutPersonSchema({ t, locale }: AboutSchemaParams) {
     return {
         "@context": "https://schema.org",
         "@type": "AboutPage",
-        name: t("app.about.h1"),
+        name: t("app.about_me.h1"),
         url: `${BASE_URL}/${locale}${getPath(ROUTES.ABOUT, locale)}`,
         inLanguage: locale,
         about: {

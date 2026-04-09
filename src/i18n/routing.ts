@@ -13,8 +13,8 @@ export const ROUTING = defineRouting({
   pathnames: {
     [ROUTES.HOME]: '/',
     [ROUTES.ABOUT]: {
-      es: '/acerca-de',
-      en: '/about'
+      es: '/sobre-mi',
+      en: '/about-me'
     },
     [ROUTES.CONTACT]: {
       es: '/contacto',
