@@ -52,7 +52,7 @@ export default function ContactContent({ data }: Props) {
     }, [])
 
     return (
-        <section className="container-xxl mx-auto px-6 py-12 lg:py-20" key={refreshKey}>
+        <section className="container-xl mx-auto px-6 py-12 lg:py-20" key={refreshKey}>
             <div className="grid gap-16 md:grid-cols-2 items-start">
                 {/* LEFT */}
                 <motion.div
