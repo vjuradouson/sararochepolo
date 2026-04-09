@@ -57,25 +57,18 @@ export default async function AboutPage({
                         title: t("app.about_me.image_title"),
                         alt: t("app.about_me.image_alt"),
                     },
+                    skills: {
+                        title: t("app.about_me.content.skills.title")
+                    },
                     paragraphs: [
-                        `Soy Product Designer especializada en UX/UI con más de 3 años de experiencia transformando necesidades complejas en soluciones digitales claras, funcionales y visualmente coherentes.`,
-                        `Actualmente trabajo en Grupo Piquer, donde diseño experiencias digitales en entornos educativos, mejorando la usabilidad, la estructura de la información y la consistencia visual de la plataforma.`,
-                        `Mi perfil combina diseño de producto y comunicación visual, lo que me permite trabajar tanto en interfaces digitales como en piezas físicas, asegurando una experiencia de marca consistente en todos los puntos de contacto.`,
-                        `Formación en Estudios Ingleses (C2) y educación, lo que me aporta una fuerte capacidad de comunicación, pensamiento estructurado y atención al detalle.`,
-                        `Actualmente disponible para colaboraciones, proyectos freelance y oportunidades en producto digital.`,
+                        t("app.about_me.content.paragraphs.p1"),
+                        t("app.about_me.content.paragraphs.p2"),
+                        t("app.about_me.content.paragraphs.p3"),
+                        t("app.about_me.content.paragraphs.p4")
                     ],
-
-                    labels: {
-                        skills: "Habilidades",
-                        info: "Información",
-                        location: "Ubicación",
-                        languages: "Idiomas",
-                    },
-
-                    info: {
-                        location: "Zaragoza, España",
-                        languages: "Español nativo · Inglés C2",
-                    },
+                    formation: {
+                        title: t("app.about_me.content.formation.title")
+                    }
                 }}
             />
         </>

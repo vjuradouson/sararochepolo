@@ -13,17 +13,13 @@ type Props = {
             title: string;
             alt: string;
         }
+        skills: {
+            title: string;
+        };
         paragraphs: string[];
-        labels: {
-            skills: string;
-            info: string;
-            location: string;
-            languages: string;
-        };
-        info: {
-            location: string;
-            languages: string;
-        };
+        formation: {
+            title: string;
+        }
     };
 };
 
@@ -117,7 +113,7 @@ export default function AboutContent({ data }: Props) {
                             variants={imageVariant}
                             className="w-60 h-72 md:w-80 md:h-full relative justify-self-center self-stretch"
                         >
-                            {/* Fondo azul MÁS ALTO */}
+                            {/* Blue background higher */}
                             <div className="absolute inset-0 bg-light-blue rounded-b-full" />
 
                             <div className="absolute inset-x-0 bottom-0 top-10 md:top-24 overflow-hidden rounded-b-full">
@@ -130,6 +126,7 @@ export default function AboutContent({ data }: Props) {
                                     fill
                                     className="object-cover object-top"
                                     priority
+                                    fetchPriority="high"
                                 />
                             </div>
                         </motion.div>
@@ -139,7 +136,7 @@ export default function AboutContent({ data }: Props) {
             <section className="container-xl mx-auto px-6" key={refreshKey + 1}>
 
                 {/* Content */}
-                <div className="grid md:grid-cols-[7fr_3fr] gap-10 items-start text-lg">
+                <div className="grid md:grid-cols-[7fr_3fr] gap-10 items-start text-lg md:text-xl pb-24">
 
                     {/* LEFT */}
                     <motion.div
@@ -155,7 +152,7 @@ export default function AboutContent({ data }: Props) {
                             className="bg-yellow rounded-xl shadow-[var(--shadow-card-xs)] px-10 py-8"
                         >
                             <h2 className="text-xl uppercase tracking-widest mb-8">
-                                {data.labels.skills}
+                                {data.skills.title}
                             </h2>
 
                             <ul className="grid grid-cols-2 gap-x-16 gap-y-6">
@@ -181,18 +178,18 @@ export default function AboutContent({ data }: Props) {
                         initial="hidden"
                         whileInView="show"
                         viewport={{ once: true, amount: 0.3 }}
-                        className="flex"
+                        className="flex h-full"
                     >
                         <motion.div
                             variants={item}
                             className="w-full border border-dark-blue rounded-3xl px-8 py-8 min-h-[480px]"
                         >
                             <h2 className="text-xl uppercase tracking-widest mb-6">
-                                Formación
+                                {data.formation.title}
                             </h2>
 
                             <p className="text-md">
-                                Poner aquí los estudios
+                                -
                             </p>
                         </motion.div>
                     </motion.div>

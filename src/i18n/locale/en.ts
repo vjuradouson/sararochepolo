@@ -104,7 +104,21 @@ export default {
             h1: "About Me",
             header: "Hi! I'm Sara, a Product Designer specializing in UX/UI",
             image_title: "Professional portrait of Sara Roche Polo, Product Designer (UX/UI)",
-            image_alt: "Photo of Sara Roche Polo, Product Designer (UX/UI), with a neutral background for her professional portfolio"
+            image_alt: "Photo of Sara Roche Polo, Product Designer (UX/UI), with a neutral background for her professional portfolio",
+            content: {
+                skills: {
+                    title: "skills"
+                },
+                paragraphs: {
+                    p1: "I currently design digital experiences in educational environments, improving usability, information architecture, and the visual consistency of the platform.",
+                    p2: "My profile combines product design and visual communication, allowing me to work across both digital interfaces and physical pieces, ensuring a consistent brand experience across all touchpoints.",
+                    p3: "Background in English Studies (C2) and education, which provides me with strong communication skills, structured thinking, and attention to detail.",
+                    p4: "Currently available for collaborations, freelance projects, and opportunities in digital product."
+                },
+                formation: {
+                    title: "Formation"
+                }
+            }
         },
         contact: {
             seo: {
