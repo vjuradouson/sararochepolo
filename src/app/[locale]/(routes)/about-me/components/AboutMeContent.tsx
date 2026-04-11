@@ -92,7 +92,7 @@ export default function AboutContent({ data }: Props) {
 
     return (
         <div>
-            <section className="container-xxl mx-auto px-6 pb-12 lg:py-20" key={refreshKey}>
+            <section className="container-xxl mx-auto px-6 pb-12 lg:py-10" key={refreshKey}>
                 <motion.div
                     className="pb-12 md:h-[500px] lg:h-[600px] overflow-hidden relative shadow-[var(--shadow-card)] rounded-[var(--radius-card)]"
                     variants={container}
@@ -105,7 +105,7 @@ export default function AboutContent({ data }: Props) {
                         whileInView="show"
                         viewport={{ once: true, amount: 0.6 }}
                         className="h-full grid gap-16 md:grid-cols-2 items-stretch">
-                        <div className="pl-8 pt-6 lg:ml-18 lg:pb-36 md:pt-18 px-6">
+                        <div className="pl-8 pt-6 lg:ml-18 md:pt-10 lg:pb-0 px-6">
                             <motion.h1 variants={item} className="text-xl uppercase tracking-widest mb-8 md:mb-16">
                                 {data.h1}
                             </motion.h1>
@@ -146,7 +146,7 @@ export default function AboutContent({ data }: Props) {
             <section className="container-xl mx-auto px-6" key={refreshKey + 1}>
 
                 {/* Content */}
-                <div className="grid md:grid-cols-[5fr_3fr] gap-10 md:gap-20 items-start text-lg md:text-xl md-12 md:pb-24">
+                <div className="grid md:grid-cols-[5fr_3fr] gap-10 md:gap-20 items-start text-lg md:text-xl md-12">
 
                     {/* LEFT */}
                     <motion.div

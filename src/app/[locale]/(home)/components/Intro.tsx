@@ -32,7 +32,7 @@ export default function Intro() {
     const t = useTranslations("app");
 
     return (
-        <section className="w-full py-24 mb-16">
+        <section className="w-full mb-16 md:py-24 md:mb-16">
             <motion.div
                 variants={container}
                 initial="hidden"
@@ -44,7 +44,7 @@ export default function Intro() {
                 {/* LEFT IMAGE */}
                 <motion.div
                     variants={item}
-                    className="order-1 md:order-1 relative w-full"
+                    className="order-2 md:order-1 relative w-full"
                 >
                     <motion.div
                         initial="rest"
@@ -117,7 +117,7 @@ export default function Intro() {
                 </motion.div>
 
                 {/* RIGHT CONTENT */}
-                <div className="order-2 md:order-2 text-xl">
+                <div className="order-1 md:order-2 text-xl mt-16 md:mt-0">
                     <motion.p
                         variants={item}
                         className="text-xl md:text-2xlleading-[1.7] tracking-[0.01em]"

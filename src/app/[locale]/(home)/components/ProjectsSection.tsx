@@ -50,7 +50,7 @@ export default function ProjectsSection() {
                     height={1000}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     quality={90}
-                    className="w-full h-auto object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] my-5"
+                    className="w-full h-auto object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] my-5 mt-12 mb-12 md:mt-0 md:mb-0"
                 />
             ),
         },
@@ -390,13 +390,13 @@ export default function ProjectsSection() {
                         sectionRefs.current[index] = el;
                     }}
                     data-index={index}
-                    className="flex md:min-h-screen"
+                    className="flex h-screen md:min-h-screen"
                     style={{
                         background: `radial-gradient(ellipse 75% 65% at 50% 50%, ${project.bgFrom} 0%, ${project.bgTo} 65%)`,
                     }}
                 >
                     <div className="container-xl mx-auto md:flex px-6 md:items-center">
-                        <div className="grid w-full items-center md:gap-8 md:grid-cols-2 md:grid-rows-[1fr_auto] md:gap-12">
+                        <div className="grid w-full items-center md:gap-8 md:grid-cols-2 md:grid-rows-[1fr_auto] md:gap-12 mt-16 md:mt-0">
                             {/* TEXT */}
                             <motion.div
                                 variants={textVariants}

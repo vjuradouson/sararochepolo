@@ -5,7 +5,7 @@ export default async function Footer() {
     const t = await getTranslations("app");
 
     return (
-        <footer className="border-t border-neutral-200 py-12 md:py-16 text-brand-muted">
+        <footer className="border-t border-neutral-200 py-12 md:py-16 text-brand-muted mt-12">
             <div className="container-xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
 
                 {/* Left */}
