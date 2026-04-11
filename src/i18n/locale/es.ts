@@ -123,10 +123,7 @@ export default {
                     p4: "Actualmente disponible para colaboraciones, proyectos freelance y oportunidades en producto digital."
                 },
                 studies: {
-                    title: "Formación"
-                },
-                formation: {
-                    title: "Education",
+                    title: "Formación",
                     1: {
                         year: "2020 — 2022",
                         title: "Gráfica Interactiva",
