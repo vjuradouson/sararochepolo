@@ -205,7 +205,7 @@ export default function ProjectsSection() {
         const targetY = target.offsetTop;
         const startY = window.scrollY;
         const distance = targetY - startY;
-        const duration = 1400;
+        const duration = 900;
 
         let startTime: number | null = null;
 
@@ -222,7 +222,6 @@ export default function ProjectsSection() {
             const eased = easeInOut(progress);
 
             window.scrollTo(0, startY + distance * eased);
-
             if (progress < 1) {
                 animationFrameRef.current = requestAnimationFrame(animate);
             } else {
