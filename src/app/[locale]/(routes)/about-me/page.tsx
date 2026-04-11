@@ -51,7 +51,10 @@ export default async function AboutPage({
             <AboutContent
                 data={{
                     h1: t("app.about_me.h1"),
-                    header: t("app.about_me.header"),
+                    header: {
+                        greeting: t("app.about_me.header.greeting"),
+                        presentation: t("app.about_me.header.presentation"),
+                    },
                     owner: t("app.portfolio.owner"),
                     image: {
                         title: t("app.about_me.image_title"),
@@ -68,6 +71,10 @@ export default async function AboutPage({
                     ],
                     formation: {
                         title: t("app.about_me.content.formation.title")
+                    },
+                    info: {
+                        location: "string",
+                        languages: "string"
                     }
                 }}
             />

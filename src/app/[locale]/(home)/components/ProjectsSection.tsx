@@ -34,6 +34,28 @@ export default function ProjectsSection() {
     const projects: Project[] = [
         {
             id: 1,
+            subtitle: "— " + t("home.projects.2.subtitle"),
+            title: t("home.projects.2.title"),
+            description: t("home.projects.2.description"),
+            bgFrom: "#EEEDE9",
+            bgTo: "#FFEBC0",
+            textColor: "text-black",
+            parentClass: "w-full min-h-[280px] md:min-h-[500px]",
+            content: (
+                <Image
+                    src="/media/home/projects/figma_pet_buddy.png"
+                    title={t("home.projects.2.image_title")}
+                    alt={t("home.projects.2.image_alt")}
+                    width={1000}
+                    height={1000}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    quality={90}
+                    className="w-full h-auto object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] my-5"
+                />
+            ),
+        },
+        {
+            id: 2,
             subtitle: "— " + t("home.projects.1.subtitle"),
             title: t("home.projects.1.title"),
             description: t("home.projects.1.description"),
@@ -49,28 +71,7 @@ export default function ProjectsSection() {
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     quality={90}
-                    className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] rotate-30 scale-[1.1]"
-                />
-            ),
-        },
-        {
-            id: 2,
-            subtitle: "— " + t("home.projects.2.subtitle"),
-            title: t("home.projects.2.title"),
-            description: t("home.projects.2.description"),
-            bgFrom: "#EEEDE9",
-            bgTo: "#FFEBC0",
-            textColor: "text-black",
-            parentClass: "h-[500px] md:h-full md:min-h-[500px]",
-            content: (
-                <Image
-                    src="/media/home/projects/figma_pet_buddy.png"
-                    title={t("home.projects.2.image_title")}
-                    alt={t("home.projects.2.image_alt")}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    quality={90}
-                    className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)]"
+                    className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] rotate-[30deg] scale-[0.9] md:scale-[1.1] -translate-x-4 md:translate-x-0"
                 />
             ),
         },
@@ -82,16 +83,17 @@ export default function ProjectsSection() {
             bgFrom: "#F6F2BA",
             bgTo: "#B0CCE4",
             textColor: "text-black",
-            parentClass: "h-[500px] md:h-full md:min-h-[500px]",
+            parentClass: "w-full h-full md:min-h-[500px]",
             content: (
                 <Image
                     src="/media/home/projects/cars_ilustration.png"
                     title={t("home.projects.3.image_title")}
                     alt={t("home.projects.3.image_alt")}
-                    fill
+                    width={1000}
+                    height={1000}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     quality={90}
-                    className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)]"
+                    className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] mt-5 mb-5"
                 />
             ),
         },
@@ -380,7 +382,7 @@ export default function ProjectsSection() {
     }, []);
 
     return (
-        <div ref={wrapperRef} className="overflow-x-hidden">
+        <div ref={wrapperRef} className="overflow-x-hidden md:overflow-y-hidden">
             {projects.map((project, index) => (
                 <section
                     key={project.id}
@@ -388,14 +390,13 @@ export default function ProjectsSection() {
                         sectionRefs.current[index] = el;
                     }}
                     data-index={index}
-                    className="md:h-screen flex"
+                    className="flex md:min-h-screen"
                     style={{
                         background: `radial-gradient(ellipse 75% 65% at 50% 50%, ${project.bgFrom} 0%, ${project.bgTo} 65%)`,
                     }}
                 >
-                    <div className="container-xl mx-auto px-6 flex md:items-center">
-                        <div className="w-full md:h-full grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-
+                    <div className="container-xl mx-auto md:flex px-6 md:items-center">
+                        <div className="grid w-full items-center md:gap-8 md:grid-cols-2 md:grid-rows-[1fr_auto] md:gap-12">
                             {/* TEXT */}
                             <motion.div
                                 variants={textVariants}
@@ -404,42 +405,38 @@ export default function ProjectsSection() {
                                 viewport={{ amount: 0.55, once: false }}
                                 transition={{ duration: 0.7, ease: "easeOut" }}
                                 className={`
-                                    order-1 md:order-1
-                                    pt-12 md:pt-28
-                                    pb-12 md:pb-28
-                                    ml-0
-                                    ${project.textColor}
-                                `}
+                            order-1
+                            pt-12 md:order-1 md:row-start-1
+                            md:pt-28 md:pb-0
+                            pb-0
+                            ml-0
+                            ${project.textColor}
+                        `}
                             >
-                                <p className="text-xl md:text-3xl opacity-60 mb-4">
+                                <p className="mb-4 text-xl opacity-60 md:text-3xl">
                                     {project.subtitle}
                                 </p>
 
-                                <h2 className="text-2xl md:text-5xl font-light mb-12">
+                                <h2 className="mb-12 text-2xl font-light md:text-5xl">
                                     {project.title}
                                 </h2>
 
-                                <p className="text-xl md:text-3xl opacity-70 mb-6 md:mb-8">
+                                <p className="md:mb-6 text-xl opacity-70 md:mb-8 md:text-3xl">
                                     {project.description}
                                 </p>
-
-                                <NeoButton size="sm" className="mt-8 md:mt-24 pl-12 pr-12">
-                                    <span className="text-xl">→</span>
-                                    <span>VER PUBLICACIONES</span>
-                                </NeoButton>
                             </motion.div>
 
                             {/* IMAGE */}
                             <motion.div
                                 className={`
-                                    order-2 md:order-2
-                                    relative
-                                    flex items-center justify-center
-                                    mb-12 md:mb-0
-                                    lg:w-[120%]
-                                    ${project.parentClass}
-                                `}
-
+                            order-2
+                            relative
+                            mb-0
+                            flex items-center justify-center
+                            md:order-2 md:col-start-2 md:row-span-2 md:row-start-1
+                            lg:w-[120%]
+                            ${project.parentClass}
+                        `}
                                 variants={imageVariants}
                                 initial="hidden"
                                 whileInView="show"
@@ -449,6 +446,22 @@ export default function ProjectsSection() {
                                 {project.content}
                             </motion.div>
 
+                            {/* BUTTON */}
+                            <motion.div
+                                variants={textVariants}
+                                initial="hidden"
+                                whileInView="show"
+                                viewport={{ amount: 0.55, once: false }}
+                                transition={{ duration: 0.7, ease: "easeOut" }}
+                                className="order-3 pb-12 mt-10 md:order-3 md:row-start-2 md:pb-28"
+                            >
+                                <div className="flex justify-center md:justify-start">
+                                    <NeoButton size="sm" className="mt-0 md:mt-24 pl-12 pr-12">
+                                        <span className="text-xl">→</span>
+                                        <span>VER PUBLICACIONES</span>
+                                    </NeoButton>
+                                </div>
+                            </motion.div>
                         </div>
                     </div>
                 </section>

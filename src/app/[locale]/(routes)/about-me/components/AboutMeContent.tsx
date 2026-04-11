@@ -7,7 +7,10 @@ import { useEffect, useState } from "react";
 type Props = {
     data: {
         h1: string;
-        header: string;
+        header: {
+            greeting: string;
+            presentation: string;
+        };
         owner: string;
         image: {
             title: string;
@@ -19,7 +22,11 @@ type Props = {
         paragraphs: string[];
         formation: {
             title: string;
-        }
+        },
+        info: {
+            location: string;
+            languages: string;
+        };
     };
 };
 
@@ -85,7 +92,7 @@ export default function AboutContent({ data }: Props) {
 
     return (
         <div>
-            <section className="container-xxl mx-auto px-6 py-12 lg:py-20" key={refreshKey}>
+            <section className="container-xxl mx-auto px-6 pb-12 lg:py-20" key={refreshKey}>
                 <motion.div
                     className="pb-12 md:h-[500px] lg:h-[600px] overflow-hidden relative shadow-[var(--shadow-card)] rounded-[var(--radius-card)]"
                     variants={container}
@@ -99,12 +106,15 @@ export default function AboutContent({ data }: Props) {
                         viewport={{ once: true, amount: 0.6 }}
                         className="h-full grid gap-16 md:grid-cols-2 items-stretch">
                         <div className="pl-8 pt-6 lg:ml-18 lg:pb-36 md:pt-18 px-6">
-                            <motion.h1 variants={item} className="text-xl uppercase tracking-widest text-brand-muted mb-16">
+                            <motion.h1 variants={item} className="text-xl uppercase tracking-widest mb-8 md:mb-16">
                                 {data.h1}
                             </motion.h1>
 
+                            <motion.p variants={item} className="pb-5 text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tight">
+                                {data.header.greeting}
+                            </motion.p>
                             <motion.p variants={item} className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight">
-                                {data.header}
+                                {data.header.presentation}
                             </motion.p>
                         </div>
 
@@ -136,7 +146,7 @@ export default function AboutContent({ data }: Props) {
             <section className="container-xl mx-auto px-6" key={refreshKey + 1}>
 
                 {/* Content */}
-                <div className="grid md:grid-cols-[7fr_3fr] gap-10 items-start text-lg md:text-xl pb-24">
+                <div className="grid md:grid-cols-[5fr_3fr] gap-10 md:gap-20 items-start text-lg md:text-xl md-12 md:pb-24">
 
                     {/* LEFT */}
                     <motion.div
@@ -182,15 +192,87 @@ export default function AboutContent({ data }: Props) {
                     >
                         <motion.div
                             variants={item}
-                            className="w-full border border-dark-blue rounded-3xl px-8 py-8 min-h-[480px]"
+                            className="w-full border border-dark-blue/20 rounded-3xl px-6 py-6 bg-white/40 backdrop-blur-sm"
                         >
-                            <h2 className="text-xl uppercase tracking-widest mb-6">
-                                {data.formation.title}
+                            <h2 className="text-2xl uppercase tracking-[0.2em] mb-6 ml-8">
+                                Formación
                             </h2>
 
-                            <p className="text-md">
-                                -
-                            </p>
+                            <div className="relative pl-8 pb-3 pt-3 ">
+
+                                {/* línea timeline */}
+                                <div className="absolute left-2 top-0 bottom-0 w-[1px] bg-dark-blue/20"></div>
+
+                                {/* ITEM */}
+                                <div className="relative group mb-6">
+                                    <p className="tex-md text-dark-blue mb-2 tracking-wide">
+                                        2020 — 2022
+                                    </p>
+
+                                    <h3 className="text-xl font-medium text-dark-blue mb-1">
+                                        Gráfica Interactiva
+                                    </h3>
+
+                                    <p className="tex-md text-dark-blue mb-3">
+                                        Escuela de Arte de Zaragoza
+                                    </p>
+
+                                    <p className="tex-md leading-relaxed mb-4 max-w-[500px]">
+                                        Nota final: <strong>9,4</strong>. Enfoque en diseño digital,
+                                        experiencia de usuario y prototipado.
+                                    </p>
+                                </div>
+
+                                {/* ITEM */}
+                                <div className="relative group mb-6">
+                                    <p className="tex-md text-dark-blue mb-2 tracking-wide">
+                                        2022 — 2023
+                                    </p>
+
+                                    <h3 className="text-xl font-medium text-dark-blue mb-1">
+                                        Content Marketing & Social Media
+                                    </h3>
+
+                                    <p className="tex-md text-dark-blue mb-3">
+                                        Escuela de Empresa
+                                    </p>
+
+                                    <p className="tex-md leading-relaxed max-w-[500px]">
+                                        Desarrollo de estrategias de contenido y marketing digital para marcas.
+                                    </p>
+                                </div>
+
+                                {/* ITEM */}
+                                <div className="relative group mb-6">
+                                    <p className="tex-md text-dark-blue mb-2 tracking-wide">
+                                        2016 — 2017
+                                    </p>
+
+                                    <h3 className="text-xl font-medium text-dark-blue mb-1">
+                                        Máster en Profesorado
+                                    </h3>
+
+                                    <p className="tex-md text-dark-blue">
+                                        Universidad de Zaragoza
+                                    </p>
+                                </div>
+
+                                {/* ITEM */}
+                                <div className="relative group">
+                                    <p className="tex-md text-dark-blue mb-2 tracking-wide">
+                                        2012 — 2016
+                                    </p>
+
+                                    <h3 className="text-xl font-medium text-dark-blue mb-1">
+                                        Grado en Estudios Ingleses
+                                    </h3>
+
+                                    <p className="tex-md text-dark-blue">
+                                        Universidad de Zaragoza
+                                    </p>
+                                </div>
+
+                            </div>
                         </motion.div>
                     </motion.div>
                 </div>

@@ -46,7 +46,8 @@ export default {
                 designer: "Product Designer (UX/UI) based in Zaragoza"
             },
             center: {
-                linkedin: "LinkedIn"
+                linkedin: "LinkedIn",
+                instagram: "Instagram"
             }
         },
         home: {
@@ -102,7 +103,10 @@ export default {
                 description: "Sara Roche Polo is a Product Designer (UX/UI) in Zaragoza with over 3 years of experience crafting intuitive, functional, and user-centered digital experiences."
             },
             h1: "About Me",
-            header: "Hi! I'm Sara, a Product Designer specializing in UX/UI",
+            header: {
+                greeting: "Hi!",
+                presentation: "I'm Sara, a Product Designer specializing in UX/UI",
+            },
             image_title: "Professional portrait of Sara Roche Polo, Product Designer (UX/UI)",
             image_alt: "Photo of Sara Roche Polo, Product Designer (UX/UI), with a neutral background for her professional portfolio",
             content: {
@@ -175,10 +179,15 @@ export default {
                     value: "Sara Roche Polo",
                     href: "https://www.linkedin.com/in/sara-roche-polo-a7114318b/"
                 },
-                location: {
-                    label: "Location",
-                    value: "Zaragoza, España"
+                instagram: {
+                    label: "Instagram",
+                    value: "sara.roche.paints",
+                    href: "https://www.instagram.com/sara.roche.paints/"
                 }
+            },
+            location: {
+                label: "Ubicación",
+                value: "Zaragoza, España"
             }
         }
     }

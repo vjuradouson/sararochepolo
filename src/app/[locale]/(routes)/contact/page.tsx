@@ -50,8 +50,8 @@ export default async function ContactPage({
             href: t("app.contact.contact_link.linkedin.href"),
         },
         {
-            label: t("app.contact.contact_link.location.label"),
-            value: t("app.contact.contact_link.location.value"),
+            label: t("app.contact.location.label"),
+            value: t("app.contact.location.value"),
             href: null,
         },
     ];
@@ -63,7 +63,22 @@ export default async function ContactPage({
                 title: t("app.contact.header"),
                 description: t("app.contact.description"),
                 formTitle: t("app.contact.form.title"),
-                contactLinks,
+                contactLinks: [
+                    {
+                        label: t("app.contact.contact_link.linkedin.label"),
+                        value: t("app.contact.contact_link.linkedin.value"),
+                        href: t("app.contact.contact_link.linkedin.href")
+                    },
+                    {
+                        label: t("app.contact.contact_link.instagram.label"),
+                        value: t("app.contact.contact_link.instagram.value"),
+                        href: t("app.contact.contact_link.instagram.href")
+                    }
+                ],
+                location: {
+                    label: t("app.contact.location.label"),
+                    value: t("app.contact.location.value"),
+                }
             }}
         />
     );
