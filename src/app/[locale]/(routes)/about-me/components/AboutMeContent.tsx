@@ -20,8 +20,14 @@ type Props = {
             title: string;
         };
         paragraphs: string[];
-        formation: {
+        studies: {
             title: string;
+            study: {
+                year: string;
+                title: string;
+                place: string;
+                description: string | null;
+            }[]
         },
         info: {
             location: string;
@@ -195,82 +201,37 @@ export default function AboutContent({ data }: Props) {
                             className="w-full border border-dark-blue/20 rounded-3xl px-6 py-6 bg-white/40 backdrop-blur-sm"
                         >
                             <h2 className="text-2xl uppercase tracking-[0.2em] mb-6 ml-8">
-                                Formación
+                                {data.studies.title}
                             </h2>
 
-                            <div className="relative pl-8 pb-3 pt-3 ">
+                            <div className="relative pl-8 pb-3 pt-3">
 
                                 {/* línea timeline */}
                                 <div className="absolute left-2 top-0 bottom-0 w-[1px] bg-dark-blue/20"></div>
 
-                                {/* ITEM */}
-                                <div className="relative group mb-6">
-                                    <p className="tex-md text-dark-blue mb-2 tracking-wide">
-                                        2020 — 2022
-                                    </p>
+                                {data.studies.study.map((item, index) => (
+                                    <div key={index} className="relative group mb-6 last:mb-0">
 
-                                    <h3 className="text-xl font-medium text-dark-blue mb-1">
-                                        Gráfica Interactiva
-                                    </h3>
+                                        <p className="text-md text-dark-blue mb-2 tracking-wide">
+                                            {item.year}
+                                        </p>
 
-                                    <p className="tex-md text-dark-blue mb-3">
-                                        Escuela de Arte de Zaragoza
-                                    </p>
+                                        <h3 className="text-xl font-medium text-dark-blue mb-1">
+                                            {item.title}
+                                        </h3>
 
-                                    <p className="tex-md leading-relaxed mb-4 max-w-[500px]">
-                                        Nota final: <strong>9,4</strong>. Enfoque en diseño digital,
-                                        experiencia de usuario y prototipado.
-                                    </p>
-                                </div>
+                                        <p className="text-md text-dark-blue mb-3">
+                                            {item.place}
+                                        </p>
 
-                                {/* ITEM */}
-                                <div className="relative group mb-6">
-                                    <p className="tex-md text-dark-blue mb-2 tracking-wide">
-                                        2022 — 2023
-                                    </p>
+                                        {item.description && (
+                                            <p className="text-md leading-relaxed mb-4 max-w-[500px]">
+                                                {item.description}
+                                            </p>
+                                        )}
 
-                                    <h3 className="text-xl font-medium text-dark-blue mb-1">
-                                        Content Marketing & Social Media
-                                    </h3>
-
-                                    <p className="tex-md text-dark-blue mb-3">
-                                        Escuela de Empresa
-                                    </p>
-
-                                    <p className="tex-md leading-relaxed max-w-[500px]">
-                                        Desarrollo de estrategias de contenido y marketing digital para marcas.
-                                    </p>
-                                </div>
-
-                                {/* ITEM */}
-                                <div className="relative group mb-6">
-                                    <p className="tex-md text-dark-blue mb-2 tracking-wide">
-                                        2016 — 2017
-                                    </p>
-
-                                    <h3 className="text-xl font-medium text-dark-blue mb-1">
-                                        Máster en Profesorado
-                                    </h3>
-
-                                    <p className="tex-md text-dark-blue">
-                                        Universidad de Zaragoza
-                                    </p>
-                                </div>
-
-                                {/* ITEM */}
-                                <div className="relative group">
-                                    <p className="tex-md text-dark-blue mb-2 tracking-wide">
-                                        2012 — 2016
-                                    </p>
-
-                                    <h3 className="text-xl font-medium text-dark-blue mb-1">
-                                        Grado en Estudios Ingleses
-                                    </h3>
-
-                                    <p className="tex-md text-dark-blue">
-                                        Universidad de Zaragoza
-                                    </p>
-                                </div>
+                                    </div>
+                                ))}
 
                             </div>
                         </motion.div>

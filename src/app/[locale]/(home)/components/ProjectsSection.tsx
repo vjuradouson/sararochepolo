@@ -105,7 +105,9 @@ export default function ProjectsSection() {
     const wheelAccumulator = useRef(0);
     const animationFrameRef = useRef<number | null>(null);
     const activeIndexRef = useRef(0);
-
+    const touchStartY = useRef(0);
+    const touchCurrentY = useRef(0);
+    const touchDelta = useRef(0);
     const [activeIndex, setActiveIndex] = useState(0);
 
     const setIndex = (index: number) => {
@@ -235,9 +237,6 @@ export default function ProjectsSection() {
     };
 
     useEffect(() => {
-        // Disable in mobile to avoid conflicts with native momentum scrolling and because the section snapping is less relevant on small screens
-        if (typeof window !== "undefined" && window.innerWidth < 768) return;
-
         const onScroll = () => {
             if (!wrapperRef.current) return;
 
@@ -371,13 +370,125 @@ export default function ProjectsSection() {
             }
         };
 
+        const onTouchStart = (e: TouchEvent) => {
+            if (isAnimating.current) return;
+
+            touchStartY.current = e.touches[0].clientY;
+            touchCurrentY.current = touchStartY.current;
+            touchDelta.current = 0;
+        };
+
+        const onTouchMove = (e: TouchEvent) => {
+            if (isAnimating.current) {
+                e.preventDefault();
+                return;
+            }
+
+            touchCurrentY.current = e.touches[0].clientY;
+            touchDelta.current = touchStartY.current - touchCurrentY.current;
+
+            if (!isInsideProjectsViewport()) return;
+
+            const currentIndex = activeIndexRef.current;
+            const deltaY = touchDelta.current;
+
+            const isScrollingDown = deltaY > 0; // dedo sube → contenido baja
+            const isScrollingUp = deltaY < 0;
+
+            const isFirst = currentIndex === 0;
+            const isLast = currentIndex === projects.length - 1;
+
+            const firstTop = getSectionTop(0);
+            const lastTop = getSectionTop(projects.length - 1);
+
+            // 🚨 PERMITIR salir arriba
+            if (
+                isFirst &&
+                isScrollingUp &&
+                window.scrollY <= firstTop + 2
+            ) {
+                return; // NO preventDefault → deja scroll normal
+            }
+
+            // 🚨 PERMITIR salir abajo
+            if (
+                isLast &&
+                isScrollingDown &&
+                window.scrollY >= lastTop - 2
+            ) {
+                return; // NO preventDefault
+            }
+
+            // 🔒 En cualquier otro caso, bloqueamos scroll nativo
+            e.preventDefault();
+        };
+
+        const onTouchEnd = () => {
+            if (isAnimating.current) return;
+
+            const deltaY = touchDelta.current;
+
+            const firstTop = getSectionTop(0);
+            const lastTop = getSectionTop(projects.length - 1);
+
+            // 👇 EXACT same logic que wheel
+            if (deltaY > 0 && isEnteringFirstFromAbove()) {
+                scrollToSection(0);
+                return;
+            }
+
+            if (deltaY < 0 && isEnteringLastFromBelow()) {
+                scrollToSection(projects.length - 1);
+                return;
+            }
+
+            if (!isInsideProjectsViewport()) return;
+
+            const currentIndex = activeIndexRef.current;
+
+            if (deltaY < 0 && currentIndex === 0 && window.scrollY <= firstTop + 2) {
+                return;
+            }
+
+            if (
+                deltaY > 0 &&
+                currentIndex === projects.length - 1 &&
+                window.scrollY >= lastTop - 2
+            ) {
+                return;
+            }
+
+            const threshold = 60; // menor que wheel (finger ≠ wheel)
+
+            if (Math.abs(deltaY) < threshold) return;
+
+            if (deltaY > 0) {
+                const nextIndex = Math.min(currentIndex + 1, projects.length - 1);
+                if (nextIndex !== currentIndex) {
+                    scrollToSection(nextIndex);
+                }
+            } else {
+                const prevIndex = Math.max(currentIndex - 1, 0);
+                if (prevIndex !== currentIndex) {
+                    scrollToSection(prevIndex);
+                }
+            }
+        };
+
         window.addEventListener("scroll", onScroll, { passive: true });
         window.addEventListener("wheel", onWheel, { passive: false });
         window.addEventListener("keydown", onKeyDown);
+        window.addEventListener("touchstart", onTouchStart, { passive: true });
+        window.addEventListener("touchmove", onTouchMove, { passive: false });
+        window.addEventListener("touchend", onTouchEnd);
+
         return () => {
             window.removeEventListener("scroll", onScroll);
             window.removeEventListener("wheel", onWheel);
             window.removeEventListener("keydown", onKeyDown);
+            window.removeEventListener("touchstart", onTouchStart);
+            window.removeEventListener("touchmove", onTouchMove);
+            window.removeEventListener("touchend", onTouchEnd);
         };
     }, []);
 
@@ -458,7 +569,7 @@ export default function ProjectsSection() {
                                 <div className="flex justify-center md:justify-start">
                                     <NeoButton size="sm" className="mt-0 md:mt-24 pl-12 pr-12">
                                         <span className="text-xl">→</span>
-                                        <span>VER PUBLICACIONES</span>
+                                        <span>{t("home.projects.button.label")}</span>
                                     </NeoButton>
                                 </div>
                             </motion.div>

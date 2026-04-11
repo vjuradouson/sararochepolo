@@ -69,8 +69,18 @@ export default async function AboutPage({
                         t("app.about_me.content.paragraphs.p3"),
                         t("app.about_me.content.paragraphs.p4")
                     ],
-                    formation: {
-                        title: t("app.about_me.content.formation.title")
+                    studies: {
+                        title: t("app.about_me.content.studies.title"),
+                        study: Array.from({ length: 4 }, (_, i) => {
+                            const index = i + 1;
+
+                            return {
+                                year: t(`app.about_me.content.studies.${index}.year`),
+                                title: t(`app.about_me.content.studies.${index}.title`),
+                                place: t(`app.about_me.content.studies.${index}.place`),
+                                description: t(`app.about_me.content.studies.${index}.description`) || null,
+                            };
+                        }),
                     },
                     info: {
                         location: "string",

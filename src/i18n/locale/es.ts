@@ -94,6 +94,9 @@ export default {
                     description: "Exploración visual de interfaces modernas para apps móviles.",
                     image_title: "Concepto de interfaz móvil moderna diseñado por Sara Roche Polo",
                     image_alt: "Diseño conceptual de interfaz móvil con ilustraciones de vehículos y elementos visuales para apps creado por Sara Roche Polo"
+                },
+                button: {
+                    label: 'Ver publicaciones'
                 }
             }
         },
@@ -119,8 +122,35 @@ export default {
                     p3: "Formación en Estudios Ingleses (C2) y educación, lo que me aporta una fuerte capacidad de comunicación, pensamiento estructurado y atención al detalle.",
                     p4: "Actualmente disponible para colaboraciones, proyectos freelance y oportunidades en producto digital."
                 },
-                formation: {
+                studies: {
                     title: "Formación"
+                },
+                formation: {
+                    title: "Education",
+                    1: {
+                        year: "2020 — 2022",
+                        title: "Gráfica Interactiva",
+                        place: "Escuela de Arte de Zaragoza",
+                        description: "Nota final: 9,4. Enfoque en diseño digital, experiencia de usuario y prototipado."
+                    },
+                    2: {
+                        year: "2022 — 2023",
+                        title: "Content Marketing & Social Media",
+                        place: "Escuela de Empresa",
+                        description: "Desarrollo de estrategias de contenido y marketing digital para marcas."
+                    },
+                    3: {
+                        year: "2016 — 2017",
+                        title: "Máster en Profesorado",
+                        place: "Universidad de Zaragoza",
+                        description: ""
+                    },
+                    4: {
+                        year: "2012 — 2016",
+                        title: "Grado en Estudios Ingleses",
+                        place: "Universidad de Zaragoza",
+                        description: ""
+                    }
                 }
             }
         },

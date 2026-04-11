@@ -94,6 +94,9 @@ export default {
                     description: "VVisual exploration of modern interfaces for mobile apps.",
                     image_title: "Modern mobile UI concept designed by Sara Roche Polo",
                     image_alt: "Conceptual mobile interface design featuring vehicle illustrations and visual app elements created by Sara Roche Polo"
+                },
+                button: {
+                    label: 'View posts'
                 }
             }
         },
@@ -119,8 +122,32 @@ export default {
                     p3: "Background in English Studies (C2) and education, which provides me with strong communication skills, structured thinking, and attention to detail.",
                     p4: "Currently available for collaborations, freelance projects, and opportunities in digital product."
                 },
-                formation: {
-                    title: "Formation"
+                studies: {
+                    title: "Education",
+                    1: {
+                        year: "2020 — 2022",
+                        title: "Interactive Graphics",
+                        place: "Zaragoza School of Art",
+                        description: "Final grade: 9.4. Focus on digital design, user experience, and prototyping."
+                    },
+                    2: {
+                        year: "2022 — 2023",
+                        title: "Content Marketing & Social Media",
+                        place: "Business School",
+                        description: "Development of content strategies and digital marketing for brands."
+                    },
+                    3: {
+                        year: "2016 — 2017",
+                        title: "Master's Degree in Teaching",
+                        place: "University of Zaragoza",
+                        description: ""
+                    },
+                    4: {
+                        year: "2012 — 2016",
+                        title: "Bachelor's Degree in English Studies",
+                        place: "University of Zaragoza",
+                        description: ""
+                    }
                 }
             }
         },
