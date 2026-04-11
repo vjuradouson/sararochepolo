@@ -50,7 +50,7 @@ export default function ProjectsSection() {
                     height={1000}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     quality={90}
-                    className="w-full h-auto object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] my-5 mt-12 mb-12 md:mt-0 md:mb-0"
+                    className="w-full h-auto object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] my-5 mt-12 mb-12 md:mt-0 md:mb-0 mx-0 my-0"
                 />
             ),
         },
@@ -62,7 +62,7 @@ export default function ProjectsSection() {
             bgFrom: "#A3A3A3",
             bgTo: "#404040",
             textColor: "text-white",
-            parentClass: "h-[500px] md:h-[100vh] md:min-h-[500px]",
+            parentClass: "h-[300px] md:h-[500px] lg:h-full md:h-[100vh] md:min-h-[500px]",
             content: (
                 <Image
                     src="/media/home/projects/meta_adds.png"
@@ -71,7 +71,7 @@ export default function ProjectsSection() {
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     quality={90}
-                    className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] rotate-[30deg] scale-[0.9] md:scale-[1.1] -translate-x-4 md:translate-x-0"
+                    className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] rotate-[30deg] scale-[1.1] md:scale-[1.3] -translate-x-4 md:translate-x-0 mx-0 my-0"
                 />
             ),
         },
@@ -83,7 +83,7 @@ export default function ProjectsSection() {
             bgFrom: "#F6F2BA",
             bgTo: "#B0CCE4",
             textColor: "text-black",
-            parentClass: "w-full h-full md:min-h-[500px]",
+            parentClass: "h-[300px] md:h-[500px] lg:h-full md:h-[100vh] md:min-h-[500px]",
             content: (
                 <Image
                     src="/media/home/projects/cars_ilustration.png"
@@ -93,7 +93,7 @@ export default function ProjectsSection() {
                     height={1000}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     quality={90}
-                    className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] mt-5 mb-5"
+                    className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] mt-5 mb-5 mx-0 my-0"
                 />
             ),
         },
@@ -507,7 +507,7 @@ export default function ProjectsSection() {
                     }}
                 >
                     <div className="container-xl mx-auto md:flex px-6 md:items-center">
-                        <div className="grid w-full items-center md:gap-8 md:grid-cols-2 md:grid-rows-[1fr_auto] md:gap-12 mt-16 md:mt-0">
+                        <div className="grid w-full items-center md:gap-8 md:grid-cols-2 md:grid-rows-[1fr_auto] md:gap-12 mt-12 md:mt-0">
                             {/* TEXT */}
                             <motion.div
                                 variants={textVariants}
@@ -524,15 +524,15 @@ export default function ProjectsSection() {
                             ${project.textColor}
                         `}
                             >
-                                <p className="mb-4 text-xl opacity-60 md:text-3xl">
+                                <p className="mb-1 md:mb-4 text-xl opacity-60 md:text-3xl">
                                     {project.subtitle}
                                 </p>
 
-                                <h2 className="mb-12 text-2xl font-light md:text-5xl">
+                                <h2 className="mb-4 md:mb-12 text-2xl font-light md:text-5xl">
                                     {project.title}
                                 </h2>
 
-                                <p className="md:mb-6 text-xl opacity-70 md:mb-8 md:text-3xl">
+                                <p className="md:mb-6 text-xl opacity-70 md:text-3xl">
                                     {project.description}
                                 </p>
                             </motion.div>
@@ -562,7 +562,7 @@ export default function ProjectsSection() {
                                 variants={textVariants}
                                 initial="hidden"
                                 whileInView="show"
-                                viewport={{ amount: 0.55, once: false }}
+                                viewport={{ amount: 0, once: false }}
                                 transition={{ duration: 0.7, ease: "easeOut" }}
                                 className="order-3 pb-12 mt-10 md:order-3 md:row-start-2 md:pb-28"
                             >
