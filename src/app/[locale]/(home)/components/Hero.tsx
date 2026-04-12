@@ -32,7 +32,7 @@ export default function Hero() {
     const t = useTranslations("app");
 
     return (
-        <section className="w-full py-2 md:py-16">
+        <section className="w-full py-2 md:py-16 mt-20 md:mt-10">
             <div className="container-xxl mx-auto lg:px-6">
                 <motion.div
                     className="relative overflow-hidden rounded-[var(--radius-card)] shadow-[var(--shadow-card)]"
@@ -41,7 +41,7 @@ export default function Hero() {
                     animate="show"
                 >
                     {/* BACKGROUND */}
-                    <div className="pointer-events-none absolute top-0 h-full lg:right-[10%] lg:w-[65%]">
+                    <div className="pointer-events-none absolute top-0 h-full right-[0%] w-[100%] md:right-[10%] md:w-[65%] opacity-50 md:opacity-100">
                         <motion.div
                             className="
                                 hero-bg-circle absolute right-[-10%] top-1/2
@@ -54,7 +54,7 @@ export default function Hero() {
 
                     {/* WRAPPER */}
                     <div className="h-full">
-                        <div className="grid h-full gap-8 lg:grid-cols-2 lg:grid-rows-[auto_auto] lg:items-center lg:gap-12">
+                        <div className="grid h-full gap-8 md:grid-cols-2 md:grid-rows-[auto_auto] lg:items-center lg:gap-12">
                             {/* TEXT */}
                             <div className="order-1 z-10 px-6 pl-8 pt-6 lg:col-start-1 lg:row-start-1 lg:ml-18 lg:pb-0 lg:pt-20">
                                 <motion.h1

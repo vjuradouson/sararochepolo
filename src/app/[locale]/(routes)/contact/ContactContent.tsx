@@ -99,7 +99,7 @@ export default function ContactContent({ data }: Props) {
     }, []);
 
     return (
-        <section className="container-xl mx-auto px-6 lg:pt-20" key={refreshKey}>
+        <section className="container-xl mx-auto px-6 pt-25" key={refreshKey}>
             <div className="grid items-start md:gap-20 md:grid-cols-2">
                 {/* LEFT */}
                 <motion.div

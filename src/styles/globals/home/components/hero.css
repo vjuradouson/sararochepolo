@@ -1,13 +1,25 @@
-@media (min-width: 1024px) {
     .hero-bg-circle {
-        width: 160%;
+        width: 190%;
         height: 200%;
     }
-}
 
-@media (min-width: 1400px) {
-    .hero-bg-circle {
-        width: 110%;
-        height: 190%;
+    @media (min-width: 768) {
+        .hero-bg-circle {
+            width: 160%;
+            height: 200%;
+        }
     }
-}
+
+    @media (min-width: 1024px) {
+        .hero-bg-circle {
+            width: 160%;
+            height: 200%;
+        }
+    }
+
+    @media (min-width: 1400px) {
+        .hero-bg-circle {
+            width: 110%;
+            height: 190%;
+        }
+    }

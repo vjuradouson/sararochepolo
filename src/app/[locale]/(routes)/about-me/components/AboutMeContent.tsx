@@ -98,7 +98,7 @@ export default function AboutContent({ data }: Props) {
 
     return (
         <div>
-            <section className="container-xxl mx-auto px-6 pb-12 lg:py-10" key={refreshKey}>
+            <section className="container-xxl mx-auto px-6 pb-12 pt-20 md:pt-25" key={refreshKey}>
                 <motion.div
                     className="pb-12 md:h-[500px] lg:h-[600px] overflow-hidden relative shadow-[var(--shadow-card)] rounded-[var(--radius-card)]"
                     variants={container}

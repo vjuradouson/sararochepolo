@@ -40,7 +40,7 @@ export default function ProjectsSection() {
             bgFrom: "#EEEDE9",
             bgTo: "#FFEBC0",
             textColor: "text-black",
-            parentClass: "w-full min-h-[280px] md:min-h-[500px]",
+            parentClass: "w-full min-h-[380px] md:min-h-[500px]",
             content: (
                 <Image
                     src="/media/home/projects/figma_pet_buddy.png"
@@ -62,7 +62,7 @@ export default function ProjectsSection() {
             bgFrom: "#A3A3A3",
             bgTo: "#404040",
             textColor: "text-white",
-            parentClass: "h-[300px] md:h-[500px] lg:h-full md:h-[100vh] md:min-h-[500px]",
+            parentClass: "h-[400px] md:h-[500px] lg:h-full md:h-[100vh] md:min-h-[500px]",
             content: (
                 <Image
                     src="/media/home/projects/meta_adds.png"
@@ -83,7 +83,7 @@ export default function ProjectsSection() {
             bgFrom: "#F6F2BA",
             bgTo: "#B0CCE4",
             textColor: "text-black",
-            parentClass: "h-[300px] md:h-[500px] lg:h-full md:h-[100vh] md:min-h-[500px]",
+            parentClass: "h-[400px] md:h-[500px] lg:h-full md:h-[100vh] md:min-h-[500px]",
             content: (
                 <Image
                     src="/media/home/projects/cars_ilustration.png"
@@ -563,7 +563,7 @@ export default function ProjectsSection() {
                                 whileInView="show"
                                 viewport={{ amount: 0, once: false }}
                                 transition={{ duration: 0.7, ease: "easeOut" }}
-                                className="order-3 pb-12 mt-10 md:order-3 md:row-start-2 md:pb-28"
+                                className="order-3 pb-12 mt-15 md:order-3 md:row-start-2 md:pb-28"
                             >
                                 <div className="flex justify-center md:justify-start">
                                     <NeoButton size="sm" className="mt-0 md:mt-24 pl-12 pr-12">

@@ -107,7 +107,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
 
-          <main className="flex-1 pt-20">
+          <main className="flex-1">
             {children}
           </main>
 
