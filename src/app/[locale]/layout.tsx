@@ -90,6 +90,32 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
         `,
           }}
         />
+        <link
+          rel="icon"
+          type="image/png"
+          href={`${BASE_URL}/media/favicons/favicon-16x16.png`}
+          sizes="16x16"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          href={`${BASE_URL}/media/favicons/favicon-32x32.png`}
+          sizes="32x32"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          href={`${BASE_URL}/media/favicons/favicon-48x48.png`}
+          sizes="48x48"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          href={`${BASE_URL}/media/favicons/favicon-96x96.png`}
+          sizes="96x96"
+        />
+        <link rel="shortcut icon" href={`${BASE_URL}/media/favicons/favicon.ico`} />
+        <link rel="icon" type="image/svg+xml" href={`${BASE_URL}/media/favicons/favicon.svg`} />
       </head>
       <body className="min-h-full flex flex-col">
         <noscript

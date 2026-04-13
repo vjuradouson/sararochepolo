@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import NeoButton from "@/components/ui/NeoButton";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { Variants } from "framer-motion";
 
 type Project = {
     id: number;
@@ -19,13 +20,25 @@ type Project = {
 };
 
 const textVariants = {
-    hidden: { opacity: 0, y: 60 },
+    hidden: { opacity: 0, y: 200 },
     show: { opacity: 1, y: 0 },
 };
 
-const imageVariants = {
-    hidden: { opacity: 0, scale: 0.9, x: 80 },
-    show: { opacity: 1, scale: 1, x: 0 },
+const imageVariants: Variants = {
+    hidden: {
+        opacity: 0,
+        y: 200,
+        scale: 0.8
+    },
+    show: {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: {
+            duration: 2,
+            ease: [0.22, 1, 0.36, 1] as any
+        },
+    },
 };
 
 export default function ProjectsSection() {
@@ -34,71 +47,94 @@ export default function ProjectsSection() {
     const projects: Project[] = [
         {
             id: 1,
-            subtitle: "— " + t("home.projects.2.subtitle"),
-            title: t("home.projects.2.title"),
-            description: t("home.projects.2.description"),
-            bgFrom: "#EEEDE9",
-            bgTo: "#FFEBC0",
+            subtitle: "— " + t("home.projects.figma_pet_buddy.subtitle"),
+            title: t("home.projects.figma_pet_buddy.title"),
+            description: t("home.projects.figma_pet_buddy.description"),
+            bgFrom: "#FDE08D",
+            bgTo: "#F9D1B7",
             textColor: "text-black",
             parentClass: "w-full min-h-[380px] md:min-h-[500px]",
             content: (
                 <Image
                     src="/media/home/projects/figma_pet_buddy.png"
-                    title={t("home.projects.2.image_title")}
-                    alt={t("home.projects.2.image_alt")}
+                    title={t("home.projects.figma_pet_buddy.image_title")}
+                    alt={t("home.projects.figma_pet_buddy.image_alt")}
                     width={1000}
                     height={1000}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     quality={90}
-                    className="w-full h-auto object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] my-5 mt-12 mb-12 md:mt-0 md:mb-0 mx-0 my-0"
+                    className="max-h-full max-w-full w-full h-auto object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] my-5 mt-12 mb-12 md:mt-0 md:mb-0 mx-0 my-0"
                 />
             ),
         },
         {
             id: 2,
-            subtitle: "— " + t("home.projects.1.subtitle"),
-            title: t("home.projects.1.title"),
-            description: t("home.projects.1.description"),
-            bgFrom: "#A3A3A3",
-            bgTo: "#404040",
-            textColor: "text-white",
+            subtitle: "— " + t("home.projects.meta_adds.subtitle"),
+            title: t("home.projects.meta_adds.title"),
+            description: t("home.projects.meta_adds.description"),
+            bgFrom: "#F9D1B7",
+            bgTo: "#EAD7D1",
+            textColor: "text-black",
             parentClass: "h-[400px] md:h-[500px] lg:h-full md:h-[100vh] md:min-h-[500px]",
             content: (
                 <Image
                     src="/media/home/projects/meta_adds.png"
-                    title={t("home.projects.1.image_title")}
-                    alt={t("home.projects.1.image_alt")}
+                    title={t("home.projects.meta_adds.image_title")}
+                    alt={t("home.projects.meta_adds.image_alt")}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     quality={90}
-                    className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] rotate-[30deg] scale-[1.1] md:scale-[1.3] -translate-x-4 md:translate-x-0 mx-0 my-0"
+                    className="max-h-full max-w-full object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] rotate-[30deg] scale-[1.1] md:scale-[1.2] -translate-x-4 md:translate-x-0 mx-0 my-0"
                 />
             ),
         },
         {
             id: 3,
-            subtitle: "— " + t("home.projects.3.subtitle"),
-            title: t("home.projects.3.title"),
-            description: t("home.projects.3.description"),
-            bgFrom: "#F6F2BA",
-            bgTo: "#B0CCE4",
+            subtitle: "— " + t("home.projects.adobe_project_neo_keyboard.subtitle"),
+            title: t("home.projects.adobe_project_neo_keyboard.title"),
+            description: t("home.projects.adobe_project_neo_keyboard.description"),
+            bgFrom: "#EAD7D1",
+            bgTo: "#D1D1D1",
             textColor: "text-black",
             parentClass: "h-[400px] md:h-[500px] lg:h-full md:h-[100vh] md:min-h-[500px]",
             content: (
                 <Image
-                    src="/media/home/projects/cars_ilustration.png"
-                    title={t("home.projects.3.image_title")}
-                    alt={t("home.projects.3.image_alt")}
+                    src="/media/home/projects/adobe_project_neo_keyboard.png"
+                    title={t("home.projects.adobe_project_neo_keyboard.image_title")}
+                    alt={t("home.projects.adobe_project_neo_keyboard.image_alt")}
                     width={1000}
                     height={1000}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     quality={90}
-                    className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] mt-5 mb-5 mx-0 my-0"
+                    className="max-h-full max-w-full object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] mt-5 mb-5 mx-0 my-0"
+                />
+            ),
+        },
+        {
+            id: 4,
+            subtitle: "— " + t("home.projects.ilustration.subtitle"),
+            title: t("home.projects.ilustration.title"),
+            description: t("home.projects.ilustration.description"),
+            bgFrom: "#D1D1D1",
+            bgTo: "#F5E1C8",
+            textColor: "text-black",
+            parentClass: "h-[400px] md:h-[500px] lg:h-full md:h-[100vh] md:min-h-[500px]",
+            content: (
+                <Image
+                    src="/media/home/projects/ilustration.png"
+                    title={t("home.projects.ilustration.image_title")}
+                    alt={t("home.projects.ilustration.image_alt")}
+                    width={1000}
+                    height={1000}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    quality={90}
+                    className="max-h-full max-w-full object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] mt-5 mb-5 mx-0 my-0 scale-[1.2] md:scale-[1.4]"
                 />
             ),
         },
     ];
 
+    const isMobile = () => window.innerWidth < 768;
     const wrapperRef = useRef<HTMLDivElement>(null);
     const sectionRefs = useRef<(HTMLElement | null)[]>([]);
     const isAnimating = useRef(false);
@@ -236,6 +272,9 @@ export default function ProjectsSection() {
     };
 
     useEffect(() => {
+
+        if (isMobile()) return;
+
         const onScroll = () => {
             if (!wrapperRef.current) return;
 
@@ -477,22 +516,22 @@ export default function ProjectsSection() {
         window.addEventListener("scroll", onScroll, { passive: true });
         window.addEventListener("wheel", onWheel, { passive: false });
         window.addEventListener("keydown", onKeyDown);
-        window.addEventListener("touchstart", onTouchStart, { passive: true });
+        /*window.addEventListener("touchstart", onTouchStart, { passive: true });
         window.addEventListener("touchmove", onTouchMove, { passive: false });
-        window.addEventListener("touchend", onTouchEnd);
+        window.addEventListener("touchend", onTouchEnd);*/
 
         return () => {
             window.removeEventListener("scroll", onScroll);
             window.removeEventListener("wheel", onWheel);
             window.removeEventListener("keydown", onKeyDown);
-            window.removeEventListener("touchstart", onTouchStart);
+            /*window.removeEventListener("touchstart", onTouchStart);
             window.removeEventListener("touchmove", onTouchMove);
-            window.removeEventListener("touchend", onTouchEnd);
+            window.removeEventListener("touchend", onTouchEnd);*/
         };
     }, []);
 
     return (
-        <div ref={wrapperRef} className="overflow-x-hidden md:overflow-y-hidden">
+        <div ref={wrapperRef} className="overflow-x-hidden overflow-y-hidden overflow-y-auto md:overflow-y-hidden">
             {projects.map((project, index) => (
                 <section
                     key={project.id}
@@ -500,13 +539,13 @@ export default function ProjectsSection() {
                         sectionRefs.current[index] = el;
                     }}
                     data-index={index}
-                    className="flex h-screen md:min-h-screen"
+                    className="flex flex-col md:h-screen md:min-h-screen py-0 md:py-0 pt-24 md:pt-0"
                     style={{
-                        background: `radial-gradient(ellipse 75% 65% at 50% 50%, ${project.bgFrom} 0%, ${project.bgTo} 65%)`,
+                        background: `linear-gradient(180deg, ${project.bgFrom} 0%, ${project.bgTo} 100%)`
                     }}
                 >
-                    <div className="container-xl mx-auto md:flex px-6 md:items-center">
-                        <div className="grid w-full items-center md:gap-8 md:grid-cols-2 md:grid-rows-[1fr_auto] md:gap-12 mt-12 md:mt-0">
+                    <div className="container-xl mx-auto px-6 md:h-full">
+                        <div className="grid w-full grid-cols-1 md:h-full md:grid-cols-2 md:grid-rows-1 md:items-center">
                             {/* TEXT */}
                             <motion.div
                                 variants={textVariants}
@@ -514,62 +553,50 @@ export default function ProjectsSection() {
                                 whileInView="show"
                                 viewport={{ amount: 0.55, once: false }}
                                 transition={{ duration: 0.7, ease: "easeOut" }}
-                                className={`
-                            order-1
-                            pt-12 md:order-1 md:row-start-1
-                            md:pt-28 md:pb-0
-                            pb-0
-                            ml-0
-                            ${project.textColor}
-                        `}
+                                className={`order-1 flex md:h-full flex-col justify-start md:justify-center mt-13 md:mt-0 ${project.textColor}`}
                             >
-                                <p className="mb-1 md:mb-4 text-xl opacity-60 md:text-3xl">
+                                <p className="mb-1 text-xl opacity-60 md:mb-4 md:text-3xl">
                                     {project.subtitle}
                                 </p>
 
-                                <h2 className="mb-4 md:mb-12 text-2xl font-light md:text-5xl">
+                                <h2 className="mb-4 text-2xl font-light md:mb-12 md:text-5xl">
                                     {project.title}
                                 </h2>
 
-                                <p className="md:mb-6 text-xl opacity-70 md:text-3xl">
+                                <p className="text-xl opacity-70 md:mb-6 md:text-3xl">
                                     {project.description}
                                 </p>
+
+                                <motion.div
+                                    variants={textVariants}
+                                    initial="hidden"
+                                    whileInView="show"
+                                    viewport={{ amount: 0, once: false }}
+                                    transition={{ duration: 0.7, ease: "easeOut" }}
+                                    className="mt-6 md:mt-24"
+                                >
+                                    <div className="flex justify-center md:justify-start">
+                                        <NeoButton size="sm" className="pl-12 pr-12">
+                                            <span className="text-xl">→</span>
+                                            <span>{t("home.projects.button.label")}</span>
+                                        </NeoButton>
+                                    </div>
+                                </motion.div>
                             </motion.div>
 
                             {/* IMAGE */}
                             <motion.div
-                                className={`
-                            order-2
-                            relative
-                            mb-0
-                            flex items-center justify-center
-                            md:order-2 md:col-start-2 md:row-span-2 md:row-start-1
-                            lg:w-[120%]
-                            ${project.parentClass}
-                        `}
+                                className={`order-2 relative flex items-center justify-center w-full md:h-full md:max-h-none lg:w-[120%] ${project.parentClass}`}
                                 variants={imageVariants}
                                 initial="hidden"
                                 whileInView="show"
-                                viewport={{ amount: 0.55, once: false }}
+                                viewport={{ amount: 0.5, once: false }}
                                 transition={{ duration: 0.85, ease: "easeOut" }}
                             >
-                                {project.content}
-                            </motion.div>
-
-                            {/* BUTTON */}
-                            <motion.div
-                                variants={textVariants}
-                                initial="hidden"
-                                whileInView="show"
-                                viewport={{ amount: 0, once: false }}
-                                transition={{ duration: 0.7, ease: "easeOut" }}
-                                className="order-3 pb-12 mt-15 md:order-3 md:row-start-2 md:pb-28"
-                            >
-                                <div className="flex justify-center md:justify-start">
-                                    <NeoButton size="sm" className="mt-0 md:mt-24 pl-12 pr-12">
-                                        <span className="text-xl">→</span>
-                                        <span>{t("home.projects.button.label")}</span>
-                                    </NeoButton>
+                                <div className="w-full h-full flex md:items-center md:justify-center">
+                                    <div className="md:max-h-full md:max-w-full">
+                                        {project.content}
+                                    </div>
                                 </div>
                             </motion.div>
                         </div>

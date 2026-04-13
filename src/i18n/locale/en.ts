@@ -26,7 +26,7 @@ export default {
                         }
                     },
                     service: {
-                        name: "UX/UI Design Services in Zaragoza",
+                        name: "UX/UI Design Services based in Zaragoza",
                     }
                 }
             }
@@ -52,12 +52,12 @@ export default {
         },
         home: {
             seo: {
-                title: "Sara Roche Polo | Product Designer (UX/UI) in Zaragoza",
+                title: "Sara Roche Polo | Product Designer (UX/UI) based in Zaragoza",
                 description: "Product Designer (UX/UI) based in Zaragoza. I create intuitive experiences and clear visual systems for digital products.",
             },
             hero: {
                 h1: "Product Designer (UX/UI)",
-                h1_meta: "in Zaragoza | Sara Roche Polo",
+                h1_meta: "based in Zaragoza | Sara Roche Polo",
                 button: {
                     label: "Contact"
                 },
@@ -74,26 +74,32 @@ export default {
                 }
             },
             projects: {
-                1: {
-                    subtitle: "Company Publication",
-                    title: "Social Media and Meta Ads",
-                    description: "Brand content for social media and Meta Ads following company guidelines.",
-                    image_title: "Branded content for social media and Meta Ads by Sara Roche Polo",
-                    image_alt: "Social media posts and Meta Ads campaigns designed by Sara Roche Polo following company brand guidelines"
-                },
-                2: {
+                figma_pet_buddy: {
                     subtitle: "Personal Project",
                     title: "Design in Figma",
-                    description: "Design and prototyping of applications using Figma.",
+                    description: "Design and prototyping in Figma of intuitive and visually appealing interfaces, from the initial idea to interactive prototypes, applying UX/UI principles and design systems.",
                     image_title: "Personal UX/UI design project in Figma by Sara Roche Polo",
                     image_alt: "Mobile app design mockups by Sara Roche Polo, including a transport app and a pet app interface"
                 },
-                3: {
+                meta_adds: {
+                    subtitle: "Company Publication",
+                    title: "Social Media and Meta Ads",
+                    description: "Creation of content for social media and Meta Ads campaigns, aligned with brand identity and business objectives. Design of visual assets optimized for performance, engagement, and conversion.",
+                    image_title: "Branded content for social media and Meta Ads by Sara Roche Polo",
+                    image_alt: "Social media posts and Meta Ads campaigns designed by Sara Roche Polo following company brand guidelines"
+                },
+                adobe_project_neo_keyboard: {
                     subtitle: "Personal Project",
                     title: "Mobile UI Concept",
-                    description: "VVisual exploration of modern interfaces for mobile apps.",
+                    description: "Creation of illustrations and 3D assets using Adobe Project Neo, focused on achieving modern, clean visual compositions with a high level of detail for digital environments.",
                     image_title: "Modern mobile UI concept designed by Sara Roche Polo",
                     image_alt: "Conceptual mobile interface design featuring vehicle illustrations and visual app elements created by Sara Roche Polo"
+                },
+                ilustration: {
+                    subtitle: "Proyecto personal",
+                    title: "Concepto UI móvil",
+                    description: "Creation of digital illustrations focused on characters and visual storytelling. Primarily working with Procreate, developing each piece from sketch to final artwork, with attention to color, texture, and composition.", image_title: "Concepto de interfaz móvil moderna diseñado por Sara Roche Polo",
+                    image_alt: "Conceptual design of a mobile interface with vehicle illustrations and visual elements for apps, created by Sara Roche Polo"
                 },
                 button: {
                     label: 'View posts'
@@ -102,8 +108,8 @@ export default {
         },
         about_me: {
             seo: {
-                title: "About Me | Product Designer (UX/UI) in Zaragoza | Sara Roche Polo",
-                description: "Sara Roche Polo is a Product Designer (UX/UI) in Zaragoza with over 3 years of experience crafting intuitive, functional, and user-centered digital experiences."
+                title: "About Me | Product Designer (UX/UI) based in Zaragoza | Sara Roche Polo",
+                description: "Sara Roche Polo is a Product Designer (UX/UI) based in Zaragoza with over 3 years of experience crafting intuitive, functional, and user-centered digital experiences."
             },
             h1: "About Me",
             header: {
@@ -153,8 +159,8 @@ export default {
         },
         contact: {
             seo: {
-                title: "Contact | Product Designer (UX/UI) in Zaragoza | Sara Roche Polo",
-                description: "Get in touch with Sara Roche Polo, Product Designer (UX/UI) in Zaragoza, available for new digital projects and professional opportunities."
+                title: "Contact | Product Designer (UX/UI) based in Zaragoza | Sara Roche Polo",
+                description: "Get in touch with Sara Roche Polo, Product Designer (UX/UI) based in Zaragoza, available for new digital projects and professional opportunities."
             },
             h1: "Contact",
             header: "Shall we talk?",

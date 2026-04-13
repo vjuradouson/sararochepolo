@@ -4,6 +4,8 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import NeoButton from "@/components/ui/NeoButton";
+import { Link } from '@/i18n/navigation';
+import { ROUTES } from "@/constants/routes";
 
 const container = {
     hidden: {},
@@ -87,7 +89,7 @@ export default function Hero() {
                             {/* IMAGE */}
                             <motion.div
                                 variants={item}
-                                className="order-2 relative mb-0 h-[380px] px-6 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:h-[500px] lg:px-0"
+                                className="order-2 relative mb-0 h-[380px] px-6 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:h-full lg:py-0"
                             >
                                 <Image
                                     src="/media/home/hero/apps_hero.png"
@@ -96,7 +98,7 @@ export default function Hero() {
                                     fill
                                     sizes="(max-width: 768px) 100vw, 50vw"
                                     quality={90}
-                                    className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)]"
+                                    className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] lg:py-5"
                                     priority
                                     fetchPriority="high"
                                 />
@@ -108,12 +110,14 @@ export default function Hero() {
                                 className="order-3 z-10 px-6 pb-8 lg:col-start-1 lg:row-start-2 lg:ml-18 lg:mt-8 lg:px-6 lg:pb-20"
                             >
                                 <div className="flex justify-center lg:justify-start">
-                                    <NeoButton size="sm">
-                                        <span className="text-2xl">→</span>
-                                        <span className="uppercase">
-                                            {t("home.hero.button.label")}
-                                        </span>
-                                    </NeoButton>
+                                    <Link href={`${ROUTES.CONTACT}`}>
+                                        <NeoButton size="sm">
+                                            <span className="text-2xl">→</span>
+                                            <span className="uppercase">
+                                                {t("home.hero.button.label")}
+                                            </span>
+                                        </NeoButton>
+                                    </Link>
                                 </div>
                             </motion.div>
                         </div>

@@ -134,7 +134,8 @@ export default function Intro() {
 
                     <motion.div
                         variants={item}
-                        className="mt-12 md:mt-16 md:ml-12 grid grid-cols-2 gap-x-12 gap-y-4 tracking-[0.2em]">
+                        className="mt-12 md:mt-16 md:ml-12 grid grid-cols-2 gap-x-2 md:gap-x-6 gap-y-4 tracking-[0.2em]"
+                    >
                         {[
                             "ADOBE PHOTOSHOP",
                             "ADOBE ILLUSTRATOR",
@@ -143,29 +144,41 @@ export default function Intro() {
                             "FIGMA",
                             "WORDPRESS",
                         ].map((tool) => (
-                            <div key={tool} className="group relative inline-flex items-center cursor-pointer w-fit pl-5">
-
+                            <div
+                                key={tool}
+                                className="group relative flex items-center cursor-pointer w-full pl-5 gap-3"
+                            >
                                 {/* DOT */}
-                                <span className="
-                                    absolute left-0 bottom-[2px]
-                                    w-2 h-[4px] bg-yellow z-10
-                                " />
+                                <span className="absolute left-0 bottom-[2px] w-2 h-[4px] bg-yellow z-10" />
+
+                                {/* ICON CONTAINER */}
+                                <div className="relative z-10 min-w-[32px] w-[32px] h-[32px] flex items-center justify-center">
+                                    <Image
+                                        src="/media/home/intro/icons/ilustrator-icon.png"
+                                        alt={`${tool} icon`}
+                                        width={32}
+                                        height={32}
+                                        className="w-full h-full object-contain"
+                                    />
+                                </div>
 
                                 {/* TEXT */}
-                                <span className="relative z-10 tracking-[0.2em] text-sm md:text-lg">
+                                <span className="relative z-10 tracking-[0.2em] text-sm md:text-lg leading-none break-words">
                                     {tool}
                                 </span>
 
                                 {/* LARGE LINE */}
-                                <span className="
-                                    absolute left-0 bottom-[2px]
-                                    h-[4px] bg-yellow
-                                    w-full
-                                    origin-left
-                                    scale-x-0
-                                    transition-transform duration-[1400ms] ease-[cubic-bezier(0.2,0,0,1)]
-                                    group-hover:scale-x-100
-                                " />
+                                <span
+                                    className="
+      absolute left-0 bottom-[2px]
+      h-[4px] bg-yellow
+      w-full
+      origin-left
+      scale-x-0
+      transition-transform duration-[1400ms] ease-[cubic-bezier(0.2,0,0,1)]
+      group-hover:scale-x-100
+    "
+                                />
                             </div>
                         ))}
                     </motion.div>

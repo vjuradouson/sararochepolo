@@ -74,24 +74,31 @@ export default {
                 }
             },
             projects: {
-                1: {
-                    subtitle: "Publicación empresa",
-                    title: "Redes sociales y Meta Ads",
-                    description: "Contenido de marca para redes sociales y Meta Ads siguiendo guidelines de empresa.",
-                    image_title: "Contenido de marca para redes sociales y Meta Ads por Sara Roche Polo",
-                    image_alt: "Publicaciones para redes sociales y campañas de Meta Ads diseñadas por Sara Roche Polo siguiendo guidelines de marca de empresa"
-                },
-                2: {
+                figma_pet_buddy: {
                     subtitle: "Proyecto personal",
                     title: "Diseño en Figma",
-                    description: "Diseño y prototipado de aplicaciones usando Figma.",
+                    description: "Diseño y prototipado en Figma de interfaces intuitivas y atractivas, desde la idea inicial hasta prototipos interactivos, aplicando principios de UX/UI y sistemas de diseño.",
                     image_title: "Proyecto personal de diseño UX/UI en Figma para aplicación móvil por Sara Roche Polo",
                     image_alt: "Diseño de aplicación móvil de mascotas creado en Figma por Sara Roche Polo, mostrando mockups de interfaz y prototipado UX/UI"
                 },
-                3: {
+                meta_adds: {
+                    subtitle: "Publicación empresa",
+                    title: "Redes sociales y Meta Ads",
+                    description: "Creación de contenido para redes sociales y campañas de Meta Ads, alineado con la identidad de marca y objetivos de negocio.Diseño de piezas visuales optimizadas para rendimiento, engagement y conversión.",
+                    image_title: "Contenido de marca para redes sociales y Meta Ads por Sara Roche Polo",
+                    image_alt: "Publicaciones para redes sociales y campañas de Meta Ads diseñadas por Sara Roche Polo siguiendo guidelines de marca de empresa"
+                },
+                adobe_project_neo_keyboard: {
                     subtitle: "Proyecto personal",
                     title: "Concepto UI móvil",
-                    description: "Exploración visual de interfaces modernas para apps móviles.",
+                    description: "Creación de ilustraciones y piezas 3D con Adobe Project Neo, enfocadas en lograr composiciones visuales modernas, limpias y con alto nivel de detalle para entornos digitales.",
+                    image_title: "Concepto de interfaz móvil moderna diseñado por Sara Roche Polo",
+                    image_alt: "Diseño conceptual de interfaz móvil con ilustraciones de vehículos y elementos visuales para apps creado por Sara Roche Polo"
+                },
+                ilustration: {
+                    subtitle: "Proyecto personal",
+                    title: "Concepto UI móvil",
+                    description: "Creación de ilustraciones digitales enfocadas en personajes y narrativa visual. Trabajo principalmente con Procreate, desarrollando cada pieza desde el boceto hasta el acabado final, cuidando color, textura y composición.",
                     image_title: "Concepto de interfaz móvil moderna diseñado por Sara Roche Polo",
                     image_alt: "Diseño conceptual de interfaz móvil con ilustraciones de vehículos y elementos visuales para apps creado por Sara Roche Polo"
                 },
