@@ -21,7 +21,7 @@ type Project = {
 };
 
 const textVariants = {
-    hidden: { opacity: 0, y: 200 },
+    hidden: { opacity: 0, y: 50 },
     show: { opacity: 1, y: 0 },
 };
 
@@ -547,7 +547,10 @@ export default function ProjectsSection() {
     }, [isMobile]);
 
     return (
-        <div ref={wrapperRef} className="overflow-x-hidden overflow-y-hidden overflow-y-auto md:overflow-y-hidden">
+        <div
+            ref={wrapperRef}
+            className="overflow-x-hidden overflow-y-hidden md:overflow-y-hidden"
+        >
             {projects.map((project, index) => (
                 <section
                     key={project.id}
@@ -555,13 +558,16 @@ export default function ProjectsSection() {
                         sectionRefs.current[index] = el;
                     }}
                     data-index={index}
-                    className="flex flex-col md:h-screen md:min-h-screen py-0 md:py-0 md:pt-12 md:pt-0"
+                    className="flex flex-col md:h-screen md:min-h-screen pt-8 md:pt-0"
                     style={{
                         background: `linear-gradient(180deg, ${project.bgFrom} 0%, ${project.bgTo} 100%)`
                     }}
                 >
-                    <div className="container-xl mx-auto px-6 md:h-full">
-                        <div className="grid w-full grid-cols-1 md:h-full md:grid-cols-2 md:grid-rows-1 md:items-center">
+                    <div className="container-xl mx-auto px-6 md:pt-8 md:pt-0 mb-12 md:mb-0 md:h-full">
+
+                        {/* 🔥 GRID */}
+                        <div className="grid w-full grid-cols-1 md:grid-cols-2 md:grid-rows-[auto_auto] md:h-full md:items-center">
+
                             {/* TEXT */}
                             <motion.div
                                 variants={textVariants}
@@ -569,7 +575,14 @@ export default function ProjectsSection() {
                                 whileInView="show"
                                 viewport={{ amount: 0.55, once: isMobile }}
                                 transition={{ duration: 0.7, ease: "easeOut" }}
-                                className={`order-1 flex md:h-full flex-col justify-start md:justify-center mt-6 md:mt-0 ${project.textColor}`}
+                                className={`
+              order-1
+              md:order-1
+              md:col-start-1 md:row-start-1
+              flex flex-col justify-start md:justify-center
+              mt-6 md:mt-0
+              ${project.textColor}
+            `}
                             >
                                 <p className="mb-1 text-xl opacity-60 md:mb-4 md:text-3xl">
                                     {project.subtitle}
@@ -582,39 +595,45 @@ export default function ProjectsSection() {
                                 <p className="text-xl opacity-70 md:mb-6 md:text-3xl">
                                     {project.description}
                                 </p>
-
-                                <motion.div
-                                    variants={textVariants}
-                                    initial="hidden"
-                                    whileInView="show"
-                                    viewport={{ amount: 0, once: isMobile }}
-                                    transition={{ duration: 0.7, ease: "easeOut" }}
-                                    className="mt-6 md:mt-24"
-                                >
-                                    <div className="flex justify-center md:justify-start">
-                                        <NeoButton size="sm" className="pl-12 pr-12">
-                                            <span className="text-xl">→</span>
-                                            <span className="uppercase">{project.view_all}</span>
-                                        </NeoButton>
-                                    </div>
-                                </motion.div>
                             </motion.div>
 
                             {/* IMAGE */}
                             <motion.div
-                                className={`order-2 relative flex items-center justify-center w-full md:h-full md:max-h-none lg:w-[120%] ${project.parentClass}`}
                                 variants={imageVariants}
                                 initial="hidden"
                                 whileInView="show"
                                 viewport={{ amount: 0.5, once: isMobile }}
                                 transition={{ duration: 0.85, ease: "easeOut" }}
+                                className={`
+              order-2
+              md:order-2
+              md:col-start-2 md:row-span-2
+              relative flex items-center justify-center w-full md:h-full lg:w-[120%]
+              ${project.parentClass}
+            `}
                             >
-                                <div className="w-full h-full flex md:items-center md:justify-center">
+                                <div className="w-full md:h-full flex md:items-center md:justify-center">
                                     <div className="md:max-h-full md:max-w-full">
                                         {project.content}
                                     </div>
                                 </div>
                             </motion.div>
+
+                            <motion.div
+                                variants={textVariants}
+                                initial="hidden"
+                                whileInView="show"
+                                viewport={{ amount: 0, once: isMobile }}
+                                transition={{ duration: 0.7, ease: "easeOut" }}
+                                className={`order-3 md:order-3 md:col-start-1 md:row-start-2 mt-6 md:mt-12 ${project.textColor}`}>
+                                <div className="flex justify-center md:justify-start">
+                                    <NeoButton size="sm" className="pl-12 pr-12">
+                                        <span className="text-xl">→</span>
+                                        <span className="uppercase">{project.view_all}</span>
+                                    </NeoButton>
+                                </div>
+                            </motion.div>
+
                         </div>
                     </div>
                 </section>

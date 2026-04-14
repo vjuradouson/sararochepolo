@@ -133,33 +133,36 @@ export default function Intro() {
 
                     <motion.div
                         variants={item}
-                        className="mt-12 md:mt-16 md:ml-12 grid grid-cols-2 gap-x-2 md:gap-x-6 gap-y-4 tracking-[0.2em]"
-                    >
+                        className="mt-12 md:mt-16 md:ml-0 grid justify-items-center lg:grid-flow-col md:grid-rows-4 gap-x-2 md:gap-x-6 gap-y-4 tracking-[0.2em]"                    >
                         {[
                             {
-                                name: "ADOBE PHOTOSHOP",
+                                name: "Adobe Photoshop",
                                 icon: "adobe-photoshop-icon.png",
                             },
                             {
-                                name: "ADOBE ILLUSTRATOR",
+                                name: "Adobe Illustrator",
                                 icon: "adobe-illustrator-icon.png",
                             },
                             {
-                                name: "ADOBE EXPRESS",
+                                name: "Adobe Express",
                                 icon: "adobe-express-icon.png",
                             },
                             {
-                                name: "ADOBE PROJECT NEO",
+                                name: "Adobe Project Neo",
                                 icon: "adobe-neo-icon.png",
                             },
                             {
-                                name: "FIGMA",
+                                name: "Figma",
                                 icon: "figma-icon.png",
                             },
                             {
-                                name: "WORDPRESS",
+                                name: "Wordpress",
                                 icon: "wordpress-icon.png",
                             },
+                            {
+                                name: "Procreate",
+                                icon: "procreate-icon.png",
+                            }
                         ].map((tool) => (
                             <div
                                 key={tool.name}
@@ -177,14 +180,13 @@ export default function Intro() {
                                 </div>
 
                                 {/* TEXT */}
-                                <span className="relative z-10 tracking-[0.2em] text-sm md:text-lg leading-none break-words">
+                                <span className="relative z-10 tracking-[0.2em] text-sm md:text-lg leading-none break-words uppercase">
                                     {tool.name}
                                 </span>
                             </div>
                         ))}
                     </motion.div>
                 </div>
-
             </motion.div>
         </section>
     );

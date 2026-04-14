@@ -90,6 +90,28 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
         `,
           }}
         />
+        {/* Modern SVG */}
+        <link
+          rel="icon"
+          type="image/svg+xml"
+          href={`${BASE_URL}/media/favicons/favicon.svg`}
+          media="(prefers-color-scheme: light)"
+        />
+        <link
+          rel="icon"
+          type="image/svg+xml"
+          href={`${BASE_URL}/media/favicons/favicon-dark.svg`}
+          media="(prefers-color-scheme: dark)"
+        />
+
+        {/* Fallback SVG */}
+        <link
+          rel="icon"
+          type="image/svg+xml"
+          href={`${BASE_URL}/media/favicons/favicon.svg`}
+        />
+
+        {/* PNG fallback (old browsers / tabs / Windows) */}
         <link
           rel="icon"
           type="image/png"
@@ -114,8 +136,12 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
           href={`${BASE_URL}/media/favicons/favicon-96x96.png`}
           sizes="96x96"
         />
-        <link rel="shortcut icon" href={`${BASE_URL}/media/favicons/favicon.ico`} />
-        <link rel="icon" type="image/svg+xml" href={`${BASE_URL}/media/favicons/favicon.svg`} />
+
+        {/* ICO fallback (legacy) */}
+        <link
+          rel="shortcut icon"
+          href={`${BASE_URL}/media/favicons/favicon.ico`}
+        />
       </head>
       <body className="min-h-full flex flex-col">
         <noscript
