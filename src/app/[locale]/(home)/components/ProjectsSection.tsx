@@ -28,12 +28,19 @@ const textVariants = {
 export default function ProjectsSection() {
     const t = useTranslations("app");
 
-    const isMobile = window.innerWidth < 768;
+    const [isMobile, setIsMobile] = useState(true);
+
+    useEffect(() => {
+        const check = () => setIsMobile(window.innerWidth < 768);
+        check();
+        window.addEventListener("resize", check);
+        return () => window.removeEventListener("resize", check);
+    }, []);
 
     const imageVariants: Variants = {
         hidden: {
             opacity: 0,
-            y: isMobile ? 50 : 200,
+            y: 200,
             scale: 0.8
         },
         show: {
@@ -530,7 +537,7 @@ export default function ProjectsSection() {
             window.removeEventListener("touchmove", onTouchMove);
             window.removeEventListener("touchend", onTouchEnd);*/
         };
-    }, []);
+    }, [isMobile]);
 
     return (
         <div ref={wrapperRef} className="overflow-x-hidden overflow-y-hidden overflow-y-auto md:overflow-y-hidden">
