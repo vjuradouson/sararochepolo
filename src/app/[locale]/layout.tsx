@@ -108,7 +108,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
         <link
           rel="icon"
           type="image/svg+xml"
-          href={`${BASE_URL}/media/favicons/favicon.svg`}
+          href={`${BASE_URL}/media/favicons/favicon-light.svg`}
         />
 
         {/* PNG fallback (old browsers / tabs / Windows) */}
@@ -135,12 +135,6 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
           type="image/png"
           href={`${BASE_URL}/media/favicons/favicon-96x96.png`}
           sizes="96x96"
-        />
-
-        {/* ICO fallback (legacy) */}
-        <link
-          rel="shortcut icon"
-          href={`${BASE_URL}/media/favicons/favicon.ico`}
         />
       </head>
       <body className="min-h-full flex flex-col">
