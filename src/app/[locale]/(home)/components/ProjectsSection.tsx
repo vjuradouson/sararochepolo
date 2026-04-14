@@ -28,13 +28,20 @@ const textVariants = {
 export default function ProjectsSection() {
     const t = useTranslations("app");
 
-    const [isMobile, setIsMobile] = useState(true);
+    const [isMobile, setIsMobile] = useState(() => {
+        if (typeof window !== "undefined") {
+            return window.innerWidth < 768;
+        }
+        return false;
+    });
 
     useEffect(() => {
-        const check = () => setIsMobile(window.innerWidth < 768);
-        check();
-        window.addEventListener("resize", check);
-        return () => window.removeEventListener("resize", check);
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
     }, []);
 
     const imageVariants: Variants = {
