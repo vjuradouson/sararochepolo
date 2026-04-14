@@ -17,6 +17,7 @@ type Project = {
     textColor: string;
     parentClass: string,
     content: React.ReactNode;
+    view_all: string;
 };
 
 const textVariants = {
@@ -24,25 +25,27 @@ const textVariants = {
     show: { opacity: 1, y: 0 },
 };
 
-const imageVariants: Variants = {
-    hidden: {
-        opacity: 0,
-        y: 200,
-        scale: 0.8
-    },
-    show: {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        transition: {
-            duration: 2,
-            ease: [0.22, 1, 0.36, 1] as any
-        },
-    },
-};
-
 export default function ProjectsSection() {
     const t = useTranslations("app");
+
+    const isMobile = window.innerWidth < 768;
+
+    const imageVariants: Variants = {
+        hidden: {
+            opacity: 0,
+            y: isMobile ? 50 : 200,
+            scale: 0.8
+        },
+        show: {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            transition: {
+                duration: 2,
+                ease: [0.22, 1, 0.36, 1] as any
+            },
+        },
+    };
 
     const projects: Project[] = [
         {
@@ -54,10 +57,10 @@ export default function ProjectsSection() {
             bgTo: "#F9D1B7",
             textColor: "text-black",
             parentClass: "w-full min-h-[380px] md:min-h-[500px]",
+            view_all: t("home.projects.figma_pet_buddy.view_all"),
             content: (
                 <Image
                     src="/media/home/projects/figma_pet_buddy.png"
-                    title={t("home.projects.figma_pet_buddy.image_title")}
                     alt={t("home.projects.figma_pet_buddy.image_alt")}
                     width={1000}
                     height={1000}
@@ -75,11 +78,11 @@ export default function ProjectsSection() {
             bgFrom: "#F9D1B7",
             bgTo: "#EAD7D1",
             textColor: "text-black",
-            parentClass: "h-[400px] md:h-[500px] lg:h-full md:h-[100vh] md:min-h-[500px]",
+            parentClass: "h-[400px] md:h-[500px] lg:h-full md:h-[100vh] md:min-h-[500px] mb-10 md:mb-0",
+            view_all: t("home.projects.meta_adds.view_all"),
             content: (
                 <Image
                     src="/media/home/projects/meta_adds.png"
-                    title={t("home.projects.meta_adds.image_title")}
                     alt={t("home.projects.meta_adds.image_alt")}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
@@ -97,10 +100,10 @@ export default function ProjectsSection() {
             bgTo: "#D1D1D1",
             textColor: "text-black",
             parentClass: "h-[400px] md:h-[500px] lg:h-full md:h-[100vh] md:min-h-[500px]",
+            view_all: t("home.projects.adobe_project_neo_keyboard.view_all"),
             content: (
                 <Image
                     src="/media/home/projects/adobe_project_neo_keyboard.png"
-                    title={t("home.projects.adobe_project_neo_keyboard.image_title")}
                     alt={t("home.projects.adobe_project_neo_keyboard.image_alt")}
                     width={1000}
                     height={1000}
@@ -112,29 +115,28 @@ export default function ProjectsSection() {
         },
         {
             id: 4,
-            subtitle: "— " + t("home.projects.ilustration.subtitle"),
-            title: t("home.projects.ilustration.title"),
-            description: t("home.projects.ilustration.description"),
+            subtitle: "— " + t("home.projects.illustration.subtitle"),
+            title: t("home.projects.illustration.title"),
+            description: t("home.projects.illustration.description"),
             bgFrom: "#D1D1D1",
             bgTo: "#F5E1C8",
             textColor: "text-black",
             parentClass: "h-[400px] md:h-[500px] lg:h-full md:h-[100vh] md:min-h-[500px]",
+            view_all: t("home.projects.illustration.view_all"),
             content: (
                 <Image
-                    src="/media/home/projects/ilustration.png"
-                    title={t("home.projects.ilustration.image_title")}
-                    alt={t("home.projects.ilustration.image_alt")}
+                    src="/media/home/projects/illustration.png"
+                    alt={t("home.projects.illustration.image_alt")}
                     width={1000}
                     height={1000}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     quality={90}
-                    className="max-h-full max-w-full object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] mt-5 mb-5 mx-0 my-0 scale-[1.2] md:scale-[1.4]"
+                    className="max-h-full max-w-full object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] mt-5 mb-5 mx-0 my-0 scale-[1.3] md:scale-[1.4]"
                 />
             ),
         },
     ];
 
-    const isMobile = () => window.innerWidth < 768;
     const wrapperRef = useRef<HTMLDivElement>(null);
     const sectionRefs = useRef<(HTMLElement | null)[]>([]);
     const isAnimating = useRef(false);
@@ -273,7 +275,7 @@ export default function ProjectsSection() {
 
     useEffect(() => {
 
-        if (isMobile()) return;
+        if (isMobile) return;
 
         const onScroll = () => {
             if (!wrapperRef.current) return;
@@ -539,7 +541,7 @@ export default function ProjectsSection() {
                         sectionRefs.current[index] = el;
                     }}
                     data-index={index}
-                    className="flex flex-col md:h-screen md:min-h-screen py-0 md:py-0 pt-24 md:pt-0"
+                    className="flex flex-col md:h-screen md:min-h-screen py-0 md:py-0 md:pt-12 md:pt-0"
                     style={{
                         background: `linear-gradient(180deg, ${project.bgFrom} 0%, ${project.bgTo} 100%)`
                     }}
@@ -551,9 +553,9 @@ export default function ProjectsSection() {
                                 variants={textVariants}
                                 initial="hidden"
                                 whileInView="show"
-                                viewport={{ amount: 0.55, once: false }}
+                                viewport={{ amount: 0.55, once: isMobile }}
                                 transition={{ duration: 0.7, ease: "easeOut" }}
-                                className={`order-1 flex md:h-full flex-col justify-start md:justify-center mt-13 md:mt-0 ${project.textColor}`}
+                                className={`order-1 flex md:h-full flex-col justify-start md:justify-center mt-6 md:mt-0 ${project.textColor}`}
                             >
                                 <p className="mb-1 text-xl opacity-60 md:mb-4 md:text-3xl">
                                     {project.subtitle}
@@ -571,14 +573,14 @@ export default function ProjectsSection() {
                                     variants={textVariants}
                                     initial="hidden"
                                     whileInView="show"
-                                    viewport={{ amount: 0, once: false }}
+                                    viewport={{ amount: 0, once: isMobile }}
                                     transition={{ duration: 0.7, ease: "easeOut" }}
                                     className="mt-6 md:mt-24"
                                 >
                                     <div className="flex justify-center md:justify-start">
                                         <NeoButton size="sm" className="pl-12 pr-12">
                                             <span className="text-xl">→</span>
-                                            <span>{t("home.projects.button.label")}</span>
+                                            <span className="uppercase">{project.view_all}</span>
                                         </NeoButton>
                                     </div>
                                 </motion.div>
@@ -590,7 +592,7 @@ export default function ProjectsSection() {
                                 variants={imageVariants}
                                 initial="hidden"
                                 whileInView="show"
-                                viewport={{ amount: 0.5, once: false }}
+                                viewport={{ amount: 0.5, once: isMobile }}
                                 transition={{ duration: 0.85, ease: "easeOut" }}
                             >
                                 <div className="w-full h-full flex md:items-center md:justify-center">

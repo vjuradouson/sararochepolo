@@ -13,7 +13,6 @@ type Props = {
         };
         owner: string;
         image: {
-            title: string;
             alt: string;
         }
         skills: {
@@ -135,7 +134,6 @@ export default function AboutContent({ data }: Props) {
                             <div className="absolute inset-x-0 bottom-0 top-10 md:top-24 overflow-hidden rounded-b-full">
                                 <Image
                                     src="/media/about/profile.png"
-                                    title={data.image.title}
                                     alt={data.image.alt}
                                     sizes="25vw"
                                     quality={90}

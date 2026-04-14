@@ -57,7 +57,6 @@ export default async function AboutPage({
                     },
                     owner: t("app.portfolio.owner"),
                     image: {
-                        title: t("app.about_me.image_title"),
                         alt: t("app.about_me.image_alt"),
                     },
                     skills: {

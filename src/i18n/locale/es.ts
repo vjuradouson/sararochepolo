@@ -62,12 +62,10 @@ export default {
                     label: "Contacto"
                 },
                 product_designer: "Transformando <line></line>necesidades complejas <line></line>en <highlight>experiencias claras </highlight><line></line><highlight>y funcionales</highlight>",
-                image_title: "Proyectos de diseño UX/UI de apps móviles por Sara Roche Polo",
                 image_alt: "Mockups de aplicaciones móviles diseñadas por Sara Roche Polo, incluyendo una app de rutas y una app de mascotas"
             },
             intro: {
                 description: "Diseñadora de Producto (UX/UI) con más de 3 años de experiencia <highlight>diseñando interfaces intuitivas y sistemas visuales consistentes.</highlight> Combino UX, UI y comunicación visual para crear <highlight>soluciones digitales y físicas alineadas con negocio y usuario.</highlight>",
-                image_title: "Proceso creativo y diseño UX/UI de Sara Roche Polo",
                 image_alt: "Sara Roche Polo sosteniendo un cuaderno Moleskine como parte de su proceso de diseño UX/UI",
                 hover: {
                     label: "¡Hola!"
@@ -78,32 +76,29 @@ export default {
                     subtitle: "Proyecto personal",
                     title: "Diseño en Figma",
                     description: "Diseño y prototipado en Figma de interfaces intuitivas y atractivas, desde la idea inicial hasta prototipos interactivos, aplicando principios de UX/UI y sistemas de diseño.",
-                    image_title: "Proyecto personal de diseño UX/UI en Figma para aplicación móvil por Sara Roche Polo",
-                    image_alt: "Diseño de aplicación móvil de mascotas creado en Figma por Sara Roche Polo, mostrando mockups de interfaz y prototipado UX/UI"
+                    image_alt: "Diseño de aplicación móvil de mascotas creado en Figma por Sara Roche Polo, mostrando mockups de interfaz y prototipado UX/UI",
+                    view_all: 'Ver proyecto'
                 },
                 meta_adds: {
                     subtitle: "Publicación empresa",
                     title: "Redes sociales y Meta Ads",
                     description: "Creación de contenido para redes sociales y campañas de Meta Ads, alineado con la identidad de marca y objetivos de negocio.Diseño de piezas visuales optimizadas para rendimiento, engagement y conversión.",
-                    image_title: "Contenido de marca para redes sociales y Meta Ads por Sara Roche Polo",
-                    image_alt: "Publicaciones para redes sociales y campañas de Meta Ads diseñadas por Sara Roche Polo siguiendo guidelines de marca de empresa"
+                    image_alt: "Publicaciones para redes sociales y campañas de Meta Ads diseñadas por Sara Roche Polo siguiendo guidelines de marca de empresa",
+                    view_all: 'Ver proyecto'
                 },
                 adobe_project_neo_keyboard: {
-                    subtitle: "Proyecto personal",
-                    title: "Concepto UI móvil",
+                    subtitle: "Diseño 3D",
+                    title: "Adobe Project Neo",
                     description: "Creación de ilustraciones y piezas 3D con Adobe Project Neo, enfocadas en lograr composiciones visuales modernas, limpias y con alto nivel de detalle para entornos digitales.",
-                    image_title: "Concepto de interfaz móvil moderna diseñado por Sara Roche Polo",
-                    image_alt: "Diseño conceptual de interfaz móvil con ilustraciones de vehículos y elementos visuales para apps creado por Sara Roche Polo"
+                    image_alt: "Render 3D de un teclado numérico inalámbrico de estilo minimalista en tonos oscuros, con iluminación suave y diseño moderno creado con Adobe Project Neo por Sara Roche Polo",
+                    view_all: 'Ver proyecto'
                 },
-                ilustration: {
+                illustration: {
                     subtitle: "Proyecto personal",
-                    title: "Concepto UI móvil",
+                    title: "Ilustración",
                     description: "Creación de ilustraciones digitales enfocadas en personajes y narrativa visual. Trabajo principalmente con Procreate, desarrollando cada pieza desde el boceto hasta el acabado final, cuidando color, textura y composición.",
-                    image_title: "Concepto de interfaz móvil moderna diseñado por Sara Roche Polo",
-                    image_alt: "Diseño conceptual de interfaz móvil con ilustraciones de vehículos y elementos visuales para apps creado por Sara Roche Polo"
-                },
-                button: {
-                    label: 'Ver publicaciones'
+                    image_alt: "Pantallas de tablet mostrando ilustraciones digitales de personajes en diferentes fases de diseño, desde bocetos hasta versiones finales, creadas por Sara Roche Polo",
+                    view_all: 'Ver ilustraciones'
                 }
             }
         },
@@ -117,7 +112,6 @@ export default {
                 greeting: "¡Hola!",
                 presentation: "Soy Sara, Diseñadora de Producto especializada en UX/UI"
             },
-            image_title: "Retrato profesional de Sara Roche Polo, Diseñadora de Producto (UX/UI)",
             image_alt: "Fotografía de Sara Roche Polo, Diseñadora de Producto (UX/UI), con fondo neutro para su portfolio profesional",
             content: {
                 skills: {

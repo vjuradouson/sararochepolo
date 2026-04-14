@@ -93,7 +93,6 @@ export default function Hero() {
                             >
                                 <Image
                                     src="/media/home/hero/apps_hero.png"
-                                    title={t("home.hero.image_title")}
                                     alt={t("home.hero.image_alt")}
                                     fill
                                     sizes="(max-width: 768px) 100vw, 50vw"
