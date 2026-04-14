@@ -43,13 +43,26 @@ export default function Hero() {
                     animate="show"
                 >
                     {/* BACKGROUND */}
-                    <div className="pointer-events-none absolute top-0 h-full right-[0%] w-[100%] md:right-[10%] md:w-[65%] opacity-50 md:opacity-100">
+                    <div className="hidden md:block pointer-events-none absolute top-0 h-full right-0 w-[100%] md:right-[10%] md:w-[65%] opacity-70 md:opacity-100">
                         <motion.div
                             className="
                                 hero-bg-circle absolute right-[-10%] top-1/2
                                 -translate-y-1/2 rounded-full rotate-[30deg]
                                 bg-[radial-gradient(circle_at_left_center,_#f3f3f1_0%,_#f4f4f4_50%,_#e3df5a_50%,_#f4f4f4_75%)]
                             "
+                            variants={item}
+                        />
+                    </div>
+                    <div className="md:hidden pointer-events-none absolute top-0 right-0 w-full h-full">
+                        <motion.div
+                            className="
+            absolute -right-[50%] top-1/2
+            -translate-y-1/2
+            w-[170%] h-[110%]
+            rotate-[45deg]
+            rounded-full
+            bg-[radial-gradient(circle_at_left_center,_#f3f3f1_0%,_#f4f4f4_50%,_#e3df5a_50%,_#f4f4f4_75%)]
+        "
                             variants={item}
                         />
                     </div>
