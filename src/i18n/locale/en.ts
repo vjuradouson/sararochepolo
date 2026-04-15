@@ -80,7 +80,7 @@ export default {
                     view_all: 'View project'
                 },
                 meta_adds: {
-                    subtitle: "Trabajo empresa",
+                    subtitle: "Company project",
                     title: "Social networks and Meta Ads",
                     description: "Creation of content for social media and Meta Ads campaigns, aligned with brand identity and business objectives. Design of visual assets optimized for performance, engagement, and conversion.",
                     image_alt: "Social media posts and Meta Ads campaigns designed by Sara Roche Polo following company brand guidelines",
@@ -94,11 +94,18 @@ export default {
                     view_all: 'View project'
                 },
                 illustration: {
-                    subtitle: "Proyecto personal",
+                    subtitle: "Personal Project",
                     title: "Ilustration",
                     description: "Creation of digital illustrations focused on characters and visual storytelling. Primarily working with Procreate, developing each piece from sketch to final artwork, with attention to color, texture, and composition.",
                     image_alt: "Tablet screens displaying digital character illustrations in different design stages, from sketches to final versions, created by Sara Roche Polo",
                     view_all: 'View illustrations'
+                },
+                branding: {
+                    subtitle: "Personal Project",
+                    title: "Branding",
+                    description: "Development of visual identity for projects, from the initial concept to its final application. I work on logo design, typography, and color to build coherent, recognizable brands with personality.",
+                    image_alt: "Branding by Sara Roche Polo",
+                    view_all: 'View project'
                 }
             }
         },

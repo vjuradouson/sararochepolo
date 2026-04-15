@@ -99,6 +99,13 @@ export default {
                     description: "Creación de ilustraciones digitales enfocadas en personajes y narrativa visual. Trabajo principalmente con Procreate, desarrollando cada pieza desde el boceto hasta el acabado final, cuidando color, textura y composición.",
                     image_alt: "Pantallas de tablet mostrando ilustraciones digitales de personajes en diferentes fases de diseño, desde bocetos hasta versiones finales, creadas por Sara Roche Polo",
                     view_all: 'Ver ilustraciones'
+                },
+                branding: {
+                    subtitle: "Proyecto personal",
+                    title: "Branding",
+                    description: "Desarrollo de identidad visual para proyectos, desde el concepto inicial hasta su aplicación final. Trabajo logotipo, tipografía y color para construir marcas coherentes, reconocibles y con personalidad.",
+                    image_alt: "Branding por Sara Roche Polo",
+                    view_all: 'Ver proyecto'
                 }
             }
         },

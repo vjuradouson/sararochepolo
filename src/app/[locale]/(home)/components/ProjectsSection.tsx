@@ -80,7 +80,7 @@ export default function ProjectsSection() {
                     height={1000}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     quality={90}
-                    className="max-h-full max-w-full w-full h-auto object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] my-5 mt-12 mb-12 md:mt-0 md:mb-0 mx-0 my-0"
+                    className="max-h-full max-w-full w-full h-auto object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] my-5 mt-12 mb-12 md:mt-0 md:mb-0 mx-0 my-0 xl:scale-[1.3] xl:pl-[10%]"
                 />
             ),
         },
@@ -101,7 +101,7 @@ export default function ProjectsSection() {
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     quality={90}
-                    className="max-h-full max-w-full object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] rotate-[30deg] scale-[1.1] md:scale-[1.2] -translate-x-4 md:translate-x-0 mx-0 my-0"
+                    className="max-h-full max-w-full object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] rotate-[30deg] scale-[1.1] md:scale-[0.8] xl:scale-[1.1] -translate-x-4 md:translate-x-0 mx-0 my-0"
                 />
             ),
         },
@@ -123,7 +123,7 @@ export default function ProjectsSection() {
                     height={1000}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     quality={90}
-                    className="max-h-full max-w-full object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] mt-5 mb-5 mx-0 my-0"
+                    className="max-h-full max-w-full object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] mt-5 mb-5 mx-0 my-0 scale-[0.9] md:pl-[10%] xl:scale-[1.05]"
                 />
             ),
         },
@@ -145,10 +145,32 @@ export default function ProjectsSection() {
                     height={1000}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     quality={90}
-                    className="max-h-full max-w-full object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] mt-5 mb-5 mx-0 my-0 scale-[1.3] md:scale-[1.4]"
+                    className="max-h-full max-w-full object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] mt-5 mb-5 mx-0 my-0 scale-[1] md:scale-[1]"
                 />
             ),
         },
+        {
+            id: 5,
+            subtitle: "— " + t("home.projects.branding.subtitle"),
+            title: t("home.projects.branding.title"),
+            description: t("home.projects.branding.description"),
+            bgFrom: "#F5E1C8",
+            bgTo: "#FFF",
+            textColor: "text-black",
+            parentClass: "h-[400px] md:h-[500px] lg:h-full md:h-[100vh] md:min-h-[500px]",
+            view_all: t("home.projects.branding.view_all"),
+            content: (
+                <Image
+                    src="/media/home/projects/illustration.png"
+                    alt={t("home.projects.branding.image_alt")}
+                    width={1000}
+                    height={1000}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    quality={90}
+                    className="max-h-full max-w-full object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] mt-5 mb-5 mx-0 my-0 scale-[1] md:scale-[1]"
+                />
+            ),
+        }
     ];
 
     const wrapperRef = useRef<HTMLDivElement>(null);
@@ -566,7 +588,7 @@ export default function ProjectsSection() {
                     <div className="container-xl mx-auto px-6 md:pt-8 md:pt-0 mb-12 md:mb-0 md:h-full">
 
                         {/* 🔥 GRID */}
-                        <div className="grid w-full grid-cols-1 md:grid-cols-2 md:grid-rows-[auto_auto] md:h-full md:items-center">
+                        <div className="grid w-full grid-cols-1 md:grid-cols-2 md:grid-rows-[1fr_auto_auto_1fr] md:h-full">
 
                             {/* TEXT */}
                             <motion.div
@@ -578,8 +600,8 @@ export default function ProjectsSection() {
                                 className={`
               order-1
               md:order-1
-              md:col-start-1 md:row-start-1
-              flex flex-col justify-start md:justify-center
+              md:col-start-1 md:row-start-2
+              flex flex-col justify-start
               mt-6 md:mt-0
               ${project.textColor}
             `}
@@ -604,13 +626,7 @@ export default function ProjectsSection() {
                                 whileInView="show"
                                 viewport={{ amount: 0.5, once: isMobile }}
                                 transition={{ duration: 0.85, ease: "easeOut" }}
-                                className={`
-              order-2
-              md:order-2
-              md:col-start-2 md:row-span-2
-              relative flex items-center justify-center w-full md:h-full lg:w-[120%]
-              ${project.parentClass}
-            `}
+                                className={`order-2 md:order-2 md:col-start-2 md:row-start-1 md:row-end-5 relative flex items-center justify-center w-full md:h-full lg:w-[100%] ${project.parentClass}`}
                             >
                                 <div className="w-full md:h-full flex md:items-center md:justify-center">
                                     <div className="md:max-h-full md:max-w-full">
@@ -625,7 +641,7 @@ export default function ProjectsSection() {
                                 whileInView="show"
                                 viewport={{ amount: 0, once: isMobile }}
                                 transition={{ duration: 0.7, ease: "easeOut" }}
-                                className={`order-3 md:order-3 md:col-start-1 md:row-start-2 mt-6 md:mt-12 ${project.textColor}`}>
+                                className={`order-3 md:order-3 md:col-start-1 md:row-start-3 mt-6 md:mt-12 ${project.textColor}`}>
                                 <div className="flex justify-center md:justify-start">
                                     <NeoButton size="sm" className="pl-12 pr-12">
                                         <span className="text-xl">→</span>
