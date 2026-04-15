@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import AboutContent from "./components/AboutMeContent";
+import AboutContent from "./components/Content";
 import JsonLd from "@/components/seo/JsonLd";
 import { getAboutPersonSchema } from "@/lib/seo/schema/about/person";
 import { BASE_URL } from '@/lib/config';

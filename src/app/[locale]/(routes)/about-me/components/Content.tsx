@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import { useEffect, useState } from "react";
 
-type Props = {
+type AboutContentProps = {
     data: {
         h1: string;
         header: {
@@ -80,7 +80,7 @@ const imageVariant: Variants = {
 };
 
 
-export default function AboutContent({ data }: Props) {
+export default function AboutContent({ data }: AboutContentProps) {
     const [refreshKey, setRefreshKey] = useState(0)
 
     useEffect(() => {
