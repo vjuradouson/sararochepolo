@@ -237,7 +237,36 @@ export default {
                     description: ""
                 },
                 content: {
-                    
+                    eyebrow: "Diseño 3D",
+                    title: "Adobe Project Neo",
+                    intro: "Exploración de Adobe Project Neo, una herramienta experimental que permite crear composiciones con profundidad y apariencia tridimensional desde un enfoque gráfico. A través de esta plataforma, desarrollo ilustraciones y piezas visuales que combinan volumen, perspectiva y color, sin recurrir a procesos complejos de modelado 3D, integrando el resultado dentro de un flujo de trabajo más amplio de diseño digital.",
+                    styles: {
+                        description: "Establecemos el estilo con el que queremos trabajar. Yo comienzo los proyectos con un <highlight>estilo Vector Art</highlight> que imita lo que sería un <highlight>“blueprint”</highlight> para, una vez establecido el diseño, pasar a un diseño realista."
+                    },
+                    forms: {
+                        description: "Mediante las <highlight>formas simples</highlight> que encontramos en el menú lateral podemos comenzar a diseñar de manera muy intuitiva."
+                    },
+                    animation: {
+                        description: "Una vez tenemos el diseño, podemos añadirle pequeñas <highlight>animaciones</highlight> a los elementos deseados. Por ejemplo, en este proyecto decidí que ciertas teclas iban a tener una <highlight>animación de pulsación</highlight>. Esto lo conseguimos añadiendo la animación <highlight>“Wiggle” y configurando el eje</highlight> en el que deseamos el movimiento, así como <highlight>la amplitud y el tiempo</highlight>.",
+                        section_title: "— Animación estilo vectorial"
+                    },
+                    realistic: {
+                        description: "Una vez vemos cómo quedaría el movimiento final y hechos los últimos ajustes, podemos pasar a darle el estilo que la pieza tendrá finalmente, en este caso realista."
+                    },
+                    final_render: {
+                        section_title: "— Animación final"
+                    },
+                    image_alt: {
+                        interface: "Interfaz principal de Adobe Project Neo con frame en blanco",
+                        styles_panel: "Panel de estilos mostrando la opción Vector Art seleccionada",
+                        forms: "Formas simples del menú lateral en Project Neo",
+                        keyboard_prototype: "Keypad isométrico en estilo blueprint en Project Neo",
+                        motion_panel: "Panel de animación Wiggle con ajustes de amplitud, eje y tiempo",
+                        keyboard_animation: "Diseño final del keypad en estilo blueprint animado",
+                        realistic_preview: "Vista previa del keypad en estilo realista",
+                        appearance_panel: "Panel de apariencia con ajustes de material realista",
+                        final_render: "Render final del teclado numérico con acabado realista"
+                    }
                 }
             }
         },

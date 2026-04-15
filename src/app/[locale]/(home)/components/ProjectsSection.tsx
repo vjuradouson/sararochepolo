@@ -101,7 +101,7 @@ export default function ProjectsSection() {
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     quality={90}
-                    className="max-h-full max-w-full object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] rotate-[30deg] scale-[1.1] md:scale-[0.8] xl:scale-[1.1] -translate-x-4 md:translate-x-0 mx-0 my-0"
+                    className="max-h-full max-w-full object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] rotate-[30deg] scale-[1.1] md:scale-[0.8] -translate-x-4 md:translate-x-0 mx-0 my-0"
                 />
             ),
         },
