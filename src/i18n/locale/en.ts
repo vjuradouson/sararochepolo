@@ -234,7 +234,7 @@ export default {
             adobe_project_neo: {
                 seo: {
                     title: "Adobe Project Neo | Sara Roche Polo",
-                    description: ""
+                    description: "Experimental project with Adobe Project Neo exploring the creation of 3D graphics from 2D compositions in an intuitive environment."
                 },
                 content: {
                     eyebrow: "3D Design",

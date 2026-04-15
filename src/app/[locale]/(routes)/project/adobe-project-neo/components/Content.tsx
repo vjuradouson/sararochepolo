@@ -46,7 +46,7 @@ export default function AdobeProjectNeoContent() {
             </section>
 
             {/* ─── 1. Interfaz + Styles overlay ──────────────────────── */}
-            <section className="container-xl pb-16 md:pb-32">
+            <section className="container-xl pb-8">
                 <motion.div
                     {...revealProps}
                     className="relative max-w-5xl mx-auto md:pb-[6%] items-center"
