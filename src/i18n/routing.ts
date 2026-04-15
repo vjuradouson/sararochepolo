@@ -19,6 +19,14 @@ export const ROUTING = defineRouting({
     [ROUTES.CONTACT]: {
       es: '/contacto',
       en: '/contact'
+    },
+    [ROUTES.PROJECT_ADOBE_PROJECT_NEO]: {
+      es: '/proyecto/adobe-project-neo',
+      en: '/project/adobe-project-neo'
+    },
+    [ROUTES.PROJECT_BRANDING]: {
+      es: '/proyecto/branding',
+      en: '/project/branding'
     }
   }
 })

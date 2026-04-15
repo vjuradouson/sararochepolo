@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import ContactForm from "./components/ContactForm";
+import ContactForm from "./components/Content";
 import { useEffect, useState } from "react";
 import { FaLinkedin, FaInstagram } from "react-icons/fa";
 import { HiOutlineLocationMarker } from "react-icons/hi";

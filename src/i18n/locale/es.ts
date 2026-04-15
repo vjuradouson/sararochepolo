@@ -33,8 +33,13 @@ export default {
         },
         header: {
             links: {
+                projects_title: "Proyectos",
+                projects: {
+                    adobe_project_neo: "Adobe Project Neo",
+                    branding: "Branding"
+                },
                 about_me: "Sobre mí",
-                contact: "Contacto"
+                contact: "Contacto",
             },
             language_switcher: {
                 en: "Inglés",
@@ -86,7 +91,7 @@ export default {
                     image_alt: "Publicaciones para redes sociales y campañas de Meta Ads diseñadas por Sara Roche Polo siguiendo guidelines de marca de empresa",
                     view_all: 'Ver proyecto'
                 },
-                adobe_project_neo_keyboard: {
+                adobe_project_neo: {
                     subtitle: "Diseño 3D",
                     title: "Adobe Project Neo",
                     description: "Creación de ilustraciones y piezas 3D con Adobe Project Neo, enfocadas en lograr composiciones visuales modernas, limpias y con alto nivel de detalle para entornos digitales.",
@@ -224,6 +229,17 @@ export default {
                 label: "Ubicación",
                 value: "Zaragoza, España"
             }
-        }
+        },
+        project: {
+            adobe_project_neo: {
+                seo: {
+                    title: "Adobe Project Neo | Sara Roche Polo",
+                    description: ""
+                },
+                content: {
+                    
+                }
+            }
+        },
     }
 } as const

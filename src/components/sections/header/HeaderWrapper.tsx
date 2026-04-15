@@ -4,11 +4,19 @@ import { HeaderMobileMenu } from "./components/HeaderMobileMenu";
 import LanguageSwitcher from "./LanguageSwitcher";
 import HeaderLogoClient from "./components/HeaderLogoClient"
 import { ROUTES } from '@/constants/routes';
+import type { NavLink } from "@/components/sections/header/types/nav";
 
 export default async function HeaderWrapper() {
     const t = await getTranslations("app");
 
-    const links = [
+    const links: NavLink[] = [
+        {
+            label: t("header.links.projects_title"),
+            children: [
+                { href: ROUTES.PROJECT_ADOBE_PROJECT_NEO, label: t("header.links.projects.adobe_project_neo") },
+                /*{ href: ROUTES.PROJECT_BRANDING, label: t("header.links.projects.branding") },*/
+            ],
+        },
         { href: ROUTES.ABOUT, label: t("header.links.about_me") },
         { href: ROUTES.CONTACT, label: t("header.links.contact") },
     ];

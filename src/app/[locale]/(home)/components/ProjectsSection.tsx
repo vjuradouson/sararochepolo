@@ -107,18 +107,18 @@ export default function ProjectsSection() {
         },
         {
             id: 3,
-            subtitle: "— " + t("home.projects.adobe_project_neo_keyboard.subtitle"),
-            title: t("home.projects.adobe_project_neo_keyboard.title"),
-            description: t("home.projects.adobe_project_neo_keyboard.description"),
+            subtitle: "— " + t("home.projects.adobe_project_neo.subtitle"),
+            title: t("home.projects.adobe_project_neo.title"),
+            description: t("home.projects.adobe_project_neo.description"),
             bgFrom: "#EAD7D1",
             bgTo: "#D1D1D1",
             textColor: "text-black",
             parentClass: "h-[400px] md:h-[500px] lg:h-full md:h-[100vh] md:min-h-[500px]",
-            view_all: t("home.projects.adobe_project_neo_keyboard.view_all"),
+            view_all: t("home.projects.adobe_project_neo.view_all"),
             content: (
                 <Image
                     src="/media/home/projects/adobe_project_neo_keyboard.png"
-                    alt={t("home.projects.adobe_project_neo_keyboard.image_alt")}
+                    alt={t("home.projects.adobe_project_neo.image_alt")}
                     width={1000}
                     height={1000}
                     sizes="(max-width: 768px) 100vw, 50vw"
