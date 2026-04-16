@@ -49,7 +49,7 @@ const getStyles = (label: string) => {
     if (l.includes("linkedin")) {
         return {
             icon: (
-                <FaLinkedin className="text-dark-blue/60 group-hover:text-[#0A66C2] transition duration-300" size={20} />
+                <FaLinkedin className="text-dark-blue/80 group-hover:text-[#0A66C2] transition duration-300" size={20} />
             ),
             text: "group-hover:text-[#0A66C2]",
             bg: "group-hover:bg-[#0A66C2]/5",
@@ -62,7 +62,7 @@ const getStyles = (label: string) => {
     if (l.includes("instagram")) {
         return {
             icon: (
-                <FaInstagram className="text-dark-blue/60 group-hover:text-pink-500 transition duration-300" size={20}
+                <FaInstagram className="text-dark-blue/80 group-hover:text-pink-500 transition duration-300" size={20}
                 />
             ),
             text: "group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-[#f58529] group-hover:via-[#dd2a7b] group-hover:to-[#8134af]",
@@ -132,7 +132,7 @@ export default function ContactContent({ data }: Props) {
                     >
                         <motion.p
                             variants={item}
-                            className="max-w-xl text-xl leading-relaxed text-dark-blue/75"
+                            className="max-w-xl text-xl leading-relaxed"
                         >
                             {data.description}
                         </motion.p>
@@ -173,13 +173,13 @@ export default function ContactContent({ data }: Props) {
                                             </div>
 
                                             <div className="min-w-0">
-                                                <span className="mb-1 block text-md uppercase tracking-[0.18em] text-dark-blue">
+                                                <span className="mb-1 block text-md uppercase tracking-[0.18em]">
                                                     {link.label}
                                                 </span>
 
                                                 <span
                                                     className={`
-                                                        inline-block font-medium text-dark-blue text-lg
+                                                        inline-block font-medium text-lg
                                                         transition-colors duration-300
                                                         ${styles.text}
                                                     `}
@@ -192,7 +192,7 @@ export default function ContactContent({ data }: Props) {
                                         <FiArrowUpRight
                                             size={17}
                                             className={`
-                                                shrink-0 text-dark-blue/40 transition-all duration-300
+                                                shrink-0 transition-all duration-300
                                                 group-hover:-translate-y-0.5 group-hover:translate-x-0.5
                                                 ${styles.arrow}
                                             `}
@@ -209,15 +209,15 @@ export default function ContactContent({ data }: Props) {
                         >
                             <div className="flex items-center justify-between gap-6 py-5">
                                 <div className="flex min-w-0 items-center gap-4">
-                                    <div className="shrink-0 text-dark-blue">
+                                    <div className="shrink-0">
                                         <HiOutlineLocationMarker size={20} />
                                     </div>
 
                                     <div className="min-w-0">
-                                        <span className="mb-1 block text-md uppercase tracking-[0.18em] text-dark-blue">
+                                        <span className="mb-1 block text-md uppercase tracking-[0.18em]">
                                             {data.location.label}
                                         </span>
-                                        <span className="text-base font-medium text-dark-blue">
+                                        <span className="text-base font-medium">
                                             {data.location.value}
                                         </span>
                                     </div>

@@ -117,7 +117,7 @@ export default function ContactForm() {
                 <motion.div key={field} variants={fadeInUp} className="flex flex-col gap-2">
                     <label
                         htmlFor={field}
-                        className="text-md text-neutral-500 font-semibold"
+                        className="text-md font-semibold"
                     >
                         {t(`contact.form.field.${field}.label`)}
                     </label>
@@ -156,7 +156,7 @@ export default function ContactForm() {
                 <NeoButton
                     size="md"
                     type="submit"
-                    className="w-full justify-center rounded-full py-3 text-xl tracking-[0.3em] bg-light-blue color-black font-semibold"
+                    className="w-full justify-center rounded-full py-3 text-xl tracking-[0.3em] bg-light-blue color-black font-bold"
                 >
                     <span className="uppercase">
                         {loading
