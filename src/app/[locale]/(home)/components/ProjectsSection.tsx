@@ -80,10 +80,10 @@ export default function ProjectsSection() {
                 <Image
                     src="/media/home/projects/figma_pet_buddy.png"
                     alt={t("home.projects.figma_pet_buddy.image_alt")}
-                    width={1000}
-                    height={1000}
+                    width={1200}
+                    height={828}
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    quality={90}
+                    quality={75}
                     className="max-h-full max-w-full w-full h-auto object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] my-5 mt-12 mb-12 md:mt-0 md:mb-0 mx-0 my-0 xl:scale-[1.3] xl:pl-[10%]"
                 />
             ),
@@ -105,7 +105,7 @@ export default function ProjectsSection() {
                     alt={t("home.projects.meta_adds.image_alt")}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    quality={90}
+                    quality={75}
                     className="max-h-full max-w-full object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] rotate-[30deg] scale-[1.1] md:scale-[0.8] -translate-x-4 md:translate-x-0 mx-0 my-0"
                 />
             ),
@@ -128,7 +128,7 @@ export default function ProjectsSection() {
                     width={1000}
                     height={1000}
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    quality={90}
+                    quality={75}
                     className="max-h-full max-w-full object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] mt-5 mb-5 mx-0 my-0 scale-[0.9] md:pl-[10%] xl:scale-[1.05]"
                 />
             ),
@@ -151,7 +151,7 @@ export default function ProjectsSection() {
                     width={1000}
                     height={1000}
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    quality={90}
+                    quality={75}
                     className="max-h-full max-w-full object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] mt-5 mb-5 mx-0 my-0 scale-[1] md:scale-[1]"
                 />
             ),
@@ -174,7 +174,7 @@ export default function ProjectsSection() {
                     width={1000}
                     height={1000}
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    quality={90}
+                    quality={75}
                     className="max-h-[280px] md:max-h-full max-w-full object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] mt-5 mb-5 mx-0 my-0 scale-[0.9] md:scale-[0.85]"
                 />
             ),

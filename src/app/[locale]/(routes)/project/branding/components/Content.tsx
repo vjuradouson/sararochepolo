@@ -65,7 +65,7 @@ export default function BrandingProjectLaEsquinitaContent() {
                             width={800}
                             height={1000}
                             sizes="(max-width: 768px) 50vw, 30vw"
-                            quality={90}
+                            quality={75}
                             className="w-[55%] max-w-[320px] md:max-w-[300px] h-auto"
                         />
                     </motion.div>
@@ -106,7 +106,7 @@ export default function BrandingProjectLaEsquinitaContent() {
                                 width={400}
                                 height={500}
                                 sizes="(max-width: 768px) 40vw, 25vw"
-                                quality={90}
+                                quality={75}
                                 className="w-full max-w-[200px] md:max-w-[240px] h-auto"
                             />
                         </motion.div>
@@ -120,7 +120,7 @@ export default function BrandingProjectLaEsquinitaContent() {
                                 width={400}
                                 height={500}
                                 sizes="(max-width: 768px) 40vw, 25vw"
-                                quality={90}
+                                quality={75}
                                 className="w-full max-w-[200px] md:max-w-[240px] h-auto"
                             />
                         </motion.div>
@@ -134,7 +134,7 @@ export default function BrandingProjectLaEsquinitaContent() {
                                 width={800}
                                 height={300}
                                 sizes="(max-width: 768px) 80vw, 25vw"
-                                quality={90}
+                                quality={75}
                                 className="w-full max-w-[320px] md:max-w-[280px] h-auto"
                             />
                         </motion.div>

@@ -57,7 +57,7 @@ export default function AdobeProjectNeoContent() {
                         width={1600}
                         height={1000}
                         sizes="(max-width: 768px) 100vw, 80vw"
-                        quality={90}
+                        quality={75}
                         className="w-full h-auto rounded-[var(--radius-card)] shadow-[var(--shadow-card)]"
                     />
                     <Image
@@ -66,7 +66,7 @@ export default function AdobeProjectNeoContent() {
                         width={500}
                         height={600}
                         sizes="(max-width: 768px) 50vw, 22vw"
-                        quality={90}
+                        quality={75}
                         className="block mx-auto mt-8 w-1/2 max-w-[280px]
                                    md:absolute md:mt-0 md:mx-0
                                    md:bottom-0 md:right-[6%] md:translate-y-[30%]
@@ -101,7 +101,7 @@ export default function AdobeProjectNeoContent() {
                                 alt={t("image_alt.forms")}
                                 fill
                                 sizes="(max-width: 768px) 12vw, 5vw"
-                                quality={90}
+                                quality={75}
                                 className="object-contain object-top rounded-[var(--radius-card)] shadow-[var(--shadow-card-xs)]"
                             />
                         </div>
@@ -111,7 +111,7 @@ export default function AdobeProjectNeoContent() {
                             width={700}
                             height={600}
                             sizes="(max-width: 768px) 75vw, 35vw"
-                            quality={90}
+                            quality={75}
                             className="flex-1 w-full h-auto rounded-[var(--radius-card)] shadow-[var(--shadow-card-xs)]"
                         />
                     </div>
@@ -138,7 +138,7 @@ export default function AdobeProjectNeoContent() {
                             width={900}
                             height={700}
                             sizes="(max-width: 768px) 90vw, 45vw"
-                            quality={90}
+                            quality={75}
                             className="w-full h-auto rounded-[var(--radius-card)] shadow-[var(--shadow-card-xs)]"
                         />
                         <Image
@@ -147,7 +147,7 @@ export default function AdobeProjectNeoContent() {
                             width={400}
                             height={600}
                             sizes="(max-width: 768px) 45vw, 18vw"
-                            quality={90}
+                            quality={75}
                             className="block mx-auto mt-6 w-1/2 max-w-[240px]
                                        md:absolute md:mt-0 md:mx-0
                                        md:bottom-0 md:left-[-8%] md:translate-y-[25%]
@@ -181,7 +181,7 @@ export default function AdobeProjectNeoContent() {
                             width={1000}
                             height={750}
                             sizes="(max-width: 768px) 90vw, 45vw"
-                            quality={90}
+                            quality={75}
                             className="w-full h-auto rounded-[var(--radius-card)] shadow-[var(--shadow-card-xs)]"
                         />
                     </div>
@@ -198,7 +198,7 @@ export default function AdobeProjectNeoContent() {
                                 width={400}
                                 height={400}
                                 sizes="(max-width: 768px) 40vw, 18vw"
-                                quality={90}
+                                quality={75}
                                 className="w-1/2 max-w-[180px] h-auto rounded-[var(--radius-card)] shadow-[var(--shadow-card-xs)]"
                             />
                             <Image
@@ -207,7 +207,7 @@ export default function AdobeProjectNeoContent() {
                                 width={400}
                                 height={600}
                                 sizes="(max-width: 768px) 40vw, 18vw"
-                                quality={90}
+                                quality={75}
                                 className="w-1/2 max-w-[180px] h-auto rounded-[var(--radius-card)] shadow-[var(--shadow-card-xs)]"
                             />
                         </div>

@@ -136,7 +136,7 @@ export default function AboutContent({ data }: AboutContentProps) {
                                     src="/media/about/profile.png"
                                     alt={data.image.alt}
                                     sizes="25vw"
-                                    quality={90}
+                                    quality={75}
                                     fill
                                     className="object-cover object-top"
                                     priority
