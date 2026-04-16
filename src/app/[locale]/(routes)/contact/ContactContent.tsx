@@ -116,12 +116,12 @@ export default function ContactContent({ data }: Props) {
                         {data.h1}
                     </motion.h1>
 
-                    <motion.p
+                    <motion.h2
                         variants={item}
                         className="mb-10 text-4xl tracking-tight sm:text-5xl"
                     >
                         {data.title}
-                    </motion.p>
+                    </motion.h2>
 
                     <motion.div
                         variants={container}

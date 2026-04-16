@@ -41,6 +41,8 @@ export default function Intro() {
                 className="container-xl mx-auto px-6 grid md:grid-cols-2 gap-16"
             >
 
+                <h2 className="sr-only">{t("home.intro.h2")}</h2>
+
                 {/* LEFT IMAGE */}
                 <motion.div
                     variants={item}

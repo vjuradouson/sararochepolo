@@ -90,6 +90,7 @@ export default function BrandingProjectLaEsquinitaContent() {
 
             {/* ─── Logo variations ────────────────────────────────────── */}
             <section className="w-full bg-[#f5f5f5] py-12 md:pt-5 md:pb-0">
+                <h2 className="sr-only">{t("logos_h2")}</h2>
                 <motion.div
                     {...revealProps}
                     className="bg-white"
@@ -143,6 +144,7 @@ export default function BrandingProjectLaEsquinitaContent() {
 
             {/* ─── Color palette ──────────────────────────────────────── */}
             <section className="w-full">
+                <h2 className="sr-only">{t("colors_h2")}</h2>
                 <motion.div
                     {...revealProps}
                     className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-0"
@@ -176,6 +178,7 @@ export default function BrandingProjectLaEsquinitaContent() {
 
             {/* ─── Typography ─────────────────────────────────────────── */}
             <section className="w-full bg-[#f5f5f5] py-12 md:py-20">
+                <h2 className="sr-only">{t("typography_h2")}</h2>
                 <motion.div
                     {...revealProps}
                     className={`container-xl md:w-[90%] xl:w-[70%] grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-10 xl:gap-0 items-center justify-items-center ${goudyOldStyle.className}`}

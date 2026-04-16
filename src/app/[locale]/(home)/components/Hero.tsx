@@ -74,17 +74,15 @@ export default function Hero() {
                             <div className="order-1 z-10 px-6 pl-8 pt-6 lg:col-start-1 lg:row-start-1 lg:ml-18 lg:pb-0 lg:pt-20">
                                 <motion.h1
                                     variants={item}
-                                    className="mb-2 text-xl uppercase tracking-[0.3em] md:text-2xl"
+                                    className="mb-2"
                                 >
-                                    {t("home.hero.h1")}
+                                    <span className="block text-xl uppercase tracking-[0.3em] md:text-2xl">
+                                        {t("home.hero.h1")}
+                                    </span>
+                                    <span className="block text-[12px] pt-3 uppercase tracking-[0.3em] text-gray-500 md:text-xs">
+                                        {t("home.hero.h1_meta")}
+                                    </span>
                                 </motion.h1>
-
-                                <motion.p
-                                    variants={item}
-                                    className="text-[12px] uppercase tracking-[0.3em] text-gray-500 md:text-xs"
-                                >
-                                    {t("home.hero.h1_meta")}
-                                </motion.p>
 
                                 <motion.p
                                     variants={item}

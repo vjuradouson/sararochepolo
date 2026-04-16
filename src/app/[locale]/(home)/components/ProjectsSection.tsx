@@ -581,6 +581,7 @@ export default function ProjectsSection() {
             ref={wrapperRef}
             className="overflow-x-hidden overflow-y-hidden md:overflow-y-hidden"
         >
+            <h2 className="sr-only">{t("home.projects_h2")}</h2>
             {projects.map((project, index) => (
                 <section
                     key={project.id}
@@ -610,9 +611,9 @@ export default function ProjectsSection() {
                                     {project.subtitle}
                                 </p>
 
-                                <h2 className="mb-4 text-2xl font-light md:mb-12 md:text-5xl">
+                                <h3 className="mb-4 text-2xl font-light md:mb-12 md:text-5xl">
                                     {project.title}
-                                </h2>
+                                </h3>
 
                                 <p className="text-xl opacity-70 md:mb-6 md:text-3xl">
                                     {project.description}

@@ -160,12 +160,12 @@ export default function AdobeProjectNeoContent() {
 
             {/* ─── Subtítulo: Animación estilo vectorial ─────────────── */}
             <section className="container-xl pb-8">
-                <motion.p
+                <motion.h2
                     {...revealProps}
                     className="mx-auto max-w-5xl text-neutral-700"
                 >
                     {t("animation.section_title")}
-                </motion.p>
+                </motion.h2>
             </section>
 
             {/* ─── 4. Blueprint grande + realista (img 6 / 7 / 8) ────── */}
@@ -217,12 +217,12 @@ export default function AdobeProjectNeoContent() {
 
             {/* ─── Subtítulo: Animación final ───────────────────────── */}
             <section className="container-xl pb-8">
-                <motion.p
+                <motion.h2
                     {...revealProps}
                     className="mx-auto max-w-5xl text-neutral-700"
                 >
                     {t("final_render.section_title")}
-                </motion.p>
+                </motion.h2>
             </section>
 
             {/* ─── 5. Render final (video 9) ──────────────────────────── */}

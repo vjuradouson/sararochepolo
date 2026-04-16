@@ -70,12 +70,14 @@ export default {
                 image_alt: "Mobile app design mockups by Sara Roche Polo, including a transport app and a pet app interface"
             },
             intro: {
+                h2: "About — Product Designer (UX/UI)",
                 description: "Product Designer (UX/UI) with over 3 years of experience <highlight>crafting intuitive interfaces and consistent visual systems.</highlight> I combine UX, UI, and visual communication to create <highlight>digital and physical solutions aligned with both business goals and user needs.</highlight>",
                 image_alt: "Sara Roche Polo holding a Moleskine notebook as part of her UX/UI design process",
                 hover: {
                     label: "Hi there!"
                 }
             },
+            projects_h2: "Featured projects",
             projects: {
                 figma_pet_buddy: {
                     subtitle: "Personal Project",
@@ -272,7 +274,7 @@ export default {
             branding_la_esquinita: {
                 seo: {
                     title: "Branding \"La Esquinita de Papel\" | Sara Roche Polo",
-                    description: ""
+                    description: "Branding project for La Esquinita de Papel, a cozy neighborhood bookstore. Warm, nostalgic visual identity by Sara Roche Polo."
                 },
                 content: {
                     eyebrow: "Personal project",
@@ -283,6 +285,9 @@ export default {
                         paragraph_1: "La Esquinita de Papel is a neighborhood bookshop conceived as an everyday refuge: <highlight>a small, intimate and carefully curated space where time slows down</highlight>. It is not just a place to buy books, but to <highlight>discover, linger, observe and reconnect</highlight>.",
                         paragraph_2: "The brand conveys a sense of emotional home, <highlight>evoking the nostalgia of unhurried reading and objects with history</highlight>. The naming reinforces the idea of a special, almost secret corner that <highlight>you stumble upon by chance but stays with you</highlight>."
                     },
+                    logos_h2: "Logo variations",
+                    colors_h2: "Color palette",
+                    typography_h2: "Brand typography",
                     colors: {
                         light_brown: "Light brown",
                         medium_brown: "Medium brown",

@@ -70,12 +70,14 @@ export default {
                 image_alt: "Mockups de aplicaciones móviles diseñadas por Sara Roche Polo, incluyendo una app de rutas y una app de mascotas"
             },
             intro: {
+                h2: "Sobre mí — Diseñadora de Producto (UX/UI)",
                 description: "Diseñadora de Producto (UX/UI) con más de 3 años de experiencia <highlight>diseñando interfaces intuitivas y sistemas visuales consistentes.</highlight> Combino UX, UI y comunicación visual para crear <highlight>soluciones digitales y físicas alineadas con negocio y usuario.</highlight>",
                 image_alt: "Sara Roche Polo sosteniendo un cuaderno Moleskine como parte de su proceso de diseño UX/UI",
                 hover: {
                     label: "¡Hola!"
                 }
             },
+            projects_h2: "Proyectos destacados",
             projects: {
                 figma_pet_buddy: {
                     subtitle: "Proyecto personal",
@@ -272,7 +274,7 @@ export default {
             branding_la_esquinita: {
                 seo: {
                     title: "Branding \"La Esquinita de Papel\" | Sara Roche Polo",
-                    description: ""
+                    description: "Proyecto de branding para La Esquinita de Papel, una librería de barrio acogedora. Identidad visual cálida y nostálgica por Sara Roche Polo."
                 },
                 content: {
                     eyebrow: "Proyecto personal",
@@ -283,6 +285,9 @@ export default {
                         paragraph_1: "La Esquinita de Papel es una librería de barrio concebida como un refugio cotidiano: <highlight>un espacio pequeño, íntimo y cuidado donde el tiempo se desacelera</highlight>. No es solo un lugar para comprar libros, sino para <highlight>descubrir, quedarse, observar y reconectar</highlight>.",
                         paragraph_2: "La marca transmite una sensación de hogar emocional, <highlight>evocando la nostalgia de la lectura pausada y los objetos con historia</highlight>. El naming refuerza esa idea de rincón especial, casi secreto, que <highlight>se encuentra por casualidad pero se queda contigo</highlight>."
                     },
+                    logos_h2: "Variaciones del logotipo",
+                    colors_h2: "Paleta de colores",
+                    typography_h2: "Tipografía corporativa",
                     colors: {
                         light_brown: "Marrón claro",
                         medium_brown: "Marrón medio",
