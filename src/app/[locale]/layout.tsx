@@ -104,13 +104,6 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
           media="(prefers-color-scheme: dark)"
         />
 
-        {/* Fallback SVG */}
-        <link
-          rel="icon"
-          type="image/svg+xml"
-          href={`${BASE_URL}/media/favicons/favicon-light.svg`}
-        />
-
         {/* PNG fallback (old browsers / tabs / Windows) */}
         <link
           rel="icon"

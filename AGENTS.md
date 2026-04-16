@@ -1,4 +1,5 @@
 # 🚀 Next.js & Visual Excellence Standards (Agent Rules)
+La versión de node utilizada es: v20.18.3
 
 ## 1. Core Tech Stack & Architecture (App Router Expert)
 - **Framework:** Next.js 14+ (App Router). Priorizar **Server Components** por defecto. Usar `"use client"` solo cuando sea estrictamente necesario (hooks de estado o interactividad).
