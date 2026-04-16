@@ -225,18 +225,23 @@ export default function AdobeProjectNeoContent() {
                 </motion.p>
             </section>
 
-            {/* ─── 5. Render final (img 9) ───────────────────────────── */}
+            {/* ─── 5. Render final (video 9) ──────────────────────────── */}
             <section className="container-xl pb-24 md:pb-32">
                 <motion.div {...revealProps} className="mx-auto max-w-3xl">
-                    <Image
-                        src={`${IMG_BASE}/9-keyboard-final.gif`}
-                        alt={t("image_alt.final_render")}
-                        width={1600}
-                        height={1000}
-                        sizes="(max-width: 768px) 100vw, 70vw"
-                        quality={95}
+                    <video
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        aria-label={t("image_alt.final_render")}
+                        poster={`${IMG_BASE}/9-keyboard-final.png`}
                         className="w-full h-auto rounded-[var(--radius-card)] shadow-[var(--shadow-card-xs)]"
-                    />
+                    >
+                        <source
+                            src={`${IMG_BASE}/9-keyboard-final.mp4`}
+                            type="video/mp4"
+                        />
+                    </video>
                 </motion.div>
             </section>
         </div>
