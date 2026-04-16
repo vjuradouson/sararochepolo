@@ -6,6 +6,8 @@ import NeoButton from "@/components/ui/NeoButton";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Variants } from "framer-motion";
+import { Link } from "@/i18n/navigation";
+import { ROUTES } from "@/constants/routes";
 
 type Project = {
     id: number;
@@ -18,6 +20,7 @@ type Project = {
     parentClass: string,
     content: React.ReactNode;
     view_all: string;
+    href: string | null;
 };
 
 const textVariants = {
@@ -72,6 +75,7 @@ export default function ProjectsSection() {
             textColor: "text-black",
             parentClass: "w-full min-h-[380px] md:min-h-[500px]",
             view_all: t("home.projects.figma_pet_buddy.view_all"),
+            href: null,
             content: (
                 <Image
                     src="/media/home/projects/figma_pet_buddy.png"
@@ -94,6 +98,7 @@ export default function ProjectsSection() {
             textColor: "text-black",
             parentClass: "h-[400px] md:h-[500px] lg:h-full md:h-[100vh] md:min-h-[500px] mb-10 md:mb-0",
             view_all: t("home.projects.meta_adds.view_all"),
+            href: null,
             content: (
                 <Image
                     src="/media/home/projects/meta_adds.png"
@@ -115,6 +120,7 @@ export default function ProjectsSection() {
             textColor: "text-black",
             parentClass: "h-[400px] md:h-[500px] lg:h-full md:h-[100vh] md:min-h-[500px]",
             view_all: t("home.projects.adobe_project_neo.view_all"),
+            href: ROUTES.PROJECT_ADOBE_PROJECT_NEO,
             content: (
                 <Image
                     src="/media/home/projects/adobe_project_neo_keyboard.png"
@@ -137,6 +143,7 @@ export default function ProjectsSection() {
             textColor: "text-black",
             parentClass: "h-[400px] md:h-[500px] lg:h-full md:h-[100vh] md:min-h-[500px]",
             view_all: t("home.projects.illustration.view_all"),
+            href: null,
             content: (
                 <Image
                     src="/media/home/projects/illustration.png"
@@ -151,23 +158,24 @@ export default function ProjectsSection() {
         },
         {
             id: 5,
-            subtitle: "— " + t("home.projects.branding.subtitle"),
-            title: t("home.projects.branding.title"),
-            description: t("home.projects.branding.description"),
+            subtitle: "— " + t("home.projects.branding_la_esquinita.subtitle"),
+            title: t("home.projects.branding_la_esquinita.title"),
+            description: t("home.projects.branding_la_esquinita.description"),
             bgFrom: "#F5E1C8",
             bgTo: "#FFF",
             textColor: "text-black",
             parentClass: "h-[400px] md:h-[500px] lg:h-full md:h-[100vh] md:min-h-[500px]",
-            view_all: t("home.projects.branding.view_all"),
+            view_all: t("home.projects.branding_la_esquinita.view_all"),
+            href: ROUTES.PROJECT_BRANDING_LA_ESQUINITA,
             content: (
                 <Image
-                    src="/media/home/projects/illustration.png"
-                    alt={t("home.projects.branding.image_alt")}
+                    src="/media/home/projects/branding_la_esquinita.png"
+                    alt={t("home.projects.branding_la_esquinita.image_alt")}
                     width={1000}
                     height={1000}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     quality={90}
-                    className="max-h-full max-w-full object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] mt-5 mb-5 mx-0 my-0 scale-[1] md:scale-[1]"
+                    className="max-h-[280px] md:max-h-full max-w-full object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] mt-5 mb-5 mx-0 my-0 scale-[0.9] md:scale-[0.85]"
                 />
             ),
         }
@@ -587,7 +595,7 @@ export default function ProjectsSection() {
                 >
                     <div className="container-xl mx-auto px-6 md:pt-8 md:pt-0 mb-12 md:mb-0 md:h-full">
 
-                        {/* 🔥 GRID */}
+                        {/* GRID */}
                         <div className="grid w-full grid-cols-1 md:grid-cols-2 md:grid-rows-[1fr_auto_auto_1fr] md:h-full">
 
                             {/* TEXT */}
@@ -597,15 +605,7 @@ export default function ProjectsSection() {
                                 whileInView="show"
                                 viewport={{ amount: 0.55, once: isMobile }}
                                 transition={{ duration: 0.7, ease: "easeOut" }}
-                                className={`
-              order-1
-              md:order-1
-              md:col-start-1 md:row-start-2
-              flex flex-col justify-start
-              mt-6 md:mt-0
-              ${project.textColor}
-            `}
-                            >
+                                className={`order-1 md:order-1 md:col-start-1 md:row-start-2 flex flex-col justify-start mt-6 md:mt-0 ${project.textColor}`}>
                                 <p className="mb-1 text-xl opacity-60 md:mb-4 md:text-3xl">
                                     {project.subtitle}
                                 </p>
@@ -643,10 +643,19 @@ export default function ProjectsSection() {
                                 transition={{ duration: 0.7, ease: "easeOut" }}
                                 className={`order-3 md:order-3 md:col-start-1 md:row-start-3 mt-6 md:mt-12 ${project.textColor}`}>
                                 <div className="flex justify-center md:justify-start">
-                                    <NeoButton size="sm" className="pl-12 pr-12">
-                                        <span className="text-xl">→</span>
-                                        <span className="uppercase">{project.view_all}</span>
-                                    </NeoButton>
+                                    {project.href ? (
+                                        <Link href={project.href}>
+                                            <NeoButton size="sm" className="pl-12 pr-12">
+                                                <span className="text-xl">→</span>
+                                                <span className="uppercase">{project.view_all}</span>
+                                            </NeoButton>
+                                        </Link>
+                                    ) : (
+                                        <NeoButton size="sm" className="pl-12 pr-12">
+                                            <span className="text-xl">→</span>
+                                            <span className="uppercase">{project.view_all}</span>
+                                        </NeoButton>
+                                    )}
                                 </div>
                             </motion.div>
 

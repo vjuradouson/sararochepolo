@@ -36,7 +36,7 @@ export default {
                 projects_title: "Proyectos",
                 projects: {
                     adobe_project_neo: "Adobe Project Neo",
-                    branding: "Branding"
+                    branding_la_esquinita: "Branding La Esquinita de Papel"
                 },
                 about_me: "Sobre mí",
                 contact: "Contacto",
@@ -105,7 +105,7 @@ export default {
                     image_alt: "Pantallas de tablet mostrando ilustraciones digitales de personajes en diferentes fases de diseño, desde bocetos hasta versiones finales, creadas por Sara Roche Polo",
                     view_all: 'Ver ilustraciones'
                 },
-                branding: {
+                branding_la_esquinita: {
                     subtitle: "Proyecto personal",
                     title: "Branding",
                     description: "Desarrollo de identidad visual para proyectos, desde el concepto inicial hasta su aplicación final. Trabajo logotipo, tipografía y color para construir marcas coherentes, reconocibles y con personalidad.",
@@ -266,6 +266,33 @@ export default {
                         realistic_preview: "Vista previa del keypad en estilo realista",
                         appearance_panel: "Panel de apariencia con ajustes de material realista",
                         final_render: "Render final del teclado numérico con acabado realista"
+                    }
+                }
+            },
+            branding_la_esquinita: {
+                seo: {
+                    title: "Branding \"La Esquinita de Papel\" | Sara Roche Polo",
+                    description: ""
+                },
+                content: {
+                    eyebrow: "Proyecto personal",
+                    title: "Branding \"La Esquinita de Papel\"",
+                    about: {
+                        heading: "La Esquinita de Papel",
+                        tagline: "Una librería pequeña, acogedora y con alma.",
+                        paragraph_1: "La Esquinita de Papel es una librería de barrio concebida como un refugio cotidiano: <highlight>un espacio pequeño, íntimo y cuidado donde el tiempo se desacelera</highlight>. No es solo un lugar para comprar libros, sino para <highlight>descubrir, quedarse, observar y reconectar</highlight>.",
+                        paragraph_2: "La marca transmite una sensación de hogar emocional, <highlight>evocando la nostalgia de la lectura pausada y los objetos con historia</highlight>. El naming refuerza esa idea de rincón especial, casi secreto, que <highlight>se encuentra por casualidad pero se queda contigo</highlight>."
+                    },
+                    colors: {
+                        light_brown: "Marrón claro",
+                        medium_brown: "Marrón medio",
+                        dark_brown: "Marrón oscuro"
+                    },
+                    image_alt: {
+                        interface: "Logo de La Esquinita de Papel",
+                        framed_logo: "Logo enmarcado de La Esquinita de Papel",
+                        square_logo: "Logo vertical de La Esquinita de Papel sobre fondo oscuro",
+                        horizontal_logo: "Logo horizontal de La Esquinita de Papel"
                     }
                 }
             }

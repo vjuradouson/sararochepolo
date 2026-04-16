@@ -36,7 +36,7 @@ export default {
                 projects_title: "Projects",
                 projects: {
                     adobe_project_neo: "Adobe Project Neo",
-                    branding: "Branding"
+                    branding_la_esquinita: "Branding La Esquinita de Papel"
                 },
                 about_me: "About me",
                 contact: "Contact",
@@ -105,7 +105,7 @@ export default {
                     image_alt: "Tablet screens displaying digital character illustrations in different design stages, from sketches to final versions, created by Sara Roche Polo",
                     view_all: 'View illustrations'
                 },
-                branding: {
+                branding_la_esquinita: {
                     subtitle: "Personal Project",
                     title: "Branding",
                     description: "Development of visual identity for projects, from the initial concept to its final application. I work on logo design, typography, and color to build coherent, recognizable brands with personality.",
@@ -266,6 +266,33 @@ export default {
                         realistic_preview: "Preview of the keypad in realistic style",
                         appearance_panel: "Appearance panel with realistic material settings",
                         final_render: "Final render of the numeric keypad with a realistic finish"
+                    }
+                }
+            },
+            branding_la_esquinita: {
+                seo: {
+                    title: "Branding \"La Esquinita de Papel\" | Sara Roche Polo",
+                    description: ""
+                },
+                content: {
+                    eyebrow: "Personal project",
+                    title: "Branding \"La Esquinita de Papel\"",
+                    about: {
+                        heading: "La Esquinita de Papel",
+                        tagline: "A small, cozy bookshop with soul.",
+                        paragraph_1: "La Esquinita de Papel is a neighborhood bookshop conceived as an everyday refuge: <highlight>a small, intimate and carefully curated space where time slows down</highlight>. It is not just a place to buy books, but to <highlight>discover, linger, observe and reconnect</highlight>.",
+                        paragraph_2: "The brand conveys a sense of emotional home, <highlight>evoking the nostalgia of unhurried reading and objects with history</highlight>. The naming reinforces the idea of a special, almost secret corner that <highlight>you stumble upon by chance but stays with you</highlight>."
+                    },
+                    colors: {
+                        light_brown: "Light brown",
+                        medium_brown: "Medium brown",
+                        dark_brown: "Dark brown"
+                    },
+                    image_alt: {
+                        interface: "La Esquinita de Papel logo",
+                        framed_logo: "Framed logo of La Esquinita de Papel",
+                        square_logo: "Vertical logo of La Esquinita de Papel on dark background",
+                        horizontal_logo: "Horizontal logo of La Esquinita de Papel"
                     }
                 }
             }

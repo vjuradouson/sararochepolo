@@ -24,9 +24,9 @@ export const ROUTING = defineRouting({
       es: '/proyecto/adobe-project-neo',
       en: '/project/adobe-project-neo'
     },
-    [ROUTES.PROJECT_BRANDING]: {
-      es: '/proyecto/branding',
-      en: '/project/branding'
+    [ROUTES.PROJECT_BRANDING_LA_ESQUINITA]: {
+      es: '/proyecto/branding-la-esquinita-de-papel',
+      en: '/project/branding-la-esquinita-de-papel'
     }
   }
 })

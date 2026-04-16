@@ -138,7 +138,7 @@ export function HeaderDesktopNav({ links }: DesktopNavProps) {
                                         animate={{ opacity: 1, y: 0 }}
                                         exit={{ opacity: 0, y: -8 }}
                                         transition={{ duration: 0.18 }}
-                                        className="absolute left-0 top-full mt-3 min-w-[250px] rounded-2xl border border-neutral-200 bg-white shadow-lg py-2 z-50"
+                                        className="absolute left-0 top-full mt-3 min-w-[350px] rounded-2xl border border-neutral-200 bg-white shadow-lg py-2 z-50"
                                     >
                                         <ul className="flex flex-col">
                                             {children.map((child) => {

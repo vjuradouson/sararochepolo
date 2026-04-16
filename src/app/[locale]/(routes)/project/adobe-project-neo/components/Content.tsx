@@ -18,7 +18,7 @@ const revealProps = {
     transition: { duration: 0.7, ease: "easeOut" as const },
 };
 
-const IMG_BASE = "/media/project/adobe-project-neo";
+const IMG_BASE = "/media/project/adobe_project_neo";
 
 const highlight = (chunks: React.ReactNode) => (
     <strong className="font-bold">{chunks}</strong>
