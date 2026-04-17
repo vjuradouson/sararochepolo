@@ -36,7 +36,7 @@ export default function AdobeProjectNeoContent() {
                     <p className="text-xl uppercase tracking-widest mb-8 md:mb-10">
                         {t("eyebrow")}
                     </p>
-                    <h1 className="mb-10 text-5xl md:text-7xl font-light tracking-tight">
+                    <h1 className="mb-10 text-4xl md:text-5xl font-light tracking-tight">
                         {t("title")}
                     </h1>
                     <p className="leading-relaxed">

@@ -38,7 +38,7 @@ const revealProps = {
     variants: fadeInUp,
     initial: "hidden" as const,
     whileInView: "show" as const,
-    viewport: { once: false, amount: 0.5 },
+    viewport: { once: true, amount: 0.5 },
     transition: { duration: 0.7, ease: "easeOut" as const },
 };
 
@@ -78,7 +78,7 @@ export default function BrandingProjectLaEsquinitaContent() {
                     <p className="text-xl uppercase tracking-widest mb-8 md:mb-10">
                         {t("eyebrow")}
                     </p>
-                    <h1 className="-ml-1 mb-10 text-5xl md:text-7xl font-light tracking-tight">
+                    <h1 className="-ml-1 mb-10 text-4xl md:text-5xl font-light tracking-tight">
                         {t("title")}
                     </h1>
                 </motion.div>
@@ -261,7 +261,7 @@ export default function BrandingProjectLaEsquinitaContent() {
                             key={item.src}
                             initial={{ opacity: 0, y: 40, scale: 0.94 }}
                             whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                            viewport={{ once: false, amount: 0.3 }}
+                            viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                             className={`relative overflow-hidden ${item.span}`}
                         >
