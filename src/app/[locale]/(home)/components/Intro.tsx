@@ -105,7 +105,7 @@ export default function Intro() {
                             className="absolute inset-0 rounded-2xl overflow-hidden z-10"
                         >
                             <Image
-                                src="/media/home/intro/sara_moleskine.png"
+                                src="/media/home/intro/sara-moleskine.png"
                                 alt={t("home.intro.image_alt")}
                                 sizes="(max-width: 768px) 100vw, 50vw"
                                 quality={90}

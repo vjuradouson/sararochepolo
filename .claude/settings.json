@@ -3,7 +3,9 @@
     "allow": [
       "Bash(pip3 show *)",
       "Bash(python3)",
-      "Bash(npm uninstall *)"
+      "Bash(npm uninstall *)",
+      "Read(//tmp/realesrgan/models/**)",
+      "Bash(/tmp/realesrgan/realesrgan-ncnn-vulkan -h)"
     ]
   }
 }

@@ -103,7 +103,7 @@ export default function Hero() {
                                 className="order-2 relative mb-0 h-[380px] px-6 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:h-full lg:py-0"
                             >
                                 <Image
-                                    src="/media/home/hero/apps_hero.png"
+                                    src="/media/home/hero/apps-hero.png"
                                     alt={t("home.hero.image_alt")}
                                     fill
                                     sizes="(max-width: 768px) 100vw, 50vw"

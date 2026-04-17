@@ -123,7 +123,7 @@ export default function ProjectsSection() {
             href: ROUTES.PROJECT_ADOBE_PROJECT_NEO,
             content: (
                 <Image
-                    src="/media/home/projects/adobe_project_neo_keyboard.png"
+                    src="/media/home/projects/adobe-project-neo-keyboard.png"
                     alt={t("home.projects.adobe_project_neo.image_alt")}
                     width={1000}
                     height={1000}
@@ -169,7 +169,7 @@ export default function ProjectsSection() {
             href: ROUTES.PROJECT_BRANDING_LA_ESQUINITA,
             content: (
                 <Image
-                    src="/media/home/projects/branding_la_esquinita.png"
+                    src="/media/home/projects/branding-la-esquinita.png"
                     alt={t("home.projects.branding_la_esquinita.image_alt")}
                     width={1000}
                     height={1000}

@@ -288,6 +288,7 @@ export default {
                     logos_h2: "Variaciones del logotipo",
                     colors_h2: "Paleta de colores",
                     typography_h2: "Tipografía corporativa",
+                    masonry_h2: "Aplicaciones de marca",
                     colors: {
                         light_brown: "Marrón claro",
                         medium_brown: "Marrón medio",
@@ -297,7 +298,17 @@ export default {
                         interface: "Logo de La Esquinita de Papel",
                         framed_logo: "Logo enmarcado de La Esquinita de Papel",
                         square_logo: "Logo vertical de La Esquinita de Papel sobre fondo oscuro",
-                        horizontal_logo: "Logo horizontal de La Esquinita de Papel"
+                        horizontal_logo: "Logo horizontal de La Esquinita de Papel",
+                        library_entry: "Escaparate de la librería con el logo",
+                        wrapped_book: "Paquete envuelto con pegatina de la marca",
+                        visit_card: "Tarjeta de visita de La Esquinita de Papel",
+                        cup: "Taza con el logo de La Esquinita de Papel",
+                        paper_bag: "Bolsa de papel con el logo",
+                        bookmark: "Marcapáginas ilustrado",
+                        schedule: "Cartel de horario colgado con el logo",
+                        ticket: "Ticket de compra impreso",
+                        tote_bag: "Bolsa tote con el logo",
+                        running_mouse: "Ilustración de un ratón corriendo"
                     }
                 }
             }

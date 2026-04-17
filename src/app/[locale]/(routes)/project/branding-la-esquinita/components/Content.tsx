@@ -23,7 +23,7 @@ const goudyOldStyle = localFont({
 });
 
 
-const IMG_BASE = "/media/project/branding_la_esquinita";
+const IMG_BASE = "/media/project/branding-la-esquinita";
 
 const highlight = (chunks: React.ReactNode) => (
     <strong className="font-bold">{chunks}</strong>
@@ -38,9 +38,34 @@ const revealProps = {
     variants: fadeInUp,
     initial: "hidden" as const,
     whileInView: "show" as const,
-    viewport: { once: true, amount: 0.5 },
+    viewport: { once: false, amount: 0.5 },
     transition: { duration: 0.7, ease: "easeOut" as const },
 };
+
+const MASONRY_BASE = `${IMG_BASE}/masonry`;
+
+type MasonryAltKey =
+    | "library_entry"
+    | "wrapped_book"
+    | "visit_card"
+    | "cup"
+    | "paper_bag"
+    | "bookmark"
+    | "schedule"
+    | "ticket"
+    | "tote_bag";
+
+const masonryItems: { src: string; altKey: MasonryAltKey; span: string; objectPos?: string }[] = [
+    { src: "1-library-entry.png", altKey: "library_entry", span: "col-span-1 md:col-span-6 aspect-[4/5] md:aspect-[7/5]" },
+    { src: "2-wrapped-book.png", altKey: "wrapped_book", span: "col-span-1 md:col-span-6 aspect-[4/5] md:aspect-[7/5]" },
+    { src: "3-visit-card.png", altKey: "visit_card", span: "col-span-1 md:col-span-6 aspect-[4/5] md:aspect-[8/5]" },
+    { src: "4-cup.png", altKey: "cup", span: "col-span-1 md:col-span-3 aspect-[4/5] md:aspect-auto md:h-full" },
+    { src: "5-notebook.png", altKey: "paper_bag", span: "col-span-1 md:col-span-3 aspect-[4/5] md:aspect-auto md:h-full" },
+    { src: "6-bookmark.png", altKey: "bookmark", span: "col-span-1 md:col-span-3 aspect-[4/5]" },
+    { src: "7-schedule.png", altKey: "schedule", span: "col-span-1 md:col-span-3 aspect-[4/5]" },
+    { src: "8-ticket.png", altKey: "ticket", span: "col-span-1 md:col-span-3 aspect-[4/5]", objectPos: "object-top" },
+    { src: "9-totebag.png", altKey: "tote_bag", span: "col-span-2 md:col-span-3 aspect-[16/9] md:aspect-[4/5]" },
+];
 
 export default function BrandingProjectLaEsquinitaContent() {
     const t = useTranslations("app.project.branding_la_esquinita.content");
@@ -58,9 +83,9 @@ export default function BrandingProjectLaEsquinitaContent() {
                     </h1>
                 </motion.div>
                 <motion.div {...revealProps} className="container-xxl mx-auto lg:px-6">
-                    <motion.div {...revealProps} className="flex items-center justify-center bg-white py-12 px-6 md:py-20 md:px-12 rounded-[var(--radius-card)] shadow-[var(--shadow-card)]">
+                    <motion.div {...revealProps} className="flex items-center justify-center bg-[#8D7C6A] py-12 px-6 md:py-20 md:px-12 rounded-[var(--radius-card)] shadow-[var(--shadow-card)]">
                         <Image
-                            src={`${IMG_BASE}/framed_logo.png`}
+                            src={`${IMG_BASE}/framed-logo-filled.png`}
                             alt={t("image_alt.interface")}
                             width={800}
                             height={1000}
@@ -101,7 +126,7 @@ export default function BrandingProjectLaEsquinitaContent() {
                         <motion.div {...revealProps}
                             className="flex items-center justify-center p-6 md:p-10">
                             <Image
-                                src={`${IMG_BASE}/framed_logo.png`}
+                                src={`${IMG_BASE}/framed-logo.png`}
                                 alt={t("image_alt.framed_logo")}
                                 width={400}
                                 height={500}
@@ -115,7 +140,7 @@ export default function BrandingProjectLaEsquinitaContent() {
                         <motion.div {...revealProps}
                             className="flex items-center justify-center p-6 md:p-10">
                             <Image
-                                src={`${IMG_BASE}/square_logo.png`}
+                                src={`${IMG_BASE}/square-logo.png`}
                                 alt={t("image_alt.square_logo")}
                                 width={400}
                                 height={500}
@@ -129,7 +154,7 @@ export default function BrandingProjectLaEsquinitaContent() {
                         <motion.div {...revealProps}
                             className="col-span-2 md:col-span-1 flex items-center justify-center p-6 md:p-10">
                             <Image
-                                src={`${IMG_BASE}/horizontal_logo.png`}
+                                src={`${IMG_BASE}/horizontal-logo.png`}
                                 alt={t("image_alt.horizontal_logo")}
                                 width={800}
                                 height={300}
@@ -142,8 +167,23 @@ export default function BrandingProjectLaEsquinitaContent() {
                 </motion.div>
             </section>
 
+            {/* ─── Framed White ──────────────────────────────────────── */}
+            <motion.div {...revealProps} className="w-full mx-auto pb-5">
+                <motion.div {...revealProps} className="flex items-center justify-center bg-[#8D7C6A] py-6 px-6 md:py-10 md:px-12">
+                    <Image
+                        src={`${IMG_BASE}/framed-logo-filled.png`}
+                        alt={t("image_alt.interface")}
+                        width={800}
+                        height={1000}
+                        sizes="(max-width: 768px) 50vw, 30vw"
+                        quality={75}
+                        className="w-[55%] max-w-[320px] md:max-w-[300px] h-auto"
+                    />
+                </motion.div>
+            </motion.div>
+
             {/* ─── Color palette ──────────────────────────────────────── */}
-            <section className="w-full">
+            <section className="w-full font-semibold">
                 <h2 className="sr-only">{t("colors_h2")}</h2>
                 <motion.div
                     {...revealProps}
@@ -151,15 +191,13 @@ export default function BrandingProjectLaEsquinitaContent() {
                 >
                     <div className="bg-[#F6F3EC] p-6 md:p-8 min-h-[160px] md:min-h-[200px] flex items-center justify-center">
                         <div>
-                            <p className="font-bold text-lg text-neutral-800">{t("colors.light_brown")}</p>
-                            <p className="text-lg text-neutral-600">#F6F3EC</p>
-                            <p className="text-lg text-neutral-600">rgb(246, 243, 236)</p>
-                            <p className="text-lg text-neutral-600">hsl(42, 36, 95)</p>
+                            <p className="text-lg">#F6F3EC</p>
+                            <p className="text-lg">rgb(246, 243, 236)</p>
+                            <p className="text-lg">hsl(42, 36, 95)</p>
                         </div>
                     </div>
                     <div className="bg-[#D6C7B2] p-6 md:p-8 min-h-[160px] md:min-h-[200px] flex items-center justify-center">
                         <div>
-                            <p className="font-bold text-lg text-neutral-800">{t("colors.medium_brown")}</p>
                             <p className="text-lg">#D6C7B2</p>
                             <p className="text-lg">rgb(214, 199, 178)</p>
                             <p className="text-lg">hsl(35, 31, 77)</p>
@@ -167,10 +205,28 @@ export default function BrandingProjectLaEsquinitaContent() {
                     </div>
                     <div className="bg-[#8D7C6A] p-6 md:p-8 min-h-[160px] md:min-h-[200px] flex items-center justify-center">
                         <div>
-                            <p className="font-bold text-lg text-white">{t("colors.dark_brown")}</p>
                             <p className="text-lg text-white">#8D7C6A</p>
                             <p className="text-lg text-white">rgb(141, 124, 106)</p>
                             <p className="text-lg text-white">hsl(31, 14, 48)</p>
+                        </div>
+                    </div>
+                </motion.div>
+                <motion.div
+                    {...revealProps}
+                    className="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-0"
+                >
+                    <div className="bg-[#F7ECD9] p-6 md:p-8 min-h-[80px] md:min-h-[100px] flex items-center justify-center">
+                        <div>
+                            <p className="text-lg">#F7ECD9</p>
+                            <p className="text-lg">rgb(247, 236, 217)</p>
+                            <p className="text-lg">hsl(38, 65, 91)</p>
+                        </div>
+                    </div>
+                    <div className="bg-[#6B6658] p-6 md:p-8 min-h-[80px] md:min-h-[100px] flex items-center justify-center">
+                        <div>
+                            <p className="text-lg text-white">#6B6658</p>
+                            <p className="text-lg text-white">rgb(107, 102, 88)</p>
+                            <p className="text-lg text-white">hsl(44, 10, 38)</p>
                         </div>
                     </div>
                 </motion.div>
@@ -195,6 +251,52 @@ export default function BrandingProjectLaEsquinitaContent() {
                     </div>
                 </motion.div>
             </section>
+
+            {/* ─── Brand applications (masonry) ─────────────────────────────────────────── */}
+            <section className="container-xl bg-[#f5f5f5] px-4 md:px-10 lg:px-20 py-16 md:py-12">
+                <h2 className="sr-only">{t("masonry_h2")}</h2>
+                <div className="grid grid-cols-2 md:grid-cols-12 gap-2 md:gap-3">
+                    {masonryItems.map((item) => (
+                        <motion.div
+                            key={item.src}
+                            initial={{ opacity: 0, y: 40, scale: 0.94 }}
+                            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                            viewport={{ once: false, amount: 0.3 }}
+                            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                            className={`relative overflow-hidden ${item.span}`}
+                        >
+                            <Image
+                                src={`${MASONRY_BASE}/${item.src}`}
+                                alt={t(`image_alt.${item.altKey}`)}
+                                fill
+                                sizes="(max-width: 768px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                                quality={75}
+                                className={`object-cover ${item.objectPos ?? ""}`}
+                            />
+                        </motion.div>
+                    ))}
+                </div>
+            </section>
+
+            {/* ─── Running mouse strip ─────────────────────────────────────────── */}
+            <motion.div
+                {...revealProps}
+                aria-hidden="true"
+                className="w-full h-[70px] bg-[#8D7C6A] flex items-center justify-center gap-12 md:gap-18 overflow-hidden"
+            >
+                {Array.from({ length: 18 }).map((_, i) => (
+                    <Image
+                        key={i}
+                        src={`${IMG_BASE}/mouse-running-filled.png`}
+                        alt={t("image_alt.running_mouse")}
+                        width={50}
+                        height={50}
+                        quality={75}
+                        className="h-[55px] w-auto flex-shrink-0"
+                    />
+                ))}
+            </motion.div>
+
         </div>
     );
 }

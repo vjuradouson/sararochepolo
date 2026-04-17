@@ -288,6 +288,7 @@ export default {
                     logos_h2: "Logo variations",
                     colors_h2: "Color palette",
                     typography_h2: "Brand typography",
+                    masonry_h2: "Brand applications",
                     colors: {
                         light_brown: "Light brown",
                         medium_brown: "Medium brown",
@@ -297,7 +298,17 @@ export default {
                         interface: "La Esquinita de Papel logo",
                         framed_logo: "Framed logo of La Esquinita de Papel",
                         square_logo: "Vertical logo of La Esquinita de Papel on dark background",
-                        horizontal_logo: "Horizontal logo of La Esquinita de Papel"
+                        horizontal_logo: "Horizontal logo of La Esquinita de Papel",
+                        library_entry: "Bookshop storefront with the logo",
+                        wrapped_book: "Wrapped package with a brand sticker",
+                        visit_card: "La Esquinita de Papel business card",
+                        cup: "Mug featuring the La Esquinita de Papel logo",
+                        paper_bag: "Paper bag with the logo",
+                        bookmark: "Illustrated bookmark",
+                        schedule: "Hanging schedule sign with the logo",
+                        ticket: "Printed purchase receipt",
+                        tote_bag: "Tote bag with the logo",
+                        running_mouse: "Illustration of a running mouse"
                     }
                 }
             }
