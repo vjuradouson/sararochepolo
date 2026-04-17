@@ -55,6 +55,29 @@ export default {
                 instagram: "Instagram"
             }
         },
+        cookies: {
+            title: "Usamos cookies",
+            description: "Usamos cookies técnicas necesarias y, si nos das permiso, también cookies de analítica, preferencias y marketing.",
+            show_settings: "Configurar cookies",
+            hide_settings: "Ocultar configuración",
+            categories: {
+                necessary: {
+                    label: "Necesarias",
+                    description: "Siempre activas."
+                },
+                preferences: "Preferencias",
+                analytics: "Analítica",
+                marketing: "Marketing"
+            },
+            actions: {
+                reject_optional: "Rechazar opcionales",
+                save_selection: "Guardar selección",
+                accept_all: "Aceptar todas"
+            },
+            errors: {
+                save_failed: "No se pudo guardar tu preferencia de cookies."
+            }
+        },
         home: {
             seo: {
                 title: "Sara Roche Polo — Diseñadora de Producto (UX/UI) en Zaragoza",

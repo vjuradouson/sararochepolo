@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { CookieConsent } from '@/lib/cookie-consent';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 
 type LocalPreferences = {
     analytics: boolean;
@@ -11,6 +12,7 @@ type LocalPreferences = {
 };
 
 export default function CookieBanner() {
+    const t = useTranslations('app.cookies');
     const [isSaving, setIsSaving] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const [showSettings, setShowSettings] = useState(false);
@@ -55,13 +57,13 @@ export default function CookieBanner() {
                 body: JSON.stringify(values),
             });
 
-            if (!res.ok) throw new Error('No se pudo guardar');
+            if (!res.ok) throw new Error('Save failed');
 
             window.dispatchEvent(new Event('cookie-consent-updated'));
         } catch (error) {
             console.error(error);
             setIsOpen(true);
-            alert('No se pudo guardar tu preferencia de cookies.');
+            alert(t('errors.save_failed'));
         } finally {
             setIsSaving(false);
         }
@@ -112,12 +114,11 @@ export default function CookieBanner() {
                 >
                     <div className="mx-auto max-w-5xl">
                         <h2 id="cookie-banner-title" className="text-lg font-semibold">
-                            Usamos cookies
+                            {t('title')}
                         </h2>
 
                         <p className="mt-2 text-sm text-neutral-700">
-                            Usamos cookies técnicas necesarias y, si nos das permiso,
-                            también cookies de analítica, preferencias y marketing.
+                            {t('description')}
                         </p>
 
                         <button
@@ -126,8 +127,8 @@ export default function CookieBanner() {
                             className="cursor-pointer mt-3 text-sm underline"
                         >
                             {showSettings
-                                ? 'Ocultar configuración'
-                                : 'Configurar cookies'}
+                                ? t('hide_settings')
+                                : t('show_settings')}
                         </button>
 
                         <AnimatePresence initial={false}>
@@ -146,10 +147,10 @@ export default function CookieBanner() {
                                         <label className="flex items-start gap-3">
                                             <input type="checkbox" checked disabled />
                                             <span>
-                                                <strong>Necesarias</strong>
+                                                <strong>{t('categories.necessary.label')}</strong>
                                                 <br />
                                                 <span className="text-sm text-neutral-600">
-                                                    Siempre activas.
+                                                    {t('categories.necessary.description')}
                                                 </span>
                                             </span>
                                         </label>
@@ -165,7 +166,7 @@ export default function CookieBanner() {
                                                     }))
                                                 }
                                             />
-                                            <strong>Preferencias</strong>
+                                            <strong>{t('categories.preferences')}</strong>
                                         </label>
 
                                         <label className="flex items-start gap-3">
@@ -179,7 +180,7 @@ export default function CookieBanner() {
                                                     }))
                                                 }
                                             />
-                                            <strong>Analítica</strong>
+                                            <strong>{t('categories.analytics')}</strong>
                                         </label>
 
                                         <label className="flex items-start gap-3">
@@ -193,7 +194,7 @@ export default function CookieBanner() {
                                                     }))
                                                 }
                                             />
-                                            <strong>Marketing</strong>
+                                            <strong>{t('categories.marketing')}</strong>
                                         </label>
                                     </div>
                                 </motion.div>
@@ -207,7 +208,7 @@ export default function CookieBanner() {
                                 disabled={isSaving}
                                 className="cursor-pointer rounded-xl border px-4 py-2 text-sm"
                             >
-                                Rechazar opcionales
+                                {t('actions.reject_optional')}
                             </button>
 
                             <button
@@ -216,7 +217,7 @@ export default function CookieBanner() {
                                 disabled={isSaving}
                                 className="cursor-pointer rounded-xl border px-4 py-2 text-sm"
                             >
-                                Guardar selección
+                                {t('actions.save_selection')}
                             </button>
 
                             <button
@@ -225,7 +226,7 @@ export default function CookieBanner() {
                                 disabled={isSaving}
                                 className="cursor-pointer rounded-xl bg-black px-4 py-2 text-sm text-white"
                             >
-                                Aceptar todas
+                                {t('actions.accept_all')}
                             </button>
                         </div>
                     </div>
