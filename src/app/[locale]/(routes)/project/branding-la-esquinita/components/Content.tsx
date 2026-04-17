@@ -114,7 +114,7 @@ export default function BrandingProjectLaEsquinitaContent() {
             </section>
 
             {/* ─── Logo variations ────────────────────────────────────── */}
-            <section className="w-full bg-[#f5f5f5] py-12 md:pt-5 md:pb-0">
+            <section className="w-full bg-[#f5f5f5] py-12 md:pt-5 pb-0">
                 <h2 className="sr-only">{t("logos_h2")}</h2>
                 <motion.div
                     {...revealProps}
@@ -152,7 +152,7 @@ export default function BrandingProjectLaEsquinitaContent() {
 
                         {/* Horizontal logo */}
                         <motion.div {...revealProps}
-                            className="col-span-2 md:col-span-1 flex items-center justify-center p-6 md:p-10">
+                            className="col-span-2 md:col-span-1 flex items-center justify-center p-10">
                             <Image
                                 src={`${IMG_BASE}/horizontal-logo.png`}
                                 alt={t("image_alt.horizontal_logo")}
@@ -160,7 +160,7 @@ export default function BrandingProjectLaEsquinitaContent() {
                                 height={300}
                                 sizes="(max-width: 768px) 80vw, 25vw"
                                 quality={75}
-                                className="w-full max-w-[320px] md:max-w-[280px] h-auto"
+                                className="w-full max-w-[320px] md:max-w-[280px] h-auto scale-[1.1] md:scale-[1.3]"
                             />
                         </motion.div>
                     </div>
@@ -168,7 +168,7 @@ export default function BrandingProjectLaEsquinitaContent() {
             </section>
 
             {/* ─── Framed White ──────────────────────────────────────── */}
-            <motion.div {...revealProps} className="w-full mx-auto">
+            <motion.div {...revealProps} className="w-full mx-auto pb-5">
                 <motion.div {...revealProps} className="flex items-center justify-center bg-[#8D7C6A] py-6 px-6 md:py-10 md:px-12">
                     <Image
                         src={`${IMG_BASE}/framed-logo-filled.png`}
