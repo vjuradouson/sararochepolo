@@ -84,7 +84,7 @@ export default function ProjectsSection() {
                     height={828}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     quality={75}
-                    className="max-h-full max-w-full w-full h-auto object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] my-5 mt-12 mb-12 md:mt-0 md:mb-0 mx-0 my-0 xl:scale-[1.3] xl:pl-[10%]"
+                    className="max-h-full max-w-full w-full h-auto object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] my-5 mt-12 mb-12 md:mt-0 md:mb-0 mx-0 my-0 scale-[1.1] md:scale-[1] xl:scale-[1.3] xl:pl-[10%]"
                 />
             ),
         },
