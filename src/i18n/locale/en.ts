@@ -85,7 +85,7 @@ export default {
             },
             hero: {
                 h1: "Product Designer (UX/UI)",
-                h1_meta: "based in Zaragoza | Sara Roche Polo",
+                h1_meta: "based in Zaragoza | Sara Roche",
                 button: {
                     label: "Contact"
                 },

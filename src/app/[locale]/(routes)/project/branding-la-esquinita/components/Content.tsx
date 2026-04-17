@@ -58,13 +58,13 @@ type MasonryAltKey =
 const masonryItems: { src: string; altKey: MasonryAltKey; span: string; objectPos?: string }[] = [
     { src: "1-library-entry.png", altKey: "library_entry", span: "col-span-1 md:col-span-6 aspect-[4/5] md:aspect-[7/5]" },
     { src: "2-wrapped-book.png", altKey: "wrapped_book", span: "col-span-1 md:col-span-6 aspect-[4/5] md:aspect-[7/5]" },
-    { src: "3-visit-card.png", altKey: "visit_card", span: "col-span-1 md:col-span-6 aspect-[4/5] md:aspect-[8/5]" },
+    { src: "3-visit-card.png", altKey: "visit_card", span: "col-span-1 md:col-span-6 aspect-[4/5] md:aspect-[8/5]", objectPos: "object-left" },
     { src: "4-cup.png", altKey: "cup", span: "col-span-1 md:col-span-3 aspect-[4/5] md:aspect-auto md:h-full" },
     { src: "5-notebook.png", altKey: "paper_bag", span: "col-span-1 md:col-span-3 aspect-[4/5] md:aspect-auto md:h-full" },
     { src: "6-bookmark.png", altKey: "bookmark", span: "col-span-1 md:col-span-3 aspect-[4/5]" },
     { src: "7-schedule.png", altKey: "schedule", span: "col-span-1 md:col-span-3 aspect-[4/5]" },
     { src: "8-ticket.png", altKey: "ticket", span: "col-span-1 md:col-span-3 aspect-[4/5]", objectPos: "object-top" },
-    { src: "9-totebag.png", altKey: "tote_bag", span: "col-span-2 md:col-span-3 aspect-[16/9] md:aspect-[4/5]" },
+    { src: "9-totebag.png", altKey: "tote_bag", span: "col-span-2 md:col-span-3 aspect-[16/9] md:aspect-[4/5]", objectPos: "object-[50%_80%]" },
 ];
 
 export default function BrandingProjectLaEsquinitaContent() {
@@ -168,7 +168,7 @@ export default function BrandingProjectLaEsquinitaContent() {
             </section>
 
             {/* ─── Framed White ──────────────────────────────────────── */}
-            <motion.div {...revealProps} className="w-full mx-auto pb-5">
+            <motion.div {...revealProps} className="w-full mx-auto">
                 <motion.div {...revealProps} className="flex items-center justify-center bg-[#8D7C6A] py-6 px-6 md:py-10 md:px-12">
                     <Image
                         src={`${IMG_BASE}/framed-logo-filled.png`}

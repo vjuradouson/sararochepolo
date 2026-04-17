@@ -58,7 +58,7 @@ export default function Hero() {
                             className="
             absolute -right-[50%] top-1/2
             -translate-y-1/2
-            w-[170%] h-[110%]
+            w-[170%] h-[120%]
             rotate-[45deg]
             rounded-full
             bg-[radial-gradient(circle_at_left_center,_#f3f3f1_0%,_#f4f4f4_50%,_#e3df5a_50%,_#f4f4f4_75%)]
@@ -79,7 +79,7 @@ export default function Hero() {
                                     <span className="block text-xl uppercase tracking-[0.3em] md:text-2xl">
                                         {t("home.hero.h1")}
                                     </span>
-                                    <span className="block text-[12px] pt-3 uppercase tracking-[0.3em] text-gray-500 md:text-xs">
+                                    <span className="block text-[11px] md:text-[12px] pt-3 uppercase tracking-[0.3em] text-gray-500 md:text-xs">
                                         {t("home.hero.h1_meta")}
                                     </span>
                                 </motion.h1>

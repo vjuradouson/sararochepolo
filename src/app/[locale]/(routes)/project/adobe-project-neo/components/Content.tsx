@@ -172,7 +172,7 @@ export default function AdobeProjectNeoContent() {
             <section className="container-xl pb-16 md:pb-32">
                 <motion.div
                     {...revealProps}
-                    className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16"
+                    className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 md:items-end"
                 >
                     <div>
                         <Image
@@ -186,7 +186,7 @@ export default function AdobeProjectNeoContent() {
                         />
                     </div>
 
-                    <div className="flex flex-col gap-8">
+                    <div className="flex flex-col gap-8 md:h-full md:justify-between">
                         <p className="max-w-md leading-relaxed">
                             {t("realistic.description")}
                         </p>
