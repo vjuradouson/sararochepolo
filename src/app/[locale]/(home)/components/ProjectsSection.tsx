@@ -80,11 +80,11 @@ export default function ProjectsSection() {
                 <Image
                     src="/media/home/projects/figma_pet_buddy.png"
                     alt={t("home.projects.figma_pet_buddy.image_alt")}
-                    width={1000}
-                    height={1000}
+                    width={1200}
+                    height={828}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     quality={75}
-                    className="max-h-full max-w-full w-full h-auto object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] my-5 mt-12 mb-12 md:mt-0 md:mb-0 mx-0 my-0 xl:scale-[1.3] xl:pl-[10%]"
+                    className="block mx-auto max-h-full max-w-full w-full h-auto object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] mt-12 mb-12 md:mt-0 md:mb-0 scale-[1.3] md:scale-[1] xl:scale-[1.3] xl:pl-[10%]"
                 />
             ),
         },
@@ -629,7 +629,7 @@ export default function ProjectsSection() {
                                 transition={{ duration: 0.85, ease: "easeOut" }}
                                 className={`order-2 md:order-2 md:col-start-2 md:row-start-1 md:row-end-5 relative flex items-center justify-center w-full md:h-full lg:w-[100%] ${project.parentClass}`}
                             >
-                                <div className="w-full md:h-full flex md:items-center md:justify-center">
+                                <div className="w-full md:h-full flex md:items-center justify-center">
                                     <div className="md:max-h-full md:max-w-full">
                                         {project.content}
                                     </div>
