@@ -5,7 +5,7 @@ import { COOKIE_CONSENT_NAME } from '@/lib/cookie-consent';
 import { LOCALES, COUNTRY_LOCALE_MAP, DEFAULT_LOCALE } from '@/lib/config';
 
 const resolveLocaleFromCountry = (country: string): string => {
-    return COUNTRY_LOCALE_MAP[country] ?? DEFAULT_LOCALE;
+    return COUNTRY_LOCALE_MAP[country] ?? 'en';
 };
 
 const isSupportedLocale = (locale: string): boolean => {
@@ -124,6 +124,19 @@ export default function middleware(req: NextRequest) {
     const response = intlMiddleware(req);
 
     if (response) {
+        // Persist locale cookie on direct visits (e.g. bookmarks) so /
+        // resolves to the same version next time without recomputing.
+        if (!cookieLocale) {
+            const urlLocale = LOCALES.find((loc) =>
+                pathname.startsWith(`/${loc}`)
+            );
+            if (urlLocale) {
+                response.cookies.set('NEXT_LOCALE', urlLocale, {
+                    path: '/',
+                    maxAge: 60 * 60 * 24 * 365
+                });
+            }
+        }
         if (consent) {
             response.headers.set('x-consent', consent);
         }

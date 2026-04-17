@@ -1,7 +1,6 @@
-import { BASE_URL, Locale } from "@/lib/config";
+import { BASE_URL, DEFAULT_LOCALE, Locale } from "@/lib/config";
 import { ROUTING } from '@/i18n/routing';
 import { getPath } from "@/i18n/getPath";
-import { ROUTES } from "@/constants/routes";
 import { Metadata, Route } from "next"
 
 export async function buildAlternates(
@@ -18,9 +17,12 @@ export async function buildAlternates(
 
     return {
         canonical: buildUrl(locale as Locale),
-        languages: Object.fromEntries(
-            locales.map(l => [l, buildUrl(l as Locale)])
-        ),
+        languages: {
+            ...Object.fromEntries(
+                locales.map(l => [l, buildUrl(l as Locale)])
+            ),
+            'x-default': buildUrl(DEFAULT_LOCALE as Locale),
+        },
     }
 }
 

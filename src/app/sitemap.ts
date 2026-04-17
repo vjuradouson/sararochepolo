@@ -22,12 +22,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
             const url = `${BASE_URL}/${locale}${getPath(locale)}`
 
             const alternates = {
-                languages: Object.fromEntries(
-                    locales.map((l) => [
-                        l,
-                        `${BASE_URL}/${l}${getPath(l)}`
-                    ])
-                )
+                languages: {
+                    ...Object.fromEntries(
+                        locales.map((l) => [
+                            l,
+                            `${BASE_URL}/${l}${getPath(l)}`
+                        ])
+                    ),
+                    'x-default': `${BASE_URL}/${defaultLocale}${getPath(defaultLocale)}`,
+                }
             }
 
             entries.push({
