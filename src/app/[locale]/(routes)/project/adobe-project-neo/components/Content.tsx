@@ -31,7 +31,7 @@ export default function AdobeProjectNeoContent() {
     return (
         <div key={refreshKey} className="text-lg md:text-xl xl:text-2xl">
             {/* ─── HEADER ─────────────────────────────────────────────── */}
-            <section className="container-xl pt-24 md:pt-36 pb-16 md:pb-24">
+            <section className="container-xl md:pt-16 mt-20 md:mt-10">
                 <motion.div {...revealProps} className="max-w-full">
                     <p className="text-xl uppercase tracking-widest mb-8 md:mb-10">
                         {t("eyebrow")}

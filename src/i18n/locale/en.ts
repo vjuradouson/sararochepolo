@@ -352,12 +352,17 @@ export default {
                         paragraph_3: "<highlight>Here coffee is taken seriously, but without pretense: quality, warmth and good vibes in every cup.</highlight>"
                     },
                     logos_h2: "Logo variations",
+                    typography_h2: "Brand typography",
+                    applications_h2: "Brand applications",
                     image_alt: {
                         coffee_cup: "Coffee cups with Don Tostado branding on top of an espresso machine",
                         logo_with_title: "Illustrated Don Tostado logo featuring a mustachioed coffee cup on a pink background",
                         logo_cyan: "Don Tostado logo on a cyan background",
                         logo_pink: "Don Tostado logo on a pink background",
-                        logo_navy: "Don Tostado light logo on a dark navy background"
+                        logo_navy: "Don Tostado light logo on a dark navy background",
+                        coffee_shop: "Don Tostado storefront with the brand logo on the window",
+                        slogan: "Don Tostado slogan: primero café, luego ya vemos",
+                        coffee_packages: "Don Tostado coffee bags: Original Classic, Hazelnut Chunk and Cinnamon Flavor on a café counter"
                     }
                 }
             }

@@ -352,12 +352,17 @@ export default {
                         paragraph_3: "<highlight>Aquí el café se cuida, pero sin postureo: calidad, cercanía y buen rollo en cada taza.</highlight>"
                     },
                     logos_h2: "Variaciones del logotipo",
+                    typography_h2: "Tipografía corporativa",
+                    applications_h2: "Aplicaciones de marca",
                     image_alt: {
                         coffee_cup: "Vasos de café con el branding de Don Tostado sobre una máquina de espresso",
                         logo_with_title: "Logotipo ilustrado de Don Tostado con una taza con bigote sobre fondo rosa",
                         logo_cyan: "Logotipo de Don Tostado sobre fondo cian",
                         logo_pink: "Logotipo de Don Tostado sobre fondo rosa",
-                        logo_navy: "Logotipo de Don Tostado en versión clara sobre fondo azul oscuro"
+                        logo_navy: "Logotipo de Don Tostado en versión clara sobre fondo azul oscuro",
+                        coffee_shop: "Escaparate de Don Tostado con el logotipo de la marca en la vidriera",
+                        slogan: "Lema de Don Tostado: primero café, luego ya vemos",
+                        coffee_packages: "Packs de café de Don Tostado: Original Classic, Hazelnut Chunk y Cinnamon Flavor sobre una barra de cafetería"
                     }
                 }
             }

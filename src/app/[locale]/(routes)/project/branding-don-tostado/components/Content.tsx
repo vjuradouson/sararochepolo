@@ -4,6 +4,23 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
+import localFont from "next/font/local";
+
+const funnyKids = localFont({
+    src: [
+        {
+            path: "../../../../../../styles/fonts/funny-kids.woff2",
+            weight: "400",
+            style: "normal",
+        },
+        {
+            path: "../../../../../../styles/fonts/funny-kids.ttf",
+            weight: "400",
+            style: "normal",
+        },
+    ],
+    display: "swap",
+});
 
 const IMG_BASE = "/media/project/branding-don-tostado";
 
@@ -112,7 +129,7 @@ export default function BrandingProjectDonTostadoContent() {
             {/* ─── About ─────────────────────────────────────────────── */}
             <section className="container-xl py-16 md:py-32">
                 <motion.div {...revealProps} className="max-w">
-                    <h2 className="-ml-0.5 mb-2 text-3xl md:text-4xl tracking-tight">
+                    <h2 className="-ml-0.5 mb-2 text-4xl md:text-5xl tracking-tight">
                         {t("about.heading")}
                     </h2>
                     <p className="mb-8 text-md md:text-xl italic">
@@ -160,6 +177,81 @@ export default function BrandingProjectDonTostadoContent() {
                             </div>
                         </motion.div>
                     ))}
+                </div>
+            </section>
+            {/* ─── Typography ─────────────────────────────────────────── */}
+            <section className="w-full bg-[#f5f5f5] py-12 md:py-20">
+                <h2 className="sr-only">{t("typography_h2")}</h2>
+                <motion.div
+                    {...revealProps}
+                    className={`container-xl md:w-[90%] xl:w-[70%] grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-10 xl:gap-0 items-center justify-items-center ${funnyKids.className}`}
+                >
+                    <div className="flex flex-col items-center md:items-start">
+                        <span className="text-9xl md:text-[240px] leading-none">Aa</span>
+                        <span className="text-2xl md:text-4xl">Funny Kids</span>
+                    </div>
+                    <div className="flex flex-col gap-4 text-3xl sm:text-5xl xl:text-7xl text-center md:text-left break-all uppercase">
+                        <p>ABCDEFGHIJKLMNÑOPQRSTUVWXYZ</p>
+                        <p>0123456789</p>
+                    </div>
+                </motion.div>
+            </section>
+
+            {/* ─── Brand applications ─────────────────────────────────────── */}
+            <section className="container-xl mx-auto py-16 md:py-24">
+                <h2 className="sr-only">{t("applications_h2")}</h2>
+                <div className="flex flex-col">
+                    {/* Row 1 — coffee shop */}
+                    <motion.div {...revealProps} className="relative w-full aspect-[16/9]">
+                        <Image
+                            src={`${IMG_BASE}/coffee-shop.png`}
+                            alt={t("image_alt.coffee_shop")}
+                            fill
+                            sizes="100vw"
+                            quality={75}
+                            className="object-cover"
+                        />
+                    </motion.div>
+
+                    {/* Row 2 — coffee cup (70%) + slogan on navy (30%) */}
+                    <div className="grid grid-cols-1 md:grid-cols-10 items-stretch">
+                        <motion.div {...revealProps} className="relative md:col-span-7 aspect-[3/2]">
+                            <Image
+                                src={`${IMG_BASE}/coffee-cup.png`}
+                                alt={t("image_alt.coffee_cup")}
+                                fill
+                                sizes="(max-width: 768px) 100vw, 70vw"
+                                quality={75}
+                                className="object-cover"
+                            />
+                        </motion.div>
+                        <motion.div
+                            {...revealProps}
+                            className="md:col-span-3 bg-[#14005F] flex items-center justify-center aspect-square md:aspect-auto p-10 md:p-12"
+                        >
+                            <Image
+                                src={`${IMG_BASE}/slogan.png`}
+                                alt={t("image_alt.slogan")}
+                                width={500}
+                                height={450}
+                                sizes="(max-width: 768px) 70vw, 25vw"
+                                quality={75}
+                                className="h-auto max-w-[80%] max-h-[80%] md:max-w-[90%] md:max-h-[80%]"
+                            />
+                        </motion.div>
+                    </div>
+
+                    {/* Row 3 — coffee packages */}
+                    <motion.div {...revealProps} className="relative w-full aspect-[4/3]">
+                        <Image
+                            src={`${IMG_BASE}/coffee-packages.png`}
+                            alt={t("image_alt.coffee_packages")}
+                            fill
+                            sizes="100vw"
+                            quality={75}
+                            className="object-cover"
+                        />
+                    </motion.div>
                 </div>
             </section>
 
