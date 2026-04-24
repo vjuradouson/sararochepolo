@@ -337,7 +337,29 @@ export default {
                 }
             },
             branding_don_tostado: {
-
+                seo: {
+                    title: "Branding \"Don Tostado\" | Sara Roche Polo",
+                    description: "Proyecto de branding para Don Tostado, una cafetería de especialidad joven, moderna y con mucho carácter. Identidad visual desenfadada y cercana por Sara Roche Polo."
+                },
+                content: {
+                    eyebrow: "Proyecto personal",
+                    title: "Branding \"Don Tostado\"",
+                    about: {
+                        heading: "Don Tostado",
+                        tagline: "Sin postureo. Calidad, cercanía y buen rollo en cada taza.",
+                        paragraph_1: "Don Tostado es una <highlight>cafetería de especialidad joven, moderna y con mucho carácter.</highlight> Un espacio luminoso, lleno de colores suaves, plantas y detalles gráficos que reflejan su identidad divertida.",
+                        paragraph_2: "El local tiene un <highlight>aire dinámico y desenfadado</highlight>, con una estética muy cuidada donde cada rincón invita a quedarse: desde la disposición abierta hasta los pequeños guiños de marca que hacen el espacio reconocible y con <highlight>personalidad propia</highlight>.",
+                        paragraph_3: "<highlight>Aquí el café se cuida, pero sin postureo: calidad, cercanía y buen rollo en cada taza.</highlight>"
+                    },
+                    logos_h2: "Variaciones del logotipo",
+                    image_alt: {
+                        coffee_cup: "Vasos de café con el branding de Don Tostado sobre una máquina de espresso",
+                        logo_with_title: "Logotipo ilustrado de Don Tostado con una taza con bigote sobre fondo rosa",
+                        logo_cyan: "Logotipo de Don Tostado sobre fondo cian",
+                        logo_pink: "Logotipo de Don Tostado sobre fondo rosa",
+                        logo_navy: "Logotipo de Don Tostado en versión clara sobre fondo azul oscuro"
+                    }
+                }
             }
         },
     }

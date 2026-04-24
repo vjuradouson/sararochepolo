@@ -32,6 +32,8 @@ La versión de node utilizada es: v20.18.3
 - **Accessibility (a11y):** Asegurar contrastes WCAG AA, uso de etiquetas semánticas (`<article>`, `<section>`, `<nav>`) y atributos `aria-label`.
 - **SEO Mastery:** Implementar el objeto `Metadata` de Next.js en cada página (Title, Description, OpenGraph). No usar la etiqueta `<Head>` (obsoleta en App Router).
 - **Clean Code Rule:** Si un componente supera las 60 líneas de código, **debe** ser fragmentado en sub-componentes más pequeños y manejables.
+- **DRY UI (data-driven rendering):** Si renderizas **2+ bloques** con la misma estructura JSX y solo varían datos (colores, imágenes, strings, claves i18n, valores hex/rgb/hsl), **extrae un array de config tipado a nivel de módulo y mapea sobre él**. Queda prohibido copiar/pegar JSX con variantes mínimas — es lo primero que envejece mal al modificar el diseño. Patrón de referencia: `masonryItems` / `logoVariants` en los proyectos de branding.
+- **Valores dinámicos de Tailwind:** Cuando el valor venga de una variable (p. ej. `v.color` del config), usa `style={{ backgroundColor: v.color }}`. Tailwind JIT **no** detecta clases construidas por interpolación (`bg-[${v.color}]` no genera CSS). Esta es la **única** excepción autorizada a la regla de "solo Tailwind" para estilos.
 
 ## 5. Reference Style
 - El objetivo es emular la estética de `beatrizhc.com`: Limpieza visual, transiciones de alta gama, tipografía premium y carga instantánea.

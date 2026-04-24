@@ -337,7 +337,29 @@ export default {
                 }
             },
             branding_don_tostado: {
-
+                seo: {
+                    title: "Branding \"Don Tostado\" | Sara Roche Polo",
+                    description: "Branding project for Don Tostado, a young, modern specialty coffee shop full of character. A laid-back, approachable visual identity by Sara Roche Polo."
+                },
+                content: {
+                    eyebrow: "Personal project",
+                    title: "Branding \"Don Tostado\"",
+                    about: {
+                        heading: "Don Tostado",
+                        tagline: "No pretenses. Quality, warmth and good vibes in every cup.",
+                        paragraph_1: "Don Tostado is a <highlight>young, modern specialty coffee shop full of character.</highlight> A bright space filled with soft colors, plants and graphic details that reflect its playful identity.",
+                        paragraph_2: "The place has a <highlight>dynamic, laid-back vibe</highlight>, with a carefully curated aesthetic where every corner invites you to stay: from the open layout to the small brand touches that make the space recognizable and with a <highlight>personality of its own</highlight>.",
+                        paragraph_3: "<highlight>Here coffee is taken seriously, but without pretense: quality, warmth and good vibes in every cup.</highlight>"
+                    },
+                    logos_h2: "Logo variations",
+                    image_alt: {
+                        coffee_cup: "Coffee cups with Don Tostado branding on top of an espresso machine",
+                        logo_with_title: "Illustrated Don Tostado logo featuring a mustachioed coffee cup on a pink background",
+                        logo_cyan: "Don Tostado logo on a cyan background",
+                        logo_pink: "Don Tostado logo on a pink background",
+                        logo_navy: "Don Tostado light logo on a dark navy background"
+                    }
+                }
             }
         }
     }
