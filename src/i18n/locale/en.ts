@@ -36,7 +36,8 @@ export default {
                 projects_title: "Projects",
                 projects: {
                     adobe_project_neo: "Adobe Project Neo",
-                    branding_la_esquinita: "Branding La Esquinita de Papel"
+                    branding_la_esquinita: "Branding La Esquinita de Papel",
+                    branding_don_tostado: "Branding Don Tostado"
                 },
                 about_me: "About me",
                 contact: "Contact",
@@ -334,6 +335,9 @@ export default {
                         running_mouse: "Illustration of a running mouse"
                     }
                 }
+            },
+            branding_don_tostado: {
+
             }
         }
     }

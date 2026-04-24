@@ -27,6 +27,10 @@ export const ROUTING = defineRouting({
     [ROUTES.PROJECT_BRANDING_LA_ESQUINITA]: {
       es: '/proyecto/branding-la-esquinita-de-papel',
       en: '/project/branding-la-esquinita-de-papel'
+    },
+    [ROUTES.PROJECT_BRANDING_DON_TOSTADO]: {
+      es: '/proyecto/branding-don-tostado',
+      en: '/project/branding-don-tostado'
     }
   }
 })
