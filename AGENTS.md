@@ -35,5 +35,13 @@ La versión de node utilizada es: v20.18.3
 - **DRY UI (data-driven rendering):** Si renderizas **2+ bloques** con la misma estructura JSX y solo varían datos (colores, imágenes, strings, claves i18n, valores hex/rgb/hsl), **extrae un array de config tipado a nivel de módulo y mapea sobre él**. Queda prohibido copiar/pegar JSX con variantes mínimas — es lo primero que envejece mal al modificar el diseño. Patrón de referencia: `masonryItems` / `logoVariants` en los proyectos de branding.
 - **Valores dinámicos de Tailwind:** Cuando el valor venga de una variable (p. ej. `v.color` del config), usa `style={{ backgroundColor: v.color }}`. Tailwind JIT **no** detecta clases construidas por interpolación (`bg-[${v.color}]` no genera CSS). Esta es la **única** excepción autorizada a la regla de "solo Tailwind" para estilos.
 
-## 5. Reference Style
+## 5. Asset Optimization
+- **Imágenes (PNG):** al meter imágenes nuevas en `public/media/**`, **ejecuta siempre** `npm run optimize:images -- <dir>` antes de committear. Usa `sharp` (viene con Next) para redimensionar a max `1920px` de ancho y re-codificar como PNG indexado (paleta) con `quality: 90`, `compressionLevel: 9`, `effort: 10`, `dither: 1.0`. Overwrites in place y salta archivos <100 KB y SVG.
+- **Objetivos de tamaño orientativos:** fotografías full-bleed <1.5 MB, fotografías col-span <800 KB, gráficos/logos <50 KB. Si un PNG fotográfico pasa de 2 MB tras correr el script, reduce `--max-width` (p. ej. `--max-width 1600`) antes que bajar `--quality` por debajo de 85.
+- **Flags del script:** `--max-width N`, `--quality N` (1-100), `--min-kb N`, `--recursive`. Ejemplo: `npm run optimize:images -- public/media/project/branding-don-tostado --max-width 1600`.
+- **SVG y favicons:** **no** los toques — el script los ignora pero tampoco los optimices a mano salvo petición expresa.
+- **Si aparece bandeo** en gradientes suaves (cielos, pieles, sombras graduales) tras la optimización, sube `--quality` a 95 o desactiva la paleta editando el script para esa foto concreta (PNG sin paleta es lossless pero mucho más pesado — valorar convertir a WebP manualmente).
+- **Referencia:** proceso validado que llevó `branding-don-tostado/` de 25 MB → 2.5 MB (-90%) sin pérdida visible de calidad.
+
+## 6. Reference Style
 - El objetivo es emular la estética de `beatrizhc.com`: Limpieza visual, transiciones de alta gama, tipografía premium y carga instantánea.
