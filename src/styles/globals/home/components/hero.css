@@ -1,3 +1,19 @@
+    .hero-image-frame {
+        height: 380px;
+    }
+
+    @media (min-width: 768px) {
+        .hero-image-frame {
+            height: 480px;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .hero-image-frame {
+            height: 560px;
+        }
+    }
+
     .hero-bg-circle {
         width: 190%;
         height: 200%;

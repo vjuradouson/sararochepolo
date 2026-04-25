@@ -1,0 +1,51 @@
+.dt-fold-grid {
+    display: block;
+}
+
+@media (min-width: 768px) {
+    .dt-fold-grid {
+        display: flex;
+        align-items: stretch;
+    }
+}
+
+.dt-fold-coffee {
+    position: relative;
+    aspect-ratio: 3 / 2;
+}
+
+@media (min-width: 768px) {
+    .dt-fold-coffee {
+        width: 66.6667%;
+    }
+}
+
+.dt-fold-logo {
+    background-color: #FFCFDF;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .dt-fold-logo {
+        aspect-ratio: auto;
+        width: 33.3333%;
+        padding: 3rem;
+    }
+}
+
+.dt-fold-logo-inner {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    max-height: 280px;
+}
+
+@media (min-width: 768px) {
+    .dt-fold-logo-inner {
+        max-height: 75%;
+    }
+}

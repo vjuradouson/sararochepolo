@@ -97,28 +97,32 @@ export default function BrandingProjectDonTostadoContent() {
 
                 {/* ─── Coffee cup + logo panel ────────────────────────────── */}
                 <div className="container-xxl mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-20 items-stretch">
-                        <div className="relative md:col-span-13 aspect-[3/2]">
+                    <div className="dt-fold-grid">
+                        <div className="dt-fold-coffee">
                             <Image
                                 src={`${IMG_BASE}/coffee-cup.png`}
                                 alt={t("image_alt.coffee_cup")}
                                 fill
-                                sizes="(max-width: 768px) 100vw, 70vw"
+                                sizes="(max-width: 768px) 100vw, 67vw"
                                 quality={75}
-                                className="object-cover"
+                                style={{ objectFit: "cover" }}
+                                placeholder="blur"
+                                blurDataURL="data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADQAQCdASoMAAgABABoJZwAAl0XElFlgAD+6k5UNUv9xc/gLNgSD18nPKlN0cH6eVPsbgSRa4TO2nqosFzj2j/SIWBtwAAA"
                                 priority
                                 fetchPriority="high"
                             />
                         </div>
-                        <div className="md:col-span-7 bg-[#FFCFDF] flex items-center justify-center aspect-square md:aspect-auto p-10 md:p-12">
-                            <div className="relative h-full w-full max-h-[280px] md:max-h-[75%]">
+                        <div className="dt-fold-logo">
+                            <div className="dt-fold-logo-inner">
                                 <Image
                                     src={`${IMG_BASE}/don-tostado-logo-with-title.png`}
                                     alt={t("image_alt.logo_with_title")}
                                     fill
                                     sizes="(max-width: 768px) 40vw, 12vw"
                                     quality={75}
-                                    className="object-contain"
+                                    style={{ objectFit: "contain" }}
+                                    priority
+                                    fetchPriority="high"
                                 />
                             </div>
                         </div>

@@ -124,7 +124,7 @@ export default function AboutContent({ data }: AboutContentProps) {
                                     sizes="(max-width: 768px) 240px, 320px"
                                     quality={75}
                                     fill
-                                    className="object-cover object-top"
+                                    style={{ objectFit: "cover", objectPosition: "top" }}
                                     priority
                                     fetchPriority="high"
                                 />

@@ -69,14 +69,15 @@ export default function Hero() {
                             </div>
 
                             {/* IMAGE */}
-                            <div className="order-2 relative mb-0 h-[380px] md:h-[480px] lg:h-[560px] px-6 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:py-0">
+                            <div className="hero-image-frame order-2 relative mb-0 px-6 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:py-0">
                                 <Image
                                     src="/media/home/hero/apps-hero.png"
                                     alt={t("home.hero.image_alt")}
                                     fill
                                     sizes="(max-width: 768px) 100vw, 50vw"
                                     quality={90}
-                                    className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)]"
+                                    style={{ objectFit: "contain" }}
+                                    className="drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)]"
                                     priority
                                     fetchPriority="high"
                                 />

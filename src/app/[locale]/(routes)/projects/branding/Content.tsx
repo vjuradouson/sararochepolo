@@ -62,14 +62,15 @@ function ProjectCard({ project, index, staggered }: ProjectCardProps) {
             className={staggered && index % 2 === 1 ? "md:mt-24 lg:mt-32" : ""}
         >
             <Link href={project.href} className="group block" aria-label={t(project.titleKey)}>
-                <div className="relative aspect-[4/5] overflow-hidden bg-neutral-100">
+                <div className="relative overflow-hidden bg-neutral-100" style={{ aspectRatio: "4 / 5" }}>
                     <Image
                         src={project.image}
                         alt={t(project.imageAltKey)}
                         fill
                         sizes="(max-width: 768px) 50vw, 50vw"
                         quality={75}
-                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        style={{ objectFit: "cover" }}
+                        className="transition-transform duration-700 ease-out group-hover:scale-105"
                         priority={index === 0}
                         fetchPriority={index === 0 ? "high" : "auto"}
                     />
