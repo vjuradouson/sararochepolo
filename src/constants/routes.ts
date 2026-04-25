@@ -3,6 +3,7 @@ export const ROUTES = {
   ABOUT: '/about-me',
   CONTACT: '/contact',
   PROJECT_ADOBE_PROJECT_NEO: '/project/adobe-project-neo',
-  PROJECT_BRANDING_LA_ESQUINITA: '/project/branding-la-esquinita',
-  PROJECT_BRANDING_DON_TOSTADO: '/project/branding-don-tostado'
+  PROJECT_BRANDING: '/project/branding',
+  PROJECT_BRANDING_LA_ESQUINITA_DE_PAPEL: '/project/branding/la-esquinita-de-papel',
+  PROJECT_BRANDING_DON_TOSTADO: '/project/branding/don-tostado'
 }

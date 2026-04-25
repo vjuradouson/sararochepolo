@@ -36,8 +36,7 @@ export default {
                 projects_title: "Projects",
                 projects: {
                     adobe_project_neo: "Adobe Project Neo",
-                    branding_la_esquinita: "Branding La Esquinita de Papel",
-                    branding_don_tostado: "Branding Don Tostado"
+                    branding: "Branding",
                 },
                 about_me: "About me",
                 contact: "Contact",
@@ -292,6 +291,24 @@ export default {
                         realistic_preview: "Preview of the keypad in realistic style",
                         appearance_panel: "Appearance panel with realistic material settings",
                         final_render: "Final render of the numeric keypad with a realistic finish"
+                    }
+                }
+            },
+            branding: {
+                seo: {
+                    title: "Branding \"La Esquinita de Papel\" | Sara Roche Polo",
+                    description: "Branding project by Sara Roche Polo."
+                },
+                content: {
+                    eyebrow: "Branding projects",
+                    title: "Branding",
+                    projects: {
+                        la_esquinita: {
+                            sector: "Independent bookstore"
+                        },
+                        don_tostado: {
+                            sector: "Specialty coffee shop"
+                        }
                     }
                 }
             },

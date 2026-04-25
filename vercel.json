@@ -6,8 +6,28 @@
             "permanent": true
         },
         {
+            "source": "/es/proyecto/branding-la-esquinita-de-papel",
+            "destination": "/es/proyectos/branding/la-esquinita-de-papel",
+            "permanent": true
+        },
+        {
+            "source": "/es/proyecto/branding-don-tostado",
+            "destination": "/es/proyectos/branding/don-tostado",
+            "permanent": true
+        },
+        {
             "source": "/en/about",
             "destination": "/en/about-me",
+            "permanent": true
+        },
+        {
+            "source": "/en/project/branding-la-esquinita-de-papel",
+            "destination": "/en/projects/branding/la-esquinita-de-papel",
+            "permanent": true
+        },
+        {
+            "source": "/es/proyecto/branding-don-tostado",
+            "destination": "/en/projects/branding/don-tostado",
             "permanent": true
         }
     ]

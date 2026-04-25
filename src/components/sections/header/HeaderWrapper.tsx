@@ -14,8 +14,7 @@ export default async function HeaderWrapper() {
             label: t("header.links.projects_title"),
             children: [
                 { href: ROUTES.PROJECT_ADOBE_PROJECT_NEO, label: t("header.links.projects.adobe_project_neo") },
-                { href: ROUTES.PROJECT_BRANDING_LA_ESQUINITA, label: t("header.links.projects.branding_la_esquinita") },
-                { href: ROUTES.PROJECT_BRANDING_DON_TOSTADO, label: t("header.links.projects.branding_don_tostado") }
+                { href: ROUTES.PROJECT_BRANDING, label: t("header.links.projects.branding") },
             ],
         },
         { href: ROUTES.ABOUT, label: t("header.links.about_me") },
@@ -24,7 +23,7 @@ export default async function HeaderWrapper() {
 
     return (
         <header className="fixed top-0 left-0 right-0 z-50 bg-surface-80 backdrop-blur-surface">
-            <nav className="container-xl mx-auto flex items-center justify-between px-6 h-20">
+            <nav className="container-xl mx-auto flex items-center justify-between h-20">
 
                 {/* Client (interaction) */}
                 <HeaderLogoClient ownerName={t("portfolio.owner")} />

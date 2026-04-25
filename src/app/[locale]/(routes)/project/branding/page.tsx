@@ -4,7 +4,7 @@ import { BASE_URL } from '@/lib/config';
 import { getPath } from "@/i18n/getPath";
 import { ROUTES } from "@/constants/routes";
 import { withAlternates } from "@/lib/seo/alternates";
-import BrandingProjectLaEsquinitaContent from "./components/Content";
+import BrandingContent from "./Content";
 
 export async function generateMetadata({
     params
@@ -20,7 +20,7 @@ export async function generateMetadata({
     return withAlternates(
         {
             locale,
-            route: ROUTES.PROJECT_ADOBE_PROJECT_NEO
+            route: ROUTES.PROJECT_BRANDING
         },
         {
             title: title,
@@ -28,12 +28,12 @@ export async function generateMetadata({
             openGraph: {
                 title: title,
                 description: description,
-                url: `${BASE_URL}/${locale}${getPath(ROUTES.PROJECT_ADOBE_PROJECT_NEO, locale)}`,
+                url: `${BASE_URL}/${locale}${getPath(ROUTES.PROJECT_BRANDING, locale)}`,
             }
         }
     )
 }
 
-export default async function BrandingProjectLaEsquinitaPage() {
-    return <BrandingProjectLaEsquinitaContent />;
+export default async function BrandingPage() {
+    return <BrandingContent />;
 }

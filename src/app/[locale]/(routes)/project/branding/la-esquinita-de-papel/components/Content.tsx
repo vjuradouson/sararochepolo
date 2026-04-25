@@ -9,12 +9,12 @@ import localFont from "next/font/local";
 const goudyOldStyle = localFont({
     src: [
         {
-            path: "../../../../../../styles/fonts/goudy-old-style.woff2",
+            path: "../../../../../../../styles/fonts/goudy-old-style.woff2",
             weight: "400",
             style: "normal",
         },
         {
-            path: "../../../../../../styles/fonts/goudy-old-style.ttf",
+            path: "../../../../../../../styles/fonts/goudy-old-style.ttf",
             weight: "400",
             style: "normal",
         },
@@ -67,7 +67,7 @@ const masonryItems: { src: string; altKey: MasonryAltKey; span: string; objectPo
     { src: "9-totebag.png", altKey: "tote_bag", span: "col-span-2 md:col-span-3 aspect-[16/9] md:aspect-[4/5]", objectPos: "object-[50%_80%]" },
 ];
 
-export default function BrandingProjectLaEsquinitaContent() {
+export default function BrandingProjectLaEsquinitaDePapelContent() {
     const t = useTranslations("app.project.branding_la_esquinita.content");
     const [refreshKey, setRefreshKey] = useState(0);
 

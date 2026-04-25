@@ -9,12 +9,12 @@ import localFont from "next/font/local";
 const funnyKids = localFont({
     src: [
         {
-            path: "../../../../../../styles/fonts/funny-kids.woff2",
+            path: "../../../../../../../styles/fonts/funny-kids.woff2",
             weight: "400",
             style: "normal",
         },
         {
-            path: "../../../../../../styles/fonts/funny-kids.ttf",
+            path: "../../../../../../../styles/fonts/funny-kids.ttf",
             weight: "400",
             style: "normal",
         },

@@ -166,7 +166,7 @@ export default function ProjectsSection() {
             textColor: "text-black",
             parentClass: "h-[400px] md:h-[500px] lg:h-full md:h-[100vh] md:min-h-[500px]",
             view_all: t("home.projects.branding_la_esquinita.view_all"),
-            href: ROUTES.PROJECT_BRANDING_LA_ESQUINITA,
+            href: ROUTES.PROJECT_BRANDING,
             content: (
                 <Image
                     src="/media/home/projects/branding-la-esquinita.png"
