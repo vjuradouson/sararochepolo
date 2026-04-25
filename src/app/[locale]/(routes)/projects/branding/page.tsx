@@ -14,13 +14,13 @@ export async function generateMetadata({
     const { locale } = await params;
     const t = await getTranslations();
 
-    const title = t("app.project.branding_la_esquinita.seo.title");
-    const description = t("app.project.branding_la_esquinita.seo.description")
+    const title = t("app.projects.branding.seo.title");
+    const description = t("app.projects.branding.seo.description")
 
     return withAlternates(
         {
             locale,
-            route: ROUTES.PROJECT_BRANDING
+            route: ROUTES.PROJECTS_BRANDING
         },
         {
             title: title,
@@ -28,7 +28,7 @@ export async function generateMetadata({
             openGraph: {
                 title: title,
                 description: description,
-                url: `${BASE_URL}/${locale}${getPath(ROUTES.PROJECT_BRANDING, locale)}`,
+                url: `${BASE_URL}/${locale}${getPath(ROUTES.PROJECTS_BRANDING, locale)}`,
             }
         }
     )

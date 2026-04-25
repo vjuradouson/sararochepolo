@@ -130,12 +130,12 @@ export default {
                     image_alt: "Tablet screens displaying digital character illustrations in different design stages, from sketches to final versions, created by Sara Roche Polo",
                     view_all: 'View illustrations'
                 },
-                branding_la_esquinita: {
+                branding: {
                     subtitle: "Personal Project",
                     title: "Branding",
                     description: "Development of visual identity for projects, from the initial concept to its final application. I work on logo design, typography, and color to build coherent, recognizable brands with personality.",
                     image_alt: "Branding by Sara Roche Polo",
-                    view_all: 'View project'
+                    view_all: 'View projects'
                 }
             }
         },
@@ -255,7 +255,7 @@ export default {
                 value: "Zaragoza, España"
             }
         },
-        project: {
+        projects: {
             adobe_project_neo: {
                 seo: {
                     title: "Adobe Project Neo | Sara Roche Polo",
@@ -303,83 +303,85 @@ export default {
                     eyebrow: "Branding projects",
                     title: "Branding",
                     projects: {
-                        la_esquinita: {
+                        la_esquinita_de_papel: {
                             sector: "Independent bookstore"
                         },
                         don_tostado: {
                             sector: "Specialty coffee shop"
                         }
                     }
-                }
-            },
-            branding_la_esquinita: {
-                seo: {
-                    title: "Branding \"La Esquinita de Papel\" | Sara Roche Polo",
-                    description: "Branding project for La Esquinita de Papel, a cozy neighborhood bookstore. Warm, nostalgic visual identity by Sara Roche Polo."
                 },
-                content: {
-                    eyebrow: "Personal project",
-                    title: "Branding \"La Esquinita de Papel\"",
-                    about: {
-                        heading: "La Esquinita de Papel",
-                        tagline: "A small, cozy bookshop with soul.",
-                        paragraph_1: "La Esquinita de Papel is a neighborhood bookshop conceived as an everyday refuge: <highlight>a small, intimate and carefully curated space where time slows down</highlight>. It is not just a place to buy books, but to <highlight>discover, linger, observe and reconnect</highlight>.",
-                        paragraph_2: "The brand conveys a sense of emotional home, <highlight>evoking the nostalgia of unhurried reading and objects with history</highlight>. The naming reinforces the idea of a special, almost secret corner that <highlight>you stumble upon by chance but stays with you</highlight>."
+                projects: {
+                    la_esquinita_de_papel: {
+                        seo: {
+                            title: "Branding \"La Esquinita de Papel\" | Sara Roche Polo",
+                            description: "Branding project for La Esquinita de Papel, a cozy neighborhood bookstore. Warm, nostalgic visual identity by Sara Roche Polo."
+                        },
+                        content: {
+                            eyebrow: "Personal project",
+                            title: "Branding \"La Esquinita de Papel\"",
+                            about: {
+                                heading: "La Esquinita de Papel",
+                                tagline: "A small, cozy bookshop with soul.",
+                                paragraph_1: "La Esquinita de Papel is a neighborhood bookshop conceived as an everyday refuge: <highlight>a small, intimate and carefully curated space where time slows down</highlight>. It is not just a place to buy books, but to <highlight>discover, linger, observe and reconnect</highlight>.",
+                                paragraph_2: "The brand conveys a sense of emotional home, <highlight>evoking the nostalgia of unhurried reading and objects with history</highlight>. The naming reinforces the idea of a special, almost secret corner that <highlight>you stumble upon by chance but stays with you</highlight>."
+                            },
+                            logos_h2: "Logo variations",
+                            colors_h2: "Color palette",
+                            typography_h2: "Brand typography",
+                            masonry_h2: "Brand applications",
+                            colors: {
+                                light_brown: "Light brown",
+                                medium_brown: "Medium brown",
+                                dark_brown: "Dark brown"
+                            },
+                            image_alt: {
+                                interface: "La Esquinita de Papel logo",
+                                framed_logo: "Framed logo of La Esquinita de Papel",
+                                square_logo: "Vertical logo of La Esquinita de Papel on dark background",
+                                horizontal_logo: "Horizontal logo of La Esquinita de Papel",
+                                library_entry: "Bookshop storefront with the logo",
+                                wrapped_book: "Wrapped package with a brand sticker",
+                                visit_card: "La Esquinita de Papel business card",
+                                cup: "Mug featuring the La Esquinita de Papel logo",
+                                paper_bag: "Paper bag with the logo",
+                                bookmark: "Illustrated bookmark",
+                                schedule: "Hanging schedule sign with the logo",
+                                ticket: "Printed purchase receipt",
+                                tote_bag: "Tote bag with the logo",
+                                running_mouse: "Illustration of a running mouse"
+                            }
+                        }
                     },
-                    logos_h2: "Logo variations",
-                    colors_h2: "Color palette",
-                    typography_h2: "Brand typography",
-                    masonry_h2: "Brand applications",
-                    colors: {
-                        light_brown: "Light brown",
-                        medium_brown: "Medium brown",
-                        dark_brown: "Dark brown"
-                    },
-                    image_alt: {
-                        interface: "La Esquinita de Papel logo",
-                        framed_logo: "Framed logo of La Esquinita de Papel",
-                        square_logo: "Vertical logo of La Esquinita de Papel on dark background",
-                        horizontal_logo: "Horizontal logo of La Esquinita de Papel",
-                        library_entry: "Bookshop storefront with the logo",
-                        wrapped_book: "Wrapped package with a brand sticker",
-                        visit_card: "La Esquinita de Papel business card",
-                        cup: "Mug featuring the La Esquinita de Papel logo",
-                        paper_bag: "Paper bag with the logo",
-                        bookmark: "Illustrated bookmark",
-                        schedule: "Hanging schedule sign with the logo",
-                        ticket: "Printed purchase receipt",
-                        tote_bag: "Tote bag with the logo",
-                        running_mouse: "Illustration of a running mouse"
-                    }
-                }
-            },
-            branding_don_tostado: {
-                seo: {
-                    title: "Branding \"Don Tostado\" | Sara Roche Polo",
-                    description: "Branding project for Don Tostado, a young, modern specialty coffee shop full of character. A laid-back, approachable visual identity by Sara Roche Polo."
-                },
-                content: {
-                    eyebrow: "Personal project",
-                    title: "Branding \"Don Tostado\"",
-                    about: {
-                        heading: "Don Tostado",
-                        tagline: "No pretenses. Quality, warmth and good vibes in every cup.",
-                        paragraph_1: "Don Tostado is a <highlight>young, modern specialty coffee shop full of character.</highlight> A bright space filled with soft colors, plants and graphic details that reflect its playful identity.",
-                        paragraph_2: "The place has a <highlight>dynamic, laid-back vibe</highlight>, with a carefully curated aesthetic where every corner invites you to stay: from the open layout to the small brand touches that make the space recognizable and with a <highlight>personality of its own</highlight>.",
-                        paragraph_3: "<highlight>Here coffee is taken seriously, but without pretense: quality, warmth and good vibes in every cup.</highlight>"
-                    },
-                    logos_h2: "Logo variations",
-                    typography_h2: "Brand typography",
-                    applications_h2: "Brand applications",
-                    image_alt: {
-                        coffee_cup: "Coffee cups with Don Tostado branding on top of an espresso machine",
-                        logo_with_title: "Illustrated Don Tostado logo featuring a mustachioed coffee cup on a pink background",
-                        logo_cyan: "Don Tostado logo on a cyan background",
-                        logo_pink: "Don Tostado logo on a pink background",
-                        logo_navy: "Don Tostado light logo on a dark navy background",
-                        coffee_shop: "Don Tostado storefront with the brand logo on the window",
-                        slogan: "Don Tostado slogan: primero café, luego ya vemos",
-                        coffee_packages: "Don Tostado coffee bags: Original Classic, Hazelnut Chunk and Cinnamon Flavor on a café counter"
+                    don_tostado: {
+                        seo: {
+                            title: "Branding \"Don Tostado\" | Sara Roche Polo",
+                            description: "Branding project for Don Tostado, a young, modern specialty coffee shop full of character. A laid-back, approachable visual identity by Sara Roche Polo."
+                        },
+                        content: {
+                            eyebrow: "Personal project",
+                            title: "Branding \"Don Tostado\"",
+                            about: {
+                                heading: "Don Tostado",
+                                tagline: "No pretenses. Quality, warmth and good vibes in every cup.",
+                                paragraph_1: "Don Tostado is a <highlight>young, modern specialty coffee shop full of character.</highlight> A bright space filled with soft colors, plants and graphic details that reflect its playful identity.",
+                                paragraph_2: "The place has a <highlight>dynamic, laid-back vibe</highlight>, with a carefully curated aesthetic where every corner invites you to stay: from the open layout to the small brand touches that make the space recognizable and with a <highlight>personality of its own</highlight>.",
+                                paragraph_3: "<highlight>Here coffee is taken seriously, but without pretense: quality, warmth and good vibes in every cup.</highlight>"
+                            },
+                            logos_h2: "Logo variations",
+                            typography_h2: "Brand typography",
+                            applications_h2: "Brand applications",
+                            image_alt: {
+                                coffee_cup: "Coffee cups with Don Tostado branding on top of an espresso machine",
+                                logo_with_title: "Illustrated Don Tostado logo featuring a mustachioed coffee cup on a pink background",
+                                logo_cyan: "Don Tostado logo on a cyan background",
+                                logo_pink: "Don Tostado logo on a pink background",
+                                logo_navy: "Don Tostado light logo on a dark navy background",
+                                coffee_shop: "Don Tostado storefront with the brand logo on the window",
+                                slogan: "Don Tostado slogan: primero café, luego ya vemos",
+                                coffee_packages: "Don Tostado coffee bags: Original Classic, Hazelnut Chunk and Cinnamon Flavor on a café counter"
+                            }
+                        }
                     }
                 }
             }

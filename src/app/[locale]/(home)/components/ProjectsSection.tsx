@@ -120,7 +120,7 @@ export default function ProjectsSection() {
             textColor: "text-black",
             parentClass: "h-[400px] md:h-[500px] lg:h-full md:h-[100vh] md:min-h-[500px]",
             view_all: t("home.projects.adobe_project_neo.view_all"),
-            href: ROUTES.PROJECT_ADOBE_PROJECT_NEO,
+            href: ROUTES.PROJECTS_ADOBE_PROJECT_NEO,
             content: (
                 <Image
                     src="/media/home/projects/adobe-project-neo-keyboard.png"
@@ -158,19 +158,19 @@ export default function ProjectsSection() {
         },
         {
             id: 5,
-            subtitle: "— " + t("home.projects.branding_la_esquinita.subtitle"),
-            title: t("home.projects.branding_la_esquinita.title"),
-            description: t("home.projects.branding_la_esquinita.description"),
+            subtitle: "— " + t("home.projects.branding.subtitle"),
+            title: t("home.projects.branding.title"),
+            description: t("home.projects.branding.description"),
             bgFrom: "#F5E1C8",
             bgTo: "#FFF",
             textColor: "text-black",
             parentClass: "h-[400px] md:h-[500px] lg:h-full md:h-[100vh] md:min-h-[500px]",
-            view_all: t("home.projects.branding_la_esquinita.view_all"),
-            href: ROUTES.PROJECT_BRANDING,
+            view_all: t("home.projects.branding.view_all"),
+            href: ROUTES.PROJECTS_BRANDING,
             content: (
                 <Image
                     src="/media/home/projects/branding-la-esquinita.png"
-                    alt={t("home.projects.branding_la_esquinita.image_alt")}
+                    alt={t("home.projects.branding.image_alt")}
                     width={1000}
                     height={1000}
                     sizes="(max-width: 768px) 100vw, 50vw"

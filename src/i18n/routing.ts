@@ -20,19 +20,19 @@ export const ROUTING = defineRouting({
       es: '/contacto',
       en: '/contact'
     },
-    [ROUTES.PROJECT_ADOBE_PROJECT_NEO]: {
+    [ROUTES.PROJECTS_ADOBE_PROJECT_NEO]: {
       es: '/proyectos/adobe-project-neo',
       en: '/projects/adobe-project-neo'
     },
-    [ROUTES.PROJECT_BRANDING]: {
+    [ROUTES.PROJECTS_BRANDING]: {
       es: '/proyectos/branding',
       en: '/projects/branding'
     },
-    [ROUTES.PROJECT_BRANDING_LA_ESQUINITA_DE_PAPEL]: {
+    [ROUTES.PROJECTS_BRANDING_LA_ESQUINITA_DE_PAPEL]: {
       es: '/proyectos/branding/la-esquinita-de-papel',
       en: '/projects/branding/la-esquinita-de-papel'
     },
-    [ROUTES.PROJECT_BRANDING_DON_TOSTADO]: {
+    [ROUTES.PROJECTS_BRANDING_DON_TOSTADO]: {
       es: '/proyectos/branding/don-tostado',
       en: '/projects/branding/don-tostado'
     }

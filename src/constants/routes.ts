@@ -2,8 +2,8 @@ export const ROUTES = {
   HOME: '/',
   ABOUT: '/about-me',
   CONTACT: '/contact',
-  PROJECT_ADOBE_PROJECT_NEO: '/project/adobe-project-neo',
-  PROJECT_BRANDING: '/project/branding',
-  PROJECT_BRANDING_LA_ESQUINITA_DE_PAPEL: '/project/branding/la-esquinita-de-papel',
-  PROJECT_BRANDING_DON_TOSTADO: '/project/branding/don-tostado'
+  PROJECTS_ADOBE_PROJECT_NEO: '/projects/adobe-project-neo',
+  PROJECTS_BRANDING: '/projects/branding',
+  PROJECTS_BRANDING_LA_ESQUINITA_DE_PAPEL: '/projects/branding/la-esquinita-de-papel',
+  PROJECTS_BRANDING_DON_TOSTADO: '/projects/branding/don-tostado'
 }

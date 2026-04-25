@@ -4,7 +4,7 @@ import { BASE_URL } from '@/lib/config';
 import { getPath } from "@/i18n/getPath";
 import { ROUTES } from "@/constants/routes";
 import { withAlternates } from "@/lib/seo/alternates";
-import AdobeProjectNeoContent from "./components/Content";
+import BrandingProjectLaEsquinitaDePapelContent from "./components/Content";
 
 export async function generateMetadata({
     params
@@ -14,13 +14,13 @@ export async function generateMetadata({
     const { locale } = await params;
     const t = await getTranslations();
 
-    const title = t("app.project.adobe_project_neo.seo.title");
-    const description = t("app.project.adobe_project_neo.seo.description")
+    const title = t("app.projects.branding.projects.la_esquinita_de_papel.seo.title");
+    const description = t("app.projects.branding.projects.la_esquinita_de_papel.seo.description")
 
     return withAlternates(
         {
             locale,
-            route: ROUTES.PROJECT_ADOBE_PROJECT_NEO
+            route: ROUTES.PROJECTS_BRANDING_LA_ESQUINITA_DE_PAPEL
         },
         {
             title: title,
@@ -28,12 +28,12 @@ export async function generateMetadata({
             openGraph: {
                 title: title,
                 description: description,
-                url: `${BASE_URL}/${locale}${getPath(ROUTES.PROJECT_ADOBE_PROJECT_NEO, locale)}`,
+                url: `${BASE_URL}/${locale}${getPath(ROUTES.PROJECTS_BRANDING_LA_ESQUINITA_DE_PAPEL, locale)}`,
             }
         }
     )
 }
 
-export default async function AdobeProjectNeoPage() {
-    return <AdobeProjectNeoContent />;
+export default async function BrandingProjectLaEsquinitaDePapelPage() {
+    return <BrandingProjectLaEsquinitaDePapelContent />;
 }

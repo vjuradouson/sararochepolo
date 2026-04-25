@@ -68,7 +68,7 @@ const masonryItems: { src: string; altKey: MasonryAltKey; span: string; objectPo
 ];
 
 export default function BrandingProjectLaEsquinitaDePapelContent() {
-    const t = useTranslations("app.project.branding_la_esquinita.content");
+    const t = useTranslations("app.projects.branding.projects.la_esquinita_de_papel.content");
     const [refreshKey, setRefreshKey] = useState(0);
 
     return (

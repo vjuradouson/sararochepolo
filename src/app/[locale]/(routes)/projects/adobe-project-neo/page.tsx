@@ -4,7 +4,7 @@ import { BASE_URL } from '@/lib/config';
 import { getPath } from "@/i18n/getPath";
 import { ROUTES } from "@/constants/routes";
 import { withAlternates } from "@/lib/seo/alternates";
-import BrandingProjectDonTostadoContent from "./components/Content";
+import AdobeProjectNeoContent from "./components/Content";
 
 export async function generateMetadata({
     params
@@ -14,13 +14,13 @@ export async function generateMetadata({
     const { locale } = await params;
     const t = await getTranslations();
 
-    const title = t("app.project.branding_don_tostado.seo.title");
-    const description = t("app.project.branding_don_tostado.seo.description")
+    const title = t("app.projects.adobe_project_neo.seo.title");
+    const description = t("app.projects.adobe_project_neo.seo.description")
 
     return withAlternates(
         {
             locale,
-            route: ROUTES.PROJECT_BRANDING_DON_TOSTADO
+            route: ROUTES.PROJECTS_ADOBE_PROJECT_NEO
         },
         {
             title: title,
@@ -28,12 +28,12 @@ export async function generateMetadata({
             openGraph: {
                 title: title,
                 description: description,
-                url: `${BASE_URL}/${locale}${getPath(ROUTES.PROJECT_BRANDING_DON_TOSTADO, locale)}`,
+                url: `${BASE_URL}/${locale}${getPath(ROUTES.PROJECTS_ADOBE_PROJECT_NEO, locale)}`,
             }
         }
     )
 }
 
-export default async function BrandingProjectLaEsquinitaPage() {
-    return <BrandingProjectDonTostadoContent />;
+export default async function AdobeProjectNeoPage() {
+    return <AdobeProjectNeoContent />;
 }

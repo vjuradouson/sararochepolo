@@ -19,20 +19,20 @@ type BrandingProject = {
 
 const projects: BrandingProject[] = [
     {
-        key: "la_esquinita",
-        href: ROUTES.PROJECT_BRANDING_LA_ESQUINITA_DE_PAPEL,
+        key: "la_esquinita_de_papel",
+        href: ROUTES.PROJECTS_BRANDING_LA_ESQUINITA_DE_PAPEL,
         image: "/media/project/branding-la-esquinita/masonry/1-library-entry.png",
-        imageAltKey: "branding_la_esquinita.content.image_alt.library_entry",
-        titleKey: "branding_la_esquinita.content.about.heading",
-        sectorKey: "branding.content.projects.la_esquinita.sector",
+        imageAltKey: "branding.projects.la_esquinita_de_papel.content.image_alt.library_entry",
+        titleKey: "branding.projects.la_esquinita_de_papel.content.about.heading",
+        sectorKey: "branding.content.projects.la_esquinita_de_papel.sector",
         year: "2024",
     },
     {
         key: "don_tostado",
-        href: ROUTES.PROJECT_BRANDING_DON_TOSTADO,
+        href: ROUTES.PROJECTS_BRANDING_DON_TOSTADO,
         image: "/media/project/branding-don-tostado/coffee-shop.png",
-        imageAltKey: "branding_don_tostado.content.image_alt.coffee_shop",
-        titleKey: "branding_don_tostado.content.about.heading",
+        imageAltKey: "branding.projects.don_tostado.content.image_alt.coffee_shop",
+        titleKey: "branding.projects.don_tostado.content.about.heading",
         sectorKey: "branding.content.projects.don_tostado.sector",
         year: "2023",
     }
@@ -58,7 +58,7 @@ type ProjectCardProps = {
 };
 
 function ProjectCard({ project, index, staggered }: ProjectCardProps) {
-    const t = useTranslations("app.project");
+    const t = useTranslations("app.projects");
 
     return (
         <motion.li
@@ -101,7 +101,7 @@ function ProjectCard({ project, index, staggered }: ProjectCardProps) {
 }
 
 export default function BrandingContent() {
-    const t = useTranslations("app.project");
+    const t = useTranslations("app.projects");
     const staggered = projects.length <= 4;
 
     return (

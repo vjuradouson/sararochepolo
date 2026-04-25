@@ -25,13 +25,13 @@ const highlight = (chunks: React.ReactNode) => (
 );
 
 export default function AdobeProjectNeoContent() {
-    const t = useTranslations("app.project.adobe_project_neo.content");
+    const t = useTranslations("app.projects.adobe_project_neo.content");
     const [refreshKey, setRefreshKey] = useState(0);
 
     return (
         <div key={refreshKey} className="text-lg md:text-xl xl:text-2xl">
             {/* ─── HEADER ─────────────────────────────────────────────── */}
-            <section className="container-xl md:pt-16 mt-20 md:mt-10">
+            <section className="container-xl md:pt-16 mt-20 md:mt-10 mb-10">
                 <motion.div {...revealProps} className="max-w-full">
                     <p className="text-xl uppercase tracking-widest mb-8 md:mb-10">
                         {t("eyebrow")}

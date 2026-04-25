@@ -80,7 +80,7 @@ const logoVariants: LogoVariant[] = [
 ];
 
 export default function BrandingProjectDonTostadoContent() {
-    const t = useTranslations("app.project.branding_don_tostado.content");
+    const t = useTranslations("app.projects.branding.projects.don_tostado.content");
     const [refreshKey] = useState(0);
 
     return (
