@@ -130,7 +130,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
           sizes="96x96"
         />
       </head>
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <noscript
           dangerouslySetInnerHTML={{
             __html: `

@@ -85,9 +85,9 @@ function ProjectCard({ project, index, staggered }: ProjectCardProps) {
                         <p className="text-sm uppercase tracking-widest text-neutral-500 mb-2">
                             {t(project.sectorKey)} · {project.year}
                         </p>
-                        <h3 className="text-2xl md:text-3xl font-light tracking-tight">
+                        <h2 className="text-2xl md:text-3xl font-light tracking-tight">
                             {t(project.titleKey)}
-                        </h3>
+                        </h2>
                     </div>
                     <ArrowUpRight
                         className="mt-2 shrink-0 transition-transform duration-500 ease-out group-hover:-translate-y-1 group-hover:translate-x-1"
@@ -111,14 +111,14 @@ export default function BrandingContent() {
                     <p className="text-xl uppercase tracking-widest mb-8 md:mb-10">
                         {t("branding.content.eyebrow")}
                     </p>
-                    <h1 className="-ml-1 mb-10 text-4xl md:text-5xl font-light tracking-tight">
+                    <h1 className="-ml-1 mb-3 text-4xl md:text-5xl font-light tracking-tight">
                         {t("branding.content.title")}
                     </h1>
                 </motion.div>
             </section>
 
             <section className="container-xl mx-auto pb-24 md:pb-32">
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12 md:gap-y-6">
+                <ul className="grid grid-cols-2 gap-x-8 gap-y-12 md:gap-y-6">
                     {projects.map((project, index) => (
                         <ProjectCard
                             key={project.key}

@@ -6,6 +6,11 @@
             "permanent": true
         },
         {
+            "source": "/es/proyecto/adobe-project-neo",
+            "destination": "/es/proyectos/adobe-project-neo",
+            "permanent": true
+        },
+        {
             "source": "/es/proyecto/branding-la-esquinita-de-papel",
             "destination": "/es/proyectos/branding/la-esquinita-de-papel",
             "permanent": true
@@ -18,6 +23,11 @@
         {
             "source": "/en/about",
             "destination": "/en/about-me",
+            "permanent": true
+        },
+        {
+            "source": "/en/project/adobe-project-neo",
+            "destination": "/en/projects/adobe-project-neo",
             "permanent": true
         },
         {

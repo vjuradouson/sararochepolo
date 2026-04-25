@@ -78,7 +78,7 @@ export default function BrandingProjectLaEsquinitaDePapelContent() {
                     <p className="text-xl uppercase tracking-widest mb-8 md:mb-10">
                         {t("eyebrow")}
                     </p>
-                    <h1 className="-ml-1 mb-10 text-4xl md:text-5xl font-light tracking-tight">
+                    <h1 className="-ml-1 mb-3 text-4xl md:text-5xl font-light tracking-tight">
                         {t("title")}
                     </h1>
                 </motion.div>

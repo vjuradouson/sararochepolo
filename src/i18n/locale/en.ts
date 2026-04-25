@@ -296,8 +296,8 @@ export default {
             },
             branding: {
                 seo: {
-                    title: "Branding \"La Esquinita de Papel\" | Sara Roche Polo",
-                    description: "Branding project by Sara Roche Polo."
+                    title: "Branding Projects | Visual Identity & Logo Design | Sara Roche Polo",
+                    description: "Branding portfolio by Sara Roche Polo: visual identity, logo design, typography and color systems — featuring projects like La Esquinita de Papel and Don Tostado."
                 },
                 content: {
                     eyebrow: "Branding projects",
