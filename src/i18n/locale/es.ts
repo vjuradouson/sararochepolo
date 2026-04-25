@@ -31,6 +31,9 @@ export default {
                 }
             }
         },
+        breadcrumb: {
+            home: "Inicio"
+        },
         header: {
             links: {
                 projects_title: "Proyectos",
@@ -296,7 +299,7 @@ export default {
             },
             branding: {
                 seo: {
-                    title: "Proyectos de Branding | Identidad Visual y Diseño de Logo | Sara Roche Polo",
+                    title: "Proyectos de Branding de Sara Roche Polo",
                     description: "Portfolio de branding de Sara Roche Polo: identidad visual, diseño de logo, tipografía y sistemas de color — con proyectos como La Esquinita de Papel y Don Tostado."
                 },
                 content: {

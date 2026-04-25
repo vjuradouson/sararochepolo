@@ -16,7 +16,7 @@ export async function generateMetadata({
     const t = await getTranslations();
 
     const title = t("app.contact.seo.title");
-    const description = t("app.about_me.seo.description")
+    const description = t("app.contact.seo.description")
 
     return withAlternates(
         {

@@ -48,6 +48,11 @@ export async function generateMetadata({
       ],
       locale: LocaleCountryMap[locale] || 'en_US',
       type: "website",
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: t("app.portfolio.owner"),
+      images: [`${BASE_URL}/media/about/profile.png`],
     }
   };
 }
@@ -102,6 +107,13 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
           type="image/svg+xml"
           href={`${BASE_URL}/media/favicons/favicon-dark.svg`}
           media="(prefers-color-scheme: dark)"
+        />
+
+        {/* Apple touch icon (iOS home screen) */}
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href={`${BASE_URL}/media/favicons/apple-touch-icon.png`}
         />
 
         {/* PNG fallback (old browsers / tabs / Windows) */}
