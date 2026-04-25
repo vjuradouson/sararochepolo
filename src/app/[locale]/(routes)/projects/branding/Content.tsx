@@ -43,14 +43,6 @@ const fadeInUp: Variants = {
     show: { opacity: 1, y: 0 },
 };
 
-const headerReveal = {
-    variants: fadeInUp,
-    initial: "hidden" as const,
-    whileInView: "show" as const,
-    viewport: { once: true, amount: 0.5 },
-    transition: { duration: 0.7, ease: "easeOut" as const },
-};
-
 type ProjectCardProps = {
     project: BrandingProject;
     index: number;
@@ -107,14 +99,14 @@ export default function BrandingContent() {
     return (
         <div className="text-lg md:text-xl xl:text-2xl">
             <section className="w-full md:pt-16 mt-20 md:mt-10">
-                <motion.div {...headerReveal} className="container-xl mx-auto pb-10">
+                <div className="container-xl mx-auto pb-10">
                     <p className="text-xl uppercase tracking-widest mb-8 md:mb-10">
                         {t("branding.content.eyebrow")}
                     </p>
                     <h1 className="-ml-1 mb-3 text-4xl md:text-5xl font-light tracking-tight">
                         {t("branding.content.title")}
                     </h1>
-                </motion.div>
+                </div>
             </section>
 
             <section className="container-xl mx-auto pb-24 md:pb-32">

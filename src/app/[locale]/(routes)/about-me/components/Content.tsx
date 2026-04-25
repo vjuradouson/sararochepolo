@@ -67,19 +67,6 @@ const item: Variants = {
     },
 };
 
-const imageVariant: Variants = {
-    hidden: { opacity: 0, scale: 0.95 },
-    show: {
-        opacity: 1,
-        scale: 1,
-        transition: {
-            duration: 0.9,
-            ease: EASE_OUT,
-        },
-    },
-};
-
-
 export default function AboutContent({ data }: AboutContentProps) {
     const [refreshKey, setRefreshKey] = useState(0)
 
@@ -111,9 +98,9 @@ export default function AboutContent({ data }: AboutContentProps) {
                         viewport={{ once: true, amount: 0.6 }}
                         className="h-full grid gap-16 md:grid-cols-2 items-stretch">
                         <div className="pl-8 pt-6 lg:ml-18 md:pt-10 lg:pb-0 px-6">
-                            <motion.h1 variants={item} className="text-xl uppercase tracking-widest mb-8 md:mb-16">
+                            <h1 className="text-xl uppercase tracking-widest mb-8 md:mb-16">
                                 {data.h1}
-                            </motion.h1>
+                            </h1>
 
                             <motion.p variants={item} className="pb-5 text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tight">
                                 {data.header.greeting}
@@ -124,10 +111,7 @@ export default function AboutContent({ data }: AboutContentProps) {
                         </div>
 
                         {/* Photo */}
-                        <motion.div
-                            variants={imageVariant}
-                            className="w-60 h-72 md:w-80 md:h-full relative justify-self-center self-stretch"
-                        >
+                        <div className="w-60 h-72 md:w-80 md:h-full relative justify-self-center self-stretch">
                             {/* Blue background higher */}
                             <div className="absolute inset-0 bg-light-blue rounded-b-full" />
 
@@ -143,7 +127,7 @@ export default function AboutContent({ data }: AboutContentProps) {
                                     fetchPriority="high"
                                 />
                             </div>
-                        </motion.div>
+                        </div>
                     </motion.div>
                 </motion.div>
             </section>

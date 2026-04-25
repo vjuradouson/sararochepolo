@@ -74,14 +74,14 @@ export default function BrandingProjectLaEsquinitaDePapelContent() {
     return (
         <div key={refreshKey} className="text-lg md:text-xl xl:text-2xl">
             <section className="w-full md:pt-16 mt-20 md:mt-10">
-                <motion.div {...revealProps} className="container-xl mx-auto pb-10">
+                <div className="container-xl mx-auto pb-10">
                     <p className="text-xl uppercase tracking-widest mb-8 md:mb-10">
                         {t("eyebrow")}
                     </p>
                     <h1 className="-ml-1 mb-3 text-4xl md:text-5xl font-light tracking-tight">
                         {t("title")}
                     </h1>
-                </motion.div>
+                </div>
                 <motion.div {...revealProps} className="container-xxl mx-auto lg:px-6">
                     <motion.div {...revealProps} className="flex items-center justify-center bg-[#8D7C6A] py-12 px-6 md:py-20 md:px-12 rounded-[var(--radius-card)] shadow-[var(--shadow-card)]">
                         <Image

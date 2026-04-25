@@ -109,12 +109,9 @@ export default function ContactContent({ data }: Props) {
                     viewport={{ once: true, amount: 0.6 }}
                     className="mb-16"
                 >
-                    <motion.h1
-                        variants={item}
-                        className="mb-4 text-xl uppercase tracking-widest text-brand-muted"
-                    >
+                    <h1 className="mb-4 text-xl uppercase tracking-widest text-brand-muted">
                         {data.h1}
-                    </motion.h1>
+                    </h1>
 
                     <motion.h2
                         variants={item}

@@ -8,7 +8,7 @@ export default function manifest(): MetadataRoute.Manifest {
       "Portfolio de Sara Roche Polo, Diseñadora de Producto (UX/UI) en Zaragoza.",
     lang: "es",
     start_url: "/",
-    display: "standalone",
+    display: "browser",
     background_color: "#f4f4f4",
     theme_color: "#f4f4f4",
     icons: [

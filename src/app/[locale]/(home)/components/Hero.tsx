@@ -72,17 +72,14 @@ export default function Hero() {
                         <div className="grid h-full gap-8 md:grid-cols-2 md:grid-rows-[auto_auto] lg:items-center lg:gap-12">
                             {/* TEXT */}
                             <div className="order-1 z-10 px-6 pl-8 pt-6 lg:col-start-1 lg:row-start-1 lg:ml-18 lg:pb-0 lg:pt-20">
-                                <motion.h1
-                                    variants={item}
-                                    className="mb-2"
-                                >
+                                <h1 className="mb-2">
                                     <span className="block text-xl uppercase tracking-[0.3em] md:text-2xl">
                                         {t("home.hero.h1")}
                                     </span>
                                     <span className="block text-[11px] md:text-[12px] pt-3 uppercase tracking-[0.3em] text-gray-500 md:text-xs">
                                         {t("home.hero.h1_meta")}
                                     </span>
-                                </motion.h1>
+                                </h1>
 
                                 <motion.p
                                     variants={item}
@@ -98,10 +95,7 @@ export default function Hero() {
                             </div>
 
                             {/* IMAGE */}
-                            <motion.div
-                                variants={item}
-                                className="order-2 relative mb-0 h-[380px] px-6 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:h-full lg:py-0"
-                            >
+                            <div className="order-2 relative mb-0 h-[380px] px-6 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:h-full lg:py-0">
                                 <Image
                                     src="/media/home/hero/apps-hero.png"
                                     alt={t("home.hero.image_alt")}
@@ -112,7 +106,7 @@ export default function Hero() {
                                     priority
                                     fetchPriority="high"
                                 />
-                            </motion.div>
+                            </div>
 
                             {/* BUTTON */}
                             <motion.div
