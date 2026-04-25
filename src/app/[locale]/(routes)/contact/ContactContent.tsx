@@ -35,7 +35,7 @@ const container: Variants = {
 };
 
 const item: Variants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: { opacity: 0.01, y: 30 },
     show: {
         opacity: 1,
         y: 0,
@@ -102,45 +102,27 @@ export default function ContactContent({ data }: Props) {
         <section className="container-xl mx-auto pt-25" key={refreshKey}>
             <div className="grid items-start md:gap-20 md:grid-cols-2">
                 {/* LEFT */}
-                <motion.div
-                    variants={container}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true, amount: 0.6 }}
-                    className="mb-16"
-                >
+                <div className="mb-16">
                     <h1 className="mb-4 text-xl uppercase tracking-widest text-brand-muted">
                         {data.h1}
                     </h1>
 
-                    <motion.h2
-                        variants={item}
-                        className="mb-10 text-4xl tracking-tight sm:text-5xl"
-                    >
+                    <h2 className="mb-10 text-4xl tracking-tight sm:text-5xl">
                         {data.title}
-                    </motion.h2>
+                    </h2>
 
-                    <motion.div
-                        variants={container}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: true }}
-                        className="flex flex-col gap-8"
-                    >
-                        <motion.p
-                            variants={item}
-                            className="max-w-xl text-xl leading-relaxed"
-                        >
+                    <div className="flex flex-col gap-8">
+                        <p className="max-w-xl text-xl leading-relaxed">
                             {data.description}
-                        </motion.p>
-                    </motion.div>
+                        </p>
+                    </div>
 
                     {/* CONTACT BLOCK */}
                     <motion.div
                         variants={container}
                         initial="hidden"
                         whileInView="show"
-                        viewport={{ once: true }}
+                        viewport={{ once: true, amount: 0.2 }}
                         className="mt-14 max-w-2xl border-t border-dark-blue/20"
                     >
                         {data.contactLinks.map((link, index) => {
@@ -222,20 +204,14 @@ export default function ContactContent({ data }: Props) {
                             </div>
                         </motion.div>
                     </motion.div>
-                </motion.div>
+                </div>
 
                 {/* RIGHT */}
-                <motion.div
-                    variants={container}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true }}
-                    className="flex items-center h-full w-full"
-                >
-                    <motion.div variants={item} className="rounded-2xl w-full">
+                <div className="flex items-center h-full w-full">
+                    <div className="rounded-2xl w-full">
                         <ContactForm />
-                    </motion.div>
-                </motion.div>
+                    </div>
+                </div>
             </div>
         </section>
     );

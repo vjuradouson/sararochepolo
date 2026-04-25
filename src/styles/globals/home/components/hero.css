@@ -3,7 +3,7 @@
         height: 200%;
     }
 
-    @media (min-width: 768) {
+    @media (min-width: 768px) {
         .hero-bg-circle {
             width: 160%;
             height: 200%;

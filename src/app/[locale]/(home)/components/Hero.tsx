@@ -2,33 +2,12 @@
 
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import NeoButton from "@/components/ui/NeoButton";
 import { Link } from '@/i18n/navigation';
 import { ROUTES } from "@/constants/routes";
 
-const container = {
-    hidden: {},
-    show: {
-        transition: {
-            staggerChildren: 0.15,
-        },
-    },
-};
-
-const item: Variants = {
-    hidden: { opacity: 0, y: 20 },
-    show: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 1.5,
-            ease: [0.25, 0.1, 0.25, 1],
-            staggerChildren: 0.15,
-            delayChildren: 0.2,
-        },
-    },
-};
+const EASE = [0.25, 0.1, 0.25, 1] as const;
 
 export default function Hero() {
     const t = useTranslations("app");
@@ -36,25 +15,19 @@ export default function Hero() {
     return (
         <section className="w-full py-2 md:py-16 mt-20 md:mt-10">
             <div className="container-xxl mx-auto lg:px-6">
-                <motion.div
-                    className="relative overflow-hidden rounded-[var(--radius-card)] shadow-[var(--shadow-card)]"
-                    variants={container}
-                    initial="hidden"
-                    animate="show"
-                >
+                <div className="relative overflow-hidden rounded-[var(--radius-card)] shadow-[var(--shadow-card)]">
                     {/* BACKGROUND */}
                     <div className="hidden md:block pointer-events-none absolute top-0 h-full right-0 w-[100%] md:right-[10%] md:w-[65%] opacity-70 md:opacity-100">
-                        <motion.div
+                        <div
                             className="
                                 hero-bg-circle absolute right-[-10%] top-1/2
                                 -translate-y-1/2 rounded-full rotate-[30deg]
                                 bg-[radial-gradient(circle_at_left_center,_#f3f3f1_0%,_#f4f4f4_50%,_#e3df5a_50%,_#f4f4f4_75%)]
                             "
-                            variants={item}
                         />
                     </div>
                     <div className="md:hidden pointer-events-none absolute top-0 right-0 w-full h-full">
-                        <motion.div
+                        <div
                             className="
             absolute -right-[50%] top-1/2
             -translate-y-1/2
@@ -63,7 +36,6 @@ export default function Hero() {
             rounded-full
             bg-[radial-gradient(circle_at_left_center,_#f3f3f1_0%,_#f4f4f4_50%,_#e3df5a_50%,_#f4f4f4_75%)]
         "
-                            variants={item}
                         />
                     </div>
 
@@ -82,7 +54,9 @@ export default function Hero() {
                                 </h1>
 
                                 <motion.p
-                                    variants={item}
+                                    initial={{ opacity: 0.01, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 1.2, ease: EASE, delay: 0.2 }}
                                     className="mt-6 text-2xl leading-tight text-gray-900 lg:text-5xl"
                                 >
                                     {t.rich("home.hero.product_designer", {
@@ -95,14 +69,14 @@ export default function Hero() {
                             </div>
 
                             {/* IMAGE */}
-                            <div className="order-2 relative mb-0 h-[380px] px-6 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:h-full lg:py-0">
+                            <div className="order-2 relative mb-0 h-[380px] md:h-[480px] lg:h-[560px] px-6 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:py-0">
                                 <Image
                                     src="/media/home/hero/apps-hero.png"
                                     alt={t("home.hero.image_alt")}
                                     fill
                                     sizes="(max-width: 768px) 100vw, 50vw"
                                     quality={90}
-                                    className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] lg:py-5"
+                                    className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)]"
                                     priority
                                     fetchPriority="high"
                                 />
@@ -110,7 +84,9 @@ export default function Hero() {
 
                             {/* BUTTON */}
                             <motion.div
-                                variants={item}
+                                initial={{ opacity: 0.01, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 1.2, ease: EASE, delay: 0.35 }}
                                 className="order-3 z-10 px-6 pb-8 lg:col-start-1 lg:row-start-2 lg:ml-18 lg:mt-8 lg:px-6 lg:pb-20"
                             >
                                 <div className="flex justify-center lg:justify-start">
@@ -126,7 +102,7 @@ export default function Hero() {
                             </motion.div>
                         </div>
                     </div>
-                </motion.div>
+                </div>
             </div>
         </section>
     );

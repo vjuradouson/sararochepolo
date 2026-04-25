@@ -8,7 +8,7 @@ import NeoButton from "@/components/ui/NeoButton";
 const EASE_OUT = [0.25, 0.1, 0.25, 1] as const;
 
 const fadeInUp = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0.01, y: 20 },
     show: {
         opacity: 1,
         y: 0,

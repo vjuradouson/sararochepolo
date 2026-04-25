@@ -56,7 +56,7 @@ const container: Variants = {
 };
 
 const item: Variants = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0.01, y: 40 },
     show: {
         opacity: 1,
         y: 0,
@@ -85,27 +85,29 @@ export default function AboutContent({ data }: AboutContentProps) {
     return (
         <div>
             <section className="container-xxl mx-auto px-6 pb-12 pt-20 md:pt-25" key={refreshKey}>
-                <motion.div
-                    className="pb-12 md:h-[500px] lg:h-[600px] overflow-hidden relative shadow-[var(--shadow-card)] rounded-[var(--radius-card)]"
-                    variants={container}
-                    initial="hidden"
-                    animate="show"
-                >
-                    <motion.div
-                        variants={container}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: true, amount: 0.6 }}
-                        className="h-full grid gap-16 md:grid-cols-2 items-stretch">
+                <div className="pb-12 md:h-[500px] lg:h-[600px] overflow-hidden relative shadow-[var(--shadow-card)] rounded-[var(--radius-card)]">
+                    <div className="h-full grid gap-16 md:grid-cols-2 items-stretch">
                         <div className="pl-8 pt-6 lg:ml-18 md:pt-10 lg:pb-0 px-6">
                             <h1 className="text-xl uppercase tracking-widest mb-8 md:mb-16">
                                 {data.h1}
                             </h1>
 
-                            <motion.p variants={item} className="pb-5 text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tight">
+                            <motion.p
+                                initial={{ opacity: 0.01, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.3 }}
+                                transition={{ duration: 0.7, ease: EASE_OUT }}
+                                className="pb-5 text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tight"
+                            >
                                 {data.header.greeting}
                             </motion.p>
-                            <motion.p variants={item} className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight">
+                            <motion.p
+                                initial={{ opacity: 0.01, y: 40 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true, amount: 0.3 }}
+                                transition={{ duration: 0.7, ease: EASE_OUT, delay: 0.12 }}
+                                className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight"
+                            >
                                 {data.header.presentation}
                             </motion.p>
                         </div>
@@ -119,7 +121,7 @@ export default function AboutContent({ data }: AboutContentProps) {
                                 <Image
                                     src="/media/about/profile.png"
                                     alt={data.image.alt}
-                                    sizes="25vw"
+                                    sizes="(max-width: 768px) 240px, 320px"
                                     quality={75}
                                     fill
                                     className="object-cover object-top"
@@ -128,8 +130,8 @@ export default function AboutContent({ data }: AboutContentProps) {
                                 />
                             </div>
                         </div>
-                    </motion.div>
-                </motion.div>
+                    </div>
+                </div>
             </section>
             <section className="container-xl mx-auto px-6" key={refreshKey + 1}>
 

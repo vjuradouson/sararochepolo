@@ -6,7 +6,7 @@ import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 
 const fadeInUp: Variants = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0.01, y: 40 },
     show: { opacity: 1, y: 0 },
 };
 
@@ -47,10 +47,7 @@ export default function AdobeProjectNeoContent() {
 
             {/* ─── 1. Interfaz + Styles overlay ──────────────────────── */}
             <section className="container-xl pb-8">
-                <motion.div
-                    {...revealProps}
-                    className="relative max-w-5xl mx-auto md:pb-[6%] items-center"
-                >
+                <div className="relative max-w-5xl mx-auto md:pb-[6%] items-center">
                     <Image
                         src={`${IMG_BASE}/1-white-frame.png`}
                         alt={t("image_alt.interface")}
@@ -59,6 +56,8 @@ export default function AdobeProjectNeoContent() {
                         sizes="(max-width: 768px) 100vw, 80vw"
                         quality={75}
                         className="w-full h-auto rounded-[var(--radius-card)] shadow-[var(--shadow-card)]"
+                        priority
+                        fetchPriority="high"
                     />
                     <Image
                         src={`${IMG_BASE}/2-styles.png`}
@@ -73,7 +72,7 @@ export default function AdobeProjectNeoContent() {
                                    md:w-[26%] md:max-w-[320px]
                                    h-auto rounded-[var(--radius-card)] shadow-[var(--shadow-card-xs)]"
                     />
-                </motion.div>
+                </div>
                 <motion.div
                     {...revealProps}
                     className="relative max-w-5xl mx-auto md:pb-[12%] items-center"

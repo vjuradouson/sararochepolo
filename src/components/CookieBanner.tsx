@@ -94,7 +94,7 @@ export default function CookieBanner() {
                     role="dialog"
                     aria-modal="true"
                     aria-labelledby="cookie-banner-title"
-                    initial={{ y: 100, opacity: 0, scale: 0.98 }}
+                    initial={{ y: 100, opacity: 0.01, scale: 0.98 }}
                     animate={{ y: 0, opacity: 1, scale: 1 }}
                     transition={{
                         type: 'spring',
@@ -103,7 +103,7 @@ export default function CookieBanner() {
                     }}
                     exit={{
                         y: 60,
-                        opacity: 0,
+                        opacity: 0.01,
                         scale: 0.98,
                         transition: {
                             duration: 0.35,
@@ -134,9 +134,9 @@ export default function CookieBanner() {
                         <AnimatePresence initial={false}>
                             {showSettings && (
                                 <motion.div
-                                    initial={{ height: 0, opacity: 0 }}
+                                    initial={{ height: 0, opacity: 0.01 }}
                                     animate={{ height: 'auto', opacity: 1 }}
-                                    exit={{ height: 0, opacity: 0 }}
+                                    exit={{ height: 0, opacity: 0.01 }}
                                     transition={{
                                         duration: 0.3,
                                         ease: 'easeInOut',

@@ -1,7 +1,7 @@
 import { Variants } from "framer-motion";
 
 export const fadeIn: Variants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0.01, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
@@ -13,7 +13,7 @@ export const fadeIn: Variants = {
 };
 
 export const staggerContainer: Variants = {
-  hidden: { opacity: 0 },
+  hidden: { opacity: 0.01 },
   visible: {
     opacity: 1,
     transition: {

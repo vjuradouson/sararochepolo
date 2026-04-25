@@ -15,7 +15,7 @@ const container = {
 };
 
 const item: Variants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0.01, y: 20 },
     show: {
         opacity: 1,
         y: 0,

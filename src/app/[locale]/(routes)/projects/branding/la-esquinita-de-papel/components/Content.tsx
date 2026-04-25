@@ -30,7 +30,7 @@ const highlight = (chunks: React.ReactNode) => (
 );
 
 const fadeInUp: Variants = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0.01, y: 40 },
     show: { opacity: 1, y: 0 },
 };
 
@@ -82,8 +82,8 @@ export default function BrandingProjectLaEsquinitaDePapelContent() {
                         {t("title")}
                     </h1>
                 </div>
-                <motion.div {...revealProps} className="container-xxl mx-auto lg:px-6">
-                    <motion.div {...revealProps} className="flex items-center justify-center bg-[#8D7C6A] py-12 px-6 md:py-20 md:px-12 rounded-[var(--radius-card)] shadow-[var(--shadow-card)]">
+                <div className="container-xxl mx-auto lg:px-6">
+                    <div className="flex items-center justify-center bg-[#8D7C6A] py-12 px-6 md:py-20 md:px-12 rounded-[var(--radius-card)] shadow-[var(--shadow-card)]">
                         <Image
                             src={`${IMG_BASE}/framed-logo-filled.png`}
                             alt={t("image_alt.interface")}
@@ -92,9 +92,11 @@ export default function BrandingProjectLaEsquinitaDePapelContent() {
                             sizes="(max-width: 768px) 50vw, 30vw"
                             quality={75}
                             className="w-[55%] max-w-[320px] md:max-w-[300px] h-auto"
+                            priority
+                            fetchPriority="high"
                         />
-                    </motion.div>
-                </motion.div>
+                    </div>
+                </div>
             </section>
 
             {/* ─── About ─────────────────────────────────────────────── */}
@@ -259,7 +261,7 @@ export default function BrandingProjectLaEsquinitaDePapelContent() {
                     {masonryItems.map((item) => (
                         <motion.div
                             key={item.src}
-                            initial={{ opacity: 0, y: 40, scale: 0.94 }}
+                            initial={{ opacity: 0.01, y: 40, scale: 0.94 }}
                             whileInView={{ opacity: 1, y: 0, scale: 1 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
