@@ -39,7 +39,7 @@ const projects: BrandingProject[] = [
 ];
 
 const fadeInUp: Variants = {
-    hidden: { opacity: 0.01, y: 40 },
+    hidden: { opacity: 0, y: 40 },
     show: { opacity: 1, y: 0 },
 };
 
@@ -69,8 +69,7 @@ function ProjectCard({ project, index, staggered }: ProjectCardProps) {
                         fill
                         sizes="(max-width: 768px) 50vw, 50vw"
                         quality={75}
-                        style={{ objectFit: "cover" }}
-                        className="transition-transform duration-700 ease-out group-hover:scale-105"
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                         priority={index === 0}
                         fetchPriority={index === 0 ? "high" : "auto"}
                     />

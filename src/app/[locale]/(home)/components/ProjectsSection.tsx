@@ -24,7 +24,7 @@ type Project = {
 };
 
 const textVariants = {
-    hidden: { opacity: 0.01, y: 50 },
+    hidden: { opacity: 0, y: 50 },
     show: { opacity: 1, y: 0 },
 };
 
@@ -49,7 +49,7 @@ export default function ProjectsSection() {
 
     const imageVariants: Variants = {
         hidden: {
-            opacity: 0.01,
+            opacity: 0,
             y: 200,
             scale: 0.8
         },

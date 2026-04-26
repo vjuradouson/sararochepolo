@@ -43,5 +43,25 @@ La versión de node utilizada es: v20.18.3
 - **Si aparece bandeo** en gradientes suaves (cielos, pieles, sombras graduales) tras la optimización, sube `--quality` a 95 o desactiva la paleta editando el script para esa foto concreta (PNG sin paleta es lossless pero mucho más pesado — valorar convertir a WebP manualmente).
 - **Referencia:** proceso validado que llevó `branding-don-tostado/` de 25 MB → 2.5 MB (-90%) sin pérdida visible de calidad.
 
-## 6. Reference Style
+## 6. Image Rendering Rules (anti-CLS & anti-flicker)
+Estas reglas son **obligatorias** para cualquier `<Image>` y especialmente críticas en imágenes **above the fold** (Hero, primer pliegue, LCP). Cada una nace de un bug real corregido — saltárselas reintroduce parpadeos visibles o Layout Shift al recargar.
+
+- **Prohibido `style={{ objectFit: ... }}` inline.** Usar siempre la clase Tailwind equivalente (`object-contain`, `object-cover`, `object-top`, `object-left`, etc.). El inline style se aplica con un frame de retraso respecto al CSS estático y produce un parpadeo visible donde la imagen se pinta estirada al 100%×100% del contenedor antes de "encogerse" al ratio correcto. Las clases Tailwind están en el bundle de CSS cargado en `<head>` y se aplican desde el primer paint.
+
+- **`width` y `height` DEBEN coincidir con las dimensiones reales del PNG.** Cuando combinas `width={N}` + `height={M}` con `className="h-auto"` (o `w-auto`), el navegador reserva espacio usando el ratio derivado de los atributos HTML. Al cargar la imagen real, si su ratio difiere, la altura se recalcula y el contenedor padre crece o encoge → **CLS visible**. Verifica siempre el tamaño antes de declarar:
+    ```bash
+    python3 -c "from PIL import Image; im = Image.open('public/media/.../tu-imagen.png'); print(im.size)"
+    ```
+
+- **Above the fold: prefiere `width`/`height` explícitos sobre `fill`.** Con dimensiones declaradas en el HTML, el navegador conoce el aspect-ratio desde el primer byte parseado y reserva el cuadro correcto sin depender de CSS ni de `object-fit`. Es la única forma de garantizar cero parpadeo en imágenes de alto contraste con su contenedor (logos estrechos en paneles cuadrados, etc.). Reserva `fill` para casos donde realmente necesites cubrir un área dinámica (galerías masonry, fondos full-bleed, cards de tamaño desconocido).
+
+- **`priority` + `fetchPriority="high"` solo en el LCP.** Aplica a una (máximo dos) imágenes por página: típicamente la del Hero. Marcar de más diluye el beneficio y compite por ancho de banda con otros recursos críticos.
+
+- **`sizes` siempre presente** cuando uses `fill` o cuando la imagen sea responsive, para que Next sirva la variante de srcset adecuada y no descargue el PNG full-res en mobile.
+
+- **Con `fill`:** el padre debe ser `position: relative` con dimensiones definidas (height fija, aspect-ratio, o stretched por flex/grid). Si el padre no tiene altura definible, el `<img absolute width:100% height:100%>` colapsa.
+
+- **Debug rápido de parpadeo en F5:** si una imagen "se ve ancha/estirada un frame y luego se encoge", la causa casi siempre es (a) `objectFit` inline en vez de clase, o (b) ratio declarado distinto al real. Si una imagen "hace crecer su card al cargar", siempre es (b).
+
+## 7. Reference Style
 - El objetivo es emular la estética de `beatrizhc.com`: Limpieza visual, transiciones de alta gama, tipografía premium y carga instantánea.

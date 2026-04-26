@@ -6,7 +6,7 @@ import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 
 const fadeInUp: Variants = {
-    hidden: { opacity: 0.01, y: 40 },
+    hidden: { opacity: 0, y: 40 },
     show: { opacity: 1, y: 0 },
 };
 

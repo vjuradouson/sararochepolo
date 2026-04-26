@@ -78,9 +78,9 @@ export function HeaderMobileMenu({ links }: MobileMenuProps) {
                 {menuOpen && (
                     <motion.div
                         ref={mobileMenuRef}
-                        initial={{ opacity: 0.01, y: -10 }}
+                        initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0.01, y: -10 }}
+                        exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2 }}
                         className="md:hidden absolute top-20 left-0 right-0 border-b border-neutral-200 bg-white"
                     >
@@ -113,9 +113,9 @@ export function HeaderMobileMenu({ links }: MobileMenuProps) {
                                             <AnimatePresence initial={false}>
                                                 {isGroupOpen && (
                                                     <motion.ul
-                                                        initial={{ height: 0, opacity: 0.01 }}
+                                                        initial={{ height: 0, opacity: 0 }}
                                                         animate={{ height: "auto", opacity: 1 }}
-                                                        exit={{ height: 0, opacity: 0.01 }}
+                                                        exit={{ height: 0, opacity: 0 }}
                                                         transition={{ duration: 0.2 }}
                                                         className="overflow-hidden pl-4 mt-3 space-y-3"
                                                     >

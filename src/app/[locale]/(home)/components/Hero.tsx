@@ -53,19 +53,14 @@ export default function Hero() {
                                     </span>
                                 </h1>
 
-                                <motion.p
-                                    initial={{ opacity: 0.01, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 1.2, ease: EASE, delay: 0.2 }}
-                                    className="mt-6 text-2xl leading-tight text-gray-900 lg:text-5xl"
-                                >
+                                <p className="mt-6 text-2xl leading-tight text-gray-900 lg:text-5xl">
                                     {t.rich("home.hero.product_designer", {
                                         line: () => <br className="hidden lg:block" />,
                                         highlight: (chunks) => (
                                             <span className="font-bold italic">{chunks}</span>
                                         ),
                                     })}
-                                </motion.p>
+                                </p>
                             </div>
 
                             {/* IMAGE */}
@@ -76,8 +71,7 @@ export default function Hero() {
                                     fill
                                     sizes="(max-width: 768px) 100vw, 50vw"
                                     quality={90}
-                                    style={{ objectFit: "contain" }}
-                                    className="drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)]"
+                                    className="object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)]"
                                     priority
                                     fetchPriority="high"
                                 />
@@ -85,7 +79,7 @@ export default function Hero() {
 
                             {/* BUTTON */}
                             <motion.div
-                                initial={{ opacity: 0.01, y: 20 }}
+                                initial={{ opacity: 0, y: 20 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 1.2, ease: EASE, delay: 0.35 }}
                                 className="order-3 z-10 px-6 pb-8 lg:col-start-1 lg:row-start-2 lg:ml-18 lg:mt-8 lg:px-6 lg:pb-20"

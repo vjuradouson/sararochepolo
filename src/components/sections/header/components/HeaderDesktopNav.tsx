@@ -101,9 +101,9 @@ export function HeaderDesktopNav({ links }: DesktopNavProps) {
                                     <motion.span
                                         layoutId="active-pill"
                                         className="absolute inset-0 rounded-full nav-item-active"
-                                        initial={{ opacity: 0.01, scale: 0.95 }}
+                                        initial={{ opacity: 0, scale: 0.95 }}
                                         animate={{ opacity: 1, scale: 1 }}
-                                        exit={{ opacity: 0.01, scale: 0.95 }}
+                                        exit={{ opacity: 0, scale: 0.95 }}
                                         transition={{
                                             opacity: { duration: 0.2 },
                                             scale: { duration: 0.2 },
@@ -134,9 +134,9 @@ export function HeaderDesktopNav({ links }: DesktopNavProps) {
                             <AnimatePresence>
                                 {isOpen && (
                                     <motion.div
-                                        initial={{ opacity: 0.01, y: -8 }}
+                                        initial={{ opacity: 0, y: -8 }}
                                         animate={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0.01, y: -8 }}
+                                        exit={{ opacity: 0, y: -8 }}
                                         transition={{ duration: 0.18 }}
                                         className="absolute left-0 top-full mt-3 min-w-[350px] rounded-2xl border border-neutral-200 bg-white shadow-lg py-2 z-50"
                                     >
@@ -190,9 +190,9 @@ export function HeaderDesktopNav({ links }: DesktopNavProps) {
                                 <motion.span
                                     layoutId="active-pill"
                                     className="absolute inset-0 rounded-full nav-item-active"
-                                    initial={{ opacity: 0.01, scale: 0.95 }}
+                                    initial={{ opacity: 0, scale: 0.95 }}
                                     animate={{ opacity: 1, scale: 1 }}
-                                    exit={{ opacity: 0.01, scale: 0.95 }}
+                                    exit={{ opacity: 0, scale: 0.95 }}
                                     transition={{
                                         opacity: { duration: 0.2 },
                                         scale: { duration: 0.2 },

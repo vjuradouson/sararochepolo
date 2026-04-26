@@ -29,7 +29,7 @@ const highlight = (chunks: React.ReactNode) => (
 );
 
 const fadeInUp: Variants = {
-    hidden: { opacity: 0.01, y: 40 },
+    hidden: { opacity: 0, y: 40 },
     show: { opacity: 1, y: 0 },
 };
 
@@ -105,7 +105,7 @@ export default function BrandingProjectDonTostadoContent() {
                                 fill
                                 sizes="(max-width: 768px) 100vw, 67vw"
                                 quality={75}
-                                style={{ objectFit: "cover" }}
+                                className="object-cover"
                                 placeholder="blur"
                                 blurDataURL="data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADQAQCdASoMAAgABABoJZwAAl0XElFlgAD+6k5UNUv9xc/gLNgSD18nPKlN0cH6eVPsbgSRa4TO2nqosFzj2j/SIWBtwAAA"
                                 priority
@@ -113,18 +113,17 @@ export default function BrandingProjectDonTostadoContent() {
                             />
                         </div>
                         <div className="dt-fold-logo">
-                            <div className="dt-fold-logo-inner">
-                                <Image
-                                    src={`${IMG_BASE}/don-tostado-logo-with-title.png`}
-                                    alt={t("image_alt.logo_with_title")}
-                                    fill
-                                    sizes="(max-width: 768px) 40vw, 12vw"
-                                    quality={75}
-                                    style={{ objectFit: "contain" }}
-                                    priority
-                                    fetchPriority="high"
-                                />
-                            </div>
+                            <Image
+                                src={`${IMG_BASE}/don-tostado-logo-with-title.png`}
+                                alt={t("image_alt.logo_with_title")}
+                                width={170}
+                                height={368}
+                                sizes="(max-width: 768px) 100vw, 40vw"
+                                quality={75}
+                                className="dt-fold-logo-img h-auto w-auto"
+                                priority
+                                fetchPriority="high"
+                            />
                         </div>
                     </div>
                 </div>

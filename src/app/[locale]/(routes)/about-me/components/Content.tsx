@@ -56,7 +56,7 @@ const container: Variants = {
 };
 
 const item: Variants = {
-    hidden: { opacity: 0.01, y: 40 },
+    hidden: { opacity: 0, y: 40 },
     show: {
         opacity: 1,
         y: 0,
@@ -93,7 +93,7 @@ export default function AboutContent({ data }: AboutContentProps) {
                             </h1>
 
                             <motion.p
-                                initial={{ opacity: 0.01, y: 40 }}
+                                initial={{ opacity: 0, y: 40 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, amount: 0.3 }}
                                 transition={{ duration: 0.7, ease: EASE_OUT }}
@@ -102,7 +102,7 @@ export default function AboutContent({ data }: AboutContentProps) {
                                 {data.header.greeting}
                             </motion.p>
                             <motion.p
-                                initial={{ opacity: 0.01, y: 40 }}
+                                initial={{ opacity: 0, y: 40 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, amount: 0.3 }}
                                 transition={{ duration: 0.7, ease: EASE_OUT, delay: 0.12 }}
@@ -124,7 +124,7 @@ export default function AboutContent({ data }: AboutContentProps) {
                                     sizes="(max-width: 768px) 240px, 320px"
                                     quality={75}
                                     fill
-                                    style={{ objectFit: "cover", objectPosition: "top" }}
+                                    className="object-cover object-top"
                                     priority
                                     fetchPriority="high"
                                 />

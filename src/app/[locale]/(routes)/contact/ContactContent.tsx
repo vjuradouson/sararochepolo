@@ -35,7 +35,7 @@ const container: Variants = {
 };
 
 const item: Variants = {
-    hidden: { opacity: 0.01, y: 30 },
+    hidden: { opacity: 0, y: 30 },
     show: {
         opacity: 1,
         y: 0,
@@ -107,15 +107,25 @@ export default function ContactContent({ data }: Props) {
                         {data.h1}
                     </h1>
 
-                    <h2 className="mb-10 text-4xl tracking-tight sm:text-5xl">
+                    <motion.h2
+                        variants={item}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true, amount: 0.2 }}
+                        className="mb-10 text-4xl tracking-tight sm:text-5xl">
                         {data.title}
-                    </h2>
+                    </motion.h2>
 
-                    <div className="flex flex-col gap-8">
+                    <motion.div
+                        variants={item}
+                        initial="hidden"
+                        whileInView="show"
+                        viewport={{ once: true, amount: 0.2 }}
+                        className="flex flex-col gap-8">
                         <p className="max-w-xl text-xl leading-relaxed">
                             {data.description}
                         </p>
-                    </div>
+                    </motion.div>
 
                     {/* CONTACT BLOCK */}
                     <motion.div

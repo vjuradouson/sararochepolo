@@ -30,7 +30,7 @@ const highlight = (chunks: React.ReactNode) => (
 );
 
 const fadeInUp: Variants = {
-    hidden: { opacity: 0.01, y: 40 },
+    hidden: { opacity: 0, y: 40 },
     show: { opacity: 1, y: 0 },
 };
 
@@ -87,8 +87,8 @@ export default function BrandingProjectLaEsquinitaDePapelContent() {
                         <Image
                             src={`${IMG_BASE}/framed-logo-filled.png`}
                             alt={t("image_alt.interface")}
-                            width={800}
-                            height={1000}
+                            width={600}
+                            height={963}
                             sizes="(max-width: 768px) 50vw, 30vw"
                             quality={75}
                             className="w-[55%] max-w-[320px] md:max-w-[300px] h-auto"
@@ -130,8 +130,8 @@ export default function BrandingProjectLaEsquinitaDePapelContent() {
                             <Image
                                 src={`${IMG_BASE}/framed-logo.png`}
                                 alt={t("image_alt.framed_logo")}
-                                width={400}
-                                height={500}
+                                width={498}
+                                height={800}
                                 sizes="(max-width: 768px) 40vw, 25vw"
                                 quality={75}
                                 className="w-full max-w-[200px] md:max-w-[240px] h-auto"
@@ -144,8 +144,8 @@ export default function BrandingProjectLaEsquinitaDePapelContent() {
                             <Image
                                 src={`${IMG_BASE}/square-logo.png`}
                                 alt={t("image_alt.square_logo")}
-                                width={400}
-                                height={500}
+                                width={616}
+                                height={800}
                                 sizes="(max-width: 768px) 40vw, 25vw"
                                 quality={75}
                                 className="w-full max-w-[200px] md:max-w-[240px] h-auto"
@@ -158,8 +158,8 @@ export default function BrandingProjectLaEsquinitaDePapelContent() {
                             <Image
                                 src={`${IMG_BASE}/horizontal-logo.png`}
                                 alt={t("image_alt.horizontal_logo")}
-                                width={800}
-                                height={300}
+                                width={1200}
+                                height={388}
                                 sizes="(max-width: 768px) 80vw, 25vw"
                                 quality={75}
                                 className="w-full max-w-[320px] md:max-w-[280px] h-auto scale-[1.1] md:scale-[1.3]"
@@ -261,7 +261,7 @@ export default function BrandingProjectLaEsquinitaDePapelContent() {
                     {masonryItems.map((item) => (
                         <motion.div
                             key={item.src}
-                            initial={{ opacity: 0.01, y: 40, scale: 0.94 }}
+                            initial={{ opacity: 0, y: 40, scale: 0.94 }}
                             whileInView={{ opacity: 1, y: 0, scale: 1 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
@@ -291,8 +291,8 @@ export default function BrandingProjectLaEsquinitaDePapelContent() {
                         key={i}
                         src={`${IMG_BASE}/mouse-running-filled.png`}
                         alt={t("image_alt.running_mouse")}
-                        width={50}
-                        height={50}
+                        width={200}
+                        height={200}
                         quality={75}
                         className="h-[55px] w-auto flex-shrink-0"
                     />

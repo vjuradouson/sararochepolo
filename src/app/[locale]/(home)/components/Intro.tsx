@@ -15,7 +15,7 @@ const container = {
 };
 
 const item: Variants = {
-    hidden: { opacity: 0.01, y: 20 },
+    hidden: { opacity: 0, y: 20 },
     show: {
         opacity: 1,
         y: 0,
@@ -121,7 +121,7 @@ export default function Intro() {
                 <div className="order-1 md:order-2 text-xl mt-16 md:mt-0">
                     <motion.p
                         variants={item}
-                        className="text-xl md:text-2xlleading-[1.7] tracking-[0.01em]"
+                        className="text-xl md:text-2xl leading-[1.7] tracking-[0.01em]"
                     >
                         {t.rich("home.intro.description", {
                             line: () => <br />,
