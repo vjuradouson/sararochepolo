@@ -102,12 +102,11 @@ export default function BrandingProjectDonTostadoContent() {
                             <Image
                                 src={`${IMG_BASE}/coffee-cup.png`}
                                 alt={t("image_alt.coffee_cup")}
-                                fill
+                                width={1600}
+                                height={1067}
                                 sizes="(max-width: 768px) 100vw, 67vw"
                                 quality={75}
-                                className="object-cover"
-                                placeholder="blur"
-                                blurDataURL="data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADQAQCdASoMAAgABABoJZwAAl0XElFlgAD+6k5UNUv9xc/gLNgSD18nPKlN0cH6eVPsbgSRa4TO2nqosFzj2j/SIWBtwAAA"
+                                className="w-full h-full object-cover"
                                 priority
                                 fetchPriority="high"
                             />
@@ -120,7 +119,7 @@ export default function BrandingProjectDonTostadoContent() {
                                 height={368}
                                 sizes="(max-width: 768px) 100vw, 40vw"
                                 quality={75}
-                                className="dt-fold-logo-img h-auto w-auto"
+                                className="w-auto h-[75%]"
                                 priority
                                 fetchPriority="high"
                             />

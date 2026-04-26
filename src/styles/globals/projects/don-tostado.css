@@ -36,14 +36,3 @@
         padding: 0;
     }
 }
-
-.dt-fold-logo-img {
-    max-height: 75%;
-    max-width: 100%;
-}
-
-@media (min-width: 768px) {
-    .dt-fold-logo-img {
-        max-height: 85%;
-    }
-}
