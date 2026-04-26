@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import { useEffect, useState } from "react";
+import { FadeInStagger, FadeInStaggerItem } from "@/components/ui/FadeInStagger";
 
 type AboutContentProps = {
     data: {
@@ -155,11 +156,19 @@ export default function AboutContent({ data }: AboutContentProps) {
                                 {data.skills.title}
                             </h2>
 
-                            <ul className="grid grid-cols-2 gap-x-16 gap-y-6">
+                            <FadeInStagger
+                                as="ul"
+                                inherit
+                                stagger={0.1}
+                                delayChildren={0.2}
+                                className="grid grid-cols-2 gap-x-16 gap-y-6"
+                            >
                                 {skills.map((skill) => (
-                                    <li key={skill}>{skill}</li>
+                                    <FadeInStaggerItem as="li" key={skill}>
+                                        {skill}
+                                    </FadeInStaggerItem>
                                 ))}
-                            </ul>
+                            </FadeInStagger>
                         </motion.div>
 
                         {/* TEXT */}

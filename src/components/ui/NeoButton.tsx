@@ -35,7 +35,7 @@ export default function NeoButton({
         transition-all duration-200
         
         hover:shadow-[4px_4px_8px_#c5c5c5,0px_0px_0px_#ffffff]
-        active:shadow-[inset_4px_4px_8px_#c5c5c5,inset_-4px_-4px_#ffffff]
+        active:shadow-[inset_4px_4px_8px_#c5c5c5,inset_-4px_-4px_#dfe2e8]
 
         cursor-pointer
         ${sizes[size]}

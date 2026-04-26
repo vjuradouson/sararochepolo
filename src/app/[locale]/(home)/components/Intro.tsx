@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Variants } from "framer-motion";
+import { FadeInStagger, FadeInStaggerItem } from "@/components/ui/FadeInStagger";
 
 const container = {
     hidden: {},
@@ -133,9 +134,10 @@ export default function Intro() {
                         })}
                     </motion.p>
 
-                    <motion.div
-                        variants={item}
-                        className="mt-12 md:mt-16 md:ml-0 grid justify-items-center lg:grid-flow-col md:grid-rows-4 gap-x-2 md:gap-x-6 gap-y-4 tracking-[0.2em]"                    >
+                    <FadeInStagger
+                        inherit
+                        className="mt-12 md:mt-16 md:ml-0 grid justify-items-center lg:grid-flow-col md:grid-rows-4 gap-x-2 md:gap-x-6 gap-y-4 tracking-[0.2em]"
+                    >
                         {[
                             {
                                 name: "Adobe Photoshop",
@@ -166,7 +168,7 @@ export default function Intro() {
                                 icon: "procreate-icon.png",
                             }
                         ].map((tool) => (
-                            <div
+                            <FadeInStaggerItem
                                 key={tool.name}
                                 className="group relative flex items-center cursor-pointer w-full pl-5 gap-3"
                             >
@@ -185,9 +187,9 @@ export default function Intro() {
                                 <span className="relative z-10 tracking-[0.2em] text-sm md:text-lg leading-none break-words uppercase">
                                     {tool.name}
                                 </span>
-                            </div>
+                            </FadeInStaggerItem>
                         ))}
-                    </motion.div>
+                    </FadeInStagger>
                 </div>
             </motion.div>
         </section>
