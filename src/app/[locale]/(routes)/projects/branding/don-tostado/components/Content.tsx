@@ -100,8 +100,8 @@ export default function BrandingProjectDonTostadoContent() {
                     <div className="dt-fold-grid">
                         <div className="dt-fold-coffee">
                             <Image
-                                src={`${IMG_BASE}/coffee-cup.png`}
-                                alt={t("image_alt.coffee_cup")}
+                                src={`${IMG_BASE}/coffee-to-go.png`}
+                                alt={t("image_alt.coffee_to_go")}
                                 width={1600}
                                 height={1067}
                                 sizes="(max-width: 768px) 100vw, 67vw"
@@ -200,7 +200,7 @@ export default function BrandingProjectDonTostadoContent() {
             </section>
 
             {/* ─── Brand applications ─────────────────────────────────────── */}
-            <section className="container-xl mx-auto py-16 md:py-24">
+            <section className="container-xl mx-auto py-16 pb-32 md:py-24 overflow-hidden">
                 <h2 className="sr-only">{t("applications_h2")}</h2>
                 <div className="flex flex-col">
                     {/* Row 1 — coffee shop */}
@@ -219,8 +219,8 @@ export default function BrandingProjectDonTostadoContent() {
                     <div className="grid grid-cols-1 md:grid-cols-10 items-stretch">
                         <motion.div {...revealProps} className="relative md:col-span-7 aspect-[3/2]">
                             <Image
-                                src={`${IMG_BASE}/coffee-cup.png`}
-                                alt={t("image_alt.coffee_cup")}
+                                src={`${IMG_BASE}/coffee-to-go.png`}
+                                alt={t("image_alt.coffee_to_go")}
                                 fill
                                 sizes="(max-width: 768px) 100vw, 70vw"
                                 quality={75}
@@ -253,6 +253,64 @@ export default function BrandingProjectDonTostadoContent() {
                             quality={75}
                             className="object-cover"
                         />
+                    </motion.div>
+
+                    {/* Row 4 — merch masonry: mugs + pin / placeholders + caps */}
+                    <motion.div
+                        {...revealProps}
+                        className="grid grid-cols-1 md:grid-cols-12 md:aspect-[6/5] md:[grid-template-rows:4fr_3fr_3fr]"
+                    >
+                        <div className="md:col-span-6 order-1 md:order-none aspect-[3/2] md:aspect-auto relative overflow-hidden">
+                            <Image
+                                src={`${IMG_BASE}/coffee-mugs.png`}
+                                alt={t("image_alt.coffee_mugs")}
+                                fill
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                quality={75}
+                                className="object-cover"
+                            />
+                        </div>
+                        <div className="md:col-span-6 order-2 md:order-none aspect-square md:aspect-auto relative overflow-hidden">
+                            <Image
+                                src={`${IMG_BASE}/pin.png`}
+                                alt={t("image_alt.pin")}
+                                fill
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                                quality={75}
+                                className="object-cover"
+                            />
+                        </div>
+                        <div className="md:col-span-4 order-3 md:order-none aspect-square md:aspect-auto bg-[#C9FBF8]" />
+                        <div className="md:col-span-4 md:row-span-2 order-5 md:order-none aspect-[3/4] md:aspect-auto relative overflow-hidden">
+                            <Image
+                                src={`${IMG_BASE}/girl-with-cap.png`}
+                                alt={t("image_alt.girl_with_cap")}
+                                fill
+                                sizes="(max-width: 768px) 100vw, 33vw"
+                                quality={75}
+                                className="object-cover"
+                            />
+                        </div>
+                        <div className="md:col-span-4 md:row-span-2 order-6 md:order-none aspect-[3/4] md:aspect-auto relative">
+                            <Image
+                                src={`${IMG_BASE}/boy-with-cap.png`}
+                                alt={t("image_alt.boy_with_cap")}
+                                fill
+                                sizes="(max-width: 768px) 100vw, 33vw"
+                                quality={75}
+                                className="object-cover"
+                            />
+                            <Image
+                                src={`${IMG_BASE}/sticker.png`}
+                                alt={t("image_alt.sticker")}
+                                width={1278}
+                                height={1254}
+                                sizes="(max-width: 768px) 30vw, 12vw"
+                                quality={75}
+                                className="absolute bottom-0 right-0 translate-x-[20%] translate-y-[46%] w-[50%] h-auto pointer-events-none"
+                            />
+                        </div>
+                        <div className="md:col-span-4 order-4 md:order-none aspect-square md:aspect-auto bg-[#FFCFDF]" />
                     </motion.div>
                 </div>
             </section>

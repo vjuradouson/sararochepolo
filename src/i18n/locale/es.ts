@@ -303,14 +303,19 @@ export default {
                     description: "Portfolio de branding de Sara Roche Polo: identidad visual, diseño de logo, tipografía y sistemas de color — con proyectos como La Esquinita de Papel y Don Tostado."
                 },
                 content: {
-                    eyebrow: "Branding projects",
-                    title: "Branding",
+                    eyebrow: "Imagen de marca",
+                    title: "Proyectos de branding",
                     projects: {
                         la_esquinita_de_papel: {
-                            sector: "Librería independiente"
+                            sector: "Librería tradicional."
                         },
                         don_tostado: {
                             sector: "Cafetería de especialidad"
+                        },
+                        patitas_con_historia: {
+                            title: "Patitas con historia",
+                            sector: "Adopción animales senior",
+                            image_alt: "Imagen provisional del proyecto Patitas con historia"
                         }
                     }
                 },
@@ -375,14 +380,19 @@ export default {
                             typography_h2: "Tipografía corporativa",
                             applications_h2: "Aplicaciones de marca",
                             image_alt: {
-                                coffee_cup: "Vasos de café con el branding de Don Tostado sobre una máquina de espresso",
+                                coffee_to_go: "Vasos de café con el branding de Don Tostado sobre una máquina de espresso",
+                                coffee_mugs: "Dos tazas de café Don Tostado con bigote ilustrado sobre una mesa de madera",
                                 logo_with_title: "Logotipo ilustrado de Don Tostado con una taza con bigote sobre fondo rosa",
                                 logo_cyan: "Logotipo de Don Tostado sobre fondo cian",
                                 logo_pink: "Logotipo de Don Tostado sobre fondo rosa",
                                 logo_navy: "Logotipo de Don Tostado en versión clara sobre fondo azul oscuro",
                                 coffee_shop: "Escaparate de Don Tostado con el logotipo de la marca en la vidriera",
                                 slogan: "Lema de Don Tostado: primero café, luego ya vemos",
-                                coffee_packages: "Packs de café de Don Tostado: Original Classic, Hazelnut Chunk y Cinnamon Flavor sobre una barra de cafetería"
+                                coffee_packages: "Packs de café de Don Tostado: Original Classic, Hazelnut Chunk y Cinnamon Flavor sobre una barra de cafetería",
+                                pin: "Chapa con el logo de Don Tostado sobre una tote bag de lona",
+                                girl_with_cap: "Chica con gorra azul de Don Tostado",
+                                boy_with_cap: "Chico con gorra rosa de Don Tostado",
+                                sticker: "Pegatina circular de Don Tostado con ilustración de taza de café"
                             }
                         }
                     }

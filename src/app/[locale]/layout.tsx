@@ -100,15 +100,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
           rel="icon"
           type="image/svg+xml"
           href={`${BASE_URL}/media/favicons/favicon.svg`}
-          media="(prefers-color-scheme: light)"
         />
-        <link
-          rel="icon"
-          type="image/svg+xml"
-          href={`${BASE_URL}/media/favicons/favicon-dark.svg`}
-          media="(prefers-color-scheme: dark)"
-        />
-
         {/* Apple touch icon (iOS home screen) */}
         <link
           rel="apple-touch-icon"
