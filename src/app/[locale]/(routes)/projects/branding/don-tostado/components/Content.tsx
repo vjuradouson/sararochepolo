@@ -258,6 +258,7 @@ export default function BrandingProjectDonTostadoContent() {
                     {/* Row 4 — merch masonry: mugs + pin / placeholders + caps */}
                     <motion.div
                         {...revealProps}
+                        viewport={{ once: true, amount: 0.1 }}
                         className="grid grid-cols-1 md:grid-cols-12 md:aspect-[6/5] md:[grid-template-rows:4fr_3fr_3fr]"
                     >
                         <div className="md:col-span-6 order-1 md:order-none aspect-[3/2] md:aspect-auto relative overflow-hidden">
