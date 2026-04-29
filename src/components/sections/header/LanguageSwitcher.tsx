@@ -1,127 +1,86 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
-import { usePathname, useRouter } from "@/i18n/navigation";
-import { useLocale } from "next-intl";
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Globe, Check } from "lucide-react";
-import { Locale, LOCALES, LANGUAGE_META } from "@/lib/config";
-import { useTranslations } from "next-intl";
+import { ArrowLeftRight, ArrowRight } from "lucide-react";
+import { usePathname, useRouter } from "@/i18n/navigation";
+import { useLocale, useTranslations } from "next-intl";
+import { Locale, LOCALES } from "@/lib/config";
 
-const LANGUAGES = LOCALES.map((code) => ({
-    code,
-    ...LANGUAGE_META[code],
-}));
+function persistLocaleCookie(locale: Locale) {
+    document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=31536000`;
+}
+
+const REVEAL_TRANSITION = { duration: 0.32, ease: [0.16, 1, 0.3, 1] as const };
+const ICON_TRANSITION = { duration: 0.22, ease: [0.16, 1, 0.3, 1] as const };
 
 export default function LanguageSwitcher() {
     const t = useTranslations("app.header.language_switcher");
-    const [isOpen, setIsOpen] = useState(false);
-    const locale = useLocale();
+    const locale = useLocale() as Locale;
     const pathname = usePathname();
     const router = useRouter();
-    const wrapperRef = useRef<HTMLDivElement>(null);
+    const [expanded, setExpanded] = useState(false);
 
-    const handleLanguageChange = (newLocale: Locale) => {
-        if (newLocale !== locale) {
-            document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=31536000`;
-            router.push(pathname, { locale: newLocale });
-        }
-        setIsOpen(false);
+    const nextLocale = (LOCALES.find((l) => l !== locale) ?? locale) as Locale;
+    const canSwap = nextLocale !== locale;
+    const showNext = expanded && canSwap;
+
+    const handleSwap = () => {
+        if (!canSwap) return;
+        persistLocaleCookie(nextLocale);
+        setExpanded(false);
+        router.push(pathname, { locale: nextLocale });
     };
 
-    useEffect(() => {
-        function handleClickOutside(event: MouseEvent) {
-            if (
-                wrapperRef.current &&
-                !wrapperRef.current.contains(event.target as Node)
-            ) {
-                setIsOpen(false);
-            }
-        }
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => document.removeEventListener("mousedown", handleClickOutside);
-    }, []);
-
-    useEffect(() => {
-        function handleKey(e: KeyboardEvent) {
-            if (e.key === "Escape") setIsOpen(false);
-        }
-        document.addEventListener("keydown", handleKey);
-        return () => document.removeEventListener("keydown", handleKey);
-    }, []);
-
     return (
-        <div ref={wrapperRef} className="relative z-50">
-            {/* Trigger */}
-            <button
-                onClick={() => setIsOpen((prev) => !prev)}
-                className="cursor-pointer flex items-center gap-2 px-3 py-2 rounded-full text-md transition-all duration-200 hover:bg-light-blue/20 hover:text-[#0B3C49] focus:outline-none focus:ring-2 focus:ring-neutral-300"
-                aria-label="Change language"
-                aria-expanded={isOpen}
-                aria-haspopup="menu"
-            >
-                <Globe size={16} className="opacity-90" />
-                <span>{t(locale)}</span>
-            </button>
+        <button
+            type="button"
+            onClick={handleSwap}
+            onMouseEnter={() => setExpanded(true)}
+            onMouseLeave={() => setExpanded(false)}
+            onFocus={() => setExpanded(true)}
+            onBlur={() => setExpanded(false)}
+            aria-label={t(nextLocale)}
+            className="group flex w-[88px] cursor-pointer items-center justify-between rounded-full border border-foreground/15 px-3 py-1 text-sm font-thin uppercase tracking-[0.18em] transition-colors duration-300 hover:border-[var(--color-dark-blue)]/40 focus-visible:border-[var(--color-dark-blue)]/40 focus-visible:outline-none"
+        >
+            <span className="text-[var(--color-dark-blue)]">{locale}</span>
 
-            {/* Dropdown */}
-            <AnimatePresence>
-                {isOpen && (
-                    <>
-                        {/* Backdrop */}
-                        <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
-                            className="fixed inset-0 z-40"
-                            onClick={() => setIsOpen(false)}
-                        />
-
-                        {/* Menu */}
-                        <motion.div
-                            initial={{ opacity: 0, y: -6, scale: 0.96 }}
-                            animate={{ opacity: 1, y: 0, scale: 1 }}
-                            exit={{ opacity: 0, y: -6, scale: 0.96 }}
-                            transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
-                            style={{ originX: 1, originY: 0 }}
-                            className="absolute right-0 mt-3 w-48 rounded-2xl border border-neutral-200 bg-white shadow-[0_12px_32px_rgba(0,0,0,0.10)]"
-                            role="menu"
+            <span className="relative flex h-3.5 w-3.5 items-center justify-center text-foreground/40 transition-colors duration-300 group-hover:text-[var(--color-dark-blue)]/70">
+                <AnimatePresence mode="wait" initial={false}>
+                    {showNext ? (
+                        <motion.span
+                            key="arrow"
+                            initial={{ opacity: 0, x: -3 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: 3 }}
+                            transition={ICON_TRANSITION}
+                            className="absolute inset-0 flex items-center justify-center"
                         >
-                            {/* Arrow */}
-                            <div className="pointer-events-none absolute -top-[6px] right-6 h-3 w-3 rotate-45 border-l border-t border-neutral-200 bg-white" />
+                            <ArrowRight size={14} strokeWidth={1.5} />
+                        </motion.span>
+                    ) : (
+                        <motion.span
+                            key="swap"
+                            initial={{ opacity: 0, rotate: -90 }}
+                            animate={{ opacity: 1, rotate: 0 }}
+                            exit={{ opacity: 0, rotate: 90 }}
+                            transition={ICON_TRANSITION}
+                            className="absolute inset-0 flex items-center justify-center"
+                        >
+                            <ArrowLeftRight size={14} strokeWidth={1.5} />
+                        </motion.span>
+                    )}
+                </AnimatePresence>
+            </span>
 
-                            <ul className="relative z-10 p-1">
-                                {LANGUAGES.map(({ code }) => {
-                                    const isActive = code === locale;
-
-                                    return (
-                                        <li key={code}>
-                                            <button
-                                                onClick={() => handleLanguageChange(code)}
-                                                role="menuitem"
-                                                className={`cursor-pointer group flex w-full items-center justify-between rounded-xl px-3 py-2 text-sm transition-all duration-150
-                                                    ${isActive
-                                                        ? "bg-neutral-100 text-neutral-900"
-                                                        : "text-neutral-600 hover:bg-neutral-50 hover:text-neutral-900"
-                                                    }`}
-                                            >
-                                                <span>{t(code)}</span>
-
-                                                {isActive && (
-                                                    <Check
-                                                        size={16}
-                                                        className="text-neutral-700 opacity-80"
-                                                    />
-                                                )}
-                                            </button>
-                                        </li>
-                                    );
-                                })}
-                            </ul>
-                        </motion.div>
-                    </>
-                )}
-            </AnimatePresence>
-        </div>
+            <motion.span
+                initial={false}
+                animate={{ width: showNext ? "auto" : 0, opacity: showNext ? 1 : 0 }}
+                transition={REVEAL_TRANSITION}
+                className="overflow-hidden whitespace-nowrap text-foreground/40 transition-colors duration-300 group-hover:text-foreground/60"
+            >
+                {nextLocale}
+            </motion.span>
+        </button>
     );
 }

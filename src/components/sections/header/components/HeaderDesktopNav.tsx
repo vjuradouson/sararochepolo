@@ -15,6 +15,31 @@ interface DesktopNavProps {
     links: NavLink[];
 }
 
+/**
+ * Renders the active label while reserving the width of the longest translation.
+ * All locale labels are stacked in the same grid cell (`col-start-1 row-start-1`)
+ * so the cell's intrinsic width is `max(translations)` regardless of which one
+ * is currently visible — no horizontal layout shift on locale change.
+ */
+function NavLabel({ current, labels }: { current: string; labels?: string[] }) {
+    const variants = labels && labels.length > 1 ? labels : null;
+    if (!variants) return <>{current}</>;
+
+    return (
+        <span className="inline-grid">
+            {variants.map((variant, i) => (
+                <span
+                    key={i}
+                    aria-hidden={variant !== current}
+                    className={`col-start-1 row-start-1 whitespace-nowrap ${variant === current ? "" : "invisible"}`}
+                >
+                    {variant}
+                </span>
+            ))}
+        </span>
+    );
+}
+
 export function HeaderDesktopNav({ links }: DesktopNavProps) {
     const pathname = usePathname();
 
@@ -73,7 +98,7 @@ export function HeaderDesktopNav({ links }: DesktopNavProps) {
     };
 
     return (
-        <ul className="flex items-center gap-6">
+        <ul className="flex items-center sm:gap-2 gap-4">
             {links.map((link) => {
                 const { label, href, children } = link;
 
@@ -124,7 +149,7 @@ export function HeaderDesktopNav({ links }: DesktopNavProps) {
                                         : "hover:bg-light-blue/20 hover:text-[#0B3C49] hover:shadow-sm"
                                     }`}
                             >
-                                {label}
+                                <NavLabel current={label} labels={link.labels} />
                                 <ChevronDown
                                     size={16}
                                     className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
@@ -211,7 +236,7 @@ export function HeaderDesktopNav({ links }: DesktopNavProps) {
                                     : "hover:bg-light-blue/20 hover:text-[#0B3C49] hover:shadow-sm"
                                 }`}
                         >
-                            {label}
+                            <NavLabel current={label} labels={link.labels} />
                         </Link>
                     </li>
                 );

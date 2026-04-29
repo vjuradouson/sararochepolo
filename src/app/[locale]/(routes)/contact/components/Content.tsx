@@ -158,7 +158,7 @@ export default function ContactForm() {
                     type="submit"
                     className="w-full justify-center rounded-full py-3 text-xl tracking-[0.3em] bg-light-blue color-black font-bold"
                 >
-                    <span className="uppercase">
+                    <span className="uppercase font-semibold">
                         {loading
                             ? t("contact.form.button.sending")
                             : t("contact.form.button.label")}
