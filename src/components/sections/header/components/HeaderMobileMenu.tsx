@@ -100,7 +100,7 @@ export function HeaderMobileMenu({ links }: MobileMenuProps) {
                                                     setOpenGroup(isGroupOpen ? null : label)
                                                 }
                                                 aria-expanded={isGroupOpen}
-                                                className="flex w-full items-center justify-between text-lg transition-colors text-brand-muted"
+                                                className="flex w-full items-center justify-between text-xl transition-colors text-brand-muted"
                                             >
                                                 <span>{label}</span>
                                                 {isGroupOpen ? (
@@ -128,7 +128,7 @@ export function HeaderMobileMenu({ links }: MobileMenuProps) {
                                                                     <Link
                                                                         href={child.href}
                                                                         onClick={() => setMenuOpen(false)}
-                                                                        className={`block text-base transition-colors ${isActive
+                                                                        className={`block text-lg transition-colors ${isActive
                                                                             ? ""
                                                                             : "text-brand-muted"
                                                                             }`}
@@ -154,7 +154,7 @@ export function HeaderMobileMenu({ links }: MobileMenuProps) {
                                         <Link
                                             href={href}
                                             onClick={() => setMenuOpen(false)}
-                                            className={`block text-lg transition-colors ${isActive
+                                            className={`block text-xl transition-colors ${isActive
                                                 ? ""
                                                 : "text-brand-muted"
                                                 }`}
