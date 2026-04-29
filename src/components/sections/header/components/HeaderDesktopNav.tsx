@@ -159,14 +159,14 @@ export function HeaderDesktopNav({ links }: DesktopNavProps) {
                             <AnimatePresence>
                                 {isOpen && (
                                     <motion.div
-                                        initial={{ opacity: 0, y: -8 }}
+                                        initial={{ opacity: 0, y: -6 }}
                                         animate={{ opacity: 1, y: 0 }}
-                                        exit={{ opacity: 0, y: -8 }}
-                                        transition={{ duration: 0.18 }}
-                                        className="absolute left-0 top-full mt-3 min-w-[350px] rounded-2xl border border-neutral-200 bg-white shadow-lg py-2 z-50"
+                                        exit={{ opacity: 0, y: -6 }}
+                                        transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
+                                        className="absolute left-0 top-full z-50 mt-3 min-w-[260px] rounded-2xl border border-foreground/8 bg-white px-4 py-6 shadow-[0_20px_50px_-20px_rgba(11,60,73,0.14)]"
                                     >
-                                        <ul className="flex flex-col">
-                                            {children.map((child) => {
+                                        <ul className="flex flex-col gap-2">
+                                            {children.map((child, idx) => {
                                                 if (!child.href) return null;
                                                 const childHref = getLocalizedHref(child.href);
                                                 const isActive =
@@ -174,22 +174,42 @@ export function HeaderDesktopNav({ links }: DesktopNavProps) {
                                                     (childHref !== "/" && normalizedPathname.startsWith(childHref));
 
                                                 return (
-                                                    <li key={child.href}>
+                                                    <motion.li
+                                                        key={child.href}
+                                                        initial={{ opacity: 0, y: 8 }}
+                                                        animate={{
+                                                            opacity: 1,
+                                                            y: 0,
+                                                            transition: {
+                                                                duration: 0.4,
+                                                                delay: 0.1 + idx * 0.08,
+                                                                ease: [0.16, 1, 0.3, 1],
+                                                            },
+                                                        }}
+                                                        exit={{
+                                                            opacity: 0,
+                                                            y: 8,
+                                                            transition: {
+                                                                duration: 0.16,
+                                                                ease: [0.7, 0, 0.84, 0],
+                                                            },
+                                                        }}
+                                                    >
                                                         <Link
                                                             href={child.href}
                                                             onClick={(e) => {
                                                                 handleClick(child.href!)(e);
                                                                 setOpenDropdown(null);
                                                             }}
-                                                            className={`block px-5 py-2 text-body-lg transition-colors
+                                                            className={`block rounded-full border px-4 py-1 text-body-lg transition-all duration-200
                                                                 ${isActive
-                                                                    ? "text-[#0B3C49]"
-                                                                    : "text-brand-muted hover:text-[#0B3C49] hover:bg-light-blue/20"
+                                                                    ? "border-light-blue/60 bg-light-blue/60 text-[#0B3C49]"
+                                                                    : "border-transparent text-brand-muted hover:bg-light-blue/20 hover:text-[#0B3C49] hover:shadow-sm"
                                                                 }`}
                                                         >
                                                             {child.label}
                                                         </Link>
-                                                    </li>
+                                                    </motion.li>
                                                 );
                                             })}
                                         </ul>

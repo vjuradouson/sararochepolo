@@ -112,33 +112,71 @@ export function HeaderMobileMenu({ links }: MobileMenuProps) {
 
                                             <AnimatePresence initial={false}>
                                                 {isGroupOpen && (
-                                                    <motion.ul
+                                                    <motion.div
                                                         initial={{ height: 0, opacity: 0 }}
                                                         animate={{ height: "auto", opacity: 1 }}
                                                         exit={{ height: 0, opacity: 0 }}
-                                                        transition={{ duration: 0.2 }}
-                                                        className="overflow-hidden pl-4 mt-3 space-y-3"
+                                                        transition={{ duration: 0.32, ease: [0.16, 1, 0.3, 1] }}
+                                                        className="overflow-hidden"
                                                     >
-                                                        {children.map((child) => {
-                                                            if (!child.href) return null;
-                                                            const isActive = isHrefActive(child.href);
+                                                        <div className="relative pl-6 pt-4 pb-1">
+                                                            <motion.span
+                                                                initial={{ scaleY: 0 }}
+                                                                animate={{
+                                                                    scaleY: 1,
+                                                                    transition: { duration: 0.5, delay: 0.05, ease: [0.16, 1, 0.3, 1] },
+                                                                }}
+                                                                exit={{
+                                                                    scaleY: 0,
+                                                                    transition: { duration: 0.22, ease: [0.7, 0, 0.84, 0] },
+                                                                }}
+                                                                aria-hidden="true"
+                                                                className="absolute left-0 top-2 bottom-2 w-px origin-top bg-foreground/20"
+                                                            />
 
-                                                            return (
-                                                                <li key={child.href}>
-                                                                    <Link
-                                                                        href={child.href}
-                                                                        onClick={() => setMenuOpen(false)}
-                                                                        className={`block text-lg transition-colors ${isActive
-                                                                            ? ""
-                                                                            : "text-brand-muted"
-                                                                            }`}
-                                                                    >
-                                                                        {child.label}
-                                                                    </Link>
-                                                                </li>
-                                                            );
-                                                        })}
-                                                    </motion.ul>
+                                                            <ul className="flex flex-col gap-4">
+                                                                {children.map((child, idx) => {
+                                                                    if (!child.href) return null;
+                                                                    const isActive = isHrefActive(child.href);
+
+                                                                    return (
+                                                                        <motion.li
+                                                                            key={child.href}
+                                                                            initial={{ opacity: 0, x: -12 }}
+                                                                            animate={{
+                                                                                opacity: 1,
+                                                                                x: 0,
+                                                                                transition: {
+                                                                                    duration: 0.4,
+                                                                                    delay: 0.18 + idx * 0.08,
+                                                                                    ease: [0.16, 1, 0.3, 1],
+                                                                                },
+                                                                            }}
+                                                                            exit={{
+                                                                                opacity: 0,
+                                                                                x: -12,
+                                                                                transition: {
+                                                                                    duration: 0.18,
+                                                                                    ease: [0.7, 0, 0.84, 0],
+                                                                                },
+                                                                            }}
+                                                                        >
+                                                                            <Link
+                                                                                href={child.href}
+                                                                                onClick={() => setMenuOpen(false)}
+                                                                                className={`flex items-center justify-between text-lg transition-colors ${isActive
+                                                                                    ? ""
+                                                                                    : "text-brand-muted"
+                                                                                    }`}
+                                                                            >
+                                                                                <span>{child.label}</span>
+                                                                            </Link>
+                                                                        </motion.li>
+                                                                    );
+                                                                })}
+                                                            </ul>
+                                                        </div>
+                                                    </motion.div>
                                                 )}
                                             </AnimatePresence>
                                         </li>
