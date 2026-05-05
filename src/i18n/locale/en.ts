@@ -40,6 +40,7 @@ export default {
                 projects: {
                     adobe_project_neo: "Adobe Project Neo",
                     branding: "Branding",
+                    illustrations: "Illustrations"
                 },
                 about_me: "About me",
                 contact: "Contact",
@@ -126,7 +127,7 @@ export default {
                     image_alt: "3D render of a wireless minimalist numeric keypad in dark tones, featuring soft lighting and a modern design, created with Adobe Project Neo by Sara Roche Polo",
                     view_all: 'View project'
                 },
-                illustration: {
+                illustrations: {
                     subtitle: "Personal Project",
                     title: "Ilustration",
                     description: "Creation of digital illustrations focused on characters and visual storytelling. Primarily working with Procreate, developing each piece from sketch to final artwork, with attention to color, texture, and composition.",
@@ -394,6 +395,45 @@ export default {
                                 boy_with_cap: "Boy wearing a pink Don Tostado cap",
                                 sticker: "Circular Don Tostado sticker with an illustrated coffee mug"
                             }
+                        }
+                    }
+                }
+            },
+            illustrations: {
+                seo: {
+                    title: "Illustrations | Sara Roche Polo",
+                    description: "Digital and traditional illustrations by Sara Roche Polo: mixed media with Procreate, pencil, charcoal and watercolor, focused on character design and original scenes."
+                },
+                content: {
+                    eyebrow: "Procreate",
+                    title: "Illustrations",
+                    intro: "In the realm of drawing and illustration, my practice is defined by the exploration of diverse techniques and media — from pencil and charcoal to watercolor and digital illustration. My work focuses on the depiction of natural elements, with a particular interest in the animal world, as well as on product exploration. That said, my main creative focus lies in character design and the development of original scenes.",
+                    projects: {
+                        into_the_woods: {
+                            image_alt: {
+                                lineart: "Preparatory sketches and inked line work for the \"Into the Woods\" illustration on overlapping papers, with a torn-paper note bearing the handwritten title",
+                                final: "Final \"Into the Woods\" illustration in color: an elderly character with a mushroom-adorned headwrap carrying a baby in a woven basket"
+                            }
+                        },
+                        bill_the_bear: {
+                            image_alt: {
+                                title: "Torn-paper note with the handwritten title \"Bill the Bear\" written in blue ink",
+                                character: "\"Bill the Bear\" character design: final colored version wearing green overalls on a yellow card, alongside a line-art version on white paper and a torn-paper note with the handwritten title",
+                                lineart: "Line-art sketch of the \"Bill the Bear\" character: anthropomorphic bear wearing overalls, drawn in pencil",
+                                research: "Preparatory studies for \"Bill the Bear\": blue and red sketch on grid paper, an Apple Pencil and a list of concept notes: cute, anthropomorphic, rural, overalls, hat"
+                            }
+                        },
+                        coffee_maker: {
+                            image_alt: "Open spiral notebook with an exploded view of a moka coffee maker rendered in watercolor and a handwritten note: \"exploded product view of a coffee maker\""
+                        },
+                        hi_hunny: {
+                            image_alt: {
+                                sketch: "Preparatory sketches of the \"Hi Hunny\" illustration on stacked papers, with a torn-paper note bearing the handwritten title",
+                                final: "Final \"Hi Hunny\" illustration in color: an elderly couple embracing next to the line-art sketch of a woman in jeans"
+                            }
+                        },
+                        adventure: {
+                            image_alt: "Open notebook with a hiker sketch on the left page and the final colored illustration on the right page over an orange background, accompanied by sticky notes: \"adventure\", \"ideas\", \"color swap\" and \"let's explore nature!\""
                         }
                     }
                 }

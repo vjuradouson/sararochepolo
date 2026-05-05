@@ -39,7 +39,8 @@ export default {
                 projects_title: "Proyectos",
                 projects: {
                     adobe_project_neo: "Adobe Project Neo",
-                    branding: "Branding"
+                    branding: "Branding",
+                    illustrations: "Ilustraciones"
                 },
                 about_me: "Sobre mí",
                 contact: "Contacto",
@@ -126,7 +127,7 @@ export default {
                     image_alt: "Render 3D de un teclado numérico inalámbrico de estilo minimalista en tonos oscuros, con iluminación suave y diseño moderno creado con Adobe Project Neo por Sara Roche Polo",
                     view_all: 'Ver proyecto'
                 },
-                illustration: {
+                illustrations: {
                     subtitle: "Proyecto personal",
                     title: "Ilustración",
                     description: "Creación de ilustraciones digitales enfocadas en personajes y narrativa visual. Trabajo principalmente con Procreate, desarrollando cada pieza desde el boceto hasta el acabado final, cuidando color, textura y composición.",
@@ -394,6 +395,45 @@ export default {
                                 boy_with_cap: "Chico con gorra rosa de Don Tostado",
                                 sticker: "Pegatina circular de Don Tostado con ilustración de taza de café"
                             }
+                        }
+                    }
+                }
+            },
+            illustrations: {
+                seo: {
+                    title: "Ilustraciones | Sara Roche Polo",
+                    description: "Ilustraciones digitales y tradicionales por Sara Roche Polo: técnicas mixtas con Procreate, lápiz, carboncillo y acuarela, con foco en personajes y escenas originales."
+                },
+                content: {
+                    eyebrow: "Procreate",
+                    title: "Ilustraciones",
+                    intro: "En el ámbito del dibujo y la ilustración, mi práctica se caracteriza por la exploración de diversas técnicas y medios, que abarcan desde el lápiz y el carboncillo hasta la acuarela y la ilustración digital. Mi trabajo se centra tanto en la representación de elementos naturales —con especial interés en el mundo animal— como en la exploración de producto. No obstante, mi principal enfoque creativo reside en la creación de personajes y el desarrollo de escenas originales.",
+                    projects: {
+                        into_the_woods: {
+                            image_alt: {
+                                lineart: "Bocetos preparatorios y entintado de la ilustración \"Into the Woods\" sobre papeles superpuestos, con nota recortada del título escrita a mano",
+                                final: "Ilustración final \"Into the Woods\" en color: personaje anciano con tocado de setas cargando un bebé en una cesta tejida"
+                            }
+                        },
+                        bill_the_bear: {
+                            image_alt: {
+                                title: "Nota recortada de papel con el título \"Bill the Bear\" escrito a mano en azul",
+                                character: "Diseño del personaje \"Bill the Bear\": versión final en color con peto verde sobre fondo amarillo, junto a su versión en línea sobre papel y nota recortada con el título manuscrito",
+                                lineart: "Boceto en línea del personaje \"Bill the Bear\": oso antropomórfico con peto, dibujado a lápiz",
+                                research: "Estudios preparatorios de \"Bill the Bear\": boceto en azul y rojo sobre papel cuadriculado, lápiz Apple Pencil y lista de notas conceptuales: cute, anthropomorphic, rural, overalls, hat"
+                            }
+                        },
+                        coffee_maker: {
+                            image_alt: "Cuaderno de anillas abierto con vista explosionada de una cafetera italiana ilustrada en acuarela y nota manuscrita: \"exploded product view of a coffee maker\""
+                        },
+                        hi_hunny: {
+                            image_alt: {
+                                sketch: "Bocetos preparatorios de la ilustración \"Hi Hunny\" sobre papeles apilados, con nota recortada del título escrita a mano",
+                                final: "Ilustración final \"Hi Hunny\" en color: pareja de ancianos abrazándose junto al boceto en línea de una mujer con vaqueros"
+                            }
+                        },
+                        adventure: {
+                            image_alt: "Cuaderno abierto con boceto de excursionista a la izquierda e ilustración final en color a la derecha sobre fondo naranja, acompañado de notas adhesivas: \"adventure\", \"ideas\", \"color swap\" y \"let's explore nature!\""
                         }
                     }
                 }

@@ -114,11 +114,34 @@ export default function ProjectsSection() {
         },
         {
             id: 3,
+            subtitle: "— " + t("home.projects.branding.subtitle"),
+            title: t("home.projects.branding.title"),
+            description: t("home.projects.branding.description"),
+            bgFrom: "#EAD7D1",
+            bgTo: "#D1D1D1",
+            textColor: "text-black",
+            parentClass: "h-[400px] md:h-[500px] lg:h-full md:h-[100vh] md:min-h-[500px]",
+            view_all: t("home.projects.branding.view_all"),
+            href: ROUTES.PROJECTS_BRANDING,
+            content: (
+                <Image
+                    src="/media/home/projects/branding-la-esquinita.png"
+                    alt={t("home.projects.branding.image_alt")}
+                    width={1000}
+                    height={1000}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    quality={75}
+                    className="max-h-[280px] md:max-h-full max-w-full object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] mt-5 mb-5 mx-0 my-0 scale-[0.9] md:scale-[0.85]"
+                />
+            ),
+        },
+        {
+            id: 4,
             subtitle: "— " + t("home.projects.adobe_project_neo.subtitle"),
             title: t("home.projects.adobe_project_neo.title"),
             description: t("home.projects.adobe_project_neo.description"),
-            bgFrom: "#EAD7D1",
-            bgTo: "#D1D1D1",
+            bgFrom: "#D1D1D1",
+            bgTo: "#F5E1C8",
             textColor: "text-black",
             parentClass: "h-[400px] md:h-[500px] lg:h-full md:h-[100vh] md:min-h-[500px]",
             view_all: t("home.projects.adobe_project_neo.view_all"),
@@ -136,48 +159,25 @@ export default function ProjectsSection() {
             ),
         },
         {
-            id: 4,
-            subtitle: "— " + t("home.projects.illustration.subtitle"),
-            title: t("home.projects.illustration.title"),
-            description: t("home.projects.illustration.description"),
-            bgFrom: "#D1D1D1",
-            bgTo: "#F5E1C8",
+            id: 5,
+            subtitle: "— " + t("home.projects.illustrations.subtitle"),
+            title: t("home.projects.illustrations.title"),
+            description: t("home.projects.illustrations.description"),
+            bgFrom: "#F5E1C8",
+            bgTo: "#FFF",
             textColor: "text-black",
             parentClass: "h-[400px] md:h-[500px] lg:h-full md:h-[100vh] md:min-h-[500px]",
-            view_all: t("home.projects.illustration.view_all"),
-            href: null,
+            view_all: t("home.projects.illustrations.view_all"),
+            href: ROUTES.PROJECTS_ILLUSTRATIONS,
             content: (
                 <Image
-                    src="/media/home/projects/illustration.png"
-                    alt={t("home.projects.illustration.image_alt")}
+                    src="/media/home/projects/illustrations.png"
+                    alt={t("home.projects.illustrations.image_alt")}
                     width={1000}
                     height={1000}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     quality={75}
                     className="max-h-full max-w-full object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] mt-5 mb-5 mx-0 my-0 scale-[1] md:scale-[1]"
-                />
-            ),
-        },
-        {
-            id: 5,
-            subtitle: "— " + t("home.projects.branding.subtitle"),
-            title: t("home.projects.branding.title"),
-            description: t("home.projects.branding.description"),
-            bgFrom: "#F5E1C8",
-            bgTo: "#FFF",
-            textColor: "text-black",
-            parentClass: "h-[400px] md:h-[500px] lg:h-full md:h-[100vh] md:min-h-[500px]",
-            view_all: t("home.projects.branding.view_all"),
-            href: ROUTES.PROJECTS_BRANDING,
-            content: (
-                <Image
-                    src="/media/home/projects/branding-la-esquinita.png"
-                    alt={t("home.projects.branding.image_alt")}
-                    width={1000}
-                    height={1000}
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    quality={75}
-                    className="max-h-[280px] md:max-h-full max-w-full object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] mt-5 mb-5 mx-0 my-0 scale-[0.9] md:scale-[0.85]"
                 />
             ),
         }
