@@ -428,12 +428,19 @@ export default {
                         },
                         hi_hunny: {
                             image_alt: {
+                                title: "Torn-paper note with the handwritten title \"Hi Hunny\"",
                                 sketch: "Preparatory sketches of the \"Hi Hunny\" illustration on stacked papers, with a torn-paper note bearing the handwritten title",
+                                sketch_1: "Early blue-pencil sketch of the \"Hi Hunny\" illustration with balloons and roughed-in figures",
+                                sketch_2: "Refined pencil sketch of the elderly couple embracing for the \"Hi Hunny\" illustration",
                                 final: "Final \"Hi Hunny\" illustration in color: an elderly couple embracing next to the line-art sketch of a woman in jeans"
                             }
                         },
                         adventure: {
-                            image_alt: "Open notebook with a hiker sketch on the left page and the final colored illustration on the right page over an orange background, accompanied by sticky notes: \"adventure\", \"ideas\", \"color swap\" and \"let's explore nature!\""
+                            image_alt: "Open notebook with a hiker sketch on the left page and the final colored illustration on the right page over an orange background, accompanied by sticky notes: \"adventure\", \"ideas\", \"color swap\" and \"let's explore nature!\"",
+                            image_alt_mobile: {
+                                left: "Notebook page with a pencil sketch of a hiker with a backpack and a handwritten sticky note: \"let's explore nature!\"",
+                                right: "Notebook page with the final colored hiker illustration on an orange background, accompanied by \"ideas\" and \"color swap\" sticky notes"
+                            }
                         }
                     }
                 }

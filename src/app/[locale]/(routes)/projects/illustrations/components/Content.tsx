@@ -29,6 +29,8 @@ type ImageAsset = {
     imgClassName?: string;
     /** Extra Tailwind classes applied to the wrapper around the <Image>. */
     wrapperClassName?: string;
+    /** Override the default `sizes` attribute. Needed when CSS scales the image beyond its layout box (e.g. `scale-[2]`) so Next serves a higher-res srcset variant. */
+    sizes?: string;
 };
 
 type PairConfig = {
@@ -68,9 +70,9 @@ const intoTheWoods: PairConfig = {
     split: "60-40",
 };
 
-const hiHunny: PairConfig = {
+const hiHunnyDesktop: PairConfig = {
     key: "hi_hunny",
-    sectionClassName: "mt-0 md:mt-24",
+    sectionClassName: "mt-0 md:mt-24 hidden md:block",
     left: {
         src: `${IMG}/hi-hunny-sketch.png`,
         width: 666,
@@ -97,14 +99,15 @@ const coffeeMaker: SingleConfig = {
         maxWidth: 1000,
         altKey: "projects.coffee_maker.image_alt",
         wrapperClassName: "justify-start md:-ml-[3%]",
-        imgClassName: "scale-[2] ml-[-35%] md:scale-[1.20] md:ml-[0%]",
+        imgClassName: "scale-[2] ml-[-40%] md:scale-[1.20] md:ml-[0%]",
+        sizes: "(max-width: 768px) 200vw, 60vw",
     },
     sectionClassName: "-mt-8 md:-mt-48 mb-24 md:mb-0",
 };
 
-const adventure: SingleConfig = {
+const adventureDesktop: SingleConfig = {
     key: "adventure",
-    sectionClassName: "mt-0 md:mt-24",
+    sectionClassName: "mt-0 md:mt-24 hidden md:block",
     image: {
         src: `${IMG}/adventure.png`,
         width: 1159,
@@ -169,7 +172,7 @@ function SingleSection({ cfg, t }: { cfg: SingleConfig; t: T }) {
                     alt={t(cfg.image.altKey)}
                     width={cfg.image.width}
                     height={cfg.image.height}
-                    sizes="(max-width: 768px) 92vw, 60vw"
+                    sizes={cfg.image.sizes ?? "(max-width: 768px) 92vw, 60vw"}
                     className={`h-auto w-full object-contain ${cfg.image.imgClassName ?? ""}`}
                     style={{ maxWidth: `${cfg.image.maxWidth}px` }}
                 />
@@ -183,6 +186,7 @@ const INDIVIDUAL = "/media/project/illustrations/individual";
 function BillTheBearSection({ t }: { t: T }) {
     return (
         <section className="relative py-16 md:py-24 mb-16 md:mb-24">
+            {/* Desktop: kraft stretched to section box */}
             <Image
                 src={`${IMG}/kraft-paper-bg.png`}
                 alt=""
@@ -190,8 +194,23 @@ function BillTheBearSection({ t }: { t: T }) {
                 aria-hidden
                 sizes="100vw"
                 quality={90}
-                className="-z-10 object-fill select-none pointer-events-none"
+                className="hidden md:block -z-10 object-fill select-none pointer-events-none"
             />
+            {/* Mobile: kraft sized to section height with natural aspect ratio (overflows horizontally, clipped by outer overflow-x-clip) */}
+            <div
+                className="md:hidden absolute top-0 bottom-0 left-1/2 -translate-x-1/2 -z-10"
+                style={{ aspectRatio: "1422 / 1021" }}
+                aria-hidden
+            >
+                <Image
+                    src={`${IMG}/kraft-paper-bg.png`}
+                    alt=""
+                    fill
+                    sizes="(max-width: 768px) 200vw, 100vw"
+                    quality={90}
+                    className="object-fill select-none pointer-events-none"
+                />
+            </div>
             <div className="container-xl pb-[100px]">
                 {/* Mobile: 4 stacked elements (title → research → lineart → character) */}
                 <motion.div
@@ -269,6 +288,123 @@ function BillTheBearSection({ t }: { t: T }) {
     );
 }
 
+type HiHunnyMobileItem = {
+    src: string;
+    width: number;
+    height: number;
+    altKey: string;
+    maxWidth: string;
+    imgClassName?: string;
+};
+
+const hiHunnyMobileItems: HiHunnyMobileItem[] = [
+    {
+        src: `${INDIVIDUAL}/bill-the-bear-title.png`,
+        width: 353,
+        height: 201,
+        altKey: "projects.hi_hunny.image_alt.title",
+        maxWidth: "60%",
+        imgClassName: "z-20",
+    },
+    {
+        src: `${INDIVIDUAL}/hi-hunny-sketch-1.png`,
+        width: 365,
+        height: 298,
+        altKey: "projects.hi_hunny.image_alt.sketch_1",
+        maxWidth: "78%",
+        imgClassName: "-mt-[6%] rotate-[3deg] translate-x-[3%] z-10 scale-[1.05]",
+    },
+    {
+        src: `${INDIVIDUAL}/hi-hunny-sketch-2.png`,
+        width: 370,
+        height: 463,
+        altKey: "projects.hi_hunny.image_alt.sketch_2",
+        maxWidth: "78%",
+        imgClassName: "-mt-[8%] -rotate-[2deg] -translate-x-[3%] z-30 scale-[1.05]",
+    },
+    {
+        src: `${IMG}/hi-hunny-final.png`,
+        width: 669,
+        height: 553,
+        altKey: "projects.hi_hunny.image_alt.final",
+        maxWidth: "92%",
+        imgClassName: "mt-[6%] z-40",
+    },
+];
+
+function HiHunnyMobileSection({ t }: { t: T }) {
+    return (
+        <section className="md:hidden container-xl pb-16 mt-32">
+            <motion.div {...revealProps} className="relative flex flex-col items-center">
+                {hiHunnyMobileItems.map((item) => (
+                    <Image
+                        key={item.src}
+                        src={item.src}
+                        alt={t(item.altKey)}
+                        width={item.width}
+                        height={item.height}
+                        sizes="90vw"
+                        className={`relative h-auto w-full object-contain ${item.imgClassName ?? ""}`}
+                        style={{ maxWidth: item.maxWidth }}
+                    />
+                ))}
+            </motion.div>
+        </section>
+    );
+}
+
+type AdventureMobileItem = {
+    src: string;
+    width: number;
+    height: number;
+    altKey: string;
+    /** "end" pega la imagen al borde derecho, "start" al izquierdo. */
+    align: "start" | "end";
+    /** Tailwind width class, e.g. "w-[88%]". */
+    widthClass: string;
+    imgClassName?: string;
+};
+
+const adventureMobileItems: AdventureMobileItem[] = [
+    {
+        src: `${INDIVIDUAL}/adventure-left.png`,
+        width: 558,
+        height: 1060,
+        altKey: "projects.adventure.image_alt_mobile.left",
+        align: "end",
+        widthClass: "w-[90%]",
+    },
+    {
+        src: `${INDIVIDUAL}/adventure-right.png`,
+        width: 559,
+        height: 1060,
+        altKey: "projects.adventure.image_alt_mobile.right",
+        align: "start",
+        widthClass: "w-[90%]",
+        imgClassName: "mt-[-25%]",
+    },
+];
+
+function AdventureMobileSection({ t }: { t: T }) {
+    return (
+        <section className="md:hidden pb-16 mt-12">
+            <motion.div {...revealProps} className="flex flex-col">
+                {adventureMobileItems.map((item) => (
+                    <Image
+                        key={item.src}
+                        src={item.src}
+                        alt={t(item.altKey)}
+                        width={item.width}
+                        height={item.height}
+                        sizes="90vw"
+                        className={`h-auto object-contain ${item.widthClass} ${item.align === "end" ? "self-end" : "self-start"} ${item.imgClassName ?? ""}`}
+                    />
+                ))}
+            </motion.div>
+        </section>
+    );
+}
+
 export default function IllustrationsContent() {
     const t = useTranslations("app.projects.illustrations.content");
 
@@ -289,8 +425,10 @@ export default function IllustrationsContent() {
             <PairSection cfg={intoTheWoods} t={t} />
             <BillTheBearSection t={t} />
             <SingleSection cfg={coffeeMaker} t={t} />
-            <PairSection cfg={hiHunny} t={t} />
-            <SingleSection cfg={adventure} t={t} />
+            <HiHunnyMobileSection t={t} />
+            <PairSection cfg={hiHunnyDesktop} t={t} />
+            <AdventureMobileSection t={t} />
+            <SingleSection cfg={adventureDesktop} t={t} />
         </div>
     );
 }

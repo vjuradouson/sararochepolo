@@ -428,12 +428,19 @@ export default {
                         },
                         hi_hunny: {
                             image_alt: {
+                                title: "Nota recortada con el título \"Hi Hunny\" escrito a mano",
                                 sketch: "Bocetos preparatorios de la ilustración \"Hi Hunny\" sobre papeles apilados, con nota recortada del título escrita a mano",
+                                sketch_1: "Boceto preliminar a lápiz azul de la ilustración \"Hi Hunny\" con globos y figuras esbozadas",
+                                sketch_2: "Boceto a lápiz refinado de la pareja de ancianos abrazándose para la ilustración \"Hi Hunny\"",
                                 final: "Ilustración final \"Hi Hunny\" en color: pareja de ancianos abrazándose junto al boceto en línea de una mujer con vaqueros"
                             }
                         },
                         adventure: {
-                            image_alt: "Cuaderno abierto con boceto de excursionista a la izquierda e ilustración final en color a la derecha sobre fondo naranja, acompañado de notas adhesivas: \"adventure\", \"ideas\", \"color swap\" y \"let's explore nature!\""
+                            image_alt: "Cuaderno abierto con boceto de excursionista a la izquierda e ilustración final en color a la derecha sobre fondo naranja, acompañado de notas adhesivas: \"adventure\", \"ideas\", \"color swap\" y \"let's explore nature!\"",
+                            image_alt_mobile: {
+                                left: "Página de cuaderno con boceto a lápiz de un excursionista con mochila y nota adhesiva manuscrita: \"let's explore nature!\"",
+                                right: "Página de cuaderno con ilustración final en color del excursionista sobre fondo naranja, con notas adhesivas \"ideas\" y \"color swap\""
+                            }
                         }
                     }
                 }
