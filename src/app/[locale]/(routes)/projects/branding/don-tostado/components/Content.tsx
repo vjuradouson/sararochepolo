@@ -22,7 +22,7 @@ const funnyKids = localFont({
     display: "swap",
 });
 
-const IMG_BASE = "/media/project/branding-don-tostado";
+const IMG_BASE = "/media/projects/branding-don-tostado";
 
 const highlight = (chunks: React.ReactNode) => (
     <strong className="font-bold">{chunks}</strong>

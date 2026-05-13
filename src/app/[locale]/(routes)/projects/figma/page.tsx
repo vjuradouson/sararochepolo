@@ -7,7 +7,7 @@ import { withAlternates } from "@/lib/seo/alternates";
 import JsonLd from "@/components/seo/JsonLd";
 import { getProjectCreativeWorkSchema } from "@/lib/seo/schema/projectCreativeWork";
 import { getBreadcrumbSchema } from "@/lib/seo/schema/breadcrumb";
-import BrandingProjectLaEsquinitaDePapelContent from "./components/Content";
+import FigmaContent from "./components/Content";
 
 export async function generateMetadata({
     params
@@ -17,14 +17,14 @@ export async function generateMetadata({
     const { locale } = await params;
     const t = await getTranslations();
 
-    const title = t("app.projects.branding.projects.la_esquinita_de_papel.seo.title");
-    const description = t("app.projects.branding.projects.la_esquinita_de_papel.seo.description")
-    const ogImage = `${BASE_URL}/media/projects/branding-la-esquinita/horizontal-logo.png`;
+    const title = t("app.projects.figma.seo.title");
+    const description = t("app.projects.figma.seo.description")
+    const ogImage = `${BASE_URL}/media/projects/figma/starbucks.png`;
 
     return withAlternates(
         {
             locale,
-            route: ROUTES.PROJECTS_BRANDING_LA_ESQUINITA_DE_PAPEL
+            route: ROUTES.PROJECTS_FIGMA
         },
         {
             title: title,
@@ -32,8 +32,8 @@ export async function generateMetadata({
             openGraph: {
                 title: title,
                 description: description,
-                url: `${BASE_URL}/${locale}${getPath(ROUTES.PROJECTS_BRANDING_LA_ESQUINITA_DE_PAPEL, locale)}`,
-                images: [{ url: ogImage, width: 1200, height: 388 }],
+                url: `${BASE_URL}/${locale}${getPath(ROUTES.PROJECTS_FIGMA, locale)}`,
+                images: [{ url: ogImage, width: 1920, height: 908 }],
             },
             twitter: {
                 card: 'summary_large_image',
@@ -45,7 +45,7 @@ export async function generateMetadata({
     )
 }
 
-export default async function BrandingProjectLaEsquinitaDePapelPage({
+export default async function FigmaPage({
     params,
 }: {
     params: Promise<{ locale: string }>;
@@ -53,32 +53,30 @@ export default async function BrandingProjectLaEsquinitaDePapelPage({
     const { locale } = await params;
     const t = await getTranslations({ locale });
 
-    const url = `${BASE_URL}/${locale}${getPath(ROUTES.PROJECTS_BRANDING_LA_ESQUINITA_DE_PAPEL, locale)}`;
-    const brandingUrl = `${BASE_URL}/${locale}${getPath(ROUTES.PROJECTS_BRANDING, locale)}`;
-    const ogImage = `${BASE_URL}/media/projects/branding-la-esquinita/horizontal-logo.png`;
+    const url = `${BASE_URL}/${locale}${getPath(ROUTES.PROJECTS_FIGMA, locale)}`;
+    const ogImage = `${BASE_URL}/media/projects/figma/starbucks.png`;
 
     const creativeWorkSchema = getProjectCreativeWorkSchema({
         t,
         locale,
-        name: t("app.projects.branding.projects.la_esquinita_de_papel.seo.title"),
-        description: t("app.projects.branding.projects.la_esquinita_de_papel.seo.description"),
+        name: t("app.projects.figma.seo.title"),
+        description: t("app.projects.figma.seo.description"),
         url,
         image: ogImage,
-        genre: "Branding",
-        about: ["Branding", "Visual Identity", "Logo Design", "Bookstore"],
+        genre: "UX/UI Design",
+        about: ["Figma", "UX/UI Design", "Prototyping", "Interaction Design"],
     });
 
     const breadcrumbSchema = getBreadcrumbSchema([
         { name: t("app.breadcrumb.home"), url: `${BASE_URL}/${locale}` },
-        { name: t("app.home.projects.branding.title"), url: brandingUrl },
-        { name: t("app.projects.branding.projects.la_esquinita_de_papel.content.title"), url },
+        { name: t("app.projects.figma.content.title"), url },
     ]);
 
     return (
         <>
             <JsonLd data={creativeWorkSchema} />
             <JsonLd data={breadcrumbSchema} />
-            <BrandingProjectLaEsquinitaDePapelContent />
+            <FigmaContent />
         </>
     );
 }

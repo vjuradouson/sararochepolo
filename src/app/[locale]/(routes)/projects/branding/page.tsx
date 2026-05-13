@@ -19,7 +19,7 @@ export async function generateMetadata({
 
     const title = t("app.projects.branding.seo.title");
     const description = t("app.projects.branding.seo.description")
-    const ogImage = `${BASE_URL}/media/project/branding-don-tostado/coffee-shop.png`;
+    const ogImage = `${BASE_URL}/media/projects/branding-don-tostado/coffee-shop.png`;
 
     return withAlternates(
         {
@@ -54,7 +54,7 @@ export default async function BrandingPage({
     const t = await getTranslations({ locale });
 
     const url = `${BASE_URL}/${locale}${getPath(ROUTES.PROJECTS_BRANDING, locale)}`;
-    const ogImage = `${BASE_URL}/media/project/branding-don-tostado/coffee-shop.png`;
+    const ogImage = `${BASE_URL}/media/projects/branding-don-tostado/coffee-shop.png`;
 
     const creativeWorkSchema = getProjectCreativeWorkSchema({
         t,

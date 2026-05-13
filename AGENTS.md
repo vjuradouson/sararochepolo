@@ -38,7 +38,7 @@ La versión de node utilizada es: v20.18.3
 ## 5. Asset Optimization
 - **Imágenes (PNG):** al meter imágenes nuevas en `public/media/**`, **ejecuta siempre** `npm run optimize:images -- <dir>` antes de committear. Usa `sharp` (viene con Next) para redimensionar a max `1920px` de ancho y re-codificar como PNG indexado (paleta) con `quality: 90`, `compressionLevel: 9`, `effort: 10`, `dither: 1.0`. Overwrites in place y salta archivos <100 KB y SVG.
 - **Objetivos de tamaño orientativos:** fotografías full-bleed <1.5 MB, fotografías col-span <800 KB, gráficos/logos <50 KB. Si un PNG fotográfico pasa de 2 MB tras correr el script, reduce `--max-width` (p. ej. `--max-width 1600`) antes que bajar `--quality` por debajo de 85.
-- **Flags del script:** `--max-width N`, `--quality N` (1-100), `--min-kb N`, `--recursive`. Ejemplo: `npm run optimize:images -- public/media/project/branding-don-tostado --max-width 1600`.
+- **Flags del script:** `--max-width N`, `--quality N` (1-100), `--min-kb N`, `--recursive`. Ejemplo: `npm run optimize:images -- public/media/projects/branding-don-tostado --max-width 1600`.
 - **SVG y favicons:** **no** los toques — el script los ignora pero tampoco los optimices a mano salvo petición expresa.
 - **Si aparece bandeo** en gradientes suaves (cielos, pieles, sombras graduales) tras la optimización, sube `--quality` a 95 o desactiva la paleta editando el script para esa foto concreta (PNG sin paleta es lossless pero mucho más pesado — valorar convertir a WebP manualmente).
 - **Referencia:** proceso validado que llevó `branding-don-tostado/` de 25 MB → 2.5 MB (-90%) sin pérdida visible de calidad.

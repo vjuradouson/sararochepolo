@@ -36,6 +36,10 @@ export const ROUTING = defineRouting({
       es: '/proyectos/branding/don-tostado',
       en: '/projects/branding/don-tostado'
     },
+    [ROUTES.PROJECTS_FIGMA]: {
+      es: '/proyectos/figma',
+      en: '/projects/figma'
+    },
     [ROUTES.PROJECTS_ILLUSTRATIONS]: {
       es: '/proyectos/ilustraciones',
       en: '/projects/illustrations'

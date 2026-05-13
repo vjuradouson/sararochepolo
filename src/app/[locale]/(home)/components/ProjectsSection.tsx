@@ -75,7 +75,7 @@ export default function ProjectsSection() {
             textColor: "text-black",
             parentClass: "w-full min-h-[380px] md:min-h-[500px]",
             view_all: t("home.projects.figma_pet_buddy.view_all"),
-            href: null,
+            href: ROUTES.PROJECTS_FIGMA,
             content: (
                 <Image
                     src="/media/home/projects/figma_pet_buddy.png"

@@ -23,7 +23,7 @@ const goudyOldStyle = localFont({
 });
 
 
-const IMG_BASE = "/media/project/branding-la-esquinita";
+const IMG_BASE = "/media/projects/branding-la-esquinita";
 
 const highlight = (chunks: React.ReactNode) => (
     <strong className="font-bold">{chunks}</strong>

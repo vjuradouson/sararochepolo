@@ -20,7 +20,7 @@ const projects: BrandingProject[] = [
     {
         key: "la_esquinita_de_papel",
         href: ROUTES.PROJECTS_BRANDING_LA_ESQUINITA_DE_PAPEL,
-        image: "/media/project/branding-la-esquinita/masonry/9-totebag.png",
+        image: "/media/projects/branding-la-esquinita/masonry/9-totebag.png",
         imageAltKey: "branding.projects.la_esquinita_de_papel.content.image_alt.tote_bag",
         titleKey: "branding.projects.la_esquinita_de_papel.content.about.heading",
         sectorKey: "branding.content.projects.la_esquinita_de_papel.sector",
@@ -29,7 +29,7 @@ const projects: BrandingProject[] = [
     {
         key: "don_tostado",
         href: ROUTES.PROJECTS_BRANDING_DON_TOSTADO,
-        image: "/media/project/branding-don-tostado/coffee-mugs.png",
+        image: "/media/projects/branding-don-tostado/coffee-mugs.png",
         imageAltKey: "branding.projects.don_tostado.content.image_alt.coffee_mugs",
         titleKey: "branding.projects.don_tostado.content.about.heading",
         sectorKey: "branding.content.projects.don_tostado.sector",
@@ -37,7 +37,7 @@ const projects: BrandingProject[] = [
     }/*,
     {
         key: "patitas_con_historia",
-        image: "/media/project/branding-la-esquinita/masonry/9-totebag.png",
+        image: "/media/projects/branding-la-esquinita/masonry/9-totebag.png",
         imageAltKey: "branding.content.projects.patitas_con_historia.image_alt",
         titleKey: "branding.content.projects.patitas_con_historia.title",
         sectorKey: "branding.content.projects.patitas_con_historia.sector",

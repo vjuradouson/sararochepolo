@@ -40,6 +40,7 @@ export default {
                 projects: {
                     adobe_project_neo: "Adobe Project Neo",
                     branding: "Branding",
+                    figma: "Figma",
                     illustrations: "Illustrations"
                 },
                 about_me: "About me",
@@ -396,6 +397,45 @@ export default {
                                 sticker: "Circular Don Tostado sticker with an illustrated coffee mug"
                             }
                         }
+                    }
+                }
+            },
+            figma: {
+                seo: {
+                    title: "Design in Figma | Sara Roche Polo",
+                    description: "Prototyping and interface design projects in Figma: user flows, design systems and interactive prototypes by Sara Roche Polo."
+                },
+                content: {
+                    eyebrow: "Personal projects",
+                    title: "Figma",
+                    intro: "I use Figma for prototyping as a way of <highlight>turning ideas into navigable, clear and functional digital experiences</highlight>. In this section I gather projects where I <highlight>design interfaces, user flows and interactive prototypes</highlight> that help validate solutions, surface improvements and communicate visually how a digital product should behave before development.",
+                    zoom_aria: "Zoom in on the image",
+                    projects: {
+                        starbucks: {
+                            section_title: "— Starbucks",
+                            description: "Conceptual redesign of the Starbucks ordering experience. <highlight>Mapping the full flow</highlight>, from product selection to confirmation, while preserving the brand's visual identity.",
+                            image_alt: "Figma canvas with the Starbucks app interactive prototype: connected screens showing the ordering and drink customization flow"
+                        },
+                        aloha: {
+                            section_title: "— Aloha",
+                            description: "Mobile app design for <highlight>Aloha, a pizzeria</highlight>. Menu browsing, order customization and checkout solved with a fresh, friendly visual system that reflects the brand's personality.",
+                            image_alt: "Figma canvas with the Aloha pizzeria app prototype: menu, pizza detail and checkout screens connected by flow arrows"
+                        },
+                        zgz_rutas: {
+                            section_title: "— Zaragoza Routes",
+                            description: "App for urban routes and trails around Zaragoza. <highlight>System of cards, maps and filters</highlight> designed so discovering a route is as smooth as walking it.",
+                            image_alt: "Figma canvas with the Zaragoza Routes app prototype: map, listing and route detail screens"
+                        },
+                        zgz_rutas_2: {
+                            section_title: "— Screen detail",
+                            description: "Focused view of the <highlight>route detail screen</highlight>: clear hierarchy between map, description and actions so the user can decide and start walking in a single tap.",
+                            image_alt: "Vertical mockup of the route detail screen in the Zaragoza Routes app: map, description and main actions"
+                        },
+                        jason_freeny: {
+                            section_title: "— Jason Freeny",
+                            description: "Concept for an online shop and digital portfolio for <highlight>Jason Freeny</highlight>, an artist known for his anatomical dissections of pop-culture icons. A minimalist visual system that lets the artwork breathe and guides browsing across collections, piece details and cart.",
+                            image_alt: "Figma canvas with the prototype of the online shop and digital portfolio for artist Jason Freeny: catalog, piece detail and cart screens connected"
+                        },
                     }
                 }
             },

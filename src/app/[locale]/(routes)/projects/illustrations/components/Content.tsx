@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 
-const IMG = "/media/project/illustrations/imploded";
+const IMG = "/media/projects/illustrations/imploded";
 
 const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 40 },
@@ -181,7 +181,7 @@ function SingleSection({ cfg, t }: { cfg: SingleConfig; t: T }) {
     );
 }
 
-const INDIVIDUAL = "/media/project/illustrations/individual";
+const INDIVIDUAL = "/media/projects/illustrations/individual";
 
 function BillTheBearSection({ t }: { t: T }) {
     return (

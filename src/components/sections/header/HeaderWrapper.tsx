@@ -28,6 +28,11 @@ export default async function HeaderWrapper() {
                     labels: labelsFor("header.links.projects.branding"),
                 },
                 {
+                    href: ROUTES.PROJECTS_FIGMA,
+                    label: t("header.links.projects.figma"),
+                    labels: labelsFor("header.links.projects.figma"),
+                },
+                {
                     href: ROUTES.PROJECTS_ADOBE_PROJECT_NEO,
                     label: t("header.links.projects.adobe_project_neo"),
                     labels: labelsFor("header.links.projects.adobe_project_neo"),

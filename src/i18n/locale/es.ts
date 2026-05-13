@@ -40,6 +40,7 @@ export default {
                 projects: {
                     adobe_project_neo: "Adobe Project Neo",
                     branding: "Branding",
+                    figma: "Figma",
                     illustrations: "Ilustraciones"
                 },
                 about_me: "Sobre mí",
@@ -396,6 +397,45 @@ export default {
                                 sticker: "Pegatina circular de Don Tostado con ilustración de taza de café"
                             }
                         }
+                    }
+                }
+            },
+            figma: {
+                seo: {
+                    title: "Diseño en Figma | Sara Roche Polo",
+                    description: "Proyectos de prototipado y diseño de interfaces en Figma: flujos de usuario, sistemas de diseño y prototipos interactivos por Sara Roche Polo."
+                },
+                content: {
+                    eyebrow: "Proyectos personales",
+                    title: "Figma",
+                    intro: "Trabajo el prototipado en Figma como una forma de <highlight>convertir ideas en experiencias digitales navegables, claras y funcionales</highlight>. En esta sección reúno proyectos donde <highlight>diseño interfaces, flujos de usuario y prototipos interactivos</highlight> que ayudan a validar soluciones, detectar mejoras y comunicar de forma visual cómo debería comportarse un producto digital antes de su desarrollo.",
+                    zoom_aria: "Hacer zoom en la imagen",
+                    projects: {
+                        starbucks: {
+                            section_title: "— Starbucks",
+                            description: "Rediseño conceptual de la experiencia de pedido en la app de Starbucks. <highlight>Mapeo del flujo completo</highlight>, desde la selección de producto hasta la confirmación, manteniendo la identidad visual de marca.",
+                            image_alt: "Lienzo de Figma con el prototipo interactivo de la app de Starbucks: pantallas conectadas mostrando el flujo de pedido y personalización de bebidas"
+                        },
+                        aloha: {
+                            section_title: "— Aloha",
+                            description: "Diseño de app móvil para <highlight>Aloha, una pizzería</highlight>. Carta, personalización del pedido y pago resueltos con un sistema visual fresco y cercano que refleja la personalidad de la marca.",
+                            image_alt: "Lienzo de Figma con el prototipo de la app de la pizzería Aloha: pantallas de carta, detalle de pizza y checkout conectadas por flechas de flujo"
+                        },
+                        zgz_rutas: {
+                            section_title: "— Zaragoza Rutas",
+                            description: "App de rutas urbanas y senderos por Zaragoza. <highlight>Sistema de tarjetas, mapas y filtros</highlight> diseñado para que descubrir un recorrido sea tan ágil como recorrerlo.",
+                            image_alt: "Lienzo de Figma con el prototipo de la app Zaragoza Rutas: pantallas de mapa, listado y detalle de ruta"
+                        },
+                        zgz_rutas_2: {
+                            section_title: "— Detalle de pantalla",
+                            description: "Vista enfocada en el <highlight>detalle de ruta</highlight>: jerarquía clara entre mapa, descripción y acciones para que el usuario decida y empiece a caminar en un solo gesto.",
+                            image_alt: "Mockup vertical de la pantalla de detalle de ruta en la app Zaragoza Rutas: mapa, descripción y acciones principales"
+                        },
+                        jason_freeny: {
+                            section_title: "— Jason Freeny",
+                            description: "Concepto de tienda y portfolio digital para <highlight>Jason Freeny</highlight>, artista conocido por sus disecciones anatómicas de iconos pop. Un sistema visual minimalista que deja respirar a la obra y guía la navegación entre colecciones, fichas de pieza y carrito.",
+                            image_alt: "Lienzo de Figma con el prototipo de tienda y portfolio digital del artista Jason Freeny: pantallas de catálogo, detalle de pieza y carrito conectadas"
+                        },
                     }
                 }
             },

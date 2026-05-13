@@ -19,7 +19,7 @@ export async function generateMetadata({
 
     const title = t("app.projects.illustrations.seo.title");
     const description = t("app.projects.illustrations.seo.description")
-    const ogImage = `${BASE_URL}/media/project/illustrations/imploded/into-the-woods-final.png`;
+    const ogImage = `${BASE_URL}/media/projects/illustrations/imploded/into-the-woods-final.png`;
 
     return withAlternates(
         {
@@ -54,7 +54,7 @@ export default async function IllustrationPage({
     const t = await getTranslations({ locale });
 
     const url = `${BASE_URL}/${locale}${getPath(ROUTES.PROJECTS_ILLUSTRATIONS, locale)}`;
-    const ogImage = `${BASE_URL}/media/project/illustrations/imploded/into-the-woods-final.png`;
+    const ogImage = `${BASE_URL}/media/projects/illustrations/imploded/into-the-woods-final.png`;
 
     const creativeWorkSchema = getProjectCreativeWorkSchema({
         t,

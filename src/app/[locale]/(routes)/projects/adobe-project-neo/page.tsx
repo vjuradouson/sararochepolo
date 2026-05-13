@@ -19,7 +19,7 @@ export async function generateMetadata({
 
     const title = t("app.projects.adobe_project_neo.seo.title");
     const description = t("app.projects.adobe_project_neo.seo.description")
-    const ogImage = `${BASE_URL}/media/project/adobe-project-neo/9-keyboard-final.png`;
+    const ogImage = `${BASE_URL}/media/projects/adobe-project-neo/9-keyboard-final.png`;
 
     return withAlternates(
         {
@@ -54,7 +54,7 @@ export default async function AdobeProjectNeoPage({
     const t = await getTranslations({ locale });
 
     const url = `${BASE_URL}/${locale}${getPath(ROUTES.PROJECTS_ADOBE_PROJECT_NEO, locale)}`;
-    const ogImage = `${BASE_URL}/media/project/adobe-project-neo/9-keyboard-final.png`;
+    const ogImage = `${BASE_URL}/media/projects/adobe-project-neo/9-keyboard-final.png`;
 
     const creativeWorkSchema = getProjectCreativeWorkSchema({
         t,
