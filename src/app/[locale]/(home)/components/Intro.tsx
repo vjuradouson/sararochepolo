@@ -165,7 +165,7 @@ export default function Intro() {
                             },
                             {
                                 name: "Elementor",
-                                icon: "wordpress-icon.png",
+                                icon: "elementor-icon.png",
                             },
                             {
                                 name: "Procreate",
