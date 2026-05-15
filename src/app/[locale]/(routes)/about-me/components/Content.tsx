@@ -87,7 +87,7 @@ export default function AboutContent({ data }: AboutContentProps) {
         <div>
             <section className="container-xxl mx-auto px-6 pb-12 pt-20 md:pt-25" key={refreshKey}>
                 <div className="pb-12 md:h-[500px] lg:h-[600px] overflow-hidden relative shadow-[var(--shadow-card)] rounded-[var(--radius-card)]">
-                    <div className="h-full grid gap-16 md:grid-cols-2 items-stretch">
+                    <div className="h-full grid gap-16 md:gap-0 md:grid-cols-2 items-stretch">
                         <div className="pl-8 pt-6 lg:ml-18 md:pt-10 lg:pb-0 px-6">
                             <h1 className="text-xl uppercase tracking-widest mb-8 md:mb-16">
                                 {data.h1}
@@ -150,7 +150,7 @@ export default function AboutContent({ data }: AboutContentProps) {
                         {/* SKILLS */}
                         <motion.div
                             variants={item}
-                            className="bg-yellow rounded-xl shadow-[var(--shadow-card-xs)] px-10 py-8"
+                            className="rounded-xl shadow-[var(--shadow-card-xs)] px-10 py-8"
                         >
                             <h2 className="text-xl uppercase tracking-widest mb-8">
                                 {data.skills.title}
@@ -164,7 +164,7 @@ export default function AboutContent({ data }: AboutContentProps) {
                                 className="grid grid-cols-2 gap-x-16 gap-y-6"
                             >
                                 {skills.map((skill) => (
-                                    <FadeInStaggerItem as="li" key={skill}>
+                                    <FadeInStaggerItem as="li" key={skill} className="list-disc">
                                         {skill}
                                     </FadeInStaggerItem>
                                 ))}

@@ -1,8 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { motion, Variants } from "framer-motion";
-import ZoomableImage from "@/components/ui/ZoomableImage";
 
 const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 40 },
@@ -17,97 +17,80 @@ const revealProps = {
     transition: { duration: 0.7, ease: "easeOut" as const },
 };
 
-const IMG_BASE = "/media/projects/figma";
+const IMG_BASE = "/media/projects/editorial";
 
 const highlight = (chunks: React.ReactNode) => (
     <strong className="font-bold">{chunks}</strong>
 );
 
-type FigmaProject = {
-    key: string;
+type PrintProject = {
+    key: "triptych" | "flyers" | "rollups";
     src: string;
     width: number;
     height: number;
     priority?: boolean;
-    /** Limita el ancho máximo del <Image> en px (útil para mockups verticales que no deben ocupar todo el container). */
-    maxWidthPx?: number;
 };
 
-const projects: FigmaProject[] = [
+const projects: PrintProject[] = [
     {
-        key: "starbucks",
-        src: `${IMG_BASE}/starbucks.png`,
-        width: 1920,
-        height: 908,
+        key: "triptych",
+        src: `${IMG_BASE}/triptych.png`,
+        width: 2119,
+        height: 1720,
         priority: true,
     },
     {
-        key: "aloha",
-        src: `${IMG_BASE}/aloha.png`,
-        width: 1920,
-        height: 1044,
+        key: "flyers",
+        src: `${IMG_BASE}/flyers.png`,
+        width: 2874,
+        height: 2304,
     },
     {
-        key: "zgz_rutas",
-        src: `${IMG_BASE}/zgz-rutas.png`,
-        width: 1920,
-        height: 534,
+        key: "rollups",
+        src: `${IMG_BASE}/rollups.png`,
+        width: 3630,
+        height: 2088,
     },
-    {
-        key: "zgz_rutas_2",
-        src: `${IMG_BASE}/zgz-rutas-2.png`,
-        width: 982,
-        height: 1050,
-        maxWidthPx: 700,
-    },
-    {
-        key: "jason_freeny",
-        src: `${IMG_BASE}/jason-freeny.png`,
-        width: 1920,
-        height: 927,
-    }
 ];
 
 type T = ReturnType<typeof useTranslations>;
 
-function ProjectSection({ project, t }: { project: FigmaProject; t: T }) {
+function ProjectSection({ project, t }: { project: PrintProject; t: T }) {
     const base = `projects.${project.key}`;
     return (
         <section className="container-xl pb-16 md:pb-24">
-            <motion.div {...revealProps} className="mx-auto">
-                <motion.h2
-                    {...revealProps}
-                    className="mb-6 md:mb-8 text-neutral-700"
-                >
-                    {t(`${base}.section_title`)}
-                </motion.h2>
-                <motion.p
-                    {...revealProps}
-                    className="mb-10 md:mb-12 leading-relaxed"
-                >
+            <motion.div
+                {...revealProps}
+                className="flex flex-col-reverse md:flex-row items-center gap-y-8 md:gap-x-12 lg:gap-x-16"
+            >
+                <div className="w-full md:w-3/5">
+                    <Image
+                        src={project.src}
+                        alt={t(`${base}.image_alt`)}
+                        width={project.width}
+                        height={project.height}
+                        sizes="(max-width: 768px) 100vw, 60vw"
+                        quality={90}
+                        priority={project.priority}
+                        fetchPriority={project.priority ? "high" : "auto"}
+                        className="w-full h-auto drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)]"
+                    />
+                </div>
+                <p className="w-full md:w-2/5 leading-relaxed">
                     {t.rich(`${base}.description`, { highlight })}
-                </motion.p>
-                <ZoomableImage
-                    src={project.src}
-                    alt={t(`${base}.image_alt`)}
-                    width={project.width}
-                    height={project.height}
-                    sizes={project.maxWidthPx ? `(max-width: 768px) 90vw, ${project.maxWidthPx}px` : "(max-width: 768px) 100vw, 80vw"}
-                    priority={project.priority}
-                    maxWidthPx={project.maxWidthPx}
-                    zoomAriaLabel={t("zoom_aria")}
-                />
+                </p>
             </motion.div>
         </section>
     );
 }
 
-export default function FigmaContent() {
-    const t = useTranslations("app.projects.figma.content");
+export default function PrintDesignContent() {
+    const t = useTranslations("app.projects.print_design.content");
 
     return (
         <div className="text-lg md:text-xl xl:text-2xl">
-            <section className="container-xl md:pt-16 mt-20 md:mt-10 mb-16 md:mb-20">
+            {/* ─── HEADER ────────────────────────────────────────────── */}
+            <section className="container-xl md:pt-16 mt-20 md:mt-10 mb-12 md:mb-16">
                 <div className="max-w-full">
                     <p className="text-xl uppercase tracking-widest mb-8 md:mb-10">
                         {t("eyebrow")}
@@ -115,8 +98,11 @@ export default function FigmaContent() {
                     <h1 className="mb-10 text-4xl md:text-5xl font-light tracking-tight">
                         {t("title")}
                     </h1>
-                    <p className="leading-relaxed">
+                    <p className="leading-relaxed mb-10 md:mb-12">
                         {t.rich("intro", { highlight })}
+                    </p>
+                    <p className="leading-relaxed">
+                        {t("subtitle")}
                     </p>
                 </div>
             </section>

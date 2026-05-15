@@ -42,7 +42,8 @@ export default {
                     branding: "Branding",
                     figma: "Figma",
                     illustrations: "Illustrations",
-                    social_media: "Social media"
+                    social_media: "Social media",
+                    print_design: "Print design"
                 },
                 about_me: "About me",
                 contact: "Contact",
@@ -117,7 +118,7 @@ export default {
                 },
                 meta_adds: {
                     subtitle: "Company project",
-                    title: "Social networks and Meta Ads",
+                    title: "Social media and Meta Ads",
                     description: "Creation of content for social media and Meta Ads campaigns, aligned with brand identity and business objectives. Design of visual assets optimized for performance, engagement, and conversion.",
                     image_alt: "Social media posts and Meta Ads campaigns designed by Sara Roche Polo following company brand guidelines",
                     view_all: 'View project'
@@ -459,6 +460,32 @@ export default {
                         },
                         don_tostado: {
                             image_alt: "Social media design for Don Tostado"
+                        }
+                    }
+                }
+            },
+            print_design: {
+                seo: {
+                    title: "Print design | Sara Roche Polo",
+                    description: "Editorial graphic design by Sara Roche Polo: trifolds, flyers and roll-ups with visual hierarchy, use of color and consistency with brand identity."
+                },
+                content: {
+                    eyebrow: "Print design",
+                    title: "Editorial graphic design",
+                    intro: "I specialize in the design of <highlight>creative assets for social media and Meta Ads campaigns</highlight>, focused on <highlight>capturing attention and driving conversion</highlight>. I adapt visuals to each format and advertising goal, <highlight>taking care of impact, message clarity and brand consistency</highlight>. My work turns ideas into designs that perform in <highlight>real digital advertising environments</highlight>, helping companies communicate better and boost their results through visual design.",
+                    subtitle: "Flyer design makes it possible to communicate the essence of an event, product or company service in a direct and visual way.",
+                    projects: {
+                        triptych: {
+                            description: "On every piece I work on the <highlight>information hierarchy, composition, use of color and consistency with the brand's visual identity</highlight>, creating materials that are appealing, clear and tailored to their communicative goal.",
+                            image_alt: "Printed promotional trifold for Piquer Educación shown open"
+                        },
+                        flyers: {
+                            description: "The result is <highlight>versatile, effective designs crafted to capture the audience's attention</highlight> and convey the message in a fast and professional way.",
+                            image_alt: "Printed flyers for Fundación Piquer stacked together"
+                        },
+                        rollups: {
+                            description: "Roll-up design helps <highlight>reinforce a brand's visual presence at events, trade shows or commercial spaces</highlight>. I work on composition, readability at distance and consistency with the corporate identity to create clear, appealing and professional pieces.",
+                            image_alt: "Three printed roll-ups for Fundación Piquer on display"
                         }
                     }
                 }

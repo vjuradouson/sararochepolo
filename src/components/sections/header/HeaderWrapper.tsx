@@ -38,6 +38,11 @@ export default async function HeaderWrapper() {
                     labels: labelsFor("header.links.projects.social_media"),
                 },
                 {
+                    href: ROUTES.PROJECTS_EDITORIAL,
+                    label: t("header.links.projects.print_design"),
+                    labels: labelsFor("header.links.projects.print_design"),
+                },
+                {
                     href: ROUTES.PROJECTS_ADOBE_PROJECT_NEO,
                     label: t("header.links.projects.adobe_project_neo"),
                     labels: labelsFor("header.links.projects.adobe_project_neo"),

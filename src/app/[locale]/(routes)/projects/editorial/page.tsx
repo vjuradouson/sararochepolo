@@ -7,7 +7,7 @@ import { withAlternates } from "@/lib/seo/alternates";
 import JsonLd from "@/components/seo/JsonLd";
 import { getProjectCreativeWorkSchema } from "@/lib/seo/schema/projectCreativeWork";
 import { getBreadcrumbSchema } from "@/lib/seo/schema/breadcrumb";
-import FigmaContent from "./components/Content";
+import PrintDesignContent from "./components/Content";
 
 export async function generateMetadata({
     params
@@ -17,14 +17,14 @@ export async function generateMetadata({
     const { locale } = await params;
     const t = await getTranslations();
 
-    const title = t("app.projects.figma.seo.title");
-    const description = t("app.projects.figma.seo.description")
-    const ogImage = `${BASE_URL}/media/projects/figma/starbucks.png`;
+    const title = t("app.projects.print_design.seo.title");
+    const description = t("app.projects.print_design.seo.description")
+    const ogImage = `${BASE_URL}/media/projects/editorial/triptych.png`;
 
     return withAlternates(
         {
             locale,
-            route: ROUTES.PROJECTS_FIGMA
+            route: ROUTES.PROJECTS_EDITORIAL
         },
         {
             title: title,
@@ -32,8 +32,8 @@ export async function generateMetadata({
             openGraph: {
                 title: title,
                 description: description,
-                url: `${BASE_URL}/${locale}${getPath(ROUTES.PROJECTS_FIGMA, locale)}`,
-                images: [{ url: ogImage, width: 1920, height: 908 }],
+                url: `${BASE_URL}/${locale}${getPath(ROUTES.PROJECTS_EDITORIAL, locale)}`,
+                images: [{ url: ogImage, width: 2119, height: 1720 }],
             },
             twitter: {
                 card: 'summary_large_image',
@@ -45,7 +45,7 @@ export async function generateMetadata({
     )
 }
 
-export default async function FigmaPage({
+export default async function PrintDesignPage({
     params,
 }: {
     params: Promise<{ locale: string }>;
@@ -53,30 +53,30 @@ export default async function FigmaPage({
     const { locale } = await params;
     const t = await getTranslations({ locale });
 
-    const url = `${BASE_URL}/${locale}${getPath(ROUTES.PROJECTS_FIGMA, locale)}`;
-    const ogImage = `${BASE_URL}/media/projects/figma/starbucks.png`;
+    const url = `${BASE_URL}/${locale}${getPath(ROUTES.PROJECTS_EDITORIAL, locale)}`;
+    const ogImage = `${BASE_URL}/media/projects/editorial/triptych.png`;
 
     const creativeWorkSchema = getProjectCreativeWorkSchema({
         t,
         locale,
-        name: t("app.projects.figma.seo.title"),
-        description: t("app.projects.figma.seo.description"),
+        name: t("app.projects.print_design.seo.title"),
+        description: t("app.projects.print_design.seo.description"),
         url,
         image: ogImage,
-        genre: "UX/UI Design",
-        about: ["Figma", "UX/UI Design", "Prototyping", "Interaction Design"],
+        genre: "Editorial Design",
+        about: ["Print Design", "Editorial Design", "Flyers", "Roll-ups", "Trifolds", "Visual Communication"],
     });
 
     const breadcrumbSchema = getBreadcrumbSchema([
         { name: t("app.breadcrumb.home"), url: `${BASE_URL}/${locale}` },
-        { name: t("app.projects.figma.content.title"), url },
+        { name: t("app.projects.print_design.content.title"), url },
     ]);
 
     return (
         <>
             <JsonLd data={creativeWorkSchema} />
             <JsonLd data={breadcrumbSchema} />
-            <FigmaContent />
+            <PrintDesignContent />
         </>
     );
 }

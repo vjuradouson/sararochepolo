@@ -47,6 +47,10 @@ export const ROUTING = defineRouting({
     [ROUTES.PROJECTS_SOCIAL_MEDIA]: {
       es: '/proyectos/redes-sociales',
       en: '/projects/social-media'
+    },
+    [ROUTES.PROJECTS_EDITORIAL]: {
+      es: '/proyectos/diseño-editorial',
+      en: '/projects/print-design'
     }
   }
 })

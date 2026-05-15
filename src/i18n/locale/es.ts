@@ -42,7 +42,8 @@ export default {
                     branding: "Branding",
                     figma: "Figma",
                     illustrations: "Ilustraciones",
-                    social_media: "Redes sociales"
+                    social_media: "Redes sociales",
+                    print_design: "Diseño editorial"
                 },
                 about_me: "Sobre mí",
                 contact: "Contacto",
@@ -459,6 +460,32 @@ export default {
                         },
                         don_tostado: {
                             image_alt: "Diseño para redes sociales de Don Tostado"
+                        }
+                    }
+                }
+            },
+            print_design: {
+                seo: {
+                    title: "Diseño editorial | Sara Roche Polo",
+                    description: "Diseño gráfico editorial por Sara Roche Polo: trípticos, flyers y rollups con jerarquía visual, uso del color y coherencia con la identidad de marca."
+                },
+                content: {
+                    eyebrow: "Diseño editorial",
+                    title: "Diseño gráfico editorial",
+                    intro: "Me especializo en el diseño de <highlight>creatividades para redes sociales y campañas de Meta Ads</highlight>, enfocadas en <highlight>captar la atención y facilitar la conversión</highlight>. Trabajo adaptando piezas visuales a cada formato y objetivo publicitario, <highlight>cuidando el impacto, la claridad del mensaje y la coherencia con la marca</highlight>. Mi trabajo se centra en transformar ideas en diseños que funcionan en <highlight>entornos reales de publicidad digital</highlight>, ayudando a las empresas a comunicar mejor y a potenciar sus resultados a través de lo visual.",
+                    subtitle: "El diseño de flyers permite comunicar de forma directa y visual la esencia de un evento, producto o servicio de empresa.",
+                    projects: {
+                        triptych: {
+                            description: "En cada pieza trabajo la <highlight>jerarquía de la información, la composición, el uso del color y la coherencia con la identidad visual de la marca</highlight>, creando materiales atractivos, claros y adaptados a su objetivo comunicativo.",
+                            image_alt: "Tríptico promocional impreso de Piquer Educación mostrado abierto"
+                        },
+                        flyers: {
+                            description: "El resultado son <highlight>diseños versátiles y efectivos, pensados para captar la atención del público</highlight> y transmitir el mensaje de manera rápida y profesional.",
+                            image_alt: "Flyers impresos de Fundación Piquer apilados"
+                        },
+                        rollups: {
+                            description: "El diseño de rollups ayuda a <highlight>reforzar la presencia visual de una marca en eventos, ferias o espacios comerciales</highlight>. Trabajo la composición, la legibilidad a distancia y la coherencia con la identidad corporativa para crear piezas claras, atractivas y profesionales.",
+                            image_alt: "Tres rollups impresos de Fundación Piquer expuestos en pie"
                         }
                     }
                 }

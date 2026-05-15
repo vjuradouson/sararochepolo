@@ -8,5 +8,6 @@ export const ROUTES = {
   PROJECTS_BRANDING_DON_TOSTADO: '/projects/branding/don-tostado',
   PROJECTS_FIGMA: '/projects/figma',
   PROJECTS_ILLUSTRATIONS: '/projects/illustrations',
-  PROJECTS_SOCIAL_MEDIA: '/projects/social-media'
+  PROJECTS_SOCIAL_MEDIA: '/projects/social-media',
+  PROJECTS_EDITORIAL: '/projects/editorial'
 }
