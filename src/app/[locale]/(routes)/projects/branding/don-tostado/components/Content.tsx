@@ -255,13 +255,13 @@ export default function BrandingProjectDonTostadoContent() {
                         />
                     </motion.div>
 
-                    {/* Row 4 — merch masonry: mugs + pin / placeholders + caps */}
+                    {/* Row 4 — merch masonry: mugs + pin / slogan + caps */}
                     <motion.div
                         {...revealProps}
                         viewport={{ once: true, amount: 0.1 }}
                         className="grid grid-cols-1 md:grid-cols-12 md:aspect-[6/5] md:[grid-template-rows:4fr_3fr_3fr]"
                     >
-                        <div className="md:col-span-6 order-1 md:order-none aspect-[3/2] md:aspect-auto relative overflow-hidden">
+                        <div className="md:col-span-6 aspect-[3/2] md:aspect-auto relative overflow-hidden">
                             <Image
                                 src={`${IMG_BASE}/coffee-mugs.png`}
                                 alt={t("image_alt.coffee_mugs")}
@@ -271,7 +271,7 @@ export default function BrandingProjectDonTostadoContent() {
                                 className="object-cover"
                             />
                         </div>
-                        <div className="md:col-span-6 order-2 md:order-none aspect-square md:aspect-auto relative overflow-hidden">
+                        <div className="md:col-span-6 aspect-square md:aspect-auto relative overflow-hidden">
                             <Image
                                 src={`${IMG_BASE}/pin.png`}
                                 alt={t("image_alt.pin")}
@@ -281,8 +281,17 @@ export default function BrandingProjectDonTostadoContent() {
                                 className="object-cover"
                             />
                         </div>
-                        <div className="md:col-span-4 order-3 md:order-none aspect-square md:aspect-auto bg-[#C9FBF8]" />
-                        <div className="md:col-span-4 md:row-span-2 order-5 md:order-none aspect-[3/4] md:aspect-auto relative overflow-hidden">
+                        <div className="md:col-span-4 md:row-span-2 aspect-[2/3] md:aspect-auto relative overflow-hidden">
+                            <Image
+                                src={`${IMG_BASE}/cool_slogan.png`}
+                                alt={t("image_alt.cool_slogan")}
+                                fill
+                                sizes="(max-width: 768px) 100vw, 33vw"
+                                quality={75}
+                                className="object-cover"
+                            />
+                        </div>
+                        <div className="md:col-span-4 md:row-span-2 aspect-[3/4] md:aspect-auto relative overflow-hidden">
                             <Image
                                 src={`${IMG_BASE}/girl-with-cap.png`}
                                 alt={t("image_alt.girl_with_cap")}
@@ -292,7 +301,7 @@ export default function BrandingProjectDonTostadoContent() {
                                 className="object-cover"
                             />
                         </div>
-                        <div className="md:col-span-4 md:row-span-2 order-6 md:order-none aspect-[3/4] md:aspect-auto relative">
+                        <div className="md:col-span-4 md:row-span-2 aspect-[3/4] md:aspect-auto relative">
                             <Image
                                 src={`${IMG_BASE}/boy-with-cap.png`}
                                 alt={t("image_alt.boy_with_cap")}
@@ -311,7 +320,6 @@ export default function BrandingProjectDonTostadoContent() {
                                 className="absolute bottom-0 right-0 translate-x-[20%] translate-y-[46%] w-[50%] h-auto pointer-events-none"
                             />
                         </div>
-                        <div className="md:col-span-4 order-4 md:order-none aspect-square md:aspect-auto bg-[#FFCFDF]" />
                     </motion.div>
                 </div>
             </section>

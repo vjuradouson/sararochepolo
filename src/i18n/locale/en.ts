@@ -394,7 +394,8 @@ export default {
                                 pin: "Don Tostado pin badge resting on a canvas tote bag",
                                 girl_with_cap: "Girl wearing a blue Don Tostado cap",
                                 boy_with_cap: "Boy wearing a pink Don Tostado cap",
-                                sticker: "Circular Don Tostado sticker with an illustrated coffee mug"
+                                sticker: "Circular Don Tostado sticker with an illustrated coffee mug",
+                                cool_slogan: "Don Tostado illustrated slogan: «Coffee makes everything possible»"
                             }
                         }
                     }

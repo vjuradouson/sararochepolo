@@ -394,7 +394,8 @@ export default {
                                 pin: "Chapa con el logo de Don Tostado sobre una tote bag de lona",
                                 girl_with_cap: "Chica con gorra azul de Don Tostado",
                                 boy_with_cap: "Chico con gorra rosa de Don Tostado",
-                                sticker: "Pegatina circular de Don Tostado con ilustración de taza de café"
+                                sticker: "Pegatina circular de Don Tostado con ilustración de taza de café",
+                                cool_slogan: "Lema ilustrado de Don Tostado: «Coffee makes everything possible»"
                             }
                         }
                     }
