@@ -98,7 +98,7 @@ export default function ProjectsSection() {
             textColor: "text-black",
             parentClass: "h-[400px] md:h-[500px] lg:h-full md:h-[100vh] md:min-h-[500px] mb-10 md:mb-0",
             view_all: t("home.projects.meta_adds.view_all"),
-            href: null,
+            href: ROUTES.PROJECTS_SOCIAL_MEDIA,
             content: (
                 <div className="absolute inset-0">
                     <Image

@@ -41,7 +41,8 @@ export default {
                     adobe_project_neo: "Adobe Project Neo",
                     branding: "Branding",
                     figma: "Figma",
-                    illustrations: "Ilustraciones"
+                    illustrations: "Ilustraciones",
+                    social_media: "Redes sociales"
                 },
                 about_me: "Sobre mí",
                 contact: "Contacto",
@@ -437,6 +438,28 @@ export default {
                             description: "Concepto de tienda y portfolio digital para <highlight>Jason Freeny</highlight>, artista conocido por sus disecciones anatómicas de iconos pop. Un sistema visual minimalista que deja respirar a la obra y guía la navegación entre colecciones, fichas de pieza y carrito.",
                             image_alt: "Lienzo de Figma con el prototipo de tienda y portfolio digital del artista Jason Freeny: pantallas de catálogo, detalle de pieza y carrito conectadas"
                         },
+                    }
+                }
+            },
+            social_media: {
+                seo: {
+                    title: "Redes sociales y Meta Ads | Sara Roche Polo",
+                    description: "Diseño de creatividades para redes sociales y campañas de Meta Ads por Sara Roche Polo: piezas visuales pensadas para captar la atención, comunicar con claridad y generar conversión."
+                },
+                content: {
+                    eyebrow: "Redes sociales",
+                    title: "Redes sociales y Meta Ads",
+                    intro: "Me especializo en el diseño de <highlight>creatividades para redes sociales y campañas de Meta Ads</highlight>, enfocadas en <highlight>captar la atención y facilitar la conversión</highlight>. Trabajo adaptando piezas visuales a cada formato y objetivo publicitario, <highlight>cuidando el impacto, la claridad del mensaje y la coherencia con la marca</highlight>. Mi trabajo se centra en transformar ideas en diseños que funcionan en <highlight>entornos reales de publicidad digital</highlight>, ayudando a las empresas a comunicar mejor y a potenciar sus resultados a través de lo visual.",
+                    projects: {
+                        patitas_con_historia: {
+                            image_alt: "Pieza para redes sociales «Old Paws, Big Stories»: mockup de Instagram junto a creatividades verticales con fotos de tres perros senior (Penny, Bucky y Chad) sobre fondo turquesa con huellas ilustradas"
+                        },
+                        la_esquinita_de_papel: {
+                            image_alt: "Diseño para redes sociales de La Esquinita de Papel"
+                        },
+                        don_tostado: {
+                            image_alt: "Diseño para redes sociales de Don Tostado"
+                        }
                     }
                 }
             },

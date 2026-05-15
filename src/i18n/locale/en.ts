@@ -41,7 +41,8 @@ export default {
                     adobe_project_neo: "Adobe Project Neo",
                     branding: "Branding",
                     figma: "Figma",
-                    illustrations: "Illustrations"
+                    illustrations: "Illustrations",
+                    social_media: "Social media"
                 },
                 about_me: "About me",
                 contact: "Contact",
@@ -437,6 +438,28 @@ export default {
                             description: "Concept for an online shop and digital portfolio for <highlight>Jason Freeny</highlight>, an artist known for his anatomical dissections of pop-culture icons. A minimalist visual system that lets the artwork breathe and guides browsing across collections, piece details and cart.",
                             image_alt: "Figma canvas with the prototype of the online shop and digital portfolio for artist Jason Freeny: catalog, piece detail and cart screens connected"
                         },
+                    }
+                }
+            },
+            social_media: {
+                seo: {
+                    title: "Social media & Meta Ads | Sara Roche Polo",
+                    description: "Social media and Meta Ads creative design by Sara Roche Polo: visual assets crafted to grab attention, communicate clearly and drive conversion."
+                },
+                content: {
+                    eyebrow: "Social media",
+                    title: "Social media & Meta Ads",
+                    intro: "I specialize in the design of <highlight>creative assets for social media and Meta Ads campaigns</highlight>, focused on <highlight>capturing attention and driving conversion</highlight>. I adapt visuals to each format and advertising goal, <highlight>taking care of impact, message clarity and brand consistency</highlight>. My work turns ideas into designs that perform in <highlight>real digital advertising environments</highlight>, helping companies communicate better and boost their results through visual design.",
+                    projects: {
+                        patitas_con_historia: {
+                            image_alt: "Social media piece «Old Paws, Big Stories»: Instagram mockup next to vertical creative assets featuring three senior dogs (Penny, Bucky and Chad) on a turquoise background with illustrated paw prints"
+                        },
+                        la_esquinita_de_papel: {
+                            image_alt: "Social media design for La Esquinita de Papel"
+                        },
+                        don_tostado: {
+                            image_alt: "Social media design for Don Tostado"
+                        }
                     }
                 }
             },

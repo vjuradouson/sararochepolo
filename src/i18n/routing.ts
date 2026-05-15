@@ -43,6 +43,10 @@ export const ROUTING = defineRouting({
     [ROUTES.PROJECTS_ILLUSTRATIONS]: {
       es: '/proyectos/ilustraciones',
       en: '/projects/illustrations'
+    },
+    [ROUTES.PROJECTS_SOCIAL_MEDIA]: {
+      es: '/proyectos/redes-sociales',
+      en: '/projects/social-media'
     }
   }
 })
