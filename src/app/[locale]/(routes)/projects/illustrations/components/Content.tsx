@@ -188,6 +188,15 @@ function BillTheBearSection({ t }: { t: T }) {
         <section className="relative py-16 md:py-24 mb-16 md:mb-24">
             {/* Desktop: kraft stretched to section box */}
             <Image
+                src={`${IMG}/kraft-paper-bg-mobile.png`}
+                alt=""
+                fill
+                aria-hidden
+                sizes="100vw"
+                quality={90}
+                className="block md:hidden -z-10 object-fill select-none pointer-events-none"
+            />
+            <Image
                 src={`${IMG}/kraft-paper-bg.png`}
                 alt=""
                 fill
