@@ -299,7 +299,7 @@ type HiHunnyMobileItem = {
 
 const hiHunnyMobileItems: HiHunnyMobileItem[] = [
     {
-        src: `${INDIVIDUAL}/bill-the-bear-title.png`,
+        src: `${INDIVIDUAL}/hi-hunny-title.png`,
         width: 353,
         height: 201,
         altKey: "projects.hi_hunny.image_alt.title",
