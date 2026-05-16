@@ -17,3 +17,11 @@ export function trackCtaClick(params: {
 }) {
     pushEvent({ event: 'cta_click', ...params });
 }
+
+export function trackFormSubmit(params: {
+    form_id: string;
+    status: 'success' | 'error';
+    error_message?: string;
+}) {
+    pushEvent({ event: 'form_submit', ...params });
+}

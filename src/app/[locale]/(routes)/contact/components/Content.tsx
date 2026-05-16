@@ -4,6 +4,7 @@ import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { useTranslations, useLocale } from "next-intl";
 import NeoButton from "@/components/ui/NeoButton";
+import { trackFormSubmit } from "@/lib/gtm";
 
 const EASE_OUT = [0.25, 0.1, 0.25, 1] as const;
 
@@ -68,14 +69,18 @@ export default function ContactForm() {
 
             setSent(true);
             setForm({ name: "", email: "", message: "" });
+            trackFormSubmit({ form_id: 'contact', status: 'success' });
         } catch (err) {
-            setError(
-                t("contact.form.submit.catch.prefix") +
-                ": " +
-                (err instanceof Error
+            const errorMessage =
+                err instanceof Error
                     ? err.message
-                    : t("contact.form.submit.catch.unknown"))
-            );
+                    : t("contact.form.submit.catch.unknown");
+            setError(t("contact.form.submit.catch.prefix") + ": " + errorMessage);
+            trackFormSubmit({
+                form_id: 'contact',
+                status: 'error',
+                error_message: errorMessage,
+            });
         } finally {
             setLoading(false);
         }
