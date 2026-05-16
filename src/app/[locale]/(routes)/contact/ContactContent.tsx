@@ -6,6 +6,14 @@ import { useEffect, useState } from "react";
 import { FaLinkedin, FaInstagram } from "react-icons/fa";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 import { FiArrowUpRight } from "react-icons/fi";
+import { trackCtaClick } from "@/lib/gtm";
+
+function networkIdFromLabel(label: string): string {
+    const l = label.toLowerCase();
+    if (l.includes("linkedin")) return "linkedin";
+    if (l.includes("instagram")) return "instagram";
+    return "other";
+}
 
 type Props = {
     data: {
@@ -148,6 +156,15 @@ export default function ContactContent({ data }: Props) {
                                         href={link.href ?? "#"}
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        onClick={() => {
+                                            const networkId = networkIdFromLabel(link.label);
+                                            trackCtaClick({
+                                                cta_id: `contact_social_${networkId}`,
+                                                cta_location: 'contact_page',
+                                                cta_label: link.label,
+                                                cta_destination: link.href ?? '',
+                                            });
+                                        }}
                                         className={`
                                             group relative flex items-center justify-between gap-6
                                             py-5 transition-all duration-300 ease-out

@@ -8,6 +8,7 @@ import { useTranslations } from "next-intl";
 import { Variants } from "framer-motion";
 import { Link } from "@/i18n/navigation";
 import { ROUTES } from "@/constants/routes";
+import { trackCtaClick } from "@/lib/gtm";
 
 type Project = {
     id: number;
@@ -647,7 +648,17 @@ export default function ProjectsSection() {
                                 className={`order-3 md:order-3 md:col-start-1 md:row-start-3 mt-6 md:mt-12 ${project.textColor}`}>
                                 <div className="flex justify-center md:justify-start">
                                     {project.href ? (
-                                        <Link href={project.href}>
+                                        <Link
+                                            href={project.href}
+                                            onClick={() =>
+                                                trackCtaClick({
+                                                    cta_id: `home_project_${project.href!.split('/').filter(Boolean).pop()}`,
+                                                    cta_location: 'home_projects',
+                                                    cta_label: project.view_all,
+                                                    cta_destination: project.href!,
+                                                })
+                                            }
+                                        >
                                             <NeoButton size="sm" className="pl-12 pr-12">
                                                 <span className="text-xl">→</span>
                                                 <span className="uppercase">{project.view_all}</span>

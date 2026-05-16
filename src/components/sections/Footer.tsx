@@ -1,5 +1,5 @@
 import { getTranslations } from 'next-intl/server';
-import { FaLinkedin, FaInstagram } from 'react-icons/fa';
+import FooterSocials from '@/components/sections/footer/FooterSocials';
 
 export default async function Footer() {
     const t = await getTranslations("app");
@@ -19,35 +19,12 @@ export default async function Footer() {
                 </div>
 
                 {/* Center */}
-                <div className="flex gap-6 text-lg">
-
-                    {/* LinkedIn */}
-                    <a
-                        href={t("contact.contact_link.linkedin.href")}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group flex items-center gap-2"
-                    >
-                        <FaLinkedin className="w-4 h-4 text-dark-blue/60 group-hover:text-[#0A66C2] transition-colors duration-300" />
-                        <span>
-                            {t("footer.center.linkedin")}
-                        </span>
-                    </a>
-
-                    {/* Instagram */}
-                    <a
-                        href={t("contact.contact_link.instagram.href")}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group flex items-center gap-2"
-                    >
-                        <FaInstagram className="w-4 h-4 text-dark-blue/60 group-hover:text-pink-500 transition-colors duration-300" />
-                        <span>
-                            {t("footer.center.instagram")}
-                        </span>
-                    </a>
-
-                </div>
+                <FooterSocials
+                    linkedinHref={t("contact.contact_link.linkedin.href")}
+                    linkedinLabel={t("footer.center.linkedin")}
+                    instagramHref={t("contact.contact_link.instagram.href")}
+                    instagramLabel={t("footer.center.instagram")}
+                />
                 {/* Right */}
                 <div className="text-sm text-center md:text-right">
                     © {new Date().getFullYear()}
