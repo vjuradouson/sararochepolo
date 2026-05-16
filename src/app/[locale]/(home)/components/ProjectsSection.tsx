@@ -13,7 +13,6 @@ import { trackCtaClick } from "@/lib/gtm";
 type Project = {
     id: number;
     title: string;
-    subtitle: string;
     description: string;
     bgFrom: string;
     bgTo: string;
@@ -68,7 +67,6 @@ export default function ProjectsSection() {
     const projects: Project[] = [
         {
             id: 1,
-            subtitle: "— " + t("home.projects.figma_pet_buddy.subtitle"),
             title: t("home.projects.figma_pet_buddy.title"),
             description: t("home.projects.figma_pet_buddy.description"),
             bgFrom: "#FDE08D",
@@ -91,7 +89,6 @@ export default function ProjectsSection() {
         },
         {
             id: 2,
-            subtitle: "— " + t("home.projects.meta_adds.subtitle"),
             title: t("home.projects.meta_adds.title"),
             description: t("home.projects.meta_adds.description"),
             bgFrom: "#F9D1B7",
@@ -115,7 +112,6 @@ export default function ProjectsSection() {
         },
         {
             id: 3,
-            subtitle: "— " + t("home.projects.branding.subtitle"),
             title: t("home.projects.branding.title"),
             description: t("home.projects.branding.description"),
             bgFrom: "#EAD7D1",
@@ -138,7 +134,6 @@ export default function ProjectsSection() {
         },
         {
             id: 4,
-            subtitle: "— " + t("home.projects.adobe_project_neo.subtitle"),
             title: t("home.projects.adobe_project_neo.title"),
             description: t("home.projects.adobe_project_neo.description"),
             bgFrom: "#D1D1D1",
@@ -161,7 +156,6 @@ export default function ProjectsSection() {
         },
         {
             id: 5,
-            subtitle: "— " + t("home.projects.illustrations.subtitle"),
             title: t("home.projects.illustrations.title"),
             description: t("home.projects.illustrations.description"),
             bgFrom: "#F5E1C8",
@@ -610,10 +604,6 @@ export default function ProjectsSection() {
                                 viewport={{ amount: 0.55, once: isMobile }}
                                 transition={{ duration: 0.7, ease: "easeOut" }}
                                 className={`order-1 md:order-1 md:col-start-1 md:row-start-2 flex flex-col justify-start mt-6 md:mt-0 ${project.textColor}`}>
-                                <p className="mb-1 text-xl opacity-60 md:mb-4 md:text-3xl">
-                                    {project.subtitle}
-                                </p>
-
                                 <h3 className="mb-4 text-2xl font-light md:mb-12 md:text-5xl">
                                     {project.title}
                                 </h3>

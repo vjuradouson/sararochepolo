@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion, Variants } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FadeInStagger, FadeInStaggerItem } from "@/components/ui/FadeInStagger";
+import FAQ, { FAQEntry } from "./FAQ";
 
 type AboutContentProps = {
     data: {
@@ -32,6 +33,10 @@ type AboutContentProps = {
         info: {
             location: string;
             languages: string;
+        };
+        faq: {
+            title: string;
+            items: FAQEntry[];
         };
     };
 };
@@ -231,6 +236,12 @@ export default function AboutContent({ data }: AboutContentProps) {
                     </motion.div>
                 </div>
             </section>
+
+            {/*<FAQ
+                key={refreshKey + 2}
+                title={data.faq.title}
+                items={data.faq.items}
+            />*/}
         </div>
     );
 }

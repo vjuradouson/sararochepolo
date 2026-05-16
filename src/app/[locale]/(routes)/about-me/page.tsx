@@ -3,6 +3,7 @@ import { getTranslations } from "next-intl/server";
 import AboutContent from "./components/Content";
 import JsonLd from "@/components/seo/JsonLd";
 import { getAboutPersonSchema } from "@/lib/seo/schema/about/person";
+import { FAQ_INDICES, getAboutFaqSchema } from "@/lib/seo/schema/about/faq";
 import { BASE_URL } from '@/lib/config';
 import { getPath } from "@/i18n/getPath";
 import { ROUTES } from "@/constants/routes";
@@ -44,10 +45,12 @@ export default async function AboutPage({
     const { locale } = await params;
     const t = await getTranslations({ locale });
     const personSchema = getAboutPersonSchema({ t, locale });
+    const faqSchema = getAboutFaqSchema({ t, locale });
 
     return (
         <>
             <JsonLd data={personSchema} />
+            {/*<JsonLd data={faqSchema} />*/}
             <AboutContent
                 data={{
                     h1: t("app.about_me.h1"),
@@ -84,6 +87,13 @@ export default async function AboutPage({
                     info: {
                         location: "string",
                         languages: "string"
+                    },
+                    faq: {
+                        title: t("app.about_me.faq.title"),
+                        items: FAQ_INDICES.map((i) => ({
+                            q: t(`app.about_me.faq.${i}.q`),
+                            a: t(`app.about_me.faq.${i}.a`)
+                        }))
                     }
                 }}
             />

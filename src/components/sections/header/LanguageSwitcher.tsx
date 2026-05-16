@@ -60,7 +60,7 @@ export default function LanguageSwitcher() {
             uppercase tracking-[0.18em] transition-colors duration-300 hover:border-[var(--color-dark-blue)]/40
             focus-visible:border-[var(--color-dark-blue)]/60 focus-visible:outline-none"
         >
-            <span className="text-[var(--color-dark-blue)]">{locale}</span>
+            <span className="font-bold">{locale}</span>
             <SwapIcon
                 size={15}
                 className="text-foreground/60 transition-colors duration-300 group-hover:text-[var(--color-dark-blue)]/60"

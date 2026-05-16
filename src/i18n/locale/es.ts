@@ -110,37 +110,32 @@ export default {
             projects_h2: "Proyectos destacados",
             projects: {
                 figma_pet_buddy: {
-                    subtitle: "Proyecto personal",
-                    title: "Diseño en Figma",
-                    description: "Diseño y prototipado en Figma de interfaces intuitivas y atractivas, desde la idea inicial hasta prototipos interactivos, aplicando principios de UX/UI y sistemas de diseño.",
+                    title: "Diseño UX/UI",
+                    description: "Pensando siempre en el usuario, diseño y prototipo interfaces intuitivas y visualmente atractivas con herramientas avanzadas como Figma, llevando los diseños desde la idea inicial hasta convertirlos en prototipos interactivos.",
                     image_alt: "Diseño de aplicación móvil de mascotas creado en Figma por Sara Roche Polo, mostrando mockups de interfaz y prototipado UX/UI",
                     view_all: 'Ver proyecto'
                 },
                 meta_adds: {
-                    subtitle: "Publicación empresa",
                     title: "Redes sociales y Meta Ads",
-                    description: "Creación de contenido para redes sociales y campañas de Meta Ads, alineado con la identidad de marca y objetivos de negocio. Diseño de piezas visuales optimizadas para rendimiento, engagement y conversión.",
+                    description: "Creo contenido para redes sociales y campañas de Meta Ads, siempre alineados con la identidad de la marca y los objetivos del proyecto. Diseño piezas visuales optimizadas para mejorar el rendimiento, la interacción y la conversión.",
                     image_alt: "Publicaciones para redes sociales y campañas de Meta Ads diseñadas por Sara Roche Polo siguiendo guidelines de marca de empresa",
                     view_all: 'Ver proyecto'
                 },
                 adobe_project_neo: {
-                    subtitle: "Diseño 3D",
                     title: "Adobe Project Neo",
-                    description: "Creación de ilustraciones y piezas 3D con Adobe Project Neo, enfocadas en lograr composiciones visuales modernas, limpias y con alto nivel de detalle para entornos digitales.",
+                    description: "Con Adobe Project Neo, creo recursos 3D enfocados en lograr composiciones visuales modernas y limpias, con un alto nivel de detalle para entornos digitales.",
                     image_alt: "Render 3D de un teclado numérico inalámbrico de estilo minimalista en tonos oscuros, con iluminación suave y diseño moderno creado con Adobe Project Neo por Sara Roche Polo",
                     view_all: 'Ver proyecto'
                 },
                 illustrations: {
-                    subtitle: "Proyecto personal",
                     title: "Ilustración",
-                    description: "Creación de ilustraciones digitales enfocadas en personajes y narrativa visual. Trabajo principalmente con Procreate, desarrollando cada pieza desde el boceto hasta el acabado final, cuidando color, textura y composición.",
+                    description: "Me encanta crear ilustraciones digitales centradas en personajes y narrativa visual. Trabajo principalmente con Procreate, desarrollando cada pieza desde el boceto hasta el arte final, cuidando el color, la textura y la composición para dar vida a los personajes.",
                     image_alt: "Pantallas de tablet mostrando ilustraciones digitales de personajes en diferentes fases de diseño, desde bocetos hasta versiones finales, creadas por Sara Roche Polo",
                     view_all: 'Ver ilustraciones'
                 },
                 branding: {
-                    subtitle: "Proyecto personal",
                     title: "Branding",
-                    description: "Desarrollo de identidad visual para proyectos, desde el concepto inicial hasta su aplicación final. Trabajo logotipo, tipografía y color para construir marcas coherentes, reconocibles y con personalidad.",
+                    description: "Desarrollo identidades visuales para distintas marcas, desde el concepto inicial hasta su aplicación final en todas las plataformas. Trabajo el diseño de logotipos, la tipografía y el color para construir marcas coherentes, reconocibles y con mucha personalidad.",
                     image_alt: "Branding por Sara Roche Polo",
                     view_all: 'Ver proyectos'
                 }
@@ -193,6 +188,45 @@ export default {
                         place: "Universidad de Zaragoza",
                         description: ""
                     }
+                }
+            },
+            faq: {
+                title: "Preguntas frecuentes",
+                1: {
+                    q: "¿Quién es Sara Roche Polo?",
+                    a: "Sara Roche Polo es una Diseñadora de Producto (UX/UI) localizada en Zaragoza y más de 3 años de experiencia creando experiencias digitales intuitivas, funcionales y centradas en el usuario. Actualmente diseña servicios en entornos educativos, mejorando la usabilidad, la arquitectura de la información y la consistencia visual de la plataforma."
+                },
+                2: {
+                    q: "¿Qué servicios ofrece Sara Roche como diseñadora UX/UI?",
+                    a: "Sara Roche ofrece diseño de producto digital (UX/UI), investigación de usuarios y user flows, diseño y mantenimiento de sistemas de diseño, prototipado en Figma, diseño y maquetación web en WordPress, branding e identidad visual, y diseño editorial para impresión (CMYK / prepress)."
+                },
+                3: {
+                    q: "¿Qué tipo de proyectos hace Sara Roche y en qué sectores trabaja?",
+                    a: "Sara Roche trabaja en proyectos de producto digital (UX/UI y diseño web), branding e identidad visual, diseño editorial e impresión, e ilustración y contenido para redes sociales. Su experiencia abarca sectores como educación (su entorno profesional actual), cultura y editorial, así como startups y pequeños negocios que necesitan construir o renovar su presencia digital y visual."
+                },
+                4: {
+                    q: "¿Cómo es el proceso de trabajo de Sara Roche en un proyecto?",
+                    a: "El proceso de trabajo de Sara Roche se estructura en cuatro fases: (1) briefing y descubrimiento, donde se definen objetivos, alcance y perfil de usuario; (2) investigación, análisis de referencias y definición de user flows o arquitectura de información; (3) wireframes y prototipado interactivo en Figma, con iteraciones validadas con el cliente; y (4) diseño visual final, sistema de componentes y entrega documentada para desarrollo (handoff). Cada fase incluye puntos de validación para asegurar que la solución se alinea con los objetivos de negocio y con las necesidades reales del usuario."
+                },
+                5: {
+                    q: "¿Qué herramientas y software utiliza Sara Roche?",
+                    a: "Sara Roche trabaja principalmente con Figma para diseño de interfaz y prototipado, la suite de Adobe (Illustrator, Photoshop, InDesign) para identidad visual y editorial, WordPress para diseño y maquetación web, y Adobe Project Neo para piezas 3D y experimentación visual."
+                },
+                6: {
+                    q: "¿Dónde está ubicada Sara Roche y trabaja en remoto?",
+                    a: "Sara Roche está ubicada en Zaragoza (España) y trabaja tanto en proyectos locales como en remoto para clientes de cualquier ubicación. La modalidad híbrida o totalmente remota se acuerda según las necesidades de cada proyecto."
+                },
+                7: {
+                    q: "¿En qué idiomas trabaja Sara Roche?",
+                    a: "Sara Roche trabaja en español (nativo) e inglés (nivel C2, con Grado en Estudios Ingleses por la Universidad de Zaragoza), por lo que puede gestionar proyectos y comunicación con clientes internacionales sin barreras lingüísticas."
+                },
+                8: {
+                    q: "¿Está Sara Roche disponible para proyectos freelance?",
+                    a: "Sí. Sara Roche está actualmente disponible para colaboraciones, proyectos freelance y nuevas oportunidades en producto digital. Suele responder a nuevas peticiones en un plazo de 24 a 48 horas a través del formulario de contacto de esta web."
+                },
+                9: {
+                    q: "¿Cómo puedo contactar con Sara Roche para un proyecto?",
+                    a: "Puedes contactar con Sara Roche a través del formulario de contacto de esta web (página de Contacto), de LinkedIn (Sara Roche Polo) o de Instagram (@sara.roche.paints). Suele responder en un plazo de 24 a 48 horas. Para que la respuesta sea más útil, conviene incluir en el primer mensaje una descripción del proyecto, los plazos aproximados y referencias visuales si las tienes."
                 }
             }
         },
@@ -336,7 +370,7 @@ export default {
                                 heading: "La Esquinita de Papel",
                                 tagline: "Una librería pequeña, acogedora y con alma.",
                                 paragraph_1: "La Esquinita de Papel es una librería de barrio concebida como un refugio cotidiano: <highlight>un espacio pequeño, íntimo y cuidado donde el tiempo se desacelera</highlight>. No es solo un lugar para comprar libros, sino para <highlight>descubrir, quedarse, observar y reconectar</highlight>.",
-                                paragraph_2: "La marca transmite una sensación de hogar emocional, <highlight>evocando la nostalgia de la lectura pausada y los objetos con historia</highlight>. El naming refuerza esa idea de rincón especial, casi secreto, que <highlight>se encuentra por casualidad pero se queda contigo</highlight>."
+                                paragraph_2: "La marca transmite una sensación de hogar, <highlight>evocando la nostalgia de la lectura pausada y los objetos con historia</highlight>. El naming refuerza esa idea de rincón especial, casi secreto, que <highlight>se encuentra por casualidad pero se queda contigo</highlight>."
                             },
                             logos_h2: "Variaciones del logotipo",
                             colors_h2: "Paleta de colores",
@@ -376,7 +410,7 @@ export default {
                             about: {
                                 heading: "Don Tostado",
                                 tagline: "Sin postureo. Calidad, cercanía y buen rollo en cada taza.",
-                                paragraph_1: "Don Tostado es una <highlight>cafetería de especialidad joven, moderna y con mucho carácter.</highlight> Un espacio luminoso, lleno de colores suaves, plantas y detalles gráficos que reflejan su identidad divertida.",
+                                paragraph_1: "Don Tostado es una cafetería de especialidad <highlight>joven, moderna y con mucho carácter</highlight>. Un espacio luminoso, lleno de color, gente increíble y detalles por todas partes que reflejan su identidad desenfadada.",
                                 paragraph_2: "El local tiene un <highlight>aire dinámico y desenfadado</highlight>, con una estética muy cuidada donde cada rincón invita a quedarse: desde la disposición abierta hasta los pequeños guiños de marca que hacen el espacio reconocible y con <highlight>personalidad propia</highlight>.",
                                 paragraph_3: "<highlight>Aquí el café se cuida, pero sin postureo: calidad, cercanía y buen rollo en cada taza.</highlight>"
                             },
@@ -405,7 +439,7 @@ export default {
             },
             figma: {
                 seo: {
-                    title: "Diseño en Figma | Sara Roche Polo",
+                    title: "Diseño UX/UI | Sara Roche Polo",
                     description: "Proyectos de prototipado y diseño de interfaces en Figma: flujos de usuario, sistemas de diseño y prototipos interactivos por Sara Roche Polo."
                 },
                 content: {
@@ -450,7 +484,7 @@ export default {
                 content: {
                     eyebrow: "Redes sociales",
                     title: "Redes sociales y Meta Ads",
-                    intro: "Me especializo en el diseño de <highlight>creatividades para redes sociales y campañas de Meta Ads</highlight>, enfocadas en <highlight>captar la atención y facilitar la conversión</highlight>. Trabajo adaptando piezas visuales a cada formato y objetivo publicitario, <highlight>cuidando el impacto, la claridad del mensaje y la coherencia con la marca</highlight>. Mi trabajo se centra en transformar ideas en diseños que funcionan en <highlight>entornos reales de publicidad digital</highlight>, ayudando a las empresas a comunicar mejor y a potenciar sus resultados a través de lo visual.",
+                    intro: "Si quieres que tu marca destaque y llegue a mayor audiencia, ¡las redes sociales y Meta Ads son tus aliados! <highlight>Me especializo en diseñar piezas creativas que captan la atención del usuario e impulsan la conversión</highlight>, manteniendo siempre la coherencia de marca para potenciar los resultados a través del diseño visual.",
                     projects: {
                         patitas_con_historia: {
                             image_alt: "Pieza para redes sociales «Old Paws, Big Stories»: mockup de Instagram junto a creatividades verticales con fotos de tres perros senior (Penny, Bucky y Chad) sobre fondo turquesa con huellas ilustradas"
@@ -498,7 +532,7 @@ export default {
                 content: {
                     eyebrow: "Procreate",
                     title: "Ilustraciones",
-                    intro: "En el ámbito del dibujo y la ilustración, mi práctica se caracteriza por la exploración de diversas técnicas y medios, que abarcan desde el lápiz y el carboncillo hasta la acuarela y la ilustración digital. Mi trabajo se centra tanto en la representación de elementos naturales —con especial interés en el mundo animal— como en la exploración de producto. No obstante, mi principal enfoque creativo reside en la creación de personajes y el desarrollo de escenas originales.",
+                    intro: "Una de mis pasiones es ilustrar personajes originales, sobre todo a través de la ilustración digital. Me encanta explorar nuevas formas de dar vida a personajes y, con la ayuda de mi inseparable iPad y Procreate, ¡eso es justo lo que hago!",
                     projects: {
                         into_the_woods: {
                             image_alt: {
