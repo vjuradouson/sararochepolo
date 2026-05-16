@@ -96,7 +96,7 @@ export default {
                 button: {
                     label: "Contact"
                 },
-                product_designer: "Transforming <line></line>complex needs <line></line>into <highlight>clear experiences </highlight><line></line><highlight>and functional</highlight>",
+                product_designer: "Transforming <line></line>complex needs <line></line>into <highlight>clear and </highlight><line></line><highlight>functional experiences</highlight>",
                 image_alt: "Mobile app design mockups by Sara Roche Polo, including a transport app and a pet app interface"
             },
             intro: {

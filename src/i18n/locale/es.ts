@@ -119,7 +119,7 @@ export default {
                 meta_adds: {
                     subtitle: "Publicación empresa",
                     title: "Redes sociales y Meta Ads",
-                    description: "Creación de contenido para redes sociales y campañas de Meta Ads, alineado con la identidad de marca y objetivos de negocio.Diseño de piezas visuales optimizadas para rendimiento, engagement y conversión.",
+                    description: "Creación de contenido para redes sociales y campañas de Meta Ads, alineado con la identidad de marca y objetivos de negocio. Diseño de piezas visuales optimizadas para rendimiento, engagement y conversión.",
                     image_alt: "Publicaciones para redes sociales y campañas de Meta Ads diseñadas por Sara Roche Polo siguiendo guidelines de marca de empresa",
                     view_all: 'Ver proyecto'
                 },
