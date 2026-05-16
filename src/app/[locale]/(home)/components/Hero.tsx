@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import NeoButton from "@/components/ui/NeoButton";
 import { Link } from '@/i18n/navigation';
 import { ROUTES } from "@/constants/routes";
+import { trackCtaClick } from "@/lib/gtm";
 
 const EASE = [0.25, 0.1, 0.25, 1] as const;
 
@@ -85,7 +86,17 @@ export default function Hero() {
                                 className="order-3 z-10 px-6 pb-8 lg:col-start-1 lg:row-start-2 lg:ml-18 lg:mt-8 lg:px-6 lg:pb-20"
                             >
                                 <div className="flex justify-center lg:justify-start">
-                                    <Link href={`${ROUTES.CONTACT}`}>
+                                    <Link
+                                        href={`${ROUTES.CONTACT}`}
+                                        onClick={() =>
+                                            trackCtaClick({
+                                                cta_id: 'hero_contact',
+                                                cta_location: 'home_hero',
+                                                cta_label: t("home.hero.button.label"),
+                                                cta_destination: ROUTES.CONTACT,
+                                            })
+                                        }
+                                    >
                                         <NeoButton size="sm">
                                             <span className="text-2xl">→</span>
                                             <span className="uppercase">
