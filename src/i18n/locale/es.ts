@@ -40,7 +40,7 @@ export default {
                 projects: {
                     adobe_project_neo: "Adobe Project Neo",
                     branding: "Branding",
-                    figma: "Figma",
+                    figma: "Diseño UX/UI",
                     illustrations: "Ilustraciones",
                     social_media: "Redes sociales",
                     print_design: "Diseño editorial"
@@ -113,7 +113,7 @@ export default {
                     title: "Diseño UX/UI",
                     description: "Pensando siempre en el usuario, diseño y prototipo interfaces intuitivas y visualmente atractivas con herramientas avanzadas como Figma, llevando los diseños desde la idea inicial hasta convertirlos en prototipos interactivos.",
                     image_alt: "Diseño de aplicación móvil de mascotas creado en Figma por Sara Roche Polo, mostrando mockups de interfaz y prototipado UX/UI",
-                    view_all: 'Ver proyecto'
+                    view_all: 'Ver proyectos'
                 },
                 meta_adds: {
                     title: "Redes sociales y Meta Ads",
@@ -450,7 +450,7 @@ export default {
                 },
                 content: {
                     eyebrow: "Proyectos personales",
-                    title: "Figma",
+                    title: "Diseño UX/UI",
                     intro: "Trabajo el prototipado en Figma como una forma de <highlight>convertir ideas en experiencias digitales navegables, claras y funcionales</highlight>. En esta sección reúno proyectos donde <highlight>diseño interfaces, flujos de usuario y prototipos interactivos</highlight> que ayudan a validar soluciones, detectar mejoras y comunicar de forma visual cómo debería comportarse un producto digital antes de su desarrollo.",
                     zoom_aria: "Hacer zoom en la imagen",
                     projects: {

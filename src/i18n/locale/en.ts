@@ -40,7 +40,7 @@ export default {
                 projects: {
                     adobe_project_neo: "Adobe Project Neo",
                     branding: "Branding",
-                    figma: "Figma",
+                    figma: "UX/UI Design",
                     illustrations: "Illustrations",
                     social_media: "Social media",
                     print_design: "Print design"
@@ -113,7 +113,7 @@ export default {
                     title: "UX/UI Design",
                     description: "With the user in mind, I design and prototype intuitive, visually appealing interfaces using advanced tools like Figma, taking designs from idea to interactive prototypes.",
                     image_alt: "Mobile app design mockups by Sara Roche Polo, including a transport app and a pet app interface",
-                    view_all: 'View project'
+                    view_all: 'View projects'
                 },
                 meta_adds: {
                     title: "Social media and Meta Ads",
@@ -450,7 +450,7 @@ export default {
                 },
                 content: {
                     eyebrow: "Personal projects",
-                    title: "Figma",
+                    title: "UX/UI Design",
                     intro: "I use Figma for prototyping as a way of <highlight>turning ideas into navigable, clear and functional digital experiences</highlight>. In this section I gather projects where I <highlight>design interfaces, user flows and interactive prototypes</highlight> that help validate solutions, surface improvements and communicate visually how a digital product should behave before development.",
                     zoom_aria: "Zoom in on the image",
                     projects: {
