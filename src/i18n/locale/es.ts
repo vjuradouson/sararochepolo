@@ -416,7 +416,13 @@ export default {
                             },
                             logos_h2: "Variaciones del logotipo",
                             typography_h2: "Tipografía corporativa",
+                            videos_h2: "Vídeos de marca",
                             applications_h2: "Aplicaciones de marca",
+                            video_label: {
+                                walking: "Animación de Don Tostado caminando",
+                                to_go: "Animación de Don Tostado to go",
+                                play_to_go: "Reproducir vídeo de Don Tostado to go"
+                            },
                             image_alt: {
                                 coffee_to_go: "Vasos de café con el branding de Don Tostado sobre una máquina de espresso",
                                 coffee_mugs: "Dos tazas de café Don Tostado con bigote ilustrado sobre una mesa de madera",

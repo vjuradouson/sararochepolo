@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { motion, Variants } from "framer-motion";
+import { Play } from "lucide-react";
 import localFont from "next/font/local";
 
 const funnyKids = localFont({
@@ -82,6 +83,18 @@ const logoVariants: LogoVariant[] = [
 export default function BrandingProjectDonTostadoContent() {
     const t = useTranslations("app.projects.branding.projects.don_tostado.content");
     const [refreshKey] = useState(0);
+    const [toGoStarted, setToGoStarted] = useState(false);
+    const toGoVideoRef = useRef<HTMLVideoElement>(null);
+
+    const handleToGoPlay = () => {
+        toGoVideoRef.current?.play();
+        setToGoStarted(true);
+    };
+
+    const handleToGoEnded = () => {
+        toGoVideoRef.current?.load();
+        setToGoStarted(false);
+    };
 
     return (
         <div key={refreshKey} className="text-lg md:text-xl xl:text-2xl">
@@ -197,6 +210,55 @@ export default function BrandingProjectDonTostadoContent() {
                         <p>0123456789</p>
                     </div>
                 </motion.div>
+            </section>
+
+            {/* ─── Brand videos ─────────────────────────────────────── */}
+            <section className="container-xl mx-auto py-16 md:py-24">
+                <h2 className="sr-only">{t("videos_h2")}</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                    <motion.video
+                        {...revealProps}
+                        className="w-full aspect-square object-cover bg-[#14005F]"
+                        src={`${IMG_BASE}/don-tostado-walking.mp4`}
+                        poster={`${IMG_BASE}/don-tostado-walking-poster.jpg`}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="metadata"
+                        aria-label={t("video_label.walking")}
+                    />
+                    <motion.div {...revealProps} className="relative">
+                        <video
+                            ref={toGoVideoRef}
+                            className="w-full aspect-square object-cover bg-[#14005F] block"
+                            src={`${IMG_BASE}/don-tostado-to-go.mp4`}
+                            poster={`${IMG_BASE}/don-tostado-to-go-poster.jpg`}
+                            controls={toGoStarted}
+                            preload="metadata"
+                            playsInline
+                            aria-label={t("video_label.to_go")}
+                            onPlay={() => setToGoStarted(true)}
+                            onEnded={handleToGoEnded}
+                        />
+                        {!toGoStarted && (
+                            <button
+                                type="button"
+                                onClick={handleToGoPlay}
+                                aria-label={t("video_label.play_to_go")}
+                                className="group absolute inset-0 flex items-center justify-center cursor-pointer focus:outline-none"
+                            >
+                                <span className="flex items-center justify-center w-20 h-20 md:w-28 md:h-28 rounded-full bg-white/90 backdrop-blur-sm shadow-2xl transition-all duration-300 group-hover:scale-110 group-hover:bg-white group-focus-visible:ring-4 group-focus-visible:ring-white/60">
+                                    <Play
+                                        className="w-8 h-8 md:w-12 md:h-12 text-[#14005F] ml-1"
+                                        fill="currentColor"
+                                        strokeWidth={0}
+                                    />
+                                </span>
+                            </button>
+                        )}
+                    </motion.div>
+                </div>
             </section>
 
             {/* ─── Brand applications ─────────────────────────────────────── */}

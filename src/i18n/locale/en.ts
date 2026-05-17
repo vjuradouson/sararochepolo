@@ -416,7 +416,13 @@ export default {
                             },
                             logos_h2: "Logo variations",
                             typography_h2: "Brand typography",
+                            videos_h2: "Brand videos",
                             applications_h2: "Brand applications",
+                            video_label: {
+                                walking: "Don Tostado walking animation",
+                                to_go: "Don Tostado to go animation",
+                                play_to_go: "Play Don Tostado to go video"
+                            },
                             image_alt: {
                                 coffee_to_go: "Coffee cups with Don Tostado branding on top of an espresso machine",
                                 coffee_mugs: "Two Don Tostado coffee mugs with illustrated mustaches on a wooden table",
