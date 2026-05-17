@@ -82,7 +82,7 @@ export function HeaderMobileMenu({ links }: MobileMenuProps) {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
                         transition={{ duration: 0.2 }}
-                        className="md:hidden absolute top-20 left-0 right-0 border-b border-neutral-200 bg-white"
+                        className="md:hidden absolute top-15 left-0 right-0 border-b border-neutral-200 bg-white"
                     >
                         <ul className="flex flex-col px-6 py-4 space-y-4">
                             {links.map((link) => {

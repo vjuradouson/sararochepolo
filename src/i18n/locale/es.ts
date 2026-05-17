@@ -506,7 +506,7 @@ export default {
                 content: {
                     eyebrow: "Diseño editorial",
                     title: "Diseño gráfico editorial",
-                    intro: "Me especializo en el diseño de <highlight>creatividades para redes sociales y campañas de Meta Ads</highlight>, enfocadas en <highlight>captar la atención y facilitar la conversión</highlight>. Trabajo adaptando piezas visuales a cada formato y objetivo publicitario, <highlight>cuidando el impacto, la claridad del mensaje y la coherencia con la marca</highlight>. Mi trabajo se centra en transformar ideas en diseños que funcionan en <highlight>entornos reales de publicidad digital</highlight>, ayudando a las empresas a comunicar mejor y a potenciar sus resultados a través de lo visual.",
+                    intro: "",
                     subtitle: "El diseño de flyers permite comunicar de forma directa y visual la esencia de un evento, producto o servicio de empresa.",
                     projects: {
                         triptych: {

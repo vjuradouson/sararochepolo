@@ -68,7 +68,7 @@ export default async function HeaderWrapper() {
 
     return (
         <header className="fixed top-0 left-0 right-0 z-50 bg-surface-80 backdrop-blur-surface">
-            <nav className="container-xl mx-auto flex items-center justify-between h-20">
+            <nav className="container-xl mx-auto flex items-center justify-between h-15">
 
                 {/* Client (interaction) */}
                 <HeaderLogoClient ownerName={t("portfolio.owner")} />

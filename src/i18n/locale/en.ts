@@ -506,7 +506,7 @@ export default {
                 content: {
                     eyebrow: "Print design",
                     title: "Editorial graphic design",
-                    intro: "I specialize in the design of <highlight>creative assets for social media and Meta Ads campaigns</highlight>, focused on <highlight>capturing attention and driving conversion</highlight>. I adapt visuals to each format and advertising goal, <highlight>taking care of impact, message clarity and brand consistency</highlight>. My work turns ideas into designs that perform in <highlight>real digital advertising environments</highlight>, helping companies communicate better and boost their results through visual design.",
+                    intro: "",
                     subtitle: "Flyer design makes it possible to communicate the essence of an event, product or company service in a direct and visual way.",
                     projects: {
                         triptych: {
