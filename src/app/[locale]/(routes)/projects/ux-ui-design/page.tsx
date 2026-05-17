@@ -7,7 +7,7 @@ import { withAlternates } from "@/lib/seo/alternates";
 import JsonLd from "@/components/seo/JsonLd";
 import { getProjectCreativeWorkSchema } from "@/lib/seo/schema/projectCreativeWork";
 import { getBreadcrumbSchema } from "@/lib/seo/schema/breadcrumb";
-import FigmaContent from "./components/Content";
+import UxUiDesignContent from "./components/Content";
 
 export async function generateMetadata({
     params
@@ -24,7 +24,7 @@ export async function generateMetadata({
     return withAlternates(
         {
             locale,
-            route: ROUTES.PROJECTS_FIGMA
+            route: ROUTES.PROJECTS_UX_UI_DESIGN
         },
         {
             title: title,
@@ -32,7 +32,7 @@ export async function generateMetadata({
             openGraph: {
                 title: title,
                 description: description,
-                url: `${BASE_URL}/${locale}${getPath(ROUTES.PROJECTS_FIGMA, locale)}`,
+                url: `${BASE_URL}/${locale}${getPath(ROUTES.PROJECTS_UX_UI_DESIGN, locale)}`,
                 images: [{ url: ogImage, width: 1920, height: 908 }],
             },
             twitter: {
@@ -53,7 +53,7 @@ export default async function FigmaPage({
     const { locale } = await params;
     const t = await getTranslations({ locale });
 
-    const url = `${BASE_URL}/${locale}${getPath(ROUTES.PROJECTS_FIGMA, locale)}`;
+    const url = `${BASE_URL}/${locale}${getPath(ROUTES.PROJECTS_UX_UI_DESIGN, locale)}`;
     const ogImage = `${BASE_URL}/media/projects/figma/starbucks.png`;
 
     const creativeWorkSchema = getProjectCreativeWorkSchema({
@@ -76,7 +76,7 @@ export default async function FigmaPage({
         <>
             <JsonLd data={creativeWorkSchema} />
             <JsonLd data={breadcrumbSchema} />
-            <FigmaContent />
+            <UxUiDesignContent />
         </>
     );
 }

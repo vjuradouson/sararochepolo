@@ -102,7 +102,7 @@ function ProjectSection({ project, t }: { project: FigmaProject; t: T }) {
     );
 }
 
-export default function FigmaContent() {
+export default function UxUiDesignContent() {
     const t = useTranslations("app.projects.figma.content");
 
     return (

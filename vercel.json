@@ -21,6 +21,11 @@
             "permanent": true
         },
         {
+            "source": "/es/proyectos/figma",
+            "destination": "/es/projectos/diseños-ux-ui",
+            "permanent": true
+        },
+        {
             "source": "/en/about",
             "destination": "/en/about-me",
             "permanent": true
@@ -36,8 +41,13 @@
             "permanent": true
         },
         {
-            "source": "/es/proyecto/branding-don-tostado",
+            "source": "/en/project/branding-don-tostado",
             "destination": "/en/projects/branding/don-tostado",
+            "permanent": true
+        },
+        {
+            "source": "/en/projects/figma",
+            "destination": "/en/projects/ux-ui-design",
             "permanent": true
         }
     ]
