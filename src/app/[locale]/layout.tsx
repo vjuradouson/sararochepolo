@@ -5,6 +5,7 @@ import Footer from "@/components/sections/Footer";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, setRequestLocale, getTranslations } from 'next-intl/server';
 import { BASE_URL, LOCALES, LocaleCountryMap } from '@/lib/config';
+import { DEFAULT_OG_IMAGE } from '@/lib/seo/og';
 import { ReactNode } from 'react';
 import CookieBanner from '@/components/CookieBanner';
 import CookieScriptsClient from '@/components/CookieScriptsClient';
@@ -39,20 +40,14 @@ export async function generateMetadata({
     openGraph: {
       url: `${BASE_URL}/${locale}`,
       siteName: t("app.portfolio.owner"),
-      images: [
-        {
-          url: `${BASE_URL}/media/about/profile.png`,
-          width: 1200,
-          height: 630,
-        }
-      ],
+      images: [{ ...DEFAULT_OG_IMAGE, alt: t("app.portfolio.owner") }],
       locale: LocaleCountryMap[locale] || 'en_US',
       type: "website",
     },
     twitter: {
       card: 'summary_large_image',
       title: t("app.portfolio.owner"),
-      images: [`${BASE_URL}/media/about/profile.png`],
+      images: [DEFAULT_OG_IMAGE.url],
     }
   };
 }

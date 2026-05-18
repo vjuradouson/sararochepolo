@@ -2,6 +2,7 @@ import { BASE_URL, DEFAULT_LOCALE, Locale } from "@/lib/config";
 import { ROUTING } from '@/i18n/routing';
 import { getPath } from "@/i18n/getPath";
 import { Metadata, Route } from "next"
+import { DEFAULT_OG_IMAGE } from "@/lib/seo/og";
 
 export async function buildAlternates(
     params: ParamsWithAlternates
@@ -35,8 +36,20 @@ export async function withAlternates(
     params: ParamsWithAlternates,
     metadata: Metadata
 ): Promise<Metadata> {
+    const hasOgImage = !!metadata.openGraph && 'images' in metadata.openGraph && !!metadata.openGraph.images
+    const hasTwitterImage = !!metadata.twitter && 'images' in metadata.twitter && !!metadata.twitter.images
+
     return {
         ...metadata,
         alternates: await buildAlternates(params),
+        openGraph: {
+            ...metadata.openGraph,
+            ...(hasOgImage ? {} : { images: [DEFAULT_OG_IMAGE] }),
+        },
+        twitter: {
+            card: 'summary_large_image',
+            ...metadata.twitter,
+            ...(hasTwitterImage ? {} : { images: [DEFAULT_OG_IMAGE.url] }),
+        },
     }
 }
