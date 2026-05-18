@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import HomeClient from "./(home)/HomeClient";
+import HomeClient from "./(home)/_components/HomeClient";
 import { getTranslations } from "next-intl/server";
 import JsonLd from "@/components/seo/JsonLd";
 import { getPersonSchema } from "@/lib/seo/schema/person";

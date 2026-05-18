@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import type { CookieConsent } from '@/lib/cookie-consent';
+import type { CookieConsent } from '@/lib/cookieConsent';
 
 export default function CookieScriptsClient() {
     const [consent, setConsent] = useState<CookieConsent | null>(null);

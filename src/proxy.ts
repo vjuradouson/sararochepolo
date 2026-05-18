@@ -1,7 +1,7 @@
 import createMiddleware from 'next-intl/middleware';
 import { ROUTING } from './i18n/routing';
 import { NextRequest, NextResponse } from 'next/server';
-import { COOKIE_CONSENT_NAME } from '@/lib/cookie-consent';
+import { COOKIE_CONSENT_NAME } from '@/lib/cookieConsent';
 import { LOCALES, COUNTRY_LOCALE_MAP, DEFAULT_LOCALE } from '@/lib/config';
 
 const resolveLocaleFromCountry = (country: string): string => {

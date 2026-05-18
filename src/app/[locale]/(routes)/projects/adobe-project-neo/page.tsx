@@ -7,7 +7,7 @@ import { withAlternates } from "@/lib/seo/alternates";
 import JsonLd from "@/components/seo/JsonLd";
 import { getProjectCreativeWorkSchema } from "@/lib/seo/schema/projectCreativeWork";
 import { getBreadcrumbSchema } from "@/lib/seo/schema/breadcrumb";
-import AdobeProjectNeoContent from "./components/Content";
+import AdobeProjectNeoContent from "./_components/Content";
 
 export async function generateMetadata({
     params

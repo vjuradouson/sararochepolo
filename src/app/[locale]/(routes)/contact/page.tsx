@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import ContactContent from "./ContactContent";
+import ContactContent from "./_components/ContactContent";
 import { BASE_URL } from '@/lib/config';
 import { getPath } from "@/i18n/getPath";
 import { ROUTES } from "@/constants/routes";

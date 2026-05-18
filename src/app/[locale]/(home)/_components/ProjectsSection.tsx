@@ -77,13 +77,13 @@ export default function ProjectsSection() {
             href: ROUTES.PROJECTS_UX_UI_DESIGN,
             content: (
                 <Image
-                    src="/media/home/projects/figma_pet_buddy.png"
+                    src="/media/home/projects/figma-pet-buddy.png"
                     alt={t("home.projects.figma_pet_buddy.image_alt")}
                     width={1200}
                     height={828}
                     sizes="(max-width: 768px) 100vw, 50vw"
                     quality={75}
-                    className="block mx-auto max-h-full max-w-full w-full h-auto object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] mt-12 mb-12 md:mt-0 md:mb-0 scale-[1.3] md:scale-[1] xl:scale-[1.3] xl:pl-[10%]"
+                    className="block mx-auto max-h-full max-w-full w-full h-auto object-contain drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] mt-12 mb-12 md:mt-0 md:mb-0 scale-[1.3] md:scale-[1] xl:scale-[1.2] xl:pl-[10%]"
                 />
             ),
         },
@@ -100,7 +100,7 @@ export default function ProjectsSection() {
             content: (
                 <div className="absolute inset-0">
                     <Image
-                        src="/media/home/projects/meta_adds.png"
+                        src="/media/home/projects/meta-adds.png"
                         alt={t("home.projects.meta_adds.image_alt")}
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"

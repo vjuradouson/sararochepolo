@@ -7,7 +7,7 @@ import { withAlternates } from "@/lib/seo/alternates";
 import JsonLd from "@/components/seo/JsonLd";
 import { getProjectCreativeWorkSchema } from "@/lib/seo/schema/projectCreativeWork";
 import { getBreadcrumbSchema } from "@/lib/seo/schema/breadcrumb";
-import BrandingProjectLaEsquinitaDePapelContent from "./components/Content";
+import BrandingProjectLaEsquinitaDePapelContent from "./_components/Content";
 
 export async function generateMetadata({
     params

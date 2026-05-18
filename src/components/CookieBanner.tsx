@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-import type { CookieConsent } from '@/lib/cookie-consent';
+import type { CookieConsent } from '@/lib/cookieConsent';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 

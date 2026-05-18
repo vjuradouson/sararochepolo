@@ -1,9 +1,9 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Hero from './components/Hero'
-import Intro from './components/Intro'
-import ProjectsSection from './components/ProjectsSection'
+import Hero from './Hero'
+import Intro from './Intro'
+import ProjectsSection from './ProjectsSection'
 
 export default function HomeClient() {
     const [refreshKey, setRefreshKey] = useState(0)

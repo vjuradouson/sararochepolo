@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import {
     buildConsent,
     COOKIE_CONSENT_NAME,
-} from '@/lib/cookie-consent';
+} from '@/lib/cookieConsent';
 
 export async function POST(req: NextRequest) {
     const body = await req.json().catch(() => null);

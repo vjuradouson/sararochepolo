@@ -9,7 +9,8 @@ La versión de node utilizada es: v20.18.3
     - `app/`: Solo para archivos de routing (`page.tsx`, `layout.tsx`, `loading.tsx`).
     - `components/ui/`: Componentes base reutilizables (botones, inputs, tarjetas).
     - `components/sections/`: Secciones completas de la página (Hero, Portfolio, Contact).
-    - `lib/`: Utilidades y configuraciones (framer-motion-variants.ts, utils.ts).
+    - `lib/`: Utilidades y configuraciones (framerMotionVariants.ts, utils.ts). camelCase para archivos de utilidades.
+    - **Carpetas privadas en `app/`:** Cuando una ruta necesite colocar componentes/utilidades cerca, usar el prefijo `_` (p. ej. `app/[locale]/(routes)/contact/_components/`). El guion bajo es la sintaxis explícita de Next para opt-out de routing.
 
 ## 2. Visual Identity & Design Standards
 - **Minimalism:** Priorizar el uso de "espacio negativo" (whitespace). Escalas de espaciado generosas (`py-16` a `py-24`) para separar secciones.
