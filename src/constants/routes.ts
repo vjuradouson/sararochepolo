@@ -1,5 +1,6 @@
 export const ROUTES = {
   HOME: '/',
+  COOKIE_POLICY: '/cookie-policy',
   ABOUT: '/about-me',
   CONTACT: '/contact',
   PROJECTS_ADOBE_PROJECT_NEO: '/projects/adobe-project-neo',

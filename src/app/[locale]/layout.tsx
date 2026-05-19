@@ -14,6 +14,7 @@ import GTMPageView from '@/components/GTMPageView';
 import { Analytics as VercelAnalytics } from '@vercel/analytics/next';
 import { SpeedInsights as VercelSpeedInsights } from '@vercel/speed-insights/next';
 import ConsentScript from '@/components/ConsentScript';
+import ClarityAnalytics from '@/components/ClarityAnalytics';
 
 const kantumruyPro = Kantumruy_Pro({
   subsets: ['latin'],
@@ -141,6 +142,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
         <VercelAnalytics />
         <VercelSpeedInsights />
         <GTMPageView />
+        <ClarityAnalytics />
 
         <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />

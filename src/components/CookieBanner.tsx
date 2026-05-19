@@ -4,6 +4,8 @@ import { useEffect, useMemo, useState } from 'react';
 import type { CookieConsent } from '@/lib/cookieConsent';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import { Link } from '@/i18n/navigation';
+import { ROUTES } from '@/constants/routes';
 
 type LocalPreferences = {
     analytics: boolean;
@@ -22,6 +24,16 @@ export default function CookieBanner() {
         const existingConsent = getConsentFromCookie();
         setConsent(existingConsent);
         setIsOpen(!existingConsent);
+
+        const handleOpenRequest = () => {
+            setShowSettings(true);
+            setIsOpen(true);
+        };
+        window.addEventListener('open-cookie-banner', handleOpenRequest);
+
+        return () => {
+            window.removeEventListener('open-cookie-banner', handleOpenRequest);
+        };
     }, []);
 
     const initialValues = useMemo<LocalPreferences>(
@@ -118,7 +130,14 @@ export default function CookieBanner() {
                         </h2>
 
                         <p className="mt-2 text-sm text-neutral-700">
-                            {t('description')}
+                            {t('description')}{' '}
+                            <Link
+                                href={ROUTES.COOKIE_POLICY}
+                                className="underline"
+                            >
+                                {t('policy_link')}
+                            </Link>
+                            .
                         </p>
 
                         <button
@@ -166,7 +185,13 @@ export default function CookieBanner() {
                                                     }))
                                                 }
                                             />
-                                            <strong>{t('categories.preferences')}</strong>
+                                            <span>
+                                                <strong>{t('categories.preferences.label')}</strong>
+                                                <br />
+                                                <span className="text-sm text-neutral-600">
+                                                    {t('categories.preferences.description')}
+                                                </span>
+                                            </span>
                                         </label>
 
                                         <label className="flex items-start gap-3">
@@ -180,7 +205,13 @@ export default function CookieBanner() {
                                                     }))
                                                 }
                                             />
-                                            <strong>{t('categories.analytics')}</strong>
+                                            <span>
+                                                <strong>{t('categories.analytics.label')}</strong>
+                                                <br />
+                                                <span className="text-sm text-neutral-600">
+                                                    {t('categories.analytics.description')}
+                                                </span>
+                                            </span>
                                         </label>
 
                                         <label className="flex items-start gap-3">
@@ -194,7 +225,13 @@ export default function CookieBanner() {
                                                     }))
                                                 }
                                             />
-                                            <strong>{t('categories.marketing')}</strong>
+                                            <span>
+                                                <strong>{t('categories.marketing.label')}</strong>
+                                                <br />
+                                                <span className="text-sm text-neutral-600">
+                                                    {t('categories.marketing.description')}
+                                                </span>
+                                            </span>
                                         </label>
                                     </div>
                                 </motion.div>

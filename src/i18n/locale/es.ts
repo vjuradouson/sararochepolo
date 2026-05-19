@@ -67,14 +67,25 @@ export default {
             description: "Usamos cookies técnicas necesarias y, si nos das permiso, también cookies de analítica, preferencias y marketing.",
             show_settings: "Configurar cookies",
             hide_settings: "Ocultar configuración",
+            policy_link: "Más información en la Política de cookies",
+            manage_link: "Configurar cookies",
             categories: {
                 necessary: {
                     label: "Necesarias",
-                    description: "Siempre activas."
+                    description: "Imprescindibles para el funcionamiento del sitio."
                 },
-                preferences: "Preferencias",
-                analytics: "Analítica",
-                marketing: "Marketing"
+                preferences: {
+                    label: "Preferencias",
+                    description: "Recuerdan tus elecciones, como el idioma."
+                },
+                analytics: {
+                    label: "Analítica",
+                    description: "Nos ayudan a mejorar la web con Microsoft Clarity y Google Tag Manager."
+                },
+                marketing: {
+                    label: "Marketing",
+                    description: "Publicidad y medición de campañas. Sin proveedores activos."
+                }
             },
             actions: {
                 reject_optional: "Rechazar opcionales",
@@ -83,6 +94,147 @@ export default {
             },
             errors: {
                 save_failed: "No se pudo guardar tu preferencia de cookies."
+            }
+        },
+        cookie_policy: {
+            seo: {
+                title: "Política de cookies | Sara Roche Polo",
+                description: "Política de cookies del portfolio de Sara Roche Polo. Información sobre las cookies que usamos, finalidad, duración y cómo gestionar tu consentimiento."
+            },
+            h1: "Política de cookies",
+            last_updated_label: "Última actualización",
+            last_updated_value: "Mayo 2026",
+            intro: "Esta Política de cookies explica qué son las cookies, qué cookies utiliza este sitio web, con qué finalidad, durante cuánto tiempo y cómo puedes gestionar tu consentimiento en cualquier momento. Forma parte del cumplimiento de la normativa LSSI-CE (Art. 22.2) y del Reglamento General de Protección de Datos (RGPD).",
+            sections: {
+                controller: {
+                    h2: "1. Responsable del tratamiento",
+                    body: "Sara Roche Polo · Diseñadora de Producto (UX/UI), Zaragoza (España). Email de contacto: sararochepolo@gmail.com. Para cualquier consulta sobre esta política o el tratamiento de tus datos, puedes escribirnos a la dirección anterior."
+                },
+                what: {
+                    h2: "2. ¿Qué son las cookies?",
+                    body: "Las cookies son pequeños archivos de texto que se almacenan en tu navegador cuando visitas un sitio web. Permiten que la web recuerde información sobre tu visita (preferencias, sesión, comportamiento agregado), facilitando la navegación y aportándole funcionalidad. Pueden ser de sesión (se borran al cerrar el navegador) o persistentes (se mantienen un tiempo definido)."
+                },
+                legal_basis: {
+                    h2: "3. Base legal",
+                    body: "Las cookies estrictamente necesarias se instalan en base al interés legítimo del titular (Art. 6.1.f RGPD), ya que son imprescindibles para el funcionamiento del sitio. El resto de cookies (preferencias, analítica, marketing) requieren tu consentimiento previo, expreso e informado (Art. 6.1.a RGPD y Art. 22.2 LSSI-CE), que puedes otorgar o rechazar mediante el banner de cookies."
+                },
+                categories: {
+                    h2: "4. Cookies que usamos",
+                    necessary: {
+                        h3: "Necesarias",
+                        body: "Indispensables para el funcionamiento del sitio. No requieren consentimiento.",
+                        table: {
+                            cookie: "Cookie",
+                            provider: "Proveedor",
+                            purpose: "Finalidad",
+                            duration: "Duración",
+                            rows: {
+                                consent: {
+                                    cookie: "cookie_consent_v1",
+                                    provider: "Este sitio (propia)",
+                                    purpose: "Guarda tus preferencias de consentimiento de cookies.",
+                                    duration: "12 meses"
+                                }
+                            }
+                        }
+                    },
+                    preferences: {
+                        h3: "Preferencias",
+                        body: "Personalizan tu experiencia recordando elecciones como el idioma. Actualmente no se instalan cookies persistentes adicionales en esta categoría más allá de la preferencia de idioma gestionada en URL."
+                    },
+                    analytics: {
+                        h3: "Analítica",
+                        body: "Nos permiten entender cómo se utiliza el sitio de forma agregada y seudonimizada, para mejorar la usabilidad y detectar errores. Usamos dos proveedores:",
+                        providers: {
+                            gtm: {
+                                h4: "Google Tag Manager (Google Ireland Ltd.)",
+                                body: "Gestor de etiquetas. Por sí mismo no instala cookies de seguimiento; se utiliza para cargar otras herramientas de analítica condicionadas a tu consentimiento. Más información: policies.google.com/privacy."
+                            },
+                            clarity: {
+                                h4: "Microsoft Clarity (Microsoft Corporation)",
+                                body: "Herramienta de analítica de comportamiento que registra interacciones de tu sesión de forma seudonimizada: clics, movimientos del ratón, scroll y mapas de calor agregados. Clarity enmascara por defecto el contenido sensible (texto introducido en formularios, imágenes) y no recopila datos personales identificables. Los datos se procesan por Microsoft Corporation, lo que puede implicar transferencia internacional fuera del Espacio Económico Europeo (Estados Unidos), amparada en las Cláusulas Contractuales Tipo aprobadas por la Comisión Europea. Más información: privacy.microsoft.com."
+                            }
+                        },
+                        table: {
+                            cookie: "Cookie",
+                            provider: "Proveedor",
+                            purpose: "Finalidad",
+                            duration: "Duración",
+                            rows: {
+                                clck: {
+                                    cookie: "_clck",
+                                    provider: "Microsoft Clarity",
+                                    purpose: "Identificador de usuario único de Clarity.",
+                                    duration: "12 meses"
+                                },
+                                clsk: {
+                                    cookie: "_clsk",
+                                    provider: "Microsoft Clarity",
+                                    purpose: "Reproducciones de la sesión actual del usuario.",
+                                    duration: "1 día"
+                                },
+                                clid: {
+                                    cookie: "CLID",
+                                    provider: "Microsoft Clarity",
+                                    purpose: "Identifica el navegador del usuario en la primera visita.",
+                                    duration: "12 meses"
+                                },
+                                anonchk: {
+                                    cookie: "ANONCHK",
+                                    provider: "Microsoft",
+                                    purpose: "Indica si el MUID debe transferirse a ANID; verificación de la sincronización de cookies.",
+                                    duration: "10 minutos"
+                                },
+                                muid: {
+                                    cookie: "MUID",
+                                    provider: "Microsoft",
+                                    purpose: "Identificador único utilizado por Microsoft para reconocer usuarios únicos en los sitios de Microsoft.",
+                                    duration: "12 meses"
+                                },
+                                mr: {
+                                    cookie: "MR",
+                                    provider: "Microsoft",
+                                    purpose: "Indica si debe actualizarse MUID.",
+                                    duration: "7 días"
+                                },
+                                sm: {
+                                    cookie: "SM",
+                                    provider: "Microsoft",
+                                    purpose: "Sincroniza el MUID entre dominios de Microsoft.",
+                                    duration: "Sesión"
+                                }
+                            }
+                        }
+                    },
+                    marketing: {
+                        h3: "Marketing",
+                        body: "Cookies destinadas a mostrar publicidad personalizada y medir el rendimiento de campañas. Actualmente este sitio no tiene proveedores de marketing activos. Si en el futuro se incorporan, se actualizará esta política y se requerirá nuevamente tu consentimiento."
+                    }
+                },
+                international: {
+                    h2: "5. Transferencias internacionales",
+                    body: "El uso de Microsoft Clarity y Google Tag Manager puede implicar la transferencia de datos a servidores ubicados fuera del Espacio Económico Europeo, principalmente en Estados Unidos. Estas transferencias están amparadas por las Cláusulas Contractuales Tipo aprobadas por la Comisión Europea (Decisión 2021/914) y, en el caso de Microsoft, por su adhesión al EU-US Data Privacy Framework."
+                },
+                rights: {
+                    h2: "6. Tus derechos",
+                    body: "Como titular de los datos, tienes derecho a acceder, rectificar y suprimir tus datos, así como a limitar u oponerte a su tratamiento y a la portabilidad. También tienes derecho a retirar tu consentimiento en cualquier momento, sin que ello afecte a la licitud del tratamiento previo a la retirada. Para ejercer estos derechos, escríbenos a sararochepolo@gmail.com. Si consideras que tus derechos no se han atendido correctamente, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es)."
+                },
+                manage: {
+                    h2: "7. Cómo gestionar o retirar tu consentimiento",
+                    body: "Puedes modificar o retirar tu consentimiento en cualquier momento desde este sitio:",
+                    cta_label: "Configurar cookies",
+                    browser_body: "Además, puedes bloquear o eliminar las cookies directamente desde la configuración de tu navegador. Cada navegador tiene su propio procedimiento:",
+                    browsers: {
+                        chrome: "Google Chrome: support.google.com/chrome/answer/95647",
+                        firefox: "Mozilla Firefox: support.mozilla.org/es/kb/habilitar-y-deshabilitar-cookies-sitios-web-rastrear-preferencias",
+                        safari: "Safari: support.apple.com/es-es/guide/safari/sfri11471/mac",
+                        edge: "Microsoft Edge: support.microsoft.com/es-es/microsoft-edge"
+                    }
+                },
+                changes: {
+                    h2: "8. Cambios en esta política",
+                    body: "Esta política puede actualizarse para reflejar cambios legislativos o nuevos proveedores. La fecha de última actualización aparece al inicio del documento. Si los cambios son sustanciales, te volveremos a solicitar consentimiento mediante el banner de cookies."
+                }
             }
         },
         home: {

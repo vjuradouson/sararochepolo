@@ -67,14 +67,25 @@ export default {
             description: "We use necessary technical cookies and, with your consent, also analytics, preferences and marketing cookies.",
             show_settings: "Customize cookies",
             hide_settings: "Hide settings",
+            policy_link: "More information in the Cookie Policy",
+            manage_link: "Manage cookies",
             categories: {
                 necessary: {
                     label: "Necessary",
-                    description: "Always active."
+                    description: "Essential for the site to work."
                 },
-                preferences: "Preferences",
-                analytics: "Analytics",
-                marketing: "Marketing"
+                preferences: {
+                    label: "Preferences",
+                    description: "Remember your choices, such as language."
+                },
+                analytics: {
+                    label: "Analytics",
+                    description: "Help us improve the site with Microsoft Clarity and Google Tag Manager."
+                },
+                marketing: {
+                    label: "Marketing",
+                    description: "Advertising and campaign measurement. No active providers."
+                }
             },
             actions: {
                 reject_optional: "Reject optional",
@@ -83,6 +94,147 @@ export default {
             },
             errors: {
                 save_failed: "Could not save your cookie preferences."
+            }
+        },
+        cookie_policy: {
+            seo: {
+                title: "Cookie Policy | Sara Roche Polo",
+                description: "Cookie policy for Sara Roche Polo's portfolio. Information about the cookies we use, their purpose, duration and how to manage your consent."
+            },
+            h1: "Cookie Policy",
+            last_updated_label: "Last updated",
+            last_updated_value: "May 2026",
+            intro: "This Cookie Policy explains what cookies are, which cookies this website uses, for what purpose, how long they last, and how you can manage your consent at any time. It is part of our compliance with the Spanish LSSI-CE regulation (Art. 22.2) and the EU General Data Protection Regulation (GDPR).",
+            sections: {
+                controller: {
+                    h2: "1. Data controller",
+                    body: "Sara Roche Polo · Product Designer (UX/UI), based in Zaragoza (Spain). Contact email: sararochepolo@gmail.com. For any inquiry about this policy or the processing of your data, you can write to us at the address above."
+                },
+                what: {
+                    h2: "2. What are cookies?",
+                    body: "Cookies are small text files stored in your browser when you visit a website. They allow the site to remember information about your visit (preferences, session, aggregated behavior), making navigation easier and adding functionality. They can be session cookies (deleted when you close the browser) or persistent cookies (kept for a defined period)."
+                },
+                legal_basis: {
+                    h2: "3. Legal basis",
+                    body: "Strictly necessary cookies are installed based on the legitimate interest of the controller (Art. 6.1.f GDPR), since they are essential for the site to function. All other cookies (preferences, analytics, marketing) require your prior, express and informed consent (Art. 6.1.a GDPR and Art. 22.2 LSSI-CE), which you can grant or refuse through the cookie banner."
+                },
+                categories: {
+                    h2: "4. Cookies we use",
+                    necessary: {
+                        h3: "Necessary",
+                        body: "Essential for the site to function. They do not require consent.",
+                        table: {
+                            cookie: "Cookie",
+                            provider: "Provider",
+                            purpose: "Purpose",
+                            duration: "Duration",
+                            rows: {
+                                consent: {
+                                    cookie: "cookie_consent_v1",
+                                    provider: "This site (first-party)",
+                                    purpose: "Stores your cookie consent preferences.",
+                                    duration: "12 months"
+                                }
+                            }
+                        }
+                    },
+                    preferences: {
+                        h3: "Preferences",
+                        body: "Personalize your experience by remembering choices such as language. Currently no additional persistent cookies are stored in this category beyond the URL-based language preference."
+                    },
+                    analytics: {
+                        h3: "Analytics",
+                        body: "Allow us to understand how the site is used in an aggregated and pseudonymized way, to improve usability and detect issues. We use two providers:",
+                        providers: {
+                            gtm: {
+                                h4: "Google Tag Manager (Google Ireland Ltd.)",
+                                body: "Tag manager. By itself it does not install tracking cookies; it is used to load other analytics tools subject to your consent. More info: policies.google.com/privacy."
+                            },
+                            clarity: {
+                                h4: "Microsoft Clarity (Microsoft Corporation)",
+                                body: "Behavioral analytics tool that records session interactions in a pseudonymized way: clicks, mouse movements, scroll and aggregated heatmaps. Clarity masks sensitive content by default (text entered in forms, images) and does not collect personally identifiable information. Data is processed by Microsoft Corporation, which may involve international transfer outside the European Economic Area (United States), covered by the Standard Contractual Clauses approved by the European Commission. More info: privacy.microsoft.com."
+                            }
+                        },
+                        table: {
+                            cookie: "Cookie",
+                            provider: "Provider",
+                            purpose: "Purpose",
+                            duration: "Duration",
+                            rows: {
+                                clck: {
+                                    cookie: "_clck",
+                                    provider: "Microsoft Clarity",
+                                    purpose: "Unique Clarity user identifier.",
+                                    duration: "12 months"
+                                },
+                                clsk: {
+                                    cookie: "_clsk",
+                                    provider: "Microsoft Clarity",
+                                    purpose: "Recordings of the user's current session.",
+                                    duration: "1 day"
+                                },
+                                clid: {
+                                    cookie: "CLID",
+                                    provider: "Microsoft Clarity",
+                                    purpose: "Identifies the user's browser on first visit.",
+                                    duration: "12 months"
+                                },
+                                anonchk: {
+                                    cookie: "ANONCHK",
+                                    provider: "Microsoft",
+                                    purpose: "Indicates whether MUID should be transferred to ANID; cookie sync verification.",
+                                    duration: "10 minutes"
+                                },
+                                muid: {
+                                    cookie: "MUID",
+                                    provider: "Microsoft",
+                                    purpose: "Unique identifier used by Microsoft to recognize unique users across Microsoft sites.",
+                                    duration: "12 months"
+                                },
+                                mr: {
+                                    cookie: "MR",
+                                    provider: "Microsoft",
+                                    purpose: "Indicates whether MUID should be refreshed.",
+                                    duration: "7 days"
+                                },
+                                sm: {
+                                    cookie: "SM",
+                                    provider: "Microsoft",
+                                    purpose: "Syncs MUID across Microsoft domains.",
+                                    duration: "Session"
+                                }
+                            }
+                        }
+                    },
+                    marketing: {
+                        h3: "Marketing",
+                        body: "Cookies aimed at displaying personalized advertising and measuring campaign performance. Currently this site has no active marketing providers. If they are added in the future, this policy will be updated and your consent will be requested again."
+                    }
+                },
+                international: {
+                    h2: "5. International transfers",
+                    body: "The use of Microsoft Clarity and Google Tag Manager may involve the transfer of data to servers located outside the European Economic Area, mainly in the United States. These transfers are covered by the Standard Contractual Clauses approved by the European Commission (Decision 2021/914) and, in the case of Microsoft, by its adherence to the EU-US Data Privacy Framework."
+                },
+                rights: {
+                    h2: "6. Your rights",
+                    body: "As a data subject, you have the right to access, rectify and erase your data, as well as to restrict or object to its processing and to data portability. You also have the right to withdraw your consent at any time, without affecting the lawfulness of processing prior to the withdrawal. To exercise these rights, write to us at sararochepolo@gmail.com. If you consider that your rights have not been properly addressed, you can file a complaint with the Spanish Data Protection Agency (www.aepd.es)."
+                },
+                manage: {
+                    h2: "7. How to manage or withdraw your consent",
+                    body: "You can modify or withdraw your consent at any time from this site:",
+                    cta_label: "Manage cookies",
+                    browser_body: "In addition, you can block or delete cookies directly from your browser settings. Each browser has its own procedure:",
+                    browsers: {
+                        chrome: "Google Chrome: support.google.com/chrome/answer/95647",
+                        firefox: "Mozilla Firefox: support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences",
+                        safari: "Safari: support.apple.com/en-us/guide/safari/sfri11471/mac",
+                        edge: "Microsoft Edge: support.microsoft.com/en-us/microsoft-edge"
+                    }
+                },
+                changes: {
+                    h2: "8. Changes to this policy",
+                    body: "This policy may be updated to reflect legislative changes or new providers. The last update date appears at the top of the document. If the changes are substantial, we will request your consent again through the cookie banner."
+                }
             }
         },
         home: {

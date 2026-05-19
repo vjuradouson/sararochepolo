@@ -51,6 +51,10 @@ export const ROUTING = defineRouting({
     [ROUTES.PROJECTS_EDITORIAL]: {
       es: '/proyectos/diseño-editorial',
       en: '/projects/print-design'
+    },
+    [ROUTES.COOKIE_POLICY]: {
+      es: '/politica-de-cookies',
+      en: '/cookie-policy'
     }
   }
 })
