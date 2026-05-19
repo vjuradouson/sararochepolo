@@ -1,10 +1,21 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import { getTranslations } from "next-intl/server";
 import { BASE_URL } from "@/lib/config";
 import { getPath } from "@/i18n/getPath";
+import { Link } from "@/i18n/navigation";
 import { ROUTES } from "@/constants/routes";
 import { withAlternates } from "@/lib/seo/alternates";
 import CookiePolicyContent from "./_components/CookiePolicyContent";
+
+const contactLink = (chunks: ReactNode) => (
+    <Link
+        href={ROUTES.CONTACT}
+        className="underline underline-offset-4 hover:opacity-75 transition-opacity"
+    >
+        {chunks}
+    </Link>
+);
 
 export async function generateMetadata({
     params,
@@ -57,7 +68,9 @@ export default async function CookiePolicyPage({
                 intro: t("app.cookie_policy.intro"),
                 controller: {
                     h2: t("app.cookie_policy.sections.controller.h2"),
-                    body: t("app.cookie_policy.sections.controller.body"),
+                    body: t.rich("app.cookie_policy.sections.controller.body", {
+                        contact: contactLink,
+                    }),
                 },
                 what: {
                     h2: t("app.cookie_policy.sections.what.h2"),
@@ -132,7 +145,9 @@ export default async function CookiePolicyPage({
                 },
                 rights: {
                     h2: t("app.cookie_policy.sections.rights.h2"),
-                    body: t("app.cookie_policy.sections.rights.body"),
+                    body: t.rich("app.cookie_policy.sections.rights.body", {
+                        contact: contactLink,
+                    }),
                 },
                 manage: {
                     h2: t("app.cookie_policy.sections.manage.h2"),

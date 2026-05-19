@@ -108,7 +108,7 @@ export default {
             sections: {
                 controller: {
                     h2: "1. Responsable del tratamiento",
-                    body: "Sara Roche Polo · Diseñadora de Producto (UX/UI), Zaragoza (España). Email de contacto: sararochepolo@gmail.com. Para cualquier consulta sobre esta política o el tratamiento de tus datos, puedes escribirnos a la dirección anterior."
+                    body: "Sara Roche Polo · Diseñadora de Producto (UX/UI), Zaragoza (España). Para cualquier consulta sobre esta política o el tratamiento de tus datos, puedes contactarnos a través de nuestro <contact>formulario de contacto</contact>."
                 },
                 what: {
                     h2: "2. ¿Qué son las cookies?",
@@ -217,7 +217,7 @@ export default {
                 },
                 rights: {
                     h2: "6. Tus derechos",
-                    body: "Como titular de los datos, tienes derecho a acceder, rectificar y suprimir tus datos, así como a limitar u oponerte a su tratamiento y a la portabilidad. También tienes derecho a retirar tu consentimiento en cualquier momento, sin que ello afecte a la licitud del tratamiento previo a la retirada. Para ejercer estos derechos, escríbenos a sararochepolo@gmail.com. Si consideras que tus derechos no se han atendido correctamente, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es)."
+                    body: "Como titular de los datos, tienes derecho a acceder, rectificar y suprimir tus datos, así como a limitar u oponerte a su tratamiento y a la portabilidad. También tienes derecho a retirar tu consentimiento en cualquier momento, sin que ello afecte a la licitud del tratamiento previo a la retirada. Para ejercer estos derechos, puedes contactarnos a través de nuestro <contact>formulario de contacto</contact>. Si consideras que tus derechos no se han atendido correctamente, puedes presentar una reclamación ante la Agencia Española de Protección de Datos (www.aepd.es)."
                 },
                 manage: {
                     h2: "7. Cómo gestionar o retirar tu consentimiento",

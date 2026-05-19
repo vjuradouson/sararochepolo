@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import ManageCookiesButton from "./ManageCookiesButton";
 
 type CookieRow = {
@@ -19,7 +20,7 @@ type Props = {
         h1: string;
         lastUpdated: { label: string; value: string };
         intro: string;
-        controller: { h2: string; body: string };
+        controller: { h2: string; body: ReactNode };
         what: { h2: string; body: string };
         legalBasis: { h2: string; body: string };
         categories: {
@@ -42,7 +43,7 @@ type Props = {
             marketing: { h3: string; body: string };
         };
         international: { h2: string; body: string };
-        rights: { h2: string; body: string };
+        rights: { h2: string; body: ReactNode };
         manage: {
             h2: string;
             body: string;

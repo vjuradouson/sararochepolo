@@ -108,7 +108,7 @@ export default {
             sections: {
                 controller: {
                     h2: "1. Data controller",
-                    body: "Sara Roche Polo · Product Designer (UX/UI), based in Zaragoza (Spain). Contact email: sararochepolo@gmail.com. For any inquiry about this policy or the processing of your data, you can write to us at the address above."
+                    body: "Sara Roche Polo · Product Designer (UX/UI), based in Zaragoza (Spain). For any inquiry about this policy or the processing of your data, please reach out through our <contact>contact form</contact>."
                 },
                 what: {
                     h2: "2. What are cookies?",
@@ -217,7 +217,7 @@ export default {
                 },
                 rights: {
                     h2: "6. Your rights",
-                    body: "As a data subject, you have the right to access, rectify and erase your data, as well as to restrict or object to its processing and to data portability. You also have the right to withdraw your consent at any time, without affecting the lawfulness of processing prior to the withdrawal. To exercise these rights, write to us at sararochepolo@gmail.com. If you consider that your rights have not been properly addressed, you can file a complaint with the Spanish Data Protection Agency (www.aepd.es)."
+                    body: "As a data subject, you have the right to access, rectify and erase your data, as well as to restrict or object to its processing and to data portability. You also have the right to withdraw your consent at any time, without affecting the lawfulness of processing prior to the withdrawal. To exercise these rights, please reach out through our <contact>contact form</contact>. If you consider that your rights have not been properly addressed, you can file a complaint with the Spanish Data Protection Agency (www.aepd.es)."
                 },
                 manage: {
                     h2: "7. How to manage or withdraw your consent",
