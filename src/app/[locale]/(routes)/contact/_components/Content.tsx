@@ -114,15 +114,15 @@ export default function ContactForm() {
                 variants={fadeInUp}
                 className="flex flex-col items-start gap-4 rounded-2xl bg-neutral-100 p-8 shadow-[0_10px_30px_rgba(0,0,0,0.08)]"
             >
-                <h2 className="text-lg font-light">
+                <h2 className="text-3xl font-light">
                     {t("contact.form.submit.success.message")}
                 </h2>
-                <p className="text-sm text-neutral-500">
+                <p className="text-xl">
                     {t("contact.form.submit.success.description")}
                 </p>
                 <button
                     onClick={() => setSent(false)}
-                    className="mt-2 text-sm underline text-neutral-500"
+                    className="mt-2 text-lg underline"
                 >
                     {t("contact.form.submit.success.button")}
                 </button>
