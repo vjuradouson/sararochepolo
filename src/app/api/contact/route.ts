@@ -1,8 +1,10 @@
 import { Resend } from "resend";
 import { getTranslations } from "next-intl/server";
-import { RESEND_API_KEY, CONTACT_EMAIL, MAIL_FROM } from "@/lib/config";
+import { RESEND_API_KEY, CONTACT_EMAIL, MAIL_FROM, TURNSTILE_SECRET_KEY } from "@/lib/server-config";
 
 const resend = new Resend(RESEND_API_KEY);
+
+const MIN_FORM_FILL_MS = 2000;
 
 // =========================
 // Utils
@@ -19,6 +21,37 @@ function escapeHtml(str: string) {
 
 function formatMessage(message: string) {
     return escapeHtml(message).replace(/\n/g, "<br />");
+}
+
+function getClientIp(req: Request) {
+    const forwarded = req.headers.get("x-forwarded-for");
+    if (forwarded) return forwarded.split(",")[0].trim();
+    return req.headers.get("x-real-ip") || undefined;
+}
+
+// =========================
+// Anti-bot
+// =========================
+
+async function verifyTurnstile(token: string, remoteip?: string) {
+    if (!TURNSTILE_SECRET_KEY) return true;
+    if (!token) return false;
+
+    const params = new URLSearchParams();
+    params.set("secret", TURNSTILE_SECRET_KEY);
+    params.set("response", token);
+    if (remoteip) params.set("remoteip", remoteip);
+
+    try {
+        const res = await fetch(
+            "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+            { method: "POST", body: params }
+        );
+        const data = (await res.json()) as { success?: boolean };
+        return Boolean(data.success);
+    } catch {
+        return false;
+    }
 }
 
 // =========================
@@ -69,7 +102,7 @@ function buildEmailTemplate(
     return `
     <div style="font-family: Arial, sans-serif; background-color: #f9fafb; padding: 40px 20px;">
         <div style="max-width: 600px; margin: 0 auto; background: #ffffff; border-radius: 16px; padding: 32px; border: 1px solid #e5e7eb;">
-            
+
             <h2 style="margin: 0 0 24px 0; font-size: 20px; color: #111827;">
                 Nuevo mensaje desde el Portfolio
             </h2>
@@ -145,6 +178,30 @@ export async function POST(req: Request) {
 
     try {
         const body = await req.json();
+
+        // Honeypot: silently pretend success so bots don't retry.
+        if (typeof body.honeypot === "string" && body.honeypot.trim() !== "") {
+            return Response.json({ success: true });
+        }
+
+        // Time-trap: humans take longer than 2s to fill out the form.
+        if (
+            typeof body.startedAt === "number" &&
+            Date.now() - body.startedAt < MIN_FORM_FILL_MS
+        ) {
+            return Response.json({ success: true });
+        }
+
+        const turnstileOk = await verifyTurnstile(
+            typeof body.turnstileToken === "string" ? body.turnstileToken : "",
+            getClientIp(req)
+        );
+        if (!turnstileOk) {
+            return Response.json(
+                { error: t("contact.form.api.captcha_failed") },
+                { status: 400 }
+            );
+        }
 
         const error = validateContactForm(body, t);
         if (error) {

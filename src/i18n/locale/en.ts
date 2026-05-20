@@ -413,6 +413,7 @@ export default {
                 submit: {
                     json_error: "Invalid server response.",
                     ko: "Error sending the message.",
+                    captcha_required: "Please complete the anti-bot verification before submitting.",
                     catch: {
                         prefix: "There was an error",
                         unknown: "Unknown error"
@@ -428,6 +429,7 @@ export default {
                     invalid_name: "The name is too long.",
                     invalid_email: "The email is too long.",
                     message_too_long: "The message is too long.",
+                    captcha_failed: "Anti-bot verification failed. Please try again.",
                     error_sending_mail: "Error sending email"
                 }
             },
