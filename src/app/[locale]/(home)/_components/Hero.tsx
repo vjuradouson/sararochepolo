@@ -7,6 +7,7 @@ import NeoButton from "@/components/ui/NeoButton";
 import { Link } from '@/i18n/navigation';
 import { ROUTES } from "@/constants/routes";
 import { trackCtaClick } from "@/lib/gtm";
+import { MoveRight } from "lucide-react";
 
 const EASE = [0.25, 0.1, 0.25, 1] as const;
 
@@ -98,8 +99,8 @@ export default function Hero() {
                                         }
                                     >
                                         <NeoButton size="sm">
-                                            <span className="text-2xl">→</span>
-                                            <span className="uppercase">
+                                            <MoveRight className="h-5 w-5" strokeWidth={1} aria-hidden="true" />
+                                            <span className="uppercase leading-none">
                                                 {t("home.hero.button.label")}
                                             </span>
                                         </NeoButton>

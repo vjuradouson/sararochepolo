@@ -9,6 +9,7 @@ import { Variants } from "framer-motion";
 import { Link } from "@/i18n/navigation";
 import { ROUTES } from "@/constants/routes";
 import { trackCtaClick } from "@/lib/gtm";
+import { MoveRight } from "lucide-react";
 
 type Project = {
     id: number;
@@ -650,14 +651,14 @@ export default function ProjectsSection() {
                                             }
                                         >
                                             <NeoButton size="sm" className="pl-12 pr-12">
-                                                <span className="text-xl">→</span>
-                                                <span className="uppercase">{project.view_all}</span>
+                                                <MoveRight className="h-5 w-5" strokeWidth={1} aria-hidden="true" />
+                                                <span className="uppercase leading-none">{project.view_all}</span>
                                             </NeoButton>
                                         </Link>
                                     ) : (
                                         <NeoButton size="sm" className="pl-12 pr-12">
-                                            <span className="text-xl">→</span>
-                                            <span className="uppercase">{project.view_all}</span>
+                                            <MoveRight className="h-5 w-5" strokeWidth={1} aria-hidden="true" />
+                                            <span className="uppercase leading-none">{project.view_all}</span>
                                         </NeoButton>
                                     )}
                                 </div>
