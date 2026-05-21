@@ -33,3 +33,11 @@ export function trackFormSubmit(params: {
 }) {
     pushEvent({ event: 'form_submit', ...params });
 }
+
+export function trackLanguageChange(params: {
+    lang_change_from_locale: string;
+    lang_change_to_locale: string;
+    lang_change_location: string;
+}) {
+    pushEvent({ event: 'language_change', ...params });
+}

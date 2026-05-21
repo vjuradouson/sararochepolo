@@ -3,6 +3,7 @@
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { Locale, LOCALES } from "@/lib/config";
+import { trackLanguageChange } from "@/lib/gtm";
 
 /**
  * Hand-crafted swap icon: each chevron is one polyline (single linejoin at the
@@ -47,6 +48,11 @@ export default function LanguageSwitcher() {
 
     const handleSwap = () => {
         if (!canSwap) return;
+        trackLanguageChange({
+            lang_change_from_locale: locale,
+            lang_change_to_locale: nextLocale,
+            lang_change_location: String(pathname),
+        });
         persistLocaleCookie(nextLocale);
         router.push(pathname, { locale: nextLocale });
     };
