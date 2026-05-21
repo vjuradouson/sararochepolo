@@ -18,6 +18,14 @@ export function trackCtaClick(params: {
     pushEvent({ event: 'cta_click', ...params });
 }
 
+export function trackNavClick(params: {
+    nav_item: string;
+    nav_location: string;
+    nav_destination?: string;
+}) {
+    pushEvent({ event: 'nav_click', ...params });
+}
+
 export function trackFormSubmit(params: {
     form_id: string;
     status: 'success' | 'error';

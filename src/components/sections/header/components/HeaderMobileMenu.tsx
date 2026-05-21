@@ -8,6 +8,7 @@ import { useLocale } from 'next-intl'
 import { LOCALES } from '@/lib/config';
 import { usePathname } from "next/navigation";
 import { getPath } from "@/i18n/getPath";
+import { trackNavClick } from "@/lib/gtm";
 import type { NavLink } from "@/components/sections/header/types/nav";
 
 interface MobileMenuProps {
@@ -163,7 +164,14 @@ export function HeaderMobileMenu({ links }: MobileMenuProps) {
                                                                         >
                                                                             <Link
                                                                                 href={child.href}
-                                                                                onClick={() => setMenuOpen(false)}
+                                                                                onClick={() => {
+                                                                                    trackNavClick({
+                                                                                        nav_item: child.href!,
+                                                                                        nav_location: 'header_mobile',
+                                                                                        nav_destination: getPath(child.href! as any, locale),
+                                                                                    });
+                                                                                    setMenuOpen(false);
+                                                                                }}
                                                                                 className={`flex items-center justify-between text-lg transition-colors ${isActive
                                                                                     ? ""
                                                                                     : "text-brand-muted"
@@ -191,7 +199,14 @@ export function HeaderMobileMenu({ links }: MobileMenuProps) {
                                     <li key={href}>
                                         <Link
                                             href={href}
-                                            onClick={() => setMenuOpen(false)}
+                                            onClick={() => {
+                                                trackNavClick({
+                                                    nav_item: href,
+                                                    nav_location: 'header_mobile',
+                                                    nav_destination: getPath(href as any, locale),
+                                                });
+                                                setMenuOpen(false);
+                                            }}
                                             className={`block text-xl transition-colors ${isActive
                                                 ? ""
                                                 : "text-brand-muted"

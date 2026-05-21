@@ -166,7 +166,7 @@ export default function AboutContent({ data }: AboutContentProps) {
                                 inherit
                                 stagger={0.1}
                                 delayChildren={0.2}
-                                className="grid grid-cols-2 gap-x-16 gap-y-6"
+                                className="grid md:grid-cols-2 gap-x-16 gap-y-6"
                             >
                                 {skills.map((skill) => (
                                     <FadeInStaggerItem as="li" key={skill} className="list-disc">

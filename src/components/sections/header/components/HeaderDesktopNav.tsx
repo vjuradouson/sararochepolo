@@ -9,6 +9,7 @@ import { LOCALES } from '@/lib/config';
 import { usePathname } from "next/navigation";
 import { useSmoothScrollToTop } from "@/hooks/useSmoothScrollToTop";
 import { ChevronDown } from "lucide-react";
+import { trackNavClick } from "@/lib/gtm";
 import type { NavLink } from "@/components/sections/header/types/nav";
 
 interface DesktopNavProps {
@@ -198,6 +199,11 @@ export function HeaderDesktopNav({ links }: DesktopNavProps) {
                                                         <Link
                                                             href={child.href}
                                                             onClick={(e) => {
+                                                                trackNavClick({
+                                                                    nav_item: child.href!,
+                                                                    nav_location: 'header_desktop',
+                                                                    nav_destination: childHref,
+                                                                });
                                                                 handleClick(child.href!)(e);
                                                                 setOpenDropdown(null);
                                                             }}
@@ -249,7 +255,14 @@ export function HeaderDesktopNav({ links }: DesktopNavProps) {
 
                         <Link
                             href={href}
-                            onClick={handleClick(href)}
+                            onClick={(e) => {
+                                trackNavClick({
+                                    nav_item: href,
+                                    nav_location: 'header_desktop',
+                                    nav_destination: localizedHref,
+                                });
+                                handleClick(href)(e);
+                            }}
                             className={`relative z-10 px-4 py-1 text-body-lg rounded-full transition-all duration-200
                                 ${isActive
                                     ? "text-[#0B3C49]"
