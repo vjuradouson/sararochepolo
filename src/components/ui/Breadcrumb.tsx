@@ -1,6 +1,11 @@
+"use client";
+
 import { ComponentProps } from "react";
 import { ChevronRight } from "lucide-react";
+import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { PATHNAMES } from "@/i18n/routing";
+import { trackBreadcrumbClick } from "@/lib/gtm";
 
 type Href = ComponentProps<typeof Link>["href"];
 
@@ -14,8 +19,21 @@ export type Crumb = {
  * Migas de pan clicables. Se usa en páginas con 3+ niveles (Home > Sección >
  * Proyecto). La última miga representa la página actual y no es un enlace.
  * El offset superior (`pt-*`) reserva el alto del header fijo (`h-15`).
+ *
+ * Cada clic en un enlace emite el evento `breadcrumb_click` al dataLayer (GTM),
+ * igual que `nav_click`/`cta_click`.
  */
 export default function Breadcrumb({ crumbs }: { crumbs: Crumb[] }) {
+    const locale = useLocale();
+
+    // Resuelve la ruta localizada de una clave de ROUTES, igual que el nav.
+    const getLocalizedHref = (href: Href | undefined): string | undefined => {
+        if (typeof href !== "string") return undefined;
+        const routeConfig = PATHNAMES[href as keyof typeof PATHNAMES];
+        if (!routeConfig) return undefined;
+        return typeof routeConfig === "string" ? routeConfig : routeConfig[locale];
+    };
+
     return (
         <nav
             aria-label="Breadcrumb"
@@ -30,6 +48,14 @@ export default function Breadcrumb({ crumbs }: { crumbs: Crumb[] }) {
                             {crumb.href && !isLast ? (
                                 <Link
                                     href={crumb.href}
+                                    onClick={() =>
+                                        trackBreadcrumbClick({
+                                            breadcrumb_item: String(crumb.href),
+                                            breadcrumb_label: crumb.label,
+                                            breadcrumb_position: index + 1,
+                                            breadcrumb_destination: getLocalizedHref(crumb.href),
+                                        })
+                                    }
                                     className="hover:text-neutral-900 transition-colors"
                                 >
                                     {crumb.label}

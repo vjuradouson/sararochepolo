@@ -26,6 +26,15 @@ export function trackNavClick(params: {
     pushEvent({ event: 'nav_click', ...params });
 }
 
+export function trackBreadcrumbClick(params: {
+    breadcrumb_item: string;
+    breadcrumb_label: string;
+    breadcrumb_position: number;
+    breadcrumb_destination?: string;
+}) {
+    pushEvent({ event: 'breadcrumb_click', ...params });
+}
+
 export function trackFormSubmit(params: {
     form_id: string;
     status: 'success' | 'error';
