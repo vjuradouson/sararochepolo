@@ -73,7 +73,7 @@ export default function BrandingProjectLaEsquinitaDePapelContent() {
 
     return (
         <div key={refreshKey} className="text-lg md:text-xl xl:text-2xl">
-            <section className="w-full md:pt-16 mt-20 md:mt-10">
+            <section className="w-full pt-4">
                 <div className="container-xl mx-auto pb-10">
                     <p className="text-xl uppercase tracking-widest mb-8 md:mb-10">
                         {t("eyebrow")}

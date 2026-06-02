@@ -80,7 +80,7 @@ function GetIcon({
 
 function HeroSection({ t }: { t: T }) {
     return (
-        <section className="w-full mt-20" style={{ backgroundColor: BAND_COLOR }}>
+        <section className="w-full mt-4 md:mt-6" style={{ backgroundColor: BAND_COLOR }}>
             <div className="container-xl grid grid-cols-1 md:grid-cols-2 items-center gap-10 md:gap-8 py-10 md:py-20">
                 <div>
                     <p className="text-xl md:6xl uppercase tracking-widest mb-6">
@@ -373,7 +373,7 @@ export default function UxUiDesignPetBuddyContent() {
     const t = useTranslations("app.projects.ux_ui_design.projects.pet_buddy.content");
 
     return (
-        <div className="text-lg md:text-xl xl:text-2xl mt-20 md:mt-10">
+        <div className="text-lg md:text-xl xl:text-2xl">
             <HeroSection t={t} />
             <IntroSection t={t} />
             <FocusSection t={t} />
