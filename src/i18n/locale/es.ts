@@ -40,7 +40,7 @@ export default {
                 projects: {
                     adobe_project_neo: "Adobe Project Neo",
                     branding: "Branding",
-                    figma: "Diseño UX/UI",
+                    ux_ui_design: "Diseño UX/UI",
                     illustrations: "Ilustraciones",
                     social_media: "Redes sociales",
                     print_design: "Diseño editorial"
@@ -597,7 +597,7 @@ export default {
                     }
                 }
             },
-            figma: {
+            ux_ui_design: {
                 seo: {
                     title: "Diseño UX/UI | Sara Roche Polo",
                     description: "Proyectos de prototipado y diseño de interfaces en Figma: flujos de usuario, sistemas de diseño y prototipos interactivos por Sara Roche Polo."
@@ -605,34 +605,61 @@ export default {
                 content: {
                     eyebrow: "Proyectos personales",
                     title: "Diseño UX/UI",
-                    intro: "Trabajo el prototipado en Figma como una forma de <highlight>convertir ideas en experiencias digitales navegables, claras y funcionales</highlight>. En esta sección reúno proyectos donde <highlight>diseño interfaces, flujos de usuario y prototipos interactivos</highlight> que ayudan a validar soluciones, detectar mejoras y comunicar de forma visual cómo debería comportarse un producto digital antes de su desarrollo.",
-                    zoom_aria: "Hacer zoom en la imagen",
                     projects: {
-                        starbucks: {
-                            section_title: "— Starbucks",
-                            description: "Rediseño conceptual de la experiencia de pedido en la app de Starbucks. <highlight>Mapeo del flujo completo</highlight>, desde la selección de producto hasta la confirmación, manteniendo la identidad visual de marca.",
-                            image_alt: "Lienzo de Figma con el prototipo interactivo de la app de Starbucks: pantallas conectadas mostrando el flujo de pedido y personalización de bebidas"
+                        pet_buddy: {
+                            sector: "App móvil · Figma"
+                        }
+                    }
+                },
+                projects: {
+                    pet_buddy: {
+                        seo: {
+                            title: "Pet Buddy | Diseño UX/UI | Sara Roche Polo",
+                            description: "Pet Buddy, una app móvil diseñada en Figma para centralizar toda la información de tu mascota —vacunas, citas veterinarias, medicación y recordatorios— en un único entorno claro e intuitivo. Proyecto UX/UI de Sara Roche Polo."
                         },
-                        aloha: {
-                            section_title: "— Aloha",
-                            description: "Diseño de app móvil para <highlight>Aloha, una pizzería</highlight>. Carta, personalización del pedido y pago resueltos con un sistema visual fresco y cercano que refleja la personalidad de la marca.",
-                            image_alt: "Lienzo de Figma con el prototipo de la app de la pizzería Aloha: pantallas de carta, detalle de pizza y checkout conectadas por flechas de flujo"
-                        },
-                        zgz_rutas: {
-                            section_title: "— Zaragoza Rutas",
-                            description: "App de rutas urbanas y senderos por Zaragoza. <highlight>Sistema de tarjetas, mapas y filtros</highlight> diseñado para que descubrir un recorrido sea tan ágil como recorrerlo.",
-                            image_alt: "Lienzo de Figma con el prototipo de la app Zaragoza Rutas: pantallas de mapa, listado y detalle de ruta"
-                        },
-                        zgz_rutas_2: {
-                            section_title: "— Detalle de pantalla",
-                            description: "Vista enfocada en el <highlight>detalle de ruta</highlight>: jerarquía clara entre mapa, descripción y acciones para que el usuario decida y empiece a caminar en un solo gesto.",
-                            image_alt: "Mockup vertical de la pantalla de detalle de ruta en la app Zaragoza Rutas: mapa, descripción y acciones principales"
-                        },
-                        jason_freeny: {
-                            section_title: "— Jason Freeny",
-                            description: "Concepto de tienda y portfolio digital para <highlight>Jason Freeny</highlight>, artista conocido por sus disecciones anatómicas de iconos pop. Un sistema visual minimalista que deja respirar a la obra y guía la navegación entre colecciones, fichas de pieza y carrito.",
-                            image_alt: "Lienzo de Figma con el prototipo de tienda y portfolio digital del artista Jason Freeny: pantallas de catálogo, detalle de pieza y carrito conectadas"
-                        },
+                        content: {
+                            eyebrow: "Figma Design · Proyecto personal",
+                            title: "Pet Buddy",
+                            hero_subtitle: "Tu app para tener al día todo lo relacionado con tu mascota, ya está aquí",
+                            intro_1: "Pet Buddy nació de la <highlight>necesidad de resolver uno de los principales problemas</highlight> de los dueños de mascotas, yo incluida: <highlight>la dispersión de información importante</highlight> en distintos lugares.",
+                            intro_2: "<highlight>Vacunas, citas veterinarias, medicación o recordatorios</highlight> diarios suelen gestionarse entre notas, calendarios y conversaciones, generando olvidos y estrés.",
+                            intro_3: "A través de una experiencia UX clara y accesible, <highlight>Pet Buddy centraliza toda la información relevante en un único entorno intuitivo y fácil de consultar.</highlight>",
+                            focus_1: "Uno de los focos del diseño fue reducir la carga mental del usuario en el seguimiento de la salud de sus mascotas.",
+                            focus_2: "Muchas personas no recuerdan fechas de revisiones, desparasitaciones o compras recurrentes de pienso y medicación hasta que ya es demasiado tarde.",
+                            focus_3: "Para solucionarlo, diseñé un sistema de recordatorios visuales y jerarquizados que anticipa necesidades y facilita la planificación diaria de manera natural y poco invasiva.",
+                            access_1: "Los usuarios necesitan acceder rápidamente a información crítica de su mascota sin navegar por menús confusos.",
+                            access_2: "Por ello, planteé una interfaz limpia, priorizando arquitectura de información, accesibilidad y navegación rápida, permitiendo consultar datos médicos, citas o hábitos diarios en pocos pasos.",
+                            bond_heading: "Diseño para fortalecer el vínculo entre <highlight>personas y mascotas</highlight>.",
+                            bond_intro: "El objetivo fue crear una experiencia que transmitiera <trust>confianza</trust>, <closeness>cercanía</closeness> y <simplicity>simplicidad</simplicity> en cada interacción.",
+                            video_label: "Vídeo de demostración de la app Pet Buddy en bucle",
+                            video_demo_label: "Vídeo demo de la navegación por la app Pet Buddy",
+                            video_demo_play: "Reproducir el vídeo demo de Pet Buddy",
+                            bond: {
+                                trust: {
+                                    title: "Confianza",
+                                    text: "Generar una relación emocional y de confianza entre el usuario y la aplicación."
+                                },
+                                closeness: {
+                                    title: "Cercanía",
+                                    text: "Las mascotas forman parte del entorno familiar, por lo que el diseño debía transmitir calidez y tranquilidad."
+                                },
+                                simplicity: {
+                                    title: "Simplicidad",
+                                    text: "Una interfaz y una experiencia fluida convierten la gestión del cuidado animal en una tarea sencilla, organizada y menos estresante."
+                                }
+                            },
+                            image_alt: {
+                                hero: "Maqueta de la app Pet Buddy: varias pantallas del móvil apiladas mostrando el inicio, el perfil de las mascotas y el calendario",
+                                buster_muse: "Pantalla de inicio de Pet Buddy con las tarjetas de las mascotas Buster y Muse y la próxima cita veterinaria",
+                                calendar: "Pantalla de calendario veterinario de Pet Buddy con la vista mensual y los eventos del día seleccionado",
+                                alerts: "Pantalla de alertas de Pet Buddy con los próximos recordatorios de medicación y revisiones por mascota",
+                                strengthen_bond: "Pantalla de Pet Buddy con la cuadrícula de mascotas Buster, Muse, Dexter y Bella",
+                                focus: "Icono de la app Pet Buddy",
+                                trust: "Icono de confianza de Pet Buddy",
+                                closeness: "Icono de cercanía de Pet Buddy",
+                                simplicity: "Icono de simplicidad de Pet Buddy"
+                            }
+                        }
                     }
                 }
             },

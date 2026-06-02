@@ -40,7 +40,7 @@ export default {
                 projects: {
                     adobe_project_neo: "Adobe Project Neo",
                     branding: "Branding",
-                    figma: "UX/UI Design",
+                    ux_ui_design: "UX/UI Design",
                     illustrations: "Illustrations",
                     social_media: "Social media",
                     print_design: "Print design"
@@ -597,7 +597,7 @@ export default {
                     }
                 }
             },
-            figma: {
+            ux_ui_design: {
                 seo: {
                     title: "UX/UI Design | Sara Roche Polo",
                     description: "Prototyping and interface design projects in Figma: user flows, design systems and interactive prototypes by Sara Roche Polo."
@@ -605,34 +605,61 @@ export default {
                 content: {
                     eyebrow: "Personal projects",
                     title: "UX/UI Design",
-                    intro: "I use Figma for prototyping as a way of <highlight>turning ideas into navigable, clear and functional digital experiences</highlight>. In this section I gather projects where I <highlight>design interfaces, user flows and interactive prototypes</highlight> that help validate solutions, surface improvements and communicate visually how a digital product should behave before development.",
-                    zoom_aria: "Zoom in on the image",
                     projects: {
-                        starbucks: {
-                            section_title: "— Starbucks",
-                            description: "Conceptual redesign of the Starbucks ordering experience. <highlight>Mapping the full flow</highlight>, from product selection to confirmation, while preserving the brand's visual identity.",
-                            image_alt: "Figma canvas with the Starbucks app interactive prototype: connected screens showing the ordering and drink customization flow"
+                        pet_buddy: {
+                            sector: "Mobile app · Figma"
+                        }
+                    }
+                },
+                projects: {
+                    pet_buddy: {
+                        seo: {
+                            title: "Pet Buddy | UX/UI Design | Sara Roche Polo",
+                            description: "Pet Buddy, a mobile app designed in Figma to centralize all of your pet's information —vaccinations, vet appointments, medication and reminders— in a single clear, intuitive space. A UX/UI project by Sara Roche Polo."
                         },
-                        aloha: {
-                            section_title: "— Aloha",
-                            description: "Mobile app design for <highlight>Aloha, a pizzeria</highlight>. Menu browsing, order customization and checkout solved with a fresh, friendly visual system that reflects the brand's personality.",
-                            image_alt: "Figma canvas with the Aloha pizzeria app prototype: menu, pizza detail and checkout screens connected by flow arrows"
-                        },
-                        zgz_rutas: {
-                            section_title: "— Zaragoza Routes",
-                            description: "App for urban routes and trails around Zaragoza. <highlight>System of cards, maps and filters</highlight> designed so discovering a route is as smooth as walking it.",
-                            image_alt: "Figma canvas with the Zaragoza Routes app prototype: map, listing and route detail screens"
-                        },
-                        zgz_rutas_2: {
-                            section_title: "— Screen detail",
-                            description: "Focused view of the <highlight>route detail screen</highlight>: clear hierarchy between map, description and actions so the user can decide and start walking in a single tap.",
-                            image_alt: "Vertical mockup of the route detail screen in the Zaragoza Routes app: map, description and main actions"
-                        },
-                        jason_freeny: {
-                            section_title: "— Jason Freeny",
-                            description: "Concept for an online shop and digital portfolio for <highlight>Jason Freeny</highlight>, an artist known for his anatomical dissections of pop-culture icons. A minimalist visual system that lets the artwork breathe and guides browsing across collections, piece details and cart.",
-                            image_alt: "Figma canvas with the prototype of the online shop and digital portfolio for artist Jason Freeny: catalog, piece detail and cart screens connected"
-                        },
+                        content: {
+                            eyebrow: "Figma Design · Personal project",
+                            title: "Pet Buddy",
+                            hero_subtitle: "Your app to keep everything about your pet up to date is finally here",
+                            intro_1: "Pet Buddy was born from the <highlight>need to solve one of the main problems</highlight> pet owners face, myself included: <highlight>important information scattered</highlight> across different places.",
+                            intro_2: "<highlight>Vaccinations, vet appointments, medication and daily reminders</highlight> are usually juggled between notes, calendars and conversations, leading to forgotten tasks and stress.",
+                            intro_3: "Through a clear, accessible UX experience, <highlight>Pet Buddy centralizes all the relevant information in a single, intuitive and easy-to-check space.</highlight>",
+                            focus_1: "One of the design's main goals was to reduce the user's mental load when keeping track of their pets' health.",
+                            focus_2: "Many people don't remember dates for check-ups, deworming or recurring food and medication purchases until it's already too late.",
+                            focus_3: "To solve this, I designed a system of visual, prioritized reminders that anticipates needs and makes daily planning feel natural and unobtrusive.",
+                            access_1: "Users need to quickly access critical information about their pet without navigating through confusing menus.",
+                            access_2: "That's why I designed a clean interface, prioritizing information architecture, accessibility and fast navigation, letting users check medical data, appointments or daily habits in just a few steps.",
+                            bond_heading: "Design that strengthens the bond between <highlight>people and pets</highlight>.",
+                            bond_intro: "The goal was to create an experience that conveyed <trust>trust</trust>, <closeness>warmth</closeness> and <simplicity>simplicity</simplicity> in every interaction.",
+                            video_label: "Looping demo video of the Pet Buddy app",
+                            video_demo_label: "Walkthrough demo video of the Pet Buddy app",
+                            video_demo_play: "Play the Pet Buddy demo video",
+                            bond: {
+                                trust: {
+                                    title: "Trust",
+                                    text: "Build an emotional, trusting relationship between the user and the app."
+                                },
+                                closeness: {
+                                    title: "Warmth",
+                                    text: "Pets are part of the family, so the design had to convey warmth and reassurance."
+                                },
+                                simplicity: {
+                                    title: "Simplicity",
+                                    text: "A fluid interface and experience turn pet care management into a simple, organized and less stressful task."
+                                }
+                            },
+                            image_alt: {
+                                hero: "Mockup of the Pet Buddy app: several phone screens stacked, showing the home, the pet profiles and the calendar",
+                                buster_muse: "Pet Buddy home screen with the cards for pets Buster and Muse and the upcoming vet appointment",
+                                calendar: "Pet Buddy vet calendar screen with the monthly view and the events for the selected day",
+                                alerts: "Pet Buddy alerts screen with upcoming medication and check-up reminders per pet",
+                                strengthen_bond: "Pet Buddy screen with the grid of pets Buster, Muse, Dexter and Bella",
+                                focus: "Pet Buddy app icon",
+                                trust: "Pet Buddy trust icon",
+                                closeness: "Pet Buddy warmth icon",
+                                simplicity: "Pet Buddy simplicity icon"
+                            }
+                        }
                     }
                 }
             },

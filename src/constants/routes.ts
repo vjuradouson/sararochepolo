@@ -8,6 +8,7 @@ export const ROUTES = {
   PROJECTS_BRANDING_LA_ESQUINITA_DE_PAPEL: '/projects/branding/la-esquinita-de-papel',
   PROJECTS_BRANDING_DON_TOSTADO: '/projects/branding/don-tostado',
   PROJECTS_UX_UI_DESIGN: '/projects/ux-ui-design',
+  PROJECTS_UX_UI_DESIGN_PET_BUDDY: '/projects/ux-ui-design/pet-buddy',
   PROJECTS_ILLUSTRATIONS: '/projects/illustrations',
   PROJECTS_SOCIAL_MEDIA: '/projects/social-media',
   PROJECTS_EDITORIAL: '/projects/editorial'

@@ -29,8 +29,8 @@ export default async function HeaderWrapper() {
                 },
                 {
                     href: ROUTES.PROJECTS_UX_UI_DESIGN,
-                    label: t("header.links.projects.figma"),
-                    labels: labelsFor("header.links.projects.figma"),
+                    label: t("header.links.projects.ux_ui_design"),
+                    labels: labelsFor("header.links.projects.ux_ui_design"),
                 },
                 {
                     href: ROUTES.PROJECTS_SOCIAL_MEDIA,

@@ -40,6 +40,10 @@ export const ROUTING = defineRouting({
       es: '/proyectos/diseños-ux-ui',
       en: '/projects/ux-ui-design'
     },
+    [ROUTES.PROJECTS_UX_UI_DESIGN_PET_BUDDY]: {
+      es: '/proyectos/diseños-ux-ui/pet-buddy',
+      en: '/projects/ux-ui-design/pet-buddy'
+    },
     [ROUTES.PROJECTS_ILLUSTRATIONS]: {
       es: '/proyectos/ilustraciones',
       en: '/projects/illustrations'
