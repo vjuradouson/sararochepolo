@@ -90,7 +90,7 @@ export default function AboutContent({ data }: AboutContentProps) {
 
     return (
         <div>
-            <section className="container-xxl mx-auto px-6 pb-12 pt-20 md:pt-25" key={refreshKey}>
+            <section className="container-xxl mx-auto px-6 pb-12 pt-4" key={refreshKey}>
                 <div className="pb-12 md:h-[500px] lg:h-[600px] overflow-hidden relative shadow-[var(--shadow-card)] rounded-[var(--radius-card)]">
                     <div className="h-full grid gap-16 md:gap-0 md:grid-cols-2 items-stretch">
                         <div className="pl-8 pt-6 lg:ml-18 md:pt-10 lg:pb-0 px-6">

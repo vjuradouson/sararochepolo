@@ -90,7 +90,7 @@ function CookieTable({
 
 export default function CookiePolicyContent({ data }: Props) {
     return (
-        <section className="container-xl mx-auto pt-25">
+        <section className="container-xl mx-auto pt-4">
             <article className="max-w-3xl mx-auto pb-16">
                 <h1 className="mb-4 text-xl uppercase tracking-widest text-brand-muted">
                     {data.h1}

@@ -107,7 +107,7 @@ export default function ContactContent({ data }: Props) {
     }, []);
 
     return (
-        <section className="container-xl mx-auto pt-25" key={refreshKey}>
+        <section className="container-xl mx-auto pt-4" key={refreshKey}>
             <div className="grid items-start md:gap-20 md:grid-cols-2">
                 {/* LEFT */}
                 <div className="mb-16">

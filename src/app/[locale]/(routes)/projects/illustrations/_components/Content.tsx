@@ -419,7 +419,7 @@ export default function IllustrationsContent() {
 
     return (
         <div className="text-lg md:text-xl xl:text-2xl overflow-x-clip">
-            <section className="container-xl md:pt-16 mt-20 md:mt-10 mb-16 md:mb-24">
+            <section className="container-xl md:pt-4 mb-16 md:mb-24">
                 <p className="text-xl uppercase tracking-widest mb-8 md:mb-10">
                     {t("eyebrow")}
                 </p>

@@ -5,6 +5,7 @@ import { ChevronRight } from "lucide-react";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { PATHNAMES } from "@/i18n/routing";
+import { BREADCRUMB_MIN_LEVEL } from "@/constants/breadcrumbs";
 import { trackBreadcrumbClick } from "@/lib/gtm";
 
 type Href = ComponentProps<typeof Link>["href"];
@@ -25,6 +26,10 @@ export type Crumb = {
  */
 export default function Breadcrumb({ crumbs }: { crumbs: Crumb[] }) {
     const locale = useLocale();
+
+    // El nivel de la página es su profundidad = número de migas. Si está por
+    // debajo del mínimo configurado, no se muestran migas (ver BREADCRUMB_MIN_LEVEL).
+    if (crumbs.length < BREADCRUMB_MIN_LEVEL) return null;
 
     // Resuelve la ruta localizada de una clave de ROUTES, igual que el nav.
     const getLocalizedHref = (href: Href | undefined): string | undefined => {

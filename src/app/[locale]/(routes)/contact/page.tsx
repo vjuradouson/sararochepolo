@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import ContactContent from "./_components/ContactContent";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import { BASE_URL } from '@/lib/config';
 import { getPath } from "@/i18n/getPath";
 import { ROUTES } from "@/constants/routes";
@@ -57,8 +58,15 @@ export default async function ContactPage({
     ];
 
     return (
-        <ContactContent
-            data={{
+        <>
+            <Breadcrumb
+                crumbs={[
+                    { label: t("app.breadcrumb.home"), href: ROUTES.HOME },
+                    { label: t("app.header.links.contact") },
+                ]}
+            />
+            <ContactContent
+                data={{
                 h1: t("app.contact.h1"),
                 title: t("app.contact.header"),
                 description: t("app.contact.description"),
@@ -80,6 +88,7 @@ export default async function ContactPage({
                     value: t("app.contact.location.value"),
                 }
             }}
-        />
+            />
+        </>
     );
 }

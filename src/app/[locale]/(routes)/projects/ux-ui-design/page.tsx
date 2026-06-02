@@ -7,6 +7,7 @@ import { withAlternates } from "@/lib/seo/alternates";
 import JsonLd from "@/components/seo/JsonLd";
 import { getProjectCreativeWorkSchema } from "@/lib/seo/schema/projectCreativeWork";
 import { getBreadcrumbSchema } from "@/lib/seo/schema/breadcrumb";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 import UxUiDesignContent from "./_components/Content";
 
 export async function generateMetadata({
@@ -76,6 +77,12 @@ export default async function FigmaPage({
         <>
             <JsonLd data={creativeWorkSchema} />
             <JsonLd data={breadcrumbSchema} />
+            <Breadcrumb
+                crumbs={[
+                    { label: t("app.breadcrumb.home"), href: ROUTES.HOME },
+                    { label: t("app.projects.ux_ui_design.content.title") },
+                ]}
+            />
             <UxUiDesignContent />
         </>
     );

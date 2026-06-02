@@ -7,6 +7,7 @@ import { Link } from "@/i18n/navigation";
 import { ROUTES } from "@/constants/routes";
 import { withAlternates } from "@/lib/seo/alternates";
 import CookiePolicyContent from "./_components/CookiePolicyContent";
+import Breadcrumb from "@/components/ui/Breadcrumb";
 
 const contactLink = (chunks: ReactNode) => (
     <Link
@@ -58,8 +59,15 @@ export default async function CookiePolicyPage({
     const browserKeys = ["chrome", "firefox", "safari", "edge"] as const;
 
     return (
-        <CookiePolicyContent
-            data={{
+        <>
+            <Breadcrumb
+                crumbs={[
+                    { label: t("app.breadcrumb.home"), href: ROUTES.HOME },
+                    { label: t("app.cookie_policy.h1") },
+                ]}
+            />
+            <CookiePolicyContent
+                data={{
                 h1: t("app.cookie_policy.h1"),
                 lastUpdated: {
                     label: t("app.cookie_policy.last_updated_label"),
@@ -163,6 +171,7 @@ export default async function CookiePolicyPage({
                     body: t("app.cookie_policy.sections.changes.body"),
                 },
             }}
-        />
+            />
+        </>
     );
 }

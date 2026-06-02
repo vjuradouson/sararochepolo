@@ -70,7 +70,7 @@ export default function SocialMediaContent() {
     return (
         <div className="text-lg md:text-xl xl:text-2xl">
             {/* ─── HERO ────────────────────────────────────────────── */}
-            <section className="container-xl md:pt-16 mt-20 md:mt-10 mb-16 md:mb-20">
+            <section className="container-xl md:pt-4 mb-16 md:mb-20">
                 <div className="max-w-full">
                     <p className="text-xl uppercase tracking-widest mb-8 md:mb-10">
                         {t("eyebrow")}
