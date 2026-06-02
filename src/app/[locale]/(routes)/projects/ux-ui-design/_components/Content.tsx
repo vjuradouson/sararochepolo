@@ -20,7 +20,7 @@ const projects: UxUiProject[] = [
     {
         key: "pet-buddy",
         href: ROUTES.PROJECTS_UX_UI_DESIGN_PET_BUDDY,
-        image: "/media/projects/ux-ui-design/pet-buddy/buster-muse-screen.png",
+        image: "/media/projects/ux-ui-design/pet-buddy/login-4-5.png",
         imageAltKey: "ux_ui_design.projects.pet_buddy.content.image_alt.buster_muse",
         titleKey: "ux_ui_design.projects.pet_buddy.content.title",
         sectorKey: "ux_ui_design.content.projects.pet_buddy.sector",

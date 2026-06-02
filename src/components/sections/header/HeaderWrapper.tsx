@@ -23,14 +23,14 @@ export default async function HeaderWrapper() {
             labels: labelsFor("header.links.projects_title"),
             children: [
                 {
-                    href: ROUTES.PROJECTS_BRANDING,
-                    label: t("header.links.projects.branding"),
-                    labels: labelsFor("header.links.projects.branding"),
-                },
-                {
                     href: ROUTES.PROJECTS_UX_UI_DESIGN,
                     label: t("header.links.projects.ux_ui_design"),
                     labels: labelsFor("header.links.projects.ux_ui_design"),
+                },
+                {
+                    href: ROUTES.PROJECTS_BRANDING,
+                    label: t("header.links.projects.branding"),
+                    labels: labelsFor("header.links.projects.branding"),
                 },
                 {
                     href: ROUTES.PROJECTS_SOCIAL_MEDIA,

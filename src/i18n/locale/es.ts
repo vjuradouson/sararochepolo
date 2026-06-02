@@ -634,6 +634,9 @@ export default {
                             video_label: "Vídeo de demostración de la app Pet Buddy en bucle",
                             video_demo_label: "Vídeo demo de la navegación por la app Pet Buddy",
                             video_demo_play: "Reproducir el vídeo demo de Pet Buddy",
+                            video_demo_eyebrow: "Vídeo demostrativo",
+                            video_demo_title: "¿Quieres ver cómo funciona?",
+                            video_demo_subtitle: "Un vídeo demostrativo, diseñado y prototipado en Figma.",
                             bond: {
                                 trust: {
                                     title: "Confianza",
@@ -654,7 +657,9 @@ export default {
                                 calendar: "Pantalla de calendario veterinario de Pet Buddy con la vista mensual y los eventos del día seleccionado",
                                 alerts: "Pantalla de alertas de Pet Buddy con los próximos recordatorios de medicación y revisiones por mascota",
                                 strengthen_bond: "Pantalla de Pet Buddy con la cuadrícula de mascotas Buster, Muse, Dexter y Bella",
-                                focus: "Icono de la app Pet Buddy",
+                                focus_1: "Icono de seguimiento de la salud de la mascota",
+                                focus_2: "Icono de calendario",
+                                focus_3: "Icono de alarma",
                                 trust: "Icono de confianza de Pet Buddy",
                                 closeness: "Icono de cercanía de Pet Buddy",
                                 simplicity: "Icono de simplicidad de Pet Buddy"

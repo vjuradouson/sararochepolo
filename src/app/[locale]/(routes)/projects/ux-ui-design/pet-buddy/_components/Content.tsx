@@ -28,11 +28,11 @@ const revealProps = {
 
 type T = ReturnType<typeof useTranslations>;
 
-/** Filas de foco del primer bloque: mismo icono (placeholder) y un color de círculo por fila. */
+/** Filas de foco del primer bloque: cada una con su icono y un color de círculo. */
 const focusRows = [
-    { key: "focus_1", circle: "#F4D35E" },
-    { key: "focus_2", circle: "#9CC4C5" },
-    { key: "focus_3", circle: "#E8A87C" },
+    { key: "focus_1", logo: "subject-icon.png", circle: "#F4D35E" },
+    { key: "focus_2", logo: "calendar-icon.png", circle: "#9CC4C5" },
+    { key: "focus_3", logo: "alarm-icon.png", circle: "#E8A87C" },
 ];
 
 /** Pilares del vínculo: cada uno con su propio logo (la tile de color va horneada en el PNG) y color de acento. */
@@ -57,7 +57,7 @@ const colorChunk = (color: string) =>
         );
     };
 
-function IconCircle({
+function GetIcon({
     src,
     alt,
     color,
@@ -67,19 +67,14 @@ function IconCircle({
     color: string;
 }) {
     return (
-        <span
-            className="flex shrink-0 items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full"
-            style={{ backgroundColor: color }}
-        >
-            <Image
-                src={src}
-                alt={alt}
-                width={56}
-                height={56}
-                quality={75}
-                className="w-6 h-6 md:w-7 md:h-7 object-contain"
-            />
-        </span>
+        <Image
+            src={src}
+            alt={alt}
+            width={80}
+            height={80}
+            quality={75}
+            className="w-6 h-6 md:w-20 md:h-20 object-contain"
+        />
     );
 }
 
@@ -87,14 +82,14 @@ function HeroSection({ t }: { t: T }) {
     return (
         <section className="w-full mt-20" style={{ backgroundColor: BAND_COLOR }}>
             <div className="container-xl grid grid-cols-1 md:grid-cols-2 items-center gap-10 md:gap-8 py-16 md:py-24">
-                <div className="text-neutral-700">
-                    <p className="text-xl md:4xl uppercase tracking-widest mb-6">
+                <div>
+                    <p className="text-xl md:6xl uppercase tracking-widest mb-6">
                         {t("eyebrow")}
                     </p>
-                    <h1 className="flex items-center gap-3 mb-6 text-5xl md:text-7xl font-light tracking-tight">
+                    <h1 className="flex items-center gap-3 mb-6 text-5xl md:text-8xl font-light tracking-tight">
                         {t("title")}
                         <PawPrint
-                            className="w-15 h-15 md:w-15 md:h-15"
+                            className="w-18 h-15 md:w-18 md:h-18"
                             aria-hidden="true"
                             strokeWidth={1.5}
                         />
@@ -110,7 +105,7 @@ function HeroSection({ t }: { t: T }) {
                     height={2089}
                     sizes="(max-width: 768px) 90vw, 520px"
                     quality={90}
-                    className="w-full h-auto max-w-[520px] mx-auto object-contain xl:scale-[1.1]"
+                    className="w-full h-auto max-w-[520px] mx-auto object-contain xl:scale-[1.2]"
                     priority
                     fetchPriority="high"
                 />
@@ -137,7 +132,7 @@ function IntroSection({ t }: { t: T }) {
 function FocusSection({ t }: { t: T }) {
     return (
         <section className="container-xl pb-16 md:pb-24">
-            <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-24 md:gap-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-24 md:gap-0">
                 <motion.div {...revealProps} className="flex justify-center">
                     <Image
                         src={`${IMG_BASE}/buster-muse-screen.png`}
@@ -156,12 +151,12 @@ function FocusSection({ t }: { t: T }) {
                             {...revealProps}
                             className="flex items-start gap-5"
                         >
-                            <IconCircle
-                                src={`${IMG_BASE}/user-logo.png`}
-                                alt={t("image_alt.focus")}
+                            <GetIcon
+                                src={`${IMG_BASE}/${row.logo}`}
+                                alt={t(`image_alt.${row.key}`)}
                                 color={row.circle}
                             />
-                            <p className="leading-relaxed text-neutral-700">
+                            <p className="leading-relaxed">
                                 {t(row.key)}
                             </p>
                         </motion.li>
@@ -178,7 +173,7 @@ function AccessSection({ t }: { t: T }) {
             <div className="container-xl grid grid-cols-1 md:grid-cols-[2fr_3fr] items-center gap-20 md:gap-16 py-16">
                 <motion.div
                     {...revealProps}
-                    className="flex flex-col gap-6 leading-relaxed text-neutral-700"
+                    className="flex flex-col gap-6 leading-relaxed"
                 >
                     <p>{t("access_1")}</p>
                     <p>{t("access_2")}</p>
@@ -238,7 +233,7 @@ function BondSection({ t }: { t: T }) {
                         </motion.h2>
                         <motion.p
                             {...revealProps}
-                            className="mb-10 leading-relaxed text-neutral-700"
+                            className="mb-10 leading-relaxed"
                         >
                             {t.rich("bond_intro", {
                                 trust: colorChunk(bondColor.trust),
@@ -272,7 +267,7 @@ function BondSection({ t }: { t: T }) {
                                         >
                                             {t(`bond.${item.key}.title`)}
                                         </h3>
-                                        <p className="leading-relaxed text-neutral-700 text-base md:text-lg">
+                                        <p className="leading-relaxed text-base md:text-lg">
                                             {t(`bond.${item.key}.text`)}
                                         </p>
                                     </div>
@@ -319,7 +314,21 @@ function DemoVideoSection({ t }: { t: T }) {
     };
 
     return (
-        <section className="container-xl flex justify-center pb-24 md:pb-32">
+        <section className="container-xl flex flex-col items-center pb-24 md:pb-32">
+            <motion.div
+                {...revealProps}
+                className="mb-10 md:mb-14 max-w-2xl text-center"
+            >
+                <p className="mb-3 text-sm md:text-base uppercase tracking-widest">
+                    {t("video_demo_eyebrow")}
+                </p>
+                <h2 className="mb-4 text-3xl md:text-4xl font-bold tracking-tight">
+                    {t("video_demo_title")}
+                </h2>
+                <p className="leading-relaxed">
+                    {t("video_demo_subtitle")}
+                </p>
+            </motion.div>
             <motion.div
                 {...revealProps}
                 className="relative w-full max-w-[300px] md:max-w-[450px]"
