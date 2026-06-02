@@ -73,7 +73,7 @@ function GetIcon({
             width={80}
             height={80}
             quality={75}
-            className="w-6 h-6 md:w-20 md:h-20 object-contain"
+            className="w-15 h-15 md:w-20 md:h-20 object-contain self-center"
         />
     );
 }
@@ -81,7 +81,7 @@ function GetIcon({
 function HeroSection({ t }: { t: T }) {
     return (
         <section className="w-full mt-20" style={{ backgroundColor: BAND_COLOR }}>
-            <div className="container-xl grid grid-cols-1 md:grid-cols-2 items-center gap-10 md:gap-8 py-16 md:py-24">
+            <div className="container-xl grid grid-cols-1 md:grid-cols-2 items-center gap-10 md:gap-8 py-10 md:py-20">
                 <div>
                     <p className="text-xl md:6xl uppercase tracking-widest mb-6">
                         {t("eyebrow")}
