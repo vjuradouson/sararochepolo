@@ -3,10 +3,9 @@
 import { useState, useRef, useEffect } from "react";
 import { Menu, X, Minus, Plus } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Link } from '@/i18n/navigation'
+import { Link, usePathname } from '@/i18n/navigation'
 import { useLocale } from 'next-intl'
 import { LOCALES } from '@/lib/config';
-import { usePathname } from "next/navigation";
 import { getPath } from "@/i18n/getPath";
 import { trackNavClick } from "@/lib/gtm";
 import type { NavLink } from "@/components/sections/header/types/nav";
@@ -52,13 +51,15 @@ export function HeaderMobileMenu({ links }: MobileMenuProps) {
         return path.replace(localeRegex, '') || '/';
     };
 
-    const normalizedPathname = normalizePath(pathname);
+    const normalizedPathname = normalizePath(String(pathname));
 
+    // `usePathname` (next/navigation) yields next-intl's internally-rewritten,
+    // *canonical* pathname (English segments) for every locale, so active
+    // detection must compare against the canonical `href`, not the localized one.
     const isHrefActive = (href: string) => {
-        const localizedHref = getPath(href as any, locale);
         return (
-            normalizedPathname === localizedHref ||
-            (localizedHref !== "/" && normalizedPathname.startsWith(localizedHref))
+            normalizedPathname === href ||
+            (href !== "/" && normalizedPathname.startsWith(href))
         );
     };
 

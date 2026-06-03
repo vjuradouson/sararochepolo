@@ -1,12 +1,11 @@
 "use client";
 
-import { Link } from '@/i18n/navigation'
+import { Link, usePathname } from '@/i18n/navigation'
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocale } from 'next-intl'
 import { PATHNAMES } from '@/i18n/routing';
 import { LOCALES } from '@/lib/config';
-import { usePathname } from "next/navigation";
 import { useSmoothScrollToTop } from "@/hooks/useSmoothScrollToTop";
 import { ChevronDown } from "lucide-react";
 import { trackNavClick } from "@/lib/gtm";
@@ -77,7 +76,7 @@ export function HeaderDesktopNav({ links }: DesktopNavProps) {
         return path.replace(localeRegex, '') || '/';
     };
 
-    const normalizedPathname = normalizePath(pathname);
+    const normalizedPathname = normalizePath(String(pathname));
     const { smoothScrollToTop, isScrolling } = useSmoothScrollToTop();
 
     const getLocalizedHref = (href: string) => {
@@ -85,11 +84,18 @@ export function HeaderDesktopNav({ links }: DesktopNavProps) {
         return typeof routeConfig === "string" ? routeConfig : routeConfig[locale];
     };
 
-    const handleClick = (href: string) => (e: React.MouseEvent) => {
-        const localizedHref = getLocalizedHref(href);
-        const normalizedPath = normalizePath(pathname);
+    // `usePathname` from `@/i18n/navigation` (next-intl) returns the *canonical*
+    // internal pathname with the locale stripped (e.g. both `/es/sobre-mi` and
+    // `/en/about-me` resolve to `/about-me`) — consistent on server and client.
+    // next/navigation's hook instead returns the localized client path
+    // (`/es/sobre-mi`), which is why the pill only matched in English before.
+    // So active detection compares against the canonical `href`.
+    const isActivePath = (canonicalHref: string) =>
+        normalizedPathname === canonicalHref ||
+        (canonicalHref !== "/" && normalizedPathname.startsWith(canonicalHref));
 
-        if (localizedHref === normalizedPath) {
+    const handleClick = (href: string) => (e: React.MouseEvent) => {
+        if (href === normalizedPathname) {
             e.preventDefault();
 
             if (!isScrolling.current) {
@@ -107,14 +113,9 @@ export function HeaderDesktopNav({ links }: DesktopNavProps) {
                 if (children && children.length > 0) {
                     const isOpen = openDropdown === label;
 
-                    const childActive = children.some((child) => {
-                        if (!child.href) return false;
-                        const childHref = getLocalizedHref(child.href);
-                        return (
-                            normalizedPathname === childHref ||
-                            (childHref !== "/" && normalizedPathname.startsWith(childHref))
-                        );
-                    });
+                    const childActive = children.some(
+                        (child) => !!child.href && isActivePath(child.href)
+                    );
 
                     return (
                         <li
@@ -170,9 +171,7 @@ export function HeaderDesktopNav({ links }: DesktopNavProps) {
                                             {children.map((child, idx) => {
                                                 if (!child.href) return null;
                                                 const childHref = getLocalizedHref(child.href);
-                                                const isActive =
-                                                    normalizedPathname === childHref ||
-                                                    (childHref !== "/" && normalizedPathname.startsWith(childHref));
+                                                const isActive = isActivePath(child.href);
 
                                                 return (
                                                     <motion.li
@@ -230,9 +229,7 @@ export function HeaderDesktopNav({ links }: DesktopNavProps) {
                 if (!href) return null;
 
                 const localizedHref = getLocalizedHref(href);
-                const isActive =
-                    normalizedPathname === localizedHref ||
-                    (localizedHref !== "/" && normalizedPathname.startsWith(localizedHref));
+                const isActive = isActivePath(href);
 
                 return (
                     <li key={href} className="relative">
