@@ -108,22 +108,21 @@ export default function ContactContent({ data }: Props) {
 
     return (
         <section className="container-xl mx-auto mt-10 md:mt-20 py-16" key={refreshKey}>
+            <h1 className="mb-4 text-xl uppercase tracking-widest text-brand-muted">
+                {data.h1}
+            </h1>
+
+            <motion.h2
+                variants={item}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true, amount: 0.2 }}
+                className="mb-10 text-4xl tracking-tight sm:text-5xl">
+                {data.title}
+            </motion.h2>
             <div className="grid items-start md:gap-20 md:grid-cols-2">
                 {/* LEFT */}
                 <div className="mb-16">
-                    <h1 className="mb-4 text-xl uppercase tracking-widest text-brand-muted">
-                        {data.h1}
-                    </h1>
-
-                    <motion.h2
-                        variants={item}
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: true, amount: 0.2 }}
-                        className="mb-10 text-4xl tracking-tight sm:text-5xl">
-                        {data.title}
-                    </motion.h2>
-
                     <motion.div
                         variants={item}
                         initial="hidden"
@@ -234,7 +233,7 @@ export default function ContactContent({ data }: Props) {
                 </div>
 
                 {/* RIGHT */}
-                <div className="flex items-center h-full w-full">
+                <div className="flex items-start h-full w-full">
                     <div className="rounded-2xl w-full">
                         <ContactForm />
                     </div>

@@ -2,7 +2,6 @@
 
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { motion, Variants } from "framer-motion";
 import { ROUTES } from "@/constants/routes";
 import { Link } from "@/i18n/navigation";
 
@@ -29,7 +28,7 @@ const projects: BrandingProject[] = [
     {
         key: "don_tostado",
         href: ROUTES.PROJECTS_BRANDING_DON_TOSTADO,
-        image: "/media/projects/branding-don-tostado/coffee-mugs.png",
+        image: "/media/projects/branding-don-tostado/coffee-mugs.webp",
         imageAltKey: "branding.projects.don_tostado.content.image_alt.coffee_mugs",
         titleKey: "branding.projects.don_tostado.content.about.heading",
         sectorKey: "branding.content.projects.don_tostado.sector",
@@ -44,11 +43,6 @@ const projects: BrandingProject[] = [
         number: "03",
     },*/
 ];
-
-const fadeInUp: Variants = {
-    hidden: { opacity: 0, y: 40 },
-    show: { opacity: 1, y: 0 },
-};
 
 type ProjectCardProps = {
     project: BrandingProject;
@@ -65,8 +59,8 @@ function ProjectCard({ project, index }: ProjectCardProps) {
                 src={project.image}
                 alt={t(project.imageAltKey)}
                 fill
-                sizes="(max-width: 768px) 50vw, 33vw"
-                quality={75}
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                quality={85}
                 className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                 priority={index === 0}
                 fetchPriority={index === 0 ? "high" : "auto"}
@@ -80,14 +74,7 @@ function ProjectCard({ project, index }: ProjectCardProps) {
     );
 
     return (
-        <motion.li
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7, ease: "easeOut", delay: index * 0.1 }}
-            className="flex flex-col"
-        >
+        <li className="flex flex-col">
             <p className="text-4xl font-medium text-neutral-400 leading-none">
                 {project.number}
             </p>
@@ -101,7 +88,7 @@ function ProjectCard({ project, index }: ProjectCardProps) {
             ) : (
                 card
             )}
-        </motion.li>
+        </li>
     );
 }
 

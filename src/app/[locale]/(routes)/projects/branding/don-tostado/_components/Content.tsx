@@ -325,7 +325,7 @@ export default function BrandingProjectDonTostadoContent() {
                     >
                         <div className="md:col-span-6 aspect-[3/2] md:aspect-auto relative overflow-hidden">
                             <Image
-                                src={`${IMG_BASE}/coffee-mugs.png`}
+                                src={`${IMG_BASE}/coffee-mugs.webp`}
                                 alt={t("image_alt.coffee_mugs")}
                                 fill
                                 sizes="(max-width: 768px) 100vw, 50vw"

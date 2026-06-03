@@ -2,7 +2,6 @@
 
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import { motion, Variants } from "framer-motion";
 import { ROUTES } from "@/constants/routes";
 import { Link } from "@/i18n/navigation";
 
@@ -27,11 +26,6 @@ const projects: UxUiProject[] = [
         number: "01",
     }
 ];
-
-const fadeInUp: Variants = {
-    hidden: { opacity: 0, y: 40 },
-    show: { opacity: 1, y: 0 },
-};
 
 type ProjectCardProps = {
     project: UxUiProject;
@@ -63,14 +57,7 @@ function ProjectCard({ project, index }: ProjectCardProps) {
     );
 
     return (
-        <motion.li
-            variants={fadeInUp}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.7, ease: "easeOut", delay: index * 0.1 }}
-            className="flex flex-col"
-        >
+        <li className="flex flex-col">
             <p className="text-4xl font-medium text-neutral-400 leading-none">
                 {project.number}
             </p>
@@ -84,7 +71,7 @@ function ProjectCard({ project, index }: ProjectCardProps) {
             ) : (
                 card
             )}
-        </motion.li>
+        </li>
     );
 }
 
