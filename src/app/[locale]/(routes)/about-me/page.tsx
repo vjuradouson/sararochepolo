@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import AboutContent from "./_components/Content";
-import Breadcrumb from "@/components/ui/Breadcrumb";
 import JsonLd from "@/components/seo/JsonLd";
 import { getAboutPersonSchema } from "@/lib/seo/schema/about/person";
 import { FAQ_INDICES, getAboutFaqSchema } from "@/lib/seo/schema/about/faq";
@@ -52,18 +51,13 @@ export default async function AboutPage({
         <>
             <JsonLd data={personSchema} />
             {/*<JsonLd data={faqSchema} />*/}
-            <Breadcrumb
-                crumbs={[
-                    { label: t("app.breadcrumb.home"), href: ROUTES.HOME },
-                    { label: t("app.header.links.about_me") },
-                ]}
-            />
             <AboutContent
                 data={{
                     h1: t("app.about_me.h1"),
                     header: {
                         greeting: t("app.about_me.header.greeting"),
-                        presentation: t("app.about_me.header.presentation"),
+                        presentation_1: t("app.about_me.header.presentation_1"),
+                        presentation_2: t("app.about_me.header.presentation_2"),
                     },
                     owner: t("app.portfolio.owner"),
                     image: {

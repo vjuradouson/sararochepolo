@@ -112,7 +112,7 @@ export default function BrandingContent() {
         <div className="text-xl xl:text-2xl">
             <section className="w-full md:pt-4">
                 <div className="container-xl mx-auto pb-10">
-                    <p className="text-xl uppercase tracking-widest mb-8 md:mb-10">
+                    <p className="text-xl uppercase tracking-widest mb-3 md:mb-5 mt-3 md:mt-5">
                         {t("branding.content.eyebrow")}
                     </p>
                     <h1 className="-ml-1 mb-3 text-4xl md:text-5xl font-light tracking-tight">

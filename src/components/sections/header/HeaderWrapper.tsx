@@ -67,7 +67,7 @@ export default async function HeaderWrapper() {
     ];
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 bg-surface-80 backdrop-blur-surface">
+        <header className="fixed top-0 left-0 right-0 z-50 bg-surface-80 backdrop-blur-surface border-b border-foreground/10">
             <nav className="container-xl mx-auto flex items-center justify-between h-15">
 
                 {/* Client (interaction) */}

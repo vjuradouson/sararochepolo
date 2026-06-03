@@ -301,7 +301,8 @@ export default {
             h1: "About Me",
             header: {
                 greeting: "Hi!",
-                presentation: "I'm Sara, a Product Designer specializing in UX/UI",
+                presentation_1: "I'm Sara,",
+                presentation_2: "a Product Designer specializing in UX/UI",
             },
             image_alt: "Photo of Sara Roche Polo, Product Designer (UX/UI), with a neutral background for her professional portfolio",
             content: {
@@ -514,12 +515,12 @@ export default {
                 projects: {
                     la_esquinita_de_papel: {
                         seo: {
-                            title: "Branding \"La Esquinita de Papel\" | Sara Roche Polo",
+                            title: "La Esquinita de Papel | Sara Roche Polo",
                             description: "Branding project for La Esquinita de Papel, a cozy neighborhood bookstore. Warm, nostalgic visual identity by Sara Roche Polo."
                         },
                         content: {
-                            eyebrow: "Personal project",
-                            title: "Branding \"La Esquinita de Papel\"",
+                            eyebrow: "Branding · Personal project",
+                            title: "La Esquinita de Papel",
                             about: {
                                 heading: "La Esquinita de Papel",
                                 tagline: "A small, cozy bookshop with soul.",
@@ -555,12 +556,12 @@ export default {
                     },
                     don_tostado: {
                         seo: {
-                            title: "Branding \"Don Tostado\" | Sara Roche Polo",
+                            title: "Don Tostado | Sara Roche Polo",
                             description: "Branding project for Don Tostado, a young, modern specialty coffee shop full of character. A laid-back, approachable visual identity by Sara Roche Polo."
                         },
                         content: {
-                            eyebrow: "Personal project",
-                            title: "Branding \"Don Tostado\"",
+                            eyebrow: "Branding · Personal project",
+                            title: "Don Tostado",
                             about: {
                                 heading: "Don Tostado",
                                 tagline: "No pretenses. Quality, warmth and good vibes in every cup.",
@@ -621,9 +622,9 @@ export default {
                             eyebrow: "Figma Design · Personal project",
                             title: "Pet Buddy",
                             hero_subtitle: "Your app to keep everything about your pet up to date is finally here",
-                            intro_1: "Pet Buddy was born from the <highlight>need to solve one of the main problems</highlight> pet owners face, myself included: <highlight>important information scattered</highlight> across different places.",
-                            intro_2: "<highlight>Vaccinations, vet appointments, medication and daily reminders</highlight> are usually juggled between notes, calendars and conversations, leading to forgotten tasks and stress.",
-                            intro_3: "Through a clear, accessible UX experience, <highlight>Pet Buddy centralizes all the relevant information in a single, intuitive and easy-to-check space.</highlight>",
+                            intro_1: "Pet Buddy was born from the <highlight>need to solve one of the main problems</highlight> pet owners face, myself included: <highlight>important information scattered</highlight> across different platforms.",
+                            intro_2: "<highlight>Vaccinations, vet appointments, medication and daily reminders</highlight> are usually juggled between notes, calendars and message apps, leading to forgotten tasks and stress.",
+                            intro_3: "Through a clear, accessible UX experience, <highlight>Pet Buddy centralizes all the relevant information in a single, intuitive and easy-to-check app.</highlight>",
                             focus_1: "One of the design's main goals was to reduce the user's mental load when keeping track of their pets' health.",
                             focus_2: "Many people don't remember dates for check-ups, deworming or recurring food and medication purchases until it's already too late.",
                             focus_3: "To solve this, I designed a system of visual, prioritized reminders that anticipates needs and makes daily planning feel natural and unobtrusive.",

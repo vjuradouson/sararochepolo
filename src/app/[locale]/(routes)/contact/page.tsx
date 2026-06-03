@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import ContactContent from "./_components/ContactContent";
-import Breadcrumb from "@/components/ui/Breadcrumb";
 import { BASE_URL } from '@/lib/config';
 import { getPath } from "@/i18n/getPath";
 import { ROUTES } from "@/constants/routes";
@@ -44,50 +43,31 @@ export default async function ContactPage({
     const { locale } = await params;
     const t = await getTranslations({ locale });
 
-    const contactLinks = [
-        {
-            label: t("app.contact.contact_link.linkedin.label"),
-            value: t("app.contact.contact_link.linkedin.value"),
-            href: t("app.contact.contact_link.linkedin.href"),
-        },
-        {
-            label: t("app.contact.location.label"),
-            value: t("app.contact.location.value"),
-            href: null,
-        },
-    ];
-
     return (
         <>
-            <Breadcrumb
-                crumbs={[
-                    { label: t("app.breadcrumb.home"), href: ROUTES.HOME },
-                    { label: t("app.header.links.contact") },
-                ]}
-            />
             <ContactContent
                 data={{
-                h1: t("app.contact.h1"),
-                title: t("app.contact.header"),
-                description: t("app.contact.description"),
-                formTitle: t("app.contact.form.title"),
-                contactLinks: [
-                    {
-                        label: t("app.contact.contact_link.linkedin.label"),
-                        value: t("app.contact.contact_link.linkedin.value"),
-                        href: t("app.contact.contact_link.linkedin.href")
-                    },
-                    {
-                        label: t("app.contact.contact_link.instagram.label"),
-                        value: t("app.contact.contact_link.instagram.value"),
-                        href: t("app.contact.contact_link.instagram.href")
+                    h1: t("app.contact.h1"),
+                    title: t("app.contact.header"),
+                    description: t("app.contact.description"),
+                    formTitle: t("app.contact.form.title"),
+                    contactLinks: [
+                        {
+                            label: t("app.contact.contact_link.linkedin.label"),
+                            value: t("app.contact.contact_link.linkedin.value"),
+                            href: t("app.contact.contact_link.linkedin.href")
+                        },
+                        {
+                            label: t("app.contact.contact_link.instagram.label"),
+                            value: t("app.contact.contact_link.instagram.value"),
+                            href: t("app.contact.contact_link.instagram.href")
+                        }
+                    ],
+                    location: {
+                        label: t("app.contact.location.label"),
+                        value: t("app.contact.location.value"),
                     }
-                ],
-                location: {
-                    label: t("app.contact.location.label"),
-                    value: t("app.contact.location.value"),
-                }
-            }}
+                }}
             />
         </>
     );

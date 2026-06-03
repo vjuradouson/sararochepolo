@@ -244,7 +244,7 @@ export default {
             },
             hero: {
                 h1: "Diseñadora de Producto (UX/UI)",
-                h1_meta: "en Zaragoza | Sara Roche Polo",
+                h1_meta: "Zaragoza | Sara Roche Polo",
                 button: {
                     label: "Contacto"
                 },
@@ -301,7 +301,8 @@ export default {
             h1: "Sobre mí",
             header: {
                 greeting: "¡Hola!",
-                presentation: "Soy Sara, Diseñadora de Producto especializada en UX/UI"
+                presentation_1: "Soy Sara,",
+                presentation_2: "Diseñadora de Producto especializada en UX/UI"
             },
             image_alt: "Fotografía de Sara Roche Polo, Diseñadora de Producto (UX/UI), con fondo neutro para su portfolio profesional",
             content: {
@@ -514,12 +515,12 @@ export default {
                 projects: {
                     la_esquinita_de_papel: {
                         seo: {
-                            title: "Branding \"La Esquinita de Papel\" | Sara Roche Polo",
+                            title: "La Esquinita de Papel | Sara Roche Polo",
                             description: "Proyecto de branding para La Esquinita de Papel, una librería de barrio acogedora. Identidad visual cálida y nostálgica por Sara Roche Polo."
                         },
                         content: {
-                            eyebrow: "Proyecto personal",
-                            title: "Branding \"La Esquinita de Papel\"",
+                            eyebrow: "Branding · Proyecto personal",
+                            title: "La Esquinita de Papel",
                             about: {
                                 heading: "La Esquinita de Papel",
                                 tagline: "Una librería pequeña, acogedora y con alma.",
@@ -555,12 +556,12 @@ export default {
                     },
                     don_tostado: {
                         seo: {
-                            title: "Branding \"Don Tostado\" | Sara Roche Polo",
+                            title: "Don Tostado | Sara Roche Polo",
                             description: "Proyecto de branding para Don Tostado, una cafetería de especialidad joven, moderna y con mucho carácter. Identidad visual desenfadada y cercana por Sara Roche Polo."
                         },
                         content: {
-                            eyebrow: "Proyecto personal",
-                            title: "Branding \"Don Tostado\"",
+                            eyebrow: "Branding · Proyecto personal",
+                            title: "Don Tostado",
                             about: {
                                 heading: "Don Tostado",
                                 tagline: "Sin postureo. Calidad, cercanía y buen rollo en cada taza.",

@@ -6,8 +6,6 @@ import { ROUTES } from "@/constants/routes";
 import { withAlternates } from "@/lib/seo/alternates";
 import JsonLd from "@/components/seo/JsonLd";
 import { getProjectCreativeWorkSchema } from "@/lib/seo/schema/projectCreativeWork";
-import { getBreadcrumbSchema } from "@/lib/seo/schema/breadcrumb";
-import Breadcrumb from "@/components/ui/Breadcrumb";
 import SocialMediaContent from "./_components/Content";
 
 export async function generateMetadata({
@@ -68,21 +66,9 @@ export default async function SocialMediaPage({
         about: ["Social Media", "Meta Ads", "Visual Communication", "Advertising Design"],
     });
 
-    const breadcrumbSchema = getBreadcrumbSchema([
-        { name: t("app.breadcrumb.home"), url: `${BASE_URL}/${locale}` },
-        { name: t("app.projects.social_media.content.title"), url },
-    ]);
-
     return (
         <>
             <JsonLd data={creativeWorkSchema} />
-            <JsonLd data={breadcrumbSchema} />
-            <Breadcrumb
-                crumbs={[
-                    { label: t("app.breadcrumb.home"), href: ROUTES.HOME },
-                    { label: t("app.projects.social_media.content.title") },
-                ]}
-            />
             <SocialMediaContent />
         </>
     );

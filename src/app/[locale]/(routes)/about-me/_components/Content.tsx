@@ -11,7 +11,8 @@ type AboutContentProps = {
         h1: string;
         header: {
             greeting: string;
-            presentation: string;
+            presentation_1: string;
+            presentation_2: string;
         };
         owner: string;
         image: {
@@ -90,7 +91,7 @@ export default function AboutContent({ data }: AboutContentProps) {
 
     return (
         <div>
-            <section className="container-xxl mx-auto px-6 pb-12 pt-4" key={refreshKey}>
+            <section className="container-xxl mx-auto px-6 pb-12 mt-5 md:mt-10 py-16" key={refreshKey}>
                 <div className="pb-12 md:h-[500px] lg:h-[600px] overflow-hidden relative shadow-[var(--shadow-card)] rounded-[var(--radius-card)]">
                     <div className="h-full grid gap-16 md:gap-0 md:grid-cols-2 items-stretch">
                         <div className="pl-8 pt-6 lg:ml-18 md:pt-10 lg:pb-0 px-6">
@@ -114,7 +115,9 @@ export default function AboutContent({ data }: AboutContentProps) {
                                 transition={{ duration: 0.7, ease: EASE_OUT, delay: 0.12 }}
                                 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tight"
                             >
-                                {data.header.presentation}
+                                {data.header.presentation_1}
+                                <br />
+                                {data.header.presentation_2}
                             </motion.p>
                         </div>
 

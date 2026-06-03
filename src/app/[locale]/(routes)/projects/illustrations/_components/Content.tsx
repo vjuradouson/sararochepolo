@@ -419,8 +419,8 @@ export default function IllustrationsContent() {
 
     return (
         <div className="text-lg md:text-xl xl:text-2xl overflow-x-clip">
-            <section className="container-xl md:pt-4 mb-16 md:mb-24">
-                <p className="text-xl uppercase tracking-widest mb-8 md:mb-10">
+            <section className="container-xl mt-10 md:mt-20 py-16">
+                <p className="text-xl uppercase tracking-wides mb-3 md:mb-5">
                     {t("eyebrow")}
                 </p>
                 <h1 className="mb-10 text-4xl md:text-5xl font-light tracking-tight">

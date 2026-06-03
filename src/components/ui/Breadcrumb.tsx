@@ -5,7 +5,6 @@ import { ChevronRight } from "lucide-react";
 import { useLocale } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { PATHNAMES } from "@/i18n/routing";
-import { BREADCRUMB_MIN_LEVEL } from "@/constants/breadcrumbs";
 import { trackBreadcrumbClick } from "@/lib/gtm";
 
 type Href = ComponentProps<typeof Link>["href"];
@@ -17,8 +16,9 @@ export type Crumb = {
 };
 
 /**
- * Migas de pan clicables. Se usa en páginas con 3+ niveles (Home > Sección >
- * Proyecto). La última miga representa la página actual y no es un enlace.
+ * Migas de pan clicables. Se usa únicamente en /projects/branding y
+ * /projects/ux-ui-design y en sus páginas hijas. La última miga representa la
+ * página actual y no es un enlace.
  * El offset superior (`pt-*`) reserva el alto del header fijo (`h-15`).
  *
  * Cada clic en un enlace emite el evento `breadcrumb_click` al dataLayer (GTM),
@@ -26,10 +26,6 @@ export type Crumb = {
  */
 export default function Breadcrumb({ crumbs }: { crumbs: Crumb[] }) {
     const locale = useLocale();
-
-    // El nivel de la página es su profundidad = número de migas. Si está por
-    // debajo del mínimo configurado, no se muestran migas (ver BREADCRUMB_MIN_LEVEL).
-    if (crumbs.length < BREADCRUMB_MIN_LEVEL) return null;
 
     // Resuelve la ruta localizada de una clave de ROUTES, igual que el nav.
     const getLocalizedHref = (href: Href | undefined): string | undefined => {
@@ -42,7 +38,7 @@ export default function Breadcrumb({ crumbs }: { crumbs: Crumb[] }) {
     return (
         <nav
             aria-label="Breadcrumb"
-            className="container-xl pt-20 md:pt-24 pb-2 md:pb-4"
+            className="container-xl pt-24 pb-2 md:pb-4"
         >
             <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-sm md:text-base text-neutral-500">
                 {crumbs.map((crumb, index) => {
