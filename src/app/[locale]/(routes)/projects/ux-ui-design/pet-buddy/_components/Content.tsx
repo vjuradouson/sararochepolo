@@ -84,7 +84,18 @@ function HeroSection({ t }: { t: T }) {
             <div className="container-xl grid grid-cols-1 md:grid-cols-2 items-center gap-10 md:gap-8 py-10 md:py-20">
                 <div>
                     <p className="text-xl md:6xl uppercase tracking-widest mb-6">
-                        {t("eyebrow")}
+                        {(() => {
+                            const [left, right] = t("eyebrow").split(" · ");
+                            if (!right) return t("eyebrow");
+                            return (
+                                <>
+                                    {left}
+                                    <br className="min-[480px]:hidden" />
+                                    <span className="hidden min-[480px]:inline"> · </span>
+                                    {right}
+                                </>
+                            );
+                        })()}
                     </p>
                     <h1 className="flex items-center gap-3 mb-6 text-5xl md:text-8xl font-light tracking-tight">
                         {t("title")}
