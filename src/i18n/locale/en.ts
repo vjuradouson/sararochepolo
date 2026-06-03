@@ -339,7 +339,11 @@ export default {
                         year: "2012 — 2016",
                         title: "Bachelor's Degree in English Studies",
                         place: "University of Zaragoza",
-                        description: ""
+                        description: "",
+                        badge: {
+                            level: "C2",
+                            label: "Proficiency"
+                        }
                     }
                 }
             },
@@ -676,7 +680,7 @@ export default {
                 },
                 content: {
                     eyebrow: "Social media",
-                    title: "Social media & Meta Ads",
+                    title: "Social media <break>& Meta Ads</break>",
                     intro: "If you want your brand to stand out and reach a wide audience, social media and Meta Ads are the way to go! <highlight>I specialize in the design of creative assets that capture the attention of the viewer and drive conversion</highlight>, while maintaining brand consistency to boost results through visual design",
                     projects: {
                         patitas_con_historia: {

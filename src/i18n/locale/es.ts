@@ -339,7 +339,11 @@ export default {
                         year: "2012 — 2016",
                         title: "Grado en Estudios Ingleses",
                         place: "Universidad de Zaragoza",
-                        description: ""
+                        description: "",
+                        badge: {
+                            level: "C2",
+                            label: "Proficiency"
+                        }
                     }
                 }
             },
@@ -676,7 +680,7 @@ export default {
                 },
                 content: {
                     eyebrow: "Redes sociales",
-                    title: "Redes sociales y Meta Ads",
+                    title: "Redes sociales <break>y Meta Ads</break>",
                     intro: "Si quieres que tu marca destaque y llegue a mayor audiencia, ¡las redes sociales y Meta Ads son tus aliados! <highlight>Me especializo en diseñar piezas creativas que captan la atención del usuario e impulsan la conversión</highlight>, manteniendo siempre la coherencia de marca para potenciar los resultados a través del diseño visual.",
                     projects: {
                         patitas_con_historia: {

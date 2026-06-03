@@ -76,12 +76,19 @@ export default async function AboutPage({
                         title: t("app.about_me.content.studies.title"),
                         study: Array.from({ length: 4 }, (_, i) => {
                             const index = i + 1;
+                            const badgeKey = `app.about_me.content.studies.${index}.badge`;
 
                             return {
                                 year: t(`app.about_me.content.studies.${index}.year`),
                                 title: t(`app.about_me.content.studies.${index}.title`),
                                 place: t(`app.about_me.content.studies.${index}.place`),
                                 description: t(`app.about_me.content.studies.${index}.description`) || null,
+                                badge: t.has(`${badgeKey}.level`)
+                                    ? {
+                                        level: t(`${badgeKey}.level`),
+                                        label: t(`${badgeKey}.label`),
+                                    }
+                                    : null,
                             };
                         }),
                     },

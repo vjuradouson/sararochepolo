@@ -23,6 +23,18 @@ const highlight = (chunks: React.ReactNode) => (
     <strong className="font-bold">{chunks}</strong>
 );
 
+// Salto de línea que solo aparece por debajo de 480px (móvil). Tailwind no trae
+// un breakpoint de 480px por defecto, así que usamos la variante arbitraria
+// `max-[480px]:` → `@media (max-width: 480px)`. next-intl solo parsea etiquetas
+// emparejadas (`<break>…</break>`), así que el tag envuelve la 2ª parte y le
+// antepone el <br> condicional.
+const lineBreak = (chunks: React.ReactNode) => (
+    <>
+        <br className="hidden max-[480px]:block" />
+        {chunks}
+    </>
+);
+
 type VerticalProject = {
     key: "la_esquinita_de_papel" | "don_tostado";
     src: string;
@@ -76,7 +88,7 @@ export default function SocialMediaContent() {
                         {t("eyebrow")}
                     </p>
                     <h1 className="mb-10 text-4xl md:text-5xl font-light tracking-tight">
-                        {t("title")}
+                        {t.rich("title", { break: lineBreak })}
                     </h1>
                     <p className="leading-relaxed">
                         {t.rich("intro", { highlight })}

@@ -29,6 +29,10 @@ type AboutContentProps = {
                 title: string;
                 place: string;
                 description: string | null;
+                badge: {
+                    level: string;
+                    label: string;
+                } | null;
             }[]
         },
         info: {
@@ -229,6 +233,20 @@ export default function AboutContent({ data }: AboutContentProps) {
                                             <p className="text-md leading-relaxed mb-4 max-w-[500px]">
                                                 {item.description}
                                             </p>
+                                        )}
+
+                                        {item.badge && (
+                                            <span
+                                                className="mt-2 mx-auto flex h-20 w-20 flex-col items-center justify-center rounded-full bg-yellow text-dark-blue text-center shadow-[var(--shadow-card-xs)]"
+                                                aria-label={`${item.badge.level} ${item.badge.label}`}
+                                            >
+                                                <span className="text-xl font-semibold leading-none">
+                                                    {item.badge.level}
+                                                </span>
+                                                <span className="mt-1 text-[11px] tracking-wide leading-none">
+                                                    {item.badge.label}
+                                                </span>
+                                            </span>
                                         )}
 
                                     </div>
