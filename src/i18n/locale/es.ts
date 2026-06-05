@@ -34,6 +34,9 @@ export default {
         breadcrumb: {
             home: "Inicio"
         },
+        a11y: {
+            back_to_top: "Volver arriba"
+        },
         header: {
             links: {
                 projects_title: "Proyectos",

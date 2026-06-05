@@ -297,7 +297,7 @@ function VideoSection({ t }: { t: T }) {
         <section className="container-xl mt-12 md:mt-24 pb-24 md:pb-32">
             <motion.video
                 {...revealProps}
-                className="w-full aspect-[3/2] object-cover rounded-2xl drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)]"
+                className="mx-auto w-full aspect-[3/2] object-cover md:aspect-auto md:h-auto md:w-auto md:max-h-[70vh] md:max-w-full md:object-contain rounded-2xl drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)]"
                 src={`${IMG_BASE}/pet-buddy-video-loop.mp4`}
                 autoPlay
                 loop
@@ -342,11 +342,11 @@ function DemoVideoSection({ t }: { t: T }) {
             </motion.div>
             <motion.div
                 {...revealProps}
-                className="relative w-full max-w-[300px] md:max-w-[450px]"
+                className="relative mx-auto w-fit max-w-[90vw] md:max-w-[450px]"
             >
                 <video
                     ref={videoRef}
-                    className="rounded-[3.0rem] md:rounded-[3.9rem] w-full h-auto aspect-[404/838] object-cover drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] block bg-[#D3E3E4]"
+                    className="rounded-[2.5rem] md:rounded-[3.5rem] mx-auto block w-auto h-[65svh] md:h-[75vh] aspect-[404/838] object-cover drop-shadow-[15px_20px_10px_rgba(0,0,0,0.2)] bg-[#D3E3E4]"
                     src={`${IMG_BASE}/pet-buddy-video-demo.mp4`}
                     poster={`${IMG_BASE}/pet-buddy-video-demo-poster.jpg`}
                     controls={started}

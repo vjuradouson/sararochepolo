@@ -8,6 +8,7 @@ import { BASE_URL, LOCALES, LocaleCountryMap } from '@/lib/config';
 import { DEFAULT_OG_IMAGE } from '@/lib/seo/og';
 import { ReactNode } from 'react';
 import CookieBanner from '@/components/CookieBanner';
+import BackToTop from '@/components/ui/BackToTop';
 import CookieScriptsClient from '@/components/CookieScriptsClient';
 import Script from 'next/script';
 import GTMPageView from '@/components/GTMPageView';
@@ -153,6 +154,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
 
           <Footer />
 
+          <BackToTop />
           <CookieBanner />
           <CookieScriptsClient />
         </NextIntlClientProvider>
