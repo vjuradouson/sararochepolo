@@ -2,6 +2,28 @@ export default {
     app: {
         portfolio: {
             owner: "Sara Roche Polo",
+            llms: {
+                summary: "Portfolio profesional de Sara Roche Polo, Diseñadora de Producto (UX/UI) con base en Zaragoza (España). Más de 4 años diseñando interfaces intuitivas y sistemas visuales consistentes, combinando UX, UI y comunicación visual en proyectos de producto digital, branding, ilustración, redes sociales y diseño editorial.",
+                notes: {
+                    locale: "Los enlaces de este archivo apuntan a la versión en español (/es/...). Cada página existe también en inglés bajo /en/... con la misma estructura y contenido equivalente.",
+                    location: "Ubicación: Zaragoza (Aragón, España). Trabajo en remoto y presencial.",
+                    availability: "Disponible para colaboraciones, proyectos freelance y oportunidades en producto digital. Respuesta habitual en 24-48 h a través del formulario de contacto."
+                },
+                sections: {
+                    profile: "Perfil",
+                    projects: "Proyectos",
+                    contact: "Contacto",
+                    legal: "Legal"
+                },
+                social: {
+                    linkedin: "Perfil profesional de Sara Roche Polo: experiencia, formación y trayectoria.",
+                    instagram: "Cuenta de ilustración de Sara Roche Polo: trabajo personal y proceso creativo."
+                },
+                optional: {
+                    other_language: "Esta misma guía en el otro idioma del sitio.",
+                    sitemap: "Mapa del sitio en XML con todas las URLs y sus alternativas por idioma."
+                }
+            },
             seo: {
                 keywords: "Sara Roche Polo, Diseñadora de Producto, (UX/UI), Zaragoza, Portfolio, Diseño Digital, Comunicación Visual",
                 schema: {
@@ -256,7 +278,7 @@ export default {
             },
             intro: {
                 h2: "Sobre mí — Diseñadora de Producto (UX/UI)",
-                description: "Diseñadora de Producto (UX/UI) con más de 3 años de experiencia <highlight>diseñando interfaces intuitivas y sistemas visuales consistentes.</highlight> Combino UX, UI y comunicación visual para crear <highlight>soluciones digitales y físicas alineadas con negocio y usuario.</highlight>",
+                description: "Diseñadora de Producto (UX/UI) con más de 4 años de experiencia <highlight>diseñando interfaces intuitivas y sistemas visuales consistentes.</highlight> Combino UX, UI y comunicación visual para crear <highlight>soluciones digitales y físicas alineadas con negocio y usuario.</highlight>",
                 image_alt: "Sara Roche Polo sosteniendo un cuaderno Moleskine como parte de su proceso de diseño UX/UI",
                 hover: {
                     label: "¡Hola!"
@@ -299,7 +321,7 @@ export default {
         about_me: {
             seo: {
                 title: "Sobre mí | Diseñadora de Producto (UX/UI) en Zaragoza | Sara Roche Polo",
-                description: "Conoce a Sara Roche Polo, Diseñadora de Producto (UX/UI) en Zaragoza. Más de 3 años creando experiencias digitales intuitivas, funcionales y centradas en el usuario."
+                description: "Conoce a Sara Roche Polo, Diseñadora de Producto (UX/UI) en Zaragoza. Más de 4 años creando experiencias digitales intuitivas, funcionales y centradas en el usuario."
             },
             h1: "Sobre mí",
             header: {
@@ -354,7 +376,7 @@ export default {
                 title: "Preguntas frecuentes",
                 1: {
                     q: "¿Quién es Sara Roche Polo?",
-                    a: "Sara Roche Polo es una Diseñadora de Producto (UX/UI) localizada en Zaragoza y más de 3 años de experiencia creando experiencias digitales intuitivas, funcionales y centradas en el usuario. Actualmente diseña servicios en entornos educativos, mejorando la usabilidad, la arquitectura de la información y la consistencia visual de la plataforma."
+                    a: "Sara Roche Polo es una Diseñadora de Producto (UX/UI) localizada en Zaragoza y más de 4 años de experiencia creando experiencias digitales intuitivas, funcionales y centradas en el usuario. Actualmente diseña servicios en entornos educativos, mejorando la usabilidad, la arquitectura de la información y la consistencia visual de la plataforma."
                 },
                 2: {
                     q: "¿Qué servicios ofrece Sara Roche como diseñadora UX/UI?",

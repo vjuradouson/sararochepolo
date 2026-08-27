@@ -2,6 +2,28 @@ export default {
     app: {
         portfolio: {
             owner: "Sara Roche Polo",
+            llms: {
+                summary: "Professional portfolio of Sara Roche Polo, a Product Designer (UX/UI) based in Zaragoza, Spain. Over 4 years crafting intuitive interfaces and consistent visual systems, combining UX, UI and visual communication across digital product, branding, illustration, social media and print design projects.",
+                notes: {
+                    locale: "Links in this file point to the English version (/en/...). Every page also exists in Spanish under /es/... with the same structure and equivalent content.",
+                    location: "Based in Zaragoza (Aragón, Spain). Available for remote and on-site work.",
+                    availability: "Open to collaborations, freelance projects and digital product opportunities. Replies usually within 24-48 hours via the contact form."
+                },
+                sections: {
+                    profile: "Profile",
+                    projects: "Projects",
+                    contact: "Contact",
+                    legal: "Legal"
+                },
+                social: {
+                    linkedin: "Sara Roche Polo's professional profile: experience, education and background.",
+                    instagram: "Sara Roche Polo's illustration account: personal work and creative process."
+                },
+                optional: {
+                    other_language: "This same guide in the site's other language.",
+                    sitemap: "XML sitemap with every URL and its language alternates."
+                }
+            },
             seo: {
                 keywords: "Sara Roche Polo, Product Designer, (UX/UI), Zaragoza, Portfolio, Digital Design, Visual Communication",
                 schema: {
@@ -256,7 +278,7 @@ export default {
             },
             intro: {
                 h2: "About — Product Designer (UX/UI)",
-                description: "Product Designer (UX/UI) with over 3 years of experience <highlight>crafting intuitive interfaces and consistent visual systems.</highlight> I combine UX, UI, and visual communication to create <highlight>digital and physical solutions aligned with both business goals and user needs.</highlight>",
+                description: "Product Designer (UX/UI) with over 4 years of experience <highlight>crafting intuitive interfaces and consistent visual systems.</highlight> I combine UX, UI, and visual communication to create <highlight>digital and physical solutions aligned with both business goals and user needs.</highlight>",
                 image_alt: "Sara Roche Polo holding a Moleskine notebook as part of her UX/UI design process",
                 hover: {
                     label: "Hi there!"
@@ -299,7 +321,7 @@ export default {
         about_me: {
             seo: {
                 title: "About Me | Product Designer (UX/UI) based in Zaragoza | Sara Roche Polo",
-                description: "Sara Roche Polo is a Product Designer (UX/UI) based in Zaragoza with over 3 years of experience crafting intuitive, functional, and user-centered digital experiences."
+                description: "Sara Roche Polo is a Product Designer (UX/UI) based in Zaragoza with over 4 years of experience crafting intuitive, functional, and user-centered digital experiences."
             },
             h1: "About Me",
             header: {
@@ -354,7 +376,7 @@ export default {
                 title: "Frequently Asked Questions",
                 1: {
                     q: "Who is Sara Roche Polo?",
-                    a: "Sara Roche Polo is a Product Designer (UX/UI) based in Zaragoza with over 3 years of experience crafting intuitive, functional, and user-centered digital experiences. She currently designs services in educational environments, improving usability, information architecture, and the visual consistency of the platform."
+                    a: "Sara Roche Polo is a Product Designer (UX/UI) based in Zaragoza with over 4 years of experience crafting intuitive, functional, and user-centered digital experiences. She currently designs services in educational environments, improving usability, information architecture, and the visual consistency of the platform."
                 },
                 2: {
                     q: "What services does Sara Roche offer as a UX/UI designer?",
